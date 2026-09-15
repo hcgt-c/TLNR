@@ -20,36 +20,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-================================================================================
-Documentation and figures — CC BY 4.0
-
-The text in docs/, the figures in paper/figures_final/ and the metadata tables in meta/ are licensed
-under the Creative Commons Attribution 4.0 International licence (CC BY 4.0):
-https://creativecommons.org/licenses/by/4.0/
-You may share and adapt them for any purpose, including commercially, as long as you give appropriate
-credit and indicate if changes were made.
-
-================================================================================
-The manuscript
-
-The Markdown under paper/ is the author's preprint of the paper.  If the paper is published by IEEE, the
-published version is copyright IEEE and this file does not grant rights to it; cite the published version
-for the paper itself, and use this repository for the code and the results.
-
-================================================================================
-Third-party material that is *not* distributed here
-
-No dataset, no pretrained checkpoint and no third-party image is included in this repository, so none of
-their licences is passed on to you.  To reproduce the measurements you download them yourself, under their
-own terms:
-
-* COCO (images and annotations): https://cocodataset.org/#termsofuse
-* CIFAR-10: https://www.cs.toronto.edu/~kriz/cifar.html
-* torchvision ImageNet weights (ResNet, ConvNeXt, ViT): BSD-3-Clause, via the torchvision release
-* DINOv2: the code is Apache-2.0, the published weights are CC BY-NC-4.0 (non-commercial) —
-  https://github.com/facebookresearch/dinov2
-* YOLO11n (Ultralytics): used as an installed dependency; the ultralytics package is AGPL-3.0, and its
-  weights are not redistributed here.
-
-If you add any of these to a fork, check their terms first — they are stricter than this repository's MIT
-licence for the code.
+--------------------------------------------------------------------------------
+The MIT licence above covers the code.  Documentation and figures are CC BY 4.0, the manuscript is the
+author's preprint, and several third-party components are used but not distributed: see LICENSING.md.

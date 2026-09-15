@@ -98,8 +98,8 @@ git push -u origin main
 
 That is all this release needs: the documentation lives in `README.md`, `docs/` and the release notes, and
 no external archive is required.  GitHub shows the licence in the repository sidebar from the `LICENSE`
-file (MIT for the code, CC BY 4.0 for the docs and figures — see that file for the split and for the
-third-party terms that are *not* passed on to you).
+file (MIT for the code, CC BY 4.0 for the docs and figures — `LICENSE` and `LICENSING.md` state the split and
+the third-party terms that are *not* passed on to you).
 
 If you later want the code to be citable as its own object, that is what an archival DOI (Zenodo,
 Software Heritage) is for; it changes nothing in this repository or in the paper, and it is not needed to
@@ -107,10 +107,10 @@ publish the code.
 
 ## Licence and citation
 
-**Code: MIT.  Documentation and figures: CC BY 4.0.**  `LICENSE` states the split, notes that the
-manuscript Markdown is the author's preprint, and lists the third-party terms (COCO, CIFAR-10, DINOv2,
-YOLO11n, torchvision weights) that are *not* passed on to you because none of that material is
-distributed here.  On GitHub the sidebar picks the file up automatically.
+**Code: MIT** (`LICENSE`) **— documentation and figures: CC BY 4.0** (`LICENSING.md`).  The manuscript
+Markdown is the author's preprint, and the third-party terms (COCO, CIFAR-10, DINOv2, YOLO11n, torchvision
+weights) are listed in `LICENSING.md` because none of that material is distributed here.  GitHub reads the
+root `LICENSE`, so the repository sidebar shows *MIT license*.
 
 If you use this material, please cite the paper; `CITATION.cff` carries the entry (fill in the arXiv
 identifier once it is assigned).
