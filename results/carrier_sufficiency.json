@@ -1,0 +1,53 @@
+{
+ "regime_a_injective_synthesis": {
+  "best_linear_error": 1.1102230246251565e-15
+ },
+ "regime_b_kernel": {
+  "best_linear_error": 0.961261695938319,
+  "invariance_defect": 0.9612616959383189,
+  "criterion_says_closed": false,
+  "note": "the dropped coordinate (sin 2h) is carried by A into the retained one",
+  "invariant_kernel_case": {
+   "best_linear_error": 7.771561172376096e-16,
+   "invariance_defect": 0.0,
+   "criterion_says_closed": true,
+   "note": "dropping a whole conjugate pair leaves an A-invariant kernel, and closure holds"
+  }
+ },
+ "misalignment_sweep": [
+  {
+   "theta_deg": 0.5,
+   "interface_error": 0.0052128688672595696
+  },
+  {
+   "theta_deg": 1,
+   "interface_error": 0.010423698982115214
+  },
+  {
+   "theta_deg": 2,
+   "interface_error": 0.020836415039042717
+  },
+  {
+   "theta_deg": 5,
+   "interface_error": 0.051951762211057545
+  },
+  {
+   "theta_deg": 10,
+   "interface_error": 0.10305177633206135
+  },
+  {
+   "theta_deg": 15,
+   "interface_error": 0.1525589654427506
+  },
+  {
+   "theta_deg": 20,
+   "interface_error": 0.19972413940073708
+  },
+  {
+   "theta_deg": 30,
+   "interface_error": 0.29384150231369377
+  }
+ ],
+ "misalignment_exponent": 0.9869252765256634,
+ "misalignment_error_at_0p5deg": 0.0052128688672595696
+}

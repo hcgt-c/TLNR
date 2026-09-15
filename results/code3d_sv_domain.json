@@ -1,0 +1,84 @@
+{
+ "protocol": "code3d_v3 zero-shot on dense3d_lattice test shapes (pentagon/hexagon), 12 hues x 4 poses avg, y3 GAP / feat_std; circular hue error (deg) vs (s,v)",
+ "feat_std": 0.724036693572998,
+ "grid_s": [
+  0.25,
+  0.5,
+  0.75,
+  1.0
+ ],
+ "grid_v": [
+  0.25,
+  0.5,
+  0.75,
+  1.0
+ ],
+ "per_cell": {
+  "s0.25_v0.25": {
+   "pentagon": 1.91,
+   "hexagon": 2.09
+  },
+  "s0.25_v0.50": {
+   "pentagon": 1.55,
+   "hexagon": 1.84
+  },
+  "s0.25_v0.75": {
+   "pentagon": 1.67,
+   "hexagon": 1.93
+  },
+  "s0.25_v1.00": {
+   "pentagon": 1.19,
+   "hexagon": 1.19
+  },
+  "s0.50_v0.25": {
+   "pentagon": 1.56,
+   "hexagon": 1.1
+  },
+  "s0.50_v0.50": {
+   "pentagon": 0.92,
+   "hexagon": 1.16
+  },
+  "s0.50_v0.75": {
+   "pentagon": 1.22,
+   "hexagon": 0.94
+  },
+  "s0.50_v1.00": {
+   "pentagon": 1.12,
+   "hexagon": 1.06
+  },
+  "s0.75_v0.25": {
+   "pentagon": 0.95,
+   "hexagon": 0.97
+  },
+  "s0.75_v0.50": {
+   "pentagon": 1.05,
+   "hexagon": 1.19
+  },
+  "s0.75_v0.75": {
+   "pentagon": 0.86,
+   "hexagon": 1.21
+  },
+  "s0.75_v1.00": {
+   "pentagon": 1.15,
+   "hexagon": 1.33
+  },
+  "s1.00_v0.25": {
+   "pentagon": 1.68,
+   "hexagon": 1.09
+  },
+  "s1.00_v0.50": {
+   "pentagon": 1.58,
+   "hexagon": 1.34
+  },
+  "s1.00_v0.75": {
+   "pentagon": 1.35,
+   "hexagon": 0.92
+  },
+  "s1.00_v1.00": {
+   "pentagon": 1.64,
+   "hexagon": 1.82
+  }
+ },
+ "mean_err_pentagon_deg": 1.34,
+ "mean_err_hexagon_deg": 1.32
+}

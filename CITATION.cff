@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper."
+title: "Transformation Laws in Neural Representations: Structure, Realisability, and Construction"
+authors:
+  - family-names: Sun
+    given-names: Yuan
+    affiliation: "School of Mathematical Sciences, Beijing Normal University"
+    email: 3396897122@qq.com
+type: software
+license: MIT
+repository-code: "https://github.com/hcgt-c/TLNR"
+abstract: >-
+  Code, stored results and figures for a study of how physical transformations of an input are retained,
+  realised and composed in frozen neural representations: existence conditions, the metric-weighted defect
+  law, the measured harmonic organisation of colour orbits, and a structure-fixed interface.
+keywords:
+  - representation analysis
+  - equivariance
+  - transformation laws
+  - colour
+  - reproducibility
+preferred-citation:
+  type: article
+  title: "Transformation Laws in Neural Representations: Structure, Realisability, and Construction"
+  authors:
+    - family-names: Sun
+      given-names: Yuan
+  year: 2026
+  notes: "Preprint; add the journal reference once it is published."

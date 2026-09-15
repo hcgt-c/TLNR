@@ -1,0 +1,12 @@
+{
+ "hue_err_hi": 1.35,
+ "hue_err_lo": 2.2,
+ "l_corr_v": 0.998,
+ "shat_corr_s": 0.996,
+ "shat_bin_acc": 0.9925,
+ "shat_corr_v_at_fixed_s": null,
+ "shat_corr_v_fixed_s": 0.048,
+ "raw_s_bin_acc_ref": 0.9737,
+ "rho_d40_deg": 2.36,
+ "rho_sl_drift": 0.059
+}

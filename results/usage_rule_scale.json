@@ -1,0 +1,1120 @@
+{
+ "protocol": "120 COCO instances (w,h>=80px), frozen per-cell head, JPEG draft 1/4; (a) raw white-composite, (b) mask+dominant-colour fill, (c) mask+fill at ref+40 deg (non-circular), (d) same as (c) with a GrabCut mask from the box (real segmentation front-end)",
+ "n": 120,
+ "a_raw": {
+  "n": 120,
+  "median": 76.4,
+  "mean": 82.7,
+  "frac_lt30": 0.158
+ },
+ "b_dominant_fill": {
+  "n": 120,
+  "median": 15.9,
+  "mean": 28.3,
+  "frac_lt30": 0.7
+ },
+ "c_shifted_fill_gtbox": {
+  "n": 120,
+  "median": 11.8,
+  "mean": 26.0,
+  "frac_lt30": 0.742
+ },
+ "d_shifted_fill_grabcut": {
+  "n": 120,
+  "median": 16.4,
+  "mean": 34.2,
+  "frac_lt30": 0.658
+ },
+ "by_concentration": {
+  "high_ge0.7": {
+   "n": 69,
+   "median": 9.0
+  },
+  "low_lt0.7": {
+   "n": 51,
+   "median": 16.9
+  }
+ },
+ "rows": [
+  {
+   "category": "dog",
+   "concentration": 0.956,
+   "mask_frac_gc": 0.087,
+   "a_raw": 161.4,
+   "b_dominant_fill": 26.7,
+   "c_shifted_fill_gtbox": 2.7,
+   "d_shifted_fill_grabcut": 163.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.997,
+   "mask_frac_gc": 0.223,
+   "a_raw": 60.1,
+   "b_dominant_fill": 0.1,
+   "c_shifted_fill_gtbox": 7.5,
+   "d_shifted_fill_grabcut": 7.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.893,
+   "mask_frac_gc": 0.57,
+   "a_raw": 32.4,
+   "b_dominant_fill": 45.0,
+   "c_shifted_fill_gtbox": 0.3,
+   "d_shifted_fill_grabcut": 0.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.978,
+   "mask_frac_gc": 0.237,
+   "a_raw": 165.6,
+   "b_dominant_fill": 23.5,
+   "c_shifted_fill_gtbox": 7.7,
+   "d_shifted_fill_grabcut": 18.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.663,
+   "mask_frac_gc": 0.348,
+   "a_raw": 35.4,
+   "b_dominant_fill": 33.2,
+   "c_shifted_fill_gtbox": 23.0,
+   "d_shifted_fill_grabcut": 23.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.603,
+   "mask_frac_gc": 0.345,
+   "a_raw": 121.3,
+   "b_dominant_fill": 46.7,
+   "c_shifted_fill_gtbox": 12.4,
+   "d_shifted_fill_grabcut": 12.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.171,
+   "mask_frac_gc": 0.591,
+   "a_raw": 72.2,
+   "b_dominant_fill": 39.3,
+   "c_shifted_fill_gtbox": 36.6,
+   "d_shifted_fill_grabcut": 36.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.459,
+   "mask_frac_gc": 0.484,
+   "a_raw": 124.7,
+   "b_dominant_fill": 4.1,
+   "c_shifted_fill_gtbox": 9.1,
+   "d_shifted_fill_grabcut": 9.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.148,
+   "mask_frac_gc": 0.187,
+   "a_raw": 162.6,
+   "b_dominant_fill": 69.0,
+   "c_shifted_fill_gtbox": 15.7,
+   "d_shifted_fill_grabcut": 15.7
+  },
+  {
+   "category": "dog",
+   "concentration": 0.49,
+   "mask_frac_gc": 0.438,
+   "a_raw": 96.3,
+   "b_dominant_fill": 12.1,
+   "c_shifted_fill_gtbox": 15.0,
+   "d_shifted_fill_grabcut": 15.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.793,
+   "mask_frac_gc": 0.329,
+   "a_raw": 52.6,
+   "b_dominant_fill": 4.2,
+   "c_shifted_fill_gtbox": 17.7,
+   "d_shifted_fill_grabcut": 17.7
+  },
+  {
+   "category": "dog",
+   "concentration": 0.653,
+   "mask_frac_gc": 0.248,
+   "a_raw": 115.8,
+   "b_dominant_fill": 17.5,
+   "c_shifted_fill_gtbox": 10.0,
+   "d_shifted_fill_grabcut": 10.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.385,
+   "mask_frac_gc": 0.296,
+   "a_raw": 31.1,
+   "b_dominant_fill": 20.4,
+   "c_shifted_fill_gtbox": 16.9,
+   "d_shifted_fill_grabcut": 22.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.996,
+   "mask_frac_gc": 0.526,
+   "a_raw": 33.3,
+   "b_dominant_fill": 13.5,
+   "c_shifted_fill_gtbox": 9.8,
+   "d_shifted_fill_grabcut": 9.8
+  },
+  {
+   "category": "dog",
+   "concentration": 0.987,
+   "mask_frac_gc": 0.265,
+   "a_raw": 145.0,
+   "b_dominant_fill": 6.2,
+   "c_shifted_fill_gtbox": 7.0,
+   "d_shifted_fill_grabcut": 6.8
+  },
+  {
+   "category": "dog",
+   "concentration": 0.781,
+   "mask_frac_gc": 0.01,
+   "a_raw": 88.7,
+   "b_dominant_fill": 29.5,
+   "c_shifted_fill_gtbox": 19.3,
+   "d_shifted_fill_grabcut": 145.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.952,
+   "mask_frac_gc": 0.462,
+   "a_raw": 19.3,
+   "b_dominant_fill": 9.9,
+   "c_shifted_fill_gtbox": 0.5,
+   "d_shifted_fill_grabcut": 0.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.831,
+   "mask_frac_gc": 0.386,
+   "a_raw": 177.7,
+   "b_dominant_fill": 26.2,
+   "c_shifted_fill_gtbox": 37.1,
+   "d_shifted_fill_grabcut": 37.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.429,
+   "mask_frac_gc": 0.042,
+   "a_raw": 62.6,
+   "b_dominant_fill": 8.2,
+   "c_shifted_fill_gtbox": 18.3,
+   "d_shifted_fill_grabcut": 156.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.928,
+   "mask_frac_gc": 0.494,
+   "a_raw": 150.3,
+   "b_dominant_fill": 4.5,
+   "c_shifted_fill_gtbox": 1.2,
+   "d_shifted_fill_grabcut": 1.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.986,
+   "mask_frac_gc": 0.402,
+   "a_raw": 38.7,
+   "b_dominant_fill": 5.5,
+   "c_shifted_fill_gtbox": 3.3,
+   "d_shifted_fill_grabcut": 3.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.14,
+   "mask_frac_gc": 0.449,
+   "a_raw": 165.1,
+   "b_dominant_fill": 131.4,
+   "c_shifted_fill_gtbox": 83.2,
+   "d_shifted_fill_grabcut": 83.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.293,
+   "mask_frac_gc": 0.292,
+   "a_raw": 65.1,
+   "b_dominant_fill": 13.8,
+   "c_shifted_fill_gtbox": 16.2,
+   "d_shifted_fill_grabcut": 16.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.219,
+   "mask_frac_gc": 0.592,
+   "a_raw": 158.1,
+   "b_dominant_fill": 37.7,
+   "c_shifted_fill_gtbox": 16.5,
+   "d_shifted_fill_grabcut": 16.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.986,
+   "mask_frac_gc": 0.033,
+   "a_raw": 52.3,
+   "b_dominant_fill": 40.4,
+   "c_shifted_fill_gtbox": 11.0,
+   "d_shifted_fill_grabcut": 22.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.997,
+   "mask_frac_gc": 0.511,
+   "a_raw": 16.7,
+   "b_dominant_fill": 6.2,
+   "c_shifted_fill_gtbox": 4.2,
+   "d_shifted_fill_grabcut": 4.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.766,
+   "mask_frac_gc": 0.288,
+   "a_raw": 145.2,
+   "b_dominant_fill": 171.1,
+   "c_shifted_fill_gtbox": 79.7,
+   "d_shifted_fill_grabcut": 79.8
+  },
+  {
+   "category": "dog",
+   "concentration": 0.993,
+   "mask_frac_gc": 0.013,
+   "a_raw": 55.4,
+   "b_dominant_fill": 4.1,
+   "c_shifted_fill_gtbox": 9.7,
+   "d_shifted_fill_grabcut": 18.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.748,
+   "mask_frac_gc": 0.476,
+   "a_raw": 110.5,
+   "b_dominant_fill": 38.0,
+   "c_shifted_fill_gtbox": 18.6,
+   "d_shifted_fill_grabcut": 18.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.684,
+   "mask_frac_gc": 0.398,
+   "a_raw": 21.9,
+   "b_dominant_fill": 29.1,
+   "c_shifted_fill_gtbox": 8.8,
+   "d_shifted_fill_grabcut": 8.8
+  },
+  {
+   "category": "dog",
+   "concentration": 0.739,
+   "mask_frac_gc": 0.384,
+   "a_raw": 86.2,
+   "b_dominant_fill": 45.5,
+   "c_shifted_fill_gtbox": 11.1,
+   "d_shifted_fill_grabcut": 11.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.328,
+   "mask_frac_gc": 0.403,
+   "a_raw": 157.3,
+   "b_dominant_fill": 94.8,
+   "c_shifted_fill_gtbox": 59.1,
+   "d_shifted_fill_grabcut": 59.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.866,
+   "mask_frac_gc": 0.383,
+   "a_raw": 96.1,
+   "b_dominant_fill": 55.4,
+   "c_shifted_fill_gtbox": 46.0,
+   "d_shifted_fill_grabcut": 46.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.916,
+   "mask_frac_gc": 0.46,
+   "a_raw": 102.0,
+   "b_dominant_fill": 11.4,
+   "c_shifted_fill_gtbox": 6.2,
+   "d_shifted_fill_grabcut": 6.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.182,
+   "mask_frac_gc": 0.47,
+   "a_raw": 137.8,
+   "b_dominant_fill": 23.2,
+   "c_shifted_fill_gtbox": 46.7,
+   "d_shifted_fill_grabcut": 46.7
+  },
+  {
+   "category": "dog",
+   "concentration": 0.699,
+   "mask_frac_gc": 0.018,
+   "a_raw": 4.4,
+   "b_dominant_fill": 1.9,
+   "c_shifted_fill_gtbox": 7.4,
+   "d_shifted_fill_grabcut": 17.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.306,
+   "mask_frac_gc": 0.429,
+   "a_raw": 139.8,
+   "b_dominant_fill": 28.3,
+   "c_shifted_fill_gtbox": 41.0,
+   "d_shifted_fill_grabcut": 41.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.867,
+   "mask_frac_gc": 0.321,
+   "a_raw": 104.2,
+   "b_dominant_fill": 27.4,
+   "c_shifted_fill_gtbox": 28.3,
+   "d_shifted_fill_grabcut": 28.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.427,
+   "mask_frac_gc": 0.39,
+   "a_raw": 47.7,
+   "b_dominant_fill": 39.1,
+   "c_shifted_fill_gtbox": 20.7,
+   "d_shifted_fill_grabcut": 20.7
+  },
+  {
+   "category": "dog",
+   "concentration": 0.259,
+   "mask_frac_gc": 0.391,
+   "a_raw": 36.6,
+   "b_dominant_fill": 9.8,
+   "c_shifted_fill_gtbox": 41.6,
+   "d_shifted_fill_grabcut": 41.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.067,
+   "mask_frac_gc": 0.275,
+   "a_raw": 51.0,
+   "b_dominant_fill": 7.9,
+   "c_shifted_fill_gtbox": 8.3,
+   "d_shifted_fill_grabcut": 8.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.639,
+   "mask_frac_gc": 0.399,
+   "a_raw": 57.2,
+   "b_dominant_fill": 51.4,
+   "c_shifted_fill_gtbox": 82.6,
+   "d_shifted_fill_grabcut": 82.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.538,
+   "mask_frac_gc": 0.495,
+   "a_raw": 161.0,
+   "b_dominant_fill": 40.8,
+   "c_shifted_fill_gtbox": 30.9,
+   "d_shifted_fill_grabcut": 30.9
+  },
+  {
+   "category": "dog",
+   "concentration": 0.251,
+   "mask_frac_gc": 0.24,
+   "a_raw": 32.2,
+   "b_dominant_fill": 0.3,
+   "c_shifted_fill_gtbox": 13.8,
+   "d_shifted_fill_grabcut": 13.8
+  },
+  {
+   "category": "dog",
+   "concentration": 0.669,
+   "mask_frac_gc": 0.16,
+   "a_raw": 0.7,
+   "b_dominant_fill": 6.0,
+   "c_shifted_fill_gtbox": 3.2,
+   "d_shifted_fill_grabcut": 6.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.103,
+   "mask_frac_gc": 0.494,
+   "a_raw": 155.9,
+   "b_dominant_fill": 5.4,
+   "c_shifted_fill_gtbox": 14.4,
+   "d_shifted_fill_grabcut": 14.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.711,
+   "mask_frac_gc": 0.062,
+   "a_raw": 145.1,
+   "b_dominant_fill": 31.2,
+   "c_shifted_fill_gtbox": 23.6,
+   "d_shifted_fill_grabcut": 12.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.998,
+   "mask_frac_gc": 0.457,
+   "a_raw": 56.6,
+   "b_dominant_fill": 9.1,
+   "c_shifted_fill_gtbox": 0.2,
+   "d_shifted_fill_grabcut": 0.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.449,
+   "mask_frac_gc": 0.395,
+   "a_raw": 6.0,
+   "b_dominant_fill": 14.9,
+   "c_shifted_fill_gtbox": 20.6,
+   "d_shifted_fill_grabcut": 20.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.387,
+   "mask_frac_gc": 0.177,
+   "a_raw": 159.7,
+   "b_dominant_fill": 18.1,
+   "c_shifted_fill_gtbox": 35.3,
+   "d_shifted_fill_grabcut": 35.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.191,
+   "mask_frac_gc": 0.444,
+   "a_raw": 104.1,
+   "b_dominant_fill": 68.5,
+   "c_shifted_fill_gtbox": 51.6,
+   "d_shifted_fill_grabcut": 49.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.887,
+   "mask_frac_gc": 0.032,
+   "a_raw": 29.9,
+   "b_dominant_fill": 66.5,
+   "c_shifted_fill_gtbox": 68.3,
+   "d_shifted_fill_grabcut": 95.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.982,
+   "mask_frac_gc": 0.444,
+   "a_raw": 37.2,
+   "b_dominant_fill": 22.8,
+   "c_shifted_fill_gtbox": 3.0,
+   "d_shifted_fill_grabcut": 3.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.955,
+   "mask_frac_gc": 0.529,
+   "a_raw": 67.6,
+   "b_dominant_fill": 18.3,
+   "c_shifted_fill_gtbox": 6.3,
+   "d_shifted_fill_grabcut": 6.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.782,
+   "mask_frac_gc": 0.466,
+   "a_raw": 177.5,
+   "b_dominant_fill": 9.1,
+   "c_shifted_fill_gtbox": 3.3,
+   "d_shifted_fill_grabcut": 3.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.44,
+   "mask_frac_gc": 0.453,
+   "a_raw": 137.0,
+   "b_dominant_fill": 4.2,
+   "c_shifted_fill_gtbox": 37.2,
+   "d_shifted_fill_grabcut": 37.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.957,
+   "mask_frac_gc": 0.353,
+   "a_raw": 139.7,
+   "b_dominant_fill": 44.0,
+   "c_shifted_fill_gtbox": 19.7,
+   "d_shifted_fill_grabcut": 150.7
+  },
+  {
+   "category": "dog",
+   "concentration": 0.562,
+   "mask_frac_gc": 0.5,
+   "a_raw": 101.3,
+   "b_dominant_fill": 3.6,
+   "c_shifted_fill_gtbox": 1.4,
+   "d_shifted_fill_grabcut": 1.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.769,
+   "mask_frac_gc": 0.046,
+   "a_raw": 166.3,
+   "b_dominant_fill": 7.7,
+   "c_shifted_fill_gtbox": 3.4,
+   "d_shifted_fill_grabcut": 29.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.73,
+   "mask_frac_gc": 0.386,
+   "a_raw": 9.5,
+   "b_dominant_fill": 0.6,
+   "c_shifted_fill_gtbox": 8.7,
+   "d_shifted_fill_grabcut": 8.7
+  },
+  {
+   "category": "dog",
+   "concentration": 0.689,
+   "mask_frac_gc": 0.111,
+   "a_raw": 75.1,
+   "b_dominant_fill": 1.8,
+   "c_shifted_fill_gtbox": 12.6,
+   "d_shifted_fill_grabcut": 68.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.765,
+   "mask_frac_gc": 0.079,
+   "a_raw": 73.6,
+   "b_dominant_fill": 41.2,
+   "c_shifted_fill_gtbox": 20.0,
+   "d_shifted_fill_grabcut": 34.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.881,
+   "mask_frac_gc": 0.468,
+   "a_raw": 168.1,
+   "b_dominant_fill": 148.3,
+   "c_shifted_fill_gtbox": 155.3,
+   "d_shifted_fill_grabcut": 155.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.727,
+   "mask_frac_gc": 0.161,
+   "a_raw": 50.8,
+   "b_dominant_fill": 1.5,
+   "c_shifted_fill_gtbox": 9.8,
+   "d_shifted_fill_grabcut": 9.8
+  },
+  {
+   "category": "dog",
+   "concentration": 0.602,
+   "mask_frac_gc": 0.208,
+   "a_raw": 40.5,
+   "b_dominant_fill": 21.8,
+   "c_shifted_fill_gtbox": 2.2,
+   "d_shifted_fill_grabcut": 2.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.992,
+   "mask_frac_gc": 0.014,
+   "a_raw": 3.6,
+   "b_dominant_fill": 5.1,
+   "c_shifted_fill_gtbox": 10.1,
+   "d_shifted_fill_grabcut": 7.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.899,
+   "mask_frac_gc": 0.392,
+   "a_raw": 30.0,
+   "b_dominant_fill": 18.4,
+   "c_shifted_fill_gtbox": 2.6,
+   "d_shifted_fill_grabcut": 2.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.693,
+   "mask_frac_gc": 0.149,
+   "a_raw": 27.9,
+   "b_dominant_fill": 3.5,
+   "c_shifted_fill_gtbox": 0.0,
+   "d_shifted_fill_grabcut": 19.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.995,
+   "mask_frac_gc": 0.276,
+   "a_raw": 91.6,
+   "b_dominant_fill": 20.7,
+   "c_shifted_fill_gtbox": 0.4,
+   "d_shifted_fill_grabcut": 0.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.429,
+   "mask_frac_gc": 0.411,
+   "a_raw": 88.3,
+   "b_dominant_fill": 72.2,
+   "c_shifted_fill_gtbox": 74.6,
+   "d_shifted_fill_grabcut": 74.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.901,
+   "mask_frac_gc": 0.111,
+   "a_raw": 122.6,
+   "b_dominant_fill": 90.1,
+   "c_shifted_fill_gtbox": 157.9,
+   "d_shifted_fill_grabcut": 34.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.86,
+   "mask_frac_gc": 0.391,
+   "a_raw": 27.8,
+   "b_dominant_fill": 18.3,
+   "c_shifted_fill_gtbox": 8.8,
+   "d_shifted_fill_grabcut": 8.8
+  },
+  {
+   "category": "dog",
+   "concentration": 0.955,
+   "mask_frac_gc": 0.463,
+   "a_raw": 47.7,
+   "b_dominant_fill": 15.1,
+   "c_shifted_fill_gtbox": 7.8,
+   "d_shifted_fill_grabcut": 7.8
+  },
+  {
+   "category": "dog",
+   "concentration": 0.772,
+   "mask_frac_gc": 0.432,
+   "a_raw": 46.8,
+   "b_dominant_fill": 17.5,
+   "c_shifted_fill_gtbox": 2.1,
+   "d_shifted_fill_grabcut": 2.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.662,
+   "mask_frac_gc": 0.294,
+   "a_raw": 130.3,
+   "b_dominant_fill": 14.0,
+   "c_shifted_fill_gtbox": 25.4,
+   "d_shifted_fill_grabcut": 25.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.419,
+   "mask_frac_gc": 0.423,
+   "a_raw": 66.2,
+   "b_dominant_fill": 43.4,
+   "c_shifted_fill_gtbox": 26.7,
+   "d_shifted_fill_grabcut": 26.7
+  },
+  {
+   "category": "dog",
+   "concentration": 0.244,
+   "mask_frac_gc": 0.325,
+   "a_raw": 92.5,
+   "b_dominant_fill": 11.7,
+   "c_shifted_fill_gtbox": 4.3,
+   "d_shifted_fill_grabcut": 95.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.381,
+   "mask_frac_gc": 0.387,
+   "a_raw": 18.0,
+   "b_dominant_fill": 14.7,
+   "c_shifted_fill_gtbox": 8.5,
+   "d_shifted_fill_grabcut": 8.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.948,
+   "mask_frac_gc": 0.256,
+   "a_raw": 103.1,
+   "b_dominant_fill": 1.8,
+   "c_shifted_fill_gtbox": 8.6,
+   "d_shifted_fill_grabcut": 8.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.0,
+   "mask_frac_gc": 0.225,
+   "a_raw": 87.1,
+   "b_dominant_fill": 86.5,
+   "c_shifted_fill_gtbox": 126.5,
+   "d_shifted_fill_grabcut": 125.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.844,
+   "mask_frac_gc": 0.392,
+   "a_raw": 95.1,
+   "b_dominant_fill": 8.3,
+   "c_shifted_fill_gtbox": 4.4,
+   "d_shifted_fill_grabcut": 4.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.261,
+   "mask_frac_gc": 0.334,
+   "a_raw": 93.3,
+   "b_dominant_fill": 14.7,
+   "c_shifted_fill_gtbox": 16.4,
+   "d_shifted_fill_grabcut": 16.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.425,
+   "mask_frac_gc": 0.56,
+   "a_raw": 131.9,
+   "b_dominant_fill": 16.8,
+   "c_shifted_fill_gtbox": 7.4,
+   "d_shifted_fill_grabcut": 7.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.952,
+   "mask_frac_gc": 0.058,
+   "a_raw": 60.1,
+   "b_dominant_fill": 32.0,
+   "c_shifted_fill_gtbox": 12.7,
+   "d_shifted_fill_grabcut": 141.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.761,
+   "mask_frac_gc": 0.573,
+   "a_raw": 170.6,
+   "b_dominant_fill": 26.8,
+   "c_shifted_fill_gtbox": 9.0,
+   "d_shifted_fill_grabcut": 9.0
+  },
+  {
+   "category": "dog",
+   "concentration": 0.478,
+   "mask_frac_gc": 0.245,
+   "a_raw": 35.0,
+   "b_dominant_fill": 12.6,
+   "c_shifted_fill_gtbox": 2.5,
+   "d_shifted_fill_grabcut": 2.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.924,
+   "mask_frac_gc": 0.479,
+   "a_raw": 133.8,
+   "b_dominant_fill": 115.5,
+   "c_shifted_fill_gtbox": 164.3,
+   "d_shifted_fill_grabcut": 164.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.903,
+   "mask_frac_gc": 0.343,
+   "a_raw": 46.0,
+   "b_dominant_fill": 15.2,
+   "c_shifted_fill_gtbox": 10.4,
+   "d_shifted_fill_grabcut": 10.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.995,
+   "mask_frac_gc": 0.446,
+   "a_raw": 80.9,
+   "b_dominant_fill": 10.8,
+   "c_shifted_fill_gtbox": 0.3,
+   "d_shifted_fill_grabcut": 0.3
+  },
+  {
+   "category": "dog",
+   "concentration": 0.152,
+   "mask_frac_gc": 0.417,
+   "a_raw": 54.3,
+   "b_dominant_fill": 5.4,
+   "c_shifted_fill_gtbox": 22.6,
+   "d_shifted_fill_grabcut": 22.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.706,
+   "mask_frac_gc": 0.208,
+   "a_raw": 47.4,
+   "b_dominant_fill": 26.6,
+   "c_shifted_fill_gtbox": 57.3,
+   "d_shifted_fill_grabcut": 57.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.797,
+   "mask_frac_gc": 0.462,
+   "a_raw": 91.0,
+   "b_dominant_fill": 14.7,
+   "c_shifted_fill_gtbox": 13.4,
+   "d_shifted_fill_grabcut": 13.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.57,
+   "mask_frac_gc": 0.397,
+   "a_raw": 2.9,
+   "b_dominant_fill": 11.6,
+   "c_shifted_fill_gtbox": 34.1,
+   "d_shifted_fill_grabcut": 34.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.931,
+   "mask_frac_gc": 0.394,
+   "a_raw": 137.1,
+   "b_dominant_fill": 109.6,
+   "c_shifted_fill_gtbox": 173.2,
+   "d_shifted_fill_grabcut": 173.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.72,
+   "mask_frac_gc": 0.04,
+   "a_raw": 159.5,
+   "b_dominant_fill": 5.9,
+   "c_shifted_fill_gtbox": 12.6,
+   "d_shifted_fill_grabcut": 33.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.24,
+   "mask_frac_gc": 0.399,
+   "a_raw": 81.1,
+   "b_dominant_fill": 25.9,
+   "c_shifted_fill_gtbox": 9.6,
+   "d_shifted_fill_grabcut": 9.6
+  },
+  {
+   "category": "dog",
+   "concentration": 0.537,
+   "mask_frac_gc": 0.294,
+   "a_raw": 36.1,
+   "b_dominant_fill": 47.3,
+   "c_shifted_fill_gtbox": 32.6,
+   "d_shifted_fill_grabcut": 32.4
+  },
+  {
+   "category": "dog",
+   "concentration": 0.794,
+   "mask_frac_gc": 0.636,
+   "a_raw": 16.8,
+   "b_dominant_fill": 16.7,
+   "c_shifted_fill_gtbox": 1.5,
+   "d_shifted_fill_grabcut": 1.5
+  },
+  {
+   "category": "dog",
+   "concentration": 0.816,
+   "mask_frac_gc": 0.408,
+   "a_raw": 13.2,
+   "b_dominant_fill": 6.7,
+   "c_shifted_fill_gtbox": 11.2,
+   "d_shifted_fill_grabcut": 11.2
+  },
+  {
+   "category": "dog",
+   "concentration": 0.784,
+   "mask_frac_gc": 0.385,
+   "a_raw": 93.5,
+   "b_dominant_fill": 47.5,
+   "c_shifted_fill_gtbox": 85.1,
+   "d_shifted_fill_grabcut": 85.1
+  },
+  {
+   "category": "dog",
+   "concentration": 0.824,
+   "mask_frac_gc": 0.384,
+   "a_raw": 108.3,
+   "b_dominant_fill": 2.7,
+   "c_shifted_fill_gtbox": 12.7,
+   "d_shifted_fill_grabcut": 12.7
+  },
+  {
+   "category": "dog",
+   "concentration": 0.681,
+   "mask_frac_gc": 0.386,
+   "a_raw": 62.6,
+   "b_dominant_fill": 69.9,
+   "c_shifted_fill_gtbox": 131.5,
+   "d_shifted_fill_grabcut": 131.5
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.969,
+   "mask_frac_gc": 0.229,
+   "a_raw": 106.9,
+   "b_dominant_fill": 10.3,
+   "c_shifted_fill_gtbox": 3.8,
+   "d_shifted_fill_grabcut": 118.5
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.623,
+   "mask_frac_gc": 0.126,
+   "a_raw": 109.9,
+   "b_dominant_fill": 74.0,
+   "c_shifted_fill_gtbox": 61.9,
+   "d_shifted_fill_grabcut": 61.9
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.959,
+   "mask_frac_gc": 0.412,
+   "a_raw": 21.7,
+   "b_dominant_fill": 4.2,
+   "c_shifted_fill_gtbox": 1.6,
+   "d_shifted_fill_grabcut": 25.0
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.955,
+   "mask_frac_gc": 0.202,
+   "a_raw": 14.9,
+   "b_dominant_fill": 4.4,
+   "c_shifted_fill_gtbox": 2.0,
+   "d_shifted_fill_grabcut": 2.0
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.821,
+   "mask_frac_gc": 0.134,
+   "a_raw": 56.0,
+   "b_dominant_fill": 3.3,
+   "c_shifted_fill_gtbox": 16.8,
+   "d_shifted_fill_grabcut": 17.5
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.855,
+   "mask_frac_gc": 0.351,
+   "a_raw": 84.8,
+   "b_dominant_fill": 0.1,
+   "c_shifted_fill_gtbox": 0.2,
+   "d_shifted_fill_grabcut": 0.2
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.875,
+   "mask_frac_gc": 0.486,
+   "a_raw": 43.8,
+   "b_dominant_fill": 6.0,
+   "c_shifted_fill_gtbox": 2.6,
+   "d_shifted_fill_grabcut": 2.6
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.99,
+   "mask_frac_gc": 0.296,
+   "a_raw": 31.9,
+   "b_dominant_fill": 9.0,
+   "c_shifted_fill_gtbox": 0.1,
+   "d_shifted_fill_grabcut": 0.4
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.838,
+   "mask_frac_gc": 0.501,
+   "a_raw": 87.1,
+   "b_dominant_fill": 20.8,
+   "c_shifted_fill_gtbox": 31.3,
+   "d_shifted_fill_grabcut": 31.3
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.96,
+   "mask_frac_gc": 0.262,
+   "a_raw": 1.5,
+   "b_dominant_fill": 10.2,
+   "c_shifted_fill_gtbox": 5.5,
+   "d_shifted_fill_grabcut": 3.9
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.737,
+   "mask_frac_gc": 0.391,
+   "a_raw": 76.4,
+   "b_dominant_fill": 0.9,
+   "c_shifted_fill_gtbox": 9.2,
+   "d_shifted_fill_grabcut": 9.2
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.788,
+   "mask_frac_gc": 0.594,
+   "a_raw": 155.3,
+   "b_dominant_fill": 32.6,
+   "c_shifted_fill_gtbox": 34.9,
+   "d_shifted_fill_grabcut": 34.9
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.551,
+   "mask_frac_gc": 0.215,
+   "a_raw": 67.4,
+   "b_dominant_fill": 4.8,
+   "c_shifted_fill_gtbox": 5.8,
+   "d_shifted_fill_grabcut": 5.4
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.634,
+   "mask_frac_gc": 0.196,
+   "a_raw": 62.8,
+   "b_dominant_fill": 0.9,
+   "c_shifted_fill_gtbox": 1.8,
+   "d_shifted_fill_grabcut": 1.8
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.165,
+   "mask_frac_gc": 0.489,
+   "a_raw": 76.4,
+   "b_dominant_fill": 75.4,
+   "c_shifted_fill_gtbox": 69.7,
+   "d_shifted_fill_grabcut": 69.7
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.872,
+   "mask_frac_gc": 0.396,
+   "a_raw": 179.2,
+   "b_dominant_fill": 156.3,
+   "c_shifted_fill_gtbox": 113.7,
+   "d_shifted_fill_grabcut": 113.7
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.825,
+   "mask_frac_gc": 0.453,
+   "a_raw": 13.0,
+   "b_dominant_fill": 2.8,
+   "c_shifted_fill_gtbox": 2.9,
+   "d_shifted_fill_grabcut": 2.9
+  },
+  {
+   "category": "potted plant",
+   "concentration": 0.769,
+   "mask_frac_gc": 0.703,
+   "a_raw": 142.2,
+   "b_dominant_fill": 1.3,
+   "c_shifted_fill_gtbox": 3.2,
+   "d_shifted_fill_grabcut": 3.2
+  }
+ ]
+}

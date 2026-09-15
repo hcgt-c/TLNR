@@ -1,0 +1,23 @@
+{
+ "protocol": "dense5, resnet50 offline, stage GAP, 4 pose avg",
+ "l1": {
+  "k1k2_share_mean": 0.934,
+  "mean_winding": 1.69,
+  "norm_std_mean": 0.0359
+ },
+ "l2": {
+  "k1k2_share_mean": 0.881,
+  "mean_winding": 2.14,
+  "norm_std_mean": 0.0343
+ },
+ "l3": {
+  "k1k2_share_mean": 0.743,
+  "mean_winding": 3.83,
+  "norm_std_mean": 0.0349
+ },
+ "l4": {
+  "k1k2_share_mean": 0.654,
+  "mean_winding": 5.15,
+  "norm_std_mean": 0.0515
+ }
+}

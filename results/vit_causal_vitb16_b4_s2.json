@@ -1,0 +1,47 @@
+{
+ "backbone": "vitb16",
+ "block": 4,
+ "seed": 2,
+ "delta": 60.0,
+ "n_train": 600,
+ "n_held": 200,
+ "n_head": 2000,
+ "grid": [
+  14,
+  14
+ ],
+ "dim": 768,
+ "head_train_acc": 0.969,
+ "power": {
+  "top1_flip_rate": 0.51,
+  "acc_null": 0.625,
+  "acc_real": 0.37,
+  "rel_l2_real_vs_null": 0.7929774835518397
+ },
+ "ops": {
+  "O1_procrustes": {
+   "rel_l2_vs_real": 0.45741863296516044,
+   "align_cos": 0.7476557629029059,
+   "proj_coef_agg": 0.7568039672503624,
+   "win_rate": 0.78,
+   "top1_agree_real": 0.655,
+   "acc_int": 0.41
+  },
+  "O5_mlp": {
+   "rel_l2_vs_real": 0.38880828060044237,
+   "align_cos": 0.8106183693965527,
+   "proj_coef_agg": 0.8906366898185653,
+   "win_rate": 0.775,
+   "top1_agree_real": 0.72,
+   "acc_int": 0.35
+  },
+  "O8_conv_residual": {
+   "rel_l2_vs_real": 0.4069458667257788,
+   "align_cos": 0.7900046537697949,
+   "proj_coef_agg": 0.8473080060837163,
+   "win_rate": 0.785,
+   "top1_agree_real": 0.7,
+   "acc_int": 0.36
+  }
+ }
+}

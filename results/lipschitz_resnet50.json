@@ -1,0 +1,87 @@
+{
+ "backbone": "resnet50",
+ "n_crops": 120,
+ "protocol": "pairwise Lipschitz ratio of the truth action at the site, relative-L2 metric; and the same with the consumer response metric",
+ "sites": {
+  "layer1": {
+   "hue_90.0": {
+    "median": 1.067394785940505,
+    "p90": 1.3762604140560535,
+    "mean": 1.1058197979978122,
+    "n_pairs": 1770,
+    "consumer_median": 1.055723193173394,
+    "consumer_p90": 1.248265591399296,
+    "displacement_rel": 0.2095901370048523
+   },
+   "heat_2.0": {
+    "median": 0.8474288997764851,
+    "p90": 0.9885853103421887,
+    "mean": 0.8351532677943061,
+    "n_pairs": 1770,
+    "consumer_median": 1.015266214020576,
+    "consumer_p90": 1.1866183357562845,
+    "displacement_rel": 0.28075486421585083
+   }
+  },
+  "layer2": {
+   "hue_90.0": {
+    "median": 0.9947311057079307,
+    "p90": 1.0939927995534433,
+    "mean": 1.0017167831665952,
+    "n_pairs": 1770,
+    "consumer_median": 1.055723193173394,
+    "consumer_p90": 1.248265591399296,
+    "displacement_rel": 0.20770952105522156
+   },
+   "heat_2.0": {
+    "median": 0.8002185008324718,
+    "p90": 0.8999567753158536,
+    "mean": 0.7981770998826102,
+    "n_pairs": 1770,
+    "consumer_median": 1.015266214020576,
+    "consumer_p90": 1.1866183357562845,
+    "displacement_rel": 0.30823197960853577
+   }
+  },
+  "layer3": {
+   "hue_90.0": {
+    "median": 0.9735124036528202,
+    "p90": 1.034562464501402,
+    "mean": 0.9722685937454452,
+    "n_pairs": 1770,
+    "consumer_median": 1.055723193173394,
+    "consumer_p90": 1.248265591399296,
+    "displacement_rel": 0.31400227546691895
+   },
+   "heat_2.0": {
+    "median": 0.8772778910288765,
+    "p90": 0.9456783744000818,
+    "mean": 0.8717968966350963,
+    "n_pairs": 1770,
+    "consumer_median": 1.015266214020576,
+    "consumer_p90": 1.1866183357562845,
+    "displacement_rel": 0.34866422414779663
+   }
+  },
+  "layer4": {
+   "hue_90.0": {
+    "median": 1.0274825505100191,
+    "p90": 1.1800541643217421,
+    "mean": 1.0388688977311893,
+    "n_pairs": 1770,
+    "consumer_median": 1.055723193173394,
+    "consumer_p90": 1.248265591399296,
+    "displacement_rel": 0.7687942385673523
+   },
+   "heat_2.0": {
+    "median": 0.9899751188461147,
+    "p90": 1.1403631933286722,
+    "mean": 0.9951446252740853,
+    "n_pairs": 1770,
+    "consumer_median": 1.015266214020576,
+    "consumer_p90": 1.1866183357562845,
+    "displacement_rel": 0.7312861084938049
+   }
+  }
+ }
+}

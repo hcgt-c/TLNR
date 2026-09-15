@@ -1,0 +1,98 @@
+% ---------------------------------------------------------------------------
+%  Transformation Laws in Neural Representations
+%  LaTeX source generated from paper/paper_v17.md by scripts/267_md_to_tex.py.
+%  Compiles with pdfLaTeX (Overleaf default); the source is pure ASCII.
+% ---------------------------------------------------------------------------
+\documentclass[journal]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{textcomp}
+\usepackage{url}
+% flushend balances the two columns of the last page.  Without it the bibliography, which is short
+% enough to share one page, is filled column by column and the leftover glue lands inside it as a
+% 380pt gap after the heading and blank lines between the first entries.
+\usepackage{flushend}
+\usepackage{morefloats}
+\usepackage{adjustbox}
+\usepackage{microtype}
+
+% The manuscript carries 57 tables and 12 full-width plates; raise the float limits so that
+% LaTeX never reports "Too many unprocessed floats".
+\setcounter{totalnumber}{20}
+\setcounter{topnumber}{10}
+\setcounter{bottomnumber}{10}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dblfloatpagefraction}{0.85}
+
+\captionsetup[table]{skip=4pt}
+\captionsetup[figure]{skip=4pt}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\interdisplaylinepenalty=2500
+
+% technical prose with many tokens: give TeX room to stretch and hyphenate rather than overflow into
+% the margin (microtype above does most of the work; \emergencystretch handles the rare long formula)
+\tolerance=1200
+\emergencystretch=3em
+
+\graphicspath{{figures/}}
+
+\title{Transformation Laws in Neural Representations:\\
+Structure, Realisability, and Construction}
+
+% IEEE Transactions style: the byline carries the name only; the affiliation and the e-mail address go
+% into a first-page footnote, which is where an IEEE journal prints them.  To drop the address from the
+% printed footnote, delete the parenthetical at the end of the \thanks argument.
+\author{Yuan Sun%
+\thanks{The author is with the School of Mathematical Sciences, Beijing Normal University,
+Beijing 100875, China (e-mail: 3396897122@qq.com).}}
+
+% hyperref last, with hidelinks: the running text cites figures, tables and sections by number, so
+% internal links are useful in the PDF and the review copy should not be full of coloured boxes.
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+\hypersetup{pdfauthor={Yuan Sun}}
+
+\begin{document}
+\maketitle
+
+% TITLE: Transformation Laws in Neural Representations: Structure, Realisability, and Construction
+
+\begin{abstract}
+
+How neural representations preserve the structure of input changes connects representation analysis with internal intervention. We study operable representational content through compatible actions of reference transformations on neural features. We characterise when a transformation descends through an encoder, and give a linear setting in which the defect is governed by the transformation's demand for discarded information, measured in the metric the representation induces. On a rectifier the failure to realise a transformation has two distinguishable sources --- what the source region has already made unrecoverable, and what it costs to satisfy every region the transformation visits with one operator --- and for a \textit{measured} harmonic carrier the same question has a closed answer: a linear realisation exists exactly when the retained harmonic blocks are invariant under the action. Using colour as the in-depth instance, we find that hue orbits in frozen visual features concentrate 84--88\% of their energy in the first two harmonics with rotation planes shared across shapes, that this organisation is substantially inherited from input and architecture and is reshaped by training and depth, and that the measured structure supports prediction, transport from new starting states, and composition --- with global and local realisations differing sharply in which they achieve. Guided by the measurements, we construct a compact interface whose rotation action is fixed by the structure and never fitted: it reads hue zero-shot at 3.4$^\circ$ median error on unseen shapes. Theory, structural measurement, and construction together establish transformation laws as a concrete object connecting the understanding of neural representations to their design.
+
+\end{abstract}
+
+
+%% ---- main text, figures, appendices, references (parts/) ----
+\input{parts/sec01_introduction}
+\input{parts/sec02_related_work}
+\input{parts/sec03_transformation_laws_through_neural_enc}
+\input{parts/sec04_the_shared_structure_of_colour_orbits}
+\input{parts/sec05_realising_the_structure_global_maps_lo}
+\input{parts/sec06_how_depth_and_learning_reshape_operabi}
+\input{parts/sec07_from_measured_structure_to_operable_in}
+\input{parts/sec08_discussion}
+\input{parts/sec09_conclusion}
+\input{parts/app00_front}
+\input{parts/app01_claim_status_table}
+\input{parts/app02_proofs_assumptions_and_the_status_of_e}
+\input{parts/app03_protocols}
+\input{parts/app04_full_grids}
+\input{parts/app05_method_boxes}
+\input{parts/app06_capability_tables_per_setup}
+\input{parts/app07_positioning_against_the_four_literatur}
+\input{parts/references}
+
+\end{document}

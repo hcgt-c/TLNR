@@ -1,0 +1,152 @@
+{
+ "script": "244_heat_semigroup_structure.py",
+ "backbone": "resnet50",
+ "question": "is the obstruction to a heat interface that (i) the linear approximations do not commute, (ii) they are not diagonalisable, or (iii) the decay RATE is content-dependent? (iii) decides what to build next.",
+ "control": {
+  "recovered_known_carrier": true,
+  "numbers": {
+   "commutator": {
+    "relative_commutator": 0.14670169700622482,
+    "relative_commutator_normalised_by_scale": 0.04422228776967991,
+    "leakage_top24_at_t2.0": 0.20517904476210758,
+    "leakage_sanity_same_t0.5": 0.10432517154594467
+   },
+   "spectra": {
+    "t0.5": {
+     "max_abs_imag": 0.059340538724058436,
+     "frac_real_positive": 0.51171875,
+     "top5_real": [
+      0.9750443541661064,
+      0.911062880639635,
+      0.8512869315759793,
+      0.7952532130635016,
+      0.7422972200368639
+     ]
+    },
+    "t2.0": {
+     "max_abs_imag": 0.06114156735668104,
+     "frac_real_positive": 0.51953125,
+     "top5_real": [
+      0.9051917269323883,
+      0.6900608642226707,
+      0.5256974762927799,
+      0.4013246063666963,
+      0.30474903247662527
+     ]
+    }
+   },
+   "rate_dispersion": {
+    "median_relative_sd_of_per_image_rate": 0.9070556431938903,
+    "mean_relative_sd": 1.7863001177199251,
+    "frac_modes_below_0.25": 0.0
+   },
+   "shared_rate_prediction_at_held_out_t": {
+    "err": 0.029702371825678975,
+    "copy": 0.44278972641564945,
+    "gain": 14.907554487548742
+   }
+  },
+  "note": "the control ground truth commutes exactly; its commutator and rate dispersion are the ESTIMATION NOISE FLOOR of those two metrics and every real value must be read against them"
+ },
+ "noise_floor": {
+  "commutator": 0.14670169700622482,
+  "rate_dispersion": 0.9070556431938903
+ },
+ "t_all": [
+  0.5,
+  2.0
+ ],
+ "t_fit": [
+  0.5,
+  1.0
+ ],
+ "t_test": 2.0,
+ "sites": {
+  "layer2": {
+   "commutator": {
+    "relative_commutator": 0.005611407101597718,
+    "relative_commutator_normalised_by_scale": 0.00035739360423766924,
+    "leakage_top24_at_t2.0": 0.11716622072436003,
+    "leakage_sanity_same_t0.5": 0.05204179384808216
+   },
+   "spectra": {
+    "t0.5": {
+     "max_abs_imag": 0.02355317591963337,
+     "frac_real_positive": 1.0,
+     "top5_real": [
+      0.9934439961436781,
+      0.990413592790808,
+      0.990413592790808,
+      0.9853023852586366,
+      0.9850365390767417
+     ]
+    },
+    "t2.0": {
+     "max_abs_imag": 0.03255431767888121,
+     "frac_real_positive": 1.0,
+     "top5_real": [
+      0.9664410191159432,
+      0.9664410191159432,
+      0.9613372686144932,
+      0.9474583244221213,
+      0.9432933946370644
+     ]
+    }
+   },
+   "rate_dispersion": {
+    "median_relative_sd_of_per_image_rate": 17.504326023568485,
+    "mean_relative_sd": 19.58893595911393,
+    "frac_modes_below_0.25": 0.0
+   },
+   "shared_rate_prediction_at_held_out_t": {
+    "err": 0.05382448377213322,
+    "copy": 0.04460698004117956,
+    "gain": 0.8287488688083874
+   },
+   "var_kept_by_cap": 0.9227394475657862
+  },
+  "layer3": {
+   "commutator": {
+    "relative_commutator": 0.008392665764947954,
+    "relative_commutator_normalised_by_scale": 0.0005343014461527989,
+    "leakage_top24_at_t2.0": 0.11646920159643309,
+    "leakage_sanity_same_t0.5": 0.0517566748339021
+   },
+   "spectra": {
+    "t0.5": {
+     "max_abs_imag": 0.05040717808685564,
+     "frac_real_positive": 1.0,
+     "top5_real": [
+      0.9893313535959801,
+      0.9893313535959801,
+      0.9846496393886386,
+      0.9846496393886386,
+      0.9813512254212367
+     ]
+    },
+    "t2.0": {
+     "max_abs_imag": 0.04064022098754171,
+     "frac_real_positive": 1.0,
+     "top5_real": [
+      0.96581956092726,
+      0.9410481554664688,
+      0.9376709642883709,
+      0.9251898327814749,
+      0.9251898327814749
+     ]
+    }
+   },
+   "rate_dispersion": {
+    "median_relative_sd_of_per_image_rate": 8.563364249681536,
+    "mean_relative_sd": 39.28633111800592,
+    "frac_modes_below_0.25": 0.0
+   },
+   "shared_rate_prediction_at_held_out_t": {
+    "err": 0.09124912447224504,
+    "copy": 0.06809293831993035,
+    "gain": 0.7462311415370976
+   },
+   "var_kept_by_cap": 0.9205331394125083
+  }
+ }
+}

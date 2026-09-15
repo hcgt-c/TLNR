@@ -1,0 +1,437 @@
+{
+ "self_containment": [],
+ "mirrors": [],
+ "packages": [],
+ "submissions": [],
+ "crossrefs": [],
+ "shared_failures": [],
+ "shared_table": [
+  {
+   "label": "CEConv (stage 1) col0",
+   "expected": "0.335",
+   "A_EN": "0.335",
+   "A_ZH": "0.335",
+   "B": "0.335",
+   "master": "0.335",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 1) col1",
+   "expected": "0.940",
+   "A_EN": "0.940",
+   "A_ZH": "0.940",
+   "B": "0.940",
+   "master": "0.940",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 1) col2",
+   "expected": "0.951",
+   "A_EN": "0.951",
+   "A_ZH": "0.951",
+   "B": "0.951",
+   "master": "0.951",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 1) col3",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 1) col4",
+   "expected": "0.967",
+   "A_EN": "0.967",
+   "A_ZH": "0.967",
+   "B": "0.967",
+   "master": "0.967",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 2) col0",
+   "expected": "0.335",
+   "A_EN": "0.335",
+   "A_ZH": "0.335",
+   "B": "0.335",
+   "master": "0.335",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 2) col1",
+   "expected": "0.931",
+   "A_EN": "0.931",
+   "A_ZH": "0.931",
+   "B": "0.931",
+   "master": "0.931",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 2) col2",
+   "expected": "0.953",
+   "A_EN": "0.953",
+   "A_ZH": "0.953",
+   "B": "0.953",
+   "master": "0.953",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 2) col3",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 2) col4",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 1) col0",
+   "expected": "0.389",
+   "A_EN": "0.389",
+   "A_ZH": "0.389",
+   "B": "0.389",
+   "master": "0.389",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 1) col1",
+   "expected": "0.310",
+   "A_EN": "0.310",
+   "A_ZH": "0.310",
+   "B": "0.310",
+   "master": "0.310",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 1) col2",
+   "expected": "0.608",
+   "A_EN": "0.608",
+   "A_ZH": "0.608",
+   "B": "0.608",
+   "master": "0.608",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 1) col3",
+   "expected": "0.728",
+   "A_EN": "0.728",
+   "A_ZH": "0.728",
+   "B": "0.728",
+   "master": "0.728",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 1) col4",
+   "expected": "0.830",
+   "A_EN": "0.830",
+   "A_ZH": "0.830",
+   "B": "0.830",
+   "master": "0.830",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 2) col0",
+   "expected": "0.383",
+   "A_EN": "0.383",
+   "A_ZH": "0.383",
+   "B": "0.383",
+   "master": "0.383",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 2) col1",
+   "expected": "0.154",
+   "A_EN": "0.154",
+   "A_ZH": "0.154",
+   "B": "0.154",
+   "master": "0.154",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 2) col2",
+   "expected": "0.453",
+   "A_EN": "0.453",
+   "A_ZH": "0.453",
+   "B": "0.453",
+   "master": "0.453",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 2) col3",
+   "expected": "0.549",
+   "A_EN": "0.549",
+   "A_ZH": "0.549",
+   "B": "0.549",
+   "master": "0.549",
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 2) col4",
+   "expected": "0.689",
+   "A_EN": "0.689",
+   "A_ZH": "0.689",
+   "B": "0.689",
+   "master": "0.689",
+   "pass": true
+  },
+  {
+   "label": "code-auxiliary (stage 1) col0",
+   "expected": "0.369",
+   "A_EN": "0.369",
+   "A_ZH": "0.369",
+   "B": "0.369",
+   "master": "0.369",
+   "pass": true
+  },
+  {
+   "label": "code-auxiliary (stage 1) col1",
+   "expected": "0.297",
+   "A_EN": "0.297",
+   "A_ZH": "0.297",
+   "B": "0.297",
+   "master": "0.297",
+   "pass": true
+  },
+  {
+   "label": "code-auxiliary (stage 1) col2",
+   "expected": "0.595",
+   "A_EN": "0.595",
+   "A_ZH": "0.595",
+   "B": "0.595",
+   "master": "0.595",
+   "pass": true
+  },
+  {
+   "label": "code-auxiliary (stage 1) col3",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "code-auxiliary (stage 1) col4",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "hue-augmented (stage 1) col0",
+   "expected": "0.141",
+   "A_EN": "0.141",
+   "A_ZH": "0.141",
+   "B": "0.141",
+   "master": "0.141",
+   "pass": true
+  },
+  {
+   "label": "hue-augmented (stage 1) col1",
+   "expected": "0.049",
+   "A_EN": "0.049",
+   "A_ZH": "0.049",
+   "B": "0.049",
+   "master": "0.049",
+   "pass": true
+  },
+  {
+   "label": "hue-augmented (stage 1) col2",
+   "expected": "0.165",
+   "A_EN": "0.165",
+   "A_ZH": "0.165",
+   "B": "0.165",
+   "master": "0.165",
+   "pass": true
+  },
+  {
+   "label": "hue-augmented (stage 1) col3",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "hue-augmented (stage 1) col4",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "LCER lifting (stage 1) col0",
+   "expected": "0.013",
+   "A_EN": "0.013",
+   "A_ZH": "0.013",
+   "B": "0.013",
+   "master": "0.013",
+   "pass": true
+  },
+  {
+   "label": "LCER lifting (stage 1) col1",
+   "expected": "0.045",
+   "A_EN": "0.045",
+   "A_ZH": "0.045",
+   "B": "0.045",
+   "master": "0.045",
+   "pass": true
+  },
+  {
+   "label": "LCER lifting (stage 1) col2",
+   "expected": "0.153",
+   "A_EN": "0.153",
+   "A_ZH": "0.153",
+   "B": "0.153",
+   "master": "0.153",
+   "pass": true
+  },
+  {
+   "label": "LCER lifting (stage 1) col3",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "LCER lifting (stage 1) col4",
+   "expected": "-",
+   "A_EN": "-",
+   "A_ZH": "-",
+   "B": "-",
+   "master": "-",
+   "pass": true
+  },
+  {
+   "label": "detector no intervention (null)",
+   "expected": "['0.218\u00b10.009', '0.016\u00b10.005', '0.008\u00b10.003']",
+   "A_EN": "['0.218\u00b10.009', '0.016\u00b10.005', '0.008\u00b10.003']",
+   "A_ZH": "['0.218\u00b10.009', '0.016\u00b10.005', '0.008\u00b10.003']",
+   "B": "['0.218\u00b10.009', '0.016\u00b10.005', '0.008\u00b10.003']",
+   "master": "['0.218\u00b10.009', '0.016\u00b10.005', '0.008\u00b10.003']",
+   "pass": true
+  },
+  {
+   "label": "detector Procrustes transport (O1)",
+   "expected": "['0.559\u00b10.019', '0.674\u00b10.036', '0.778\u00b10.029']",
+   "A_EN": "['0.559\u00b10.019', '0.674\u00b10.036', '0.778\u00b10.029']",
+   "A_ZH": "['0.559\u00b10.019', '0.674\u00b10.036', '0.778\u00b10.029']",
+   "B": "['0.559\u00b10.019', '0.674\u00b10.036', '0.778\u00b10.029']",
+   "master": "['0.559\u00b10.019', '0.674\u00b10.036', '0.778\u00b10.029']",
+   "pass": true
+  },
+  {
+   "label": "detector least-squares transport (O2)",
+   "expected": "['0.696\u00b10.020', '0.775\u00b10.048', '0.905\u00b10.030']",
+   "A_EN": "['0.696\u00b10.020', '0.775\u00b10.048', '0.905\u00b10.030']",
+   "A_ZH": "['0.696\u00b10.020', '0.775\u00b10.048', '0.905\u00b10.030']",
+   "B": "['0.696\u00b10.020', '0.775\u00b10.048', '0.905\u00b10.030']",
+   "master": "['0.696\u00b10.020', '0.775\u00b10.048', '0.905\u00b10.030']",
+   "pass": true
+  },
+  {
+   "label": "detector + 3\u00d73 residual conv (O8)",
+   "expected": "['0.883\u00b10.013', '0.845\u00b10.020', '0.965\u00b10.013']",
+   "A_EN": "['0.883\u00b10.013', '0.845\u00b10.020', '0.965\u00b10.013']",
+   "A_ZH": "['0.883\u00b10.013', '0.845\u00b10.020', '0.965\u00b10.013']",
+   "B": "['0.883\u00b10.013', '0.845\u00b10.020', '0.965\u00b10.013']",
+   "master": "['0.883\u00b10.013', '0.845\u00b10.020', '0.965\u00b10.013']",
+   "pass": true
+  },
+  {
+   "label": "detector random orthogonal (O6)",
+   "expected": "['0.000\u00b10.000', '0.000\u00b10.000', '0.000\u00b10.000']",
+   "A_EN": "['0.000\u00b10.000', '0.000\u00b10.000', '0.000\u00b10.000']",
+   "A_ZH": "['0.000\u00b10.000', '0.000\u00b10.000', '0.000\u00b10.000']",
+   "B": "['0.000\u00b10.000', '0.000\u00b10.000', '0.000\u00b10.000']",
+   "master": "['0.000\u00b10.000', '0.000\u00b10.000', '0.000\u00b10.000']",
+   "pass": true
+  },
+  {
+   "label": "detector mAP50",
+   "expected": "0.987",
+   "A_EN": "0.987",
+   "A_ZH": "0.987",
+   "B": "0.987",
+   "master": "0.987",
+   "pass": true
+  }
+ ],
+ "audits": [
+  {
+   "tag": "Paper A EN/ZH numbers",
+   "ok": true,
+   "summary": "- \u4e0d\u4e00\u81f4\u9879\uff1a0",
+   "failures": []
+  },
+  {
+   "tag": "Paper B numbers",
+   "ok": true,
+   "summary": "# Paper B number audit: 149/149 PASS",
+   "failures": []
+  },
+  {
+   "tag": "unified master (claims, crossrefs, self-containment)",
+   "ok": true,
+   "summary": "# Unified master audit: PASS (0 issues)",
+   "failures": []
+  },
+  {
+   "tag": "target papers built from the master",
+   "ok": true,
+   "summary": "IJCV target build: PASS (0 issues)",
+   "failures": []
+  },
+  {
+   "tag": "target figures packaged and cited",
+   "ok": true,
+   "summary": "IJCV figures: PASS (0 issues)",
+   "failures": []
+  },
+  {
+   "tag": "the depth-law main figure",
+   "ok": true,
+   "summary": "depth-law figure: PASS (0 issues)",
+   "failures": []
+  },
+  {
+   "tag": "depth grid aggregated over seeds",
+   "ok": true,
+   "summary": "depth-map aggregate: PASS (0 issues)",
+   "failures": []
+  },
+  {
+   "tag": "channel vs spatial site residual",
+   "ok": true,
+   "summary": "channel-vs-spatial residual: PASS (0 issues)",
+   "failures": []
+  },
+  {
+   "tag": "name-year bibliography and citation style",
+   "ok": true,
+   "summary": "name-year bibliography: PASS (0 issues) \u2014 41 entries, 19 preprint-only, 0 citations rewritten, 0 arXiv ids left",
+   "failures": []
+  }
+ ],
+ "n_issues": 0,
+ "verdict": "PASS"
+}

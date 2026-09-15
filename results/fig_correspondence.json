@@ -1,0 +1,360 @@
+{
+ "figure": "F35_correspondence_and_cost.png",
+ "claim": "the correspondence holds, and it is cheap",
+ "generated_by": "scripts/234_fig_correspondence.py",
+ "panel_A_closed_form": {
+  "median_per_cell_median_err_deg": 3.3600000000000003,
+  "median_per_cell_mean_err_deg": 4.405,
+  "n_cells_le_30_mean": 59,
+  "n_cells_le_30_median": 61,
+  "n_cells_total": 64,
+  "corner_s1_v1_mean_err_deg": 2.14,
+  "corner_s1_v1_median_err_deg": 1.62,
+  "delta40_residual_deg": 2.36,
+  "delta40_source": "results/code3d_v3.json:rho_d40_deg",
+  "delta40_present_in_code3d_sv_lowext": false,
+  "grid_s": [
+   0.02,
+   0.05,
+   0.1,
+   0.2,
+   0.35,
+   0.5,
+   0.75,
+   1.0
+  ],
+  "grid_v": [
+   0.02,
+   0.05,
+   0.1,
+   0.2,
+   0.35,
+   0.5,
+   0.75,
+   1.0
+  ],
+  "median_err_grid_v_by_s": [
+   [
+    99.66,
+    88.67,
+    83.2,
+    29.14,
+    18.87,
+    12.7,
+    9.85,
+    5.84
+   ],
+   [
+    28.09,
+    28.63,
+    10.12,
+    10.9,
+    3.73,
+    3.83,
+    2.56,
+    2.6
+   ],
+   [
+    23.57,
+    10.68,
+    11.96,
+    2.21,
+    5.46,
+    2.79,
+    2.84,
+    1.23
+   ],
+   [
+    22.66,
+    7.98,
+    6.51,
+    2.59,
+    1.9,
+    2.08,
+    1.27,
+    1.37
+   ],
+   [
+    11.39,
+    7.48,
+    2.99,
+    1.28,
+    2.16,
+    1.28,
+    1.07,
+    1.18
+   ],
+   [
+    12.76,
+    7.0,
+    4.46,
+    1.72,
+    1.88,
+    1.12,
+    1.06,
+    1.44
+   ],
+   [
+    8.62,
+    6.2,
+    3.99,
+    2.86,
+    1.1,
+    1.64,
+    1.24,
+    1.01
+   ],
+   [
+    17.79,
+    4.25,
+    4.48,
+    2.06,
+    1.14,
+    1.01,
+    1.21,
+    1.62
+   ]
+  ],
+  "threshold_deg": 30.0,
+  "source": "results/code3d_sv_lowext.json: per_cell[*].median_err/.mean_err, summary.*"
+ },
+ "panel_B_band_limited_vs_copy": {
+  "settings": [
+   "pentagon\n$K$=3\ncos 0.958",
+   "pentagon\n$K$=4\ncos 0.955",
+   "hexagon\n$K$=3\ncos 0.974",
+   "hexagon\n$K$=4\ncos 0.976"
+  ],
+  "relMSE_op_pct": [
+   0.4,
+   0.32,
+   0.26,
+   0.16999999999999998
+  ],
+  "copy_pct": [
+   2.71,
+   2.71,
+   2.9000000000000004,
+   2.9000000000000004
+  ],
+  "gain_over_copy": [
+   6.7,
+   8.4,
+   11.1,
+   16.6
+  ],
+  "cosine": [
+   0.958,
+   0.955,
+   0.974,
+   0.976
+  ],
+  "source": "results/hue_prediction_demo.json:dense5[0..3] (relMSE_op, copy, gain, cos)"
+ },
+ "panel_C_cost": {
+  "region_rho_cost_us": 20.892806991469115,
+  "pixel_route_cost_ms": 38.13338054489577,
+  "ratio": 1825.1918260895375,
+  "source": "results/region_rho_demo.json:region_rho_cost_s, pixel_route_cost_s"
+ },
+ "panel_D_architecture": {
+  "delta_deg": 90.0,
+  "arms": {
+   "CEConv (group-structured)": {
+    "T_F": [
+     0.7521175685288293,
+     0.782817026583365,
+     0.8331994322152124
+    ],
+    "T_F_sd_seed": [
+     0.014779629922386394,
+     0.013551911934939124,
+     0.008499666071232391
+    ],
+    "operator_order": [
+     "O1_procrustes",
+     "O2_ridge",
+     "O8_conv_residual"
+    ],
+    "audited": [
+     0.75,
+     0.78,
+     0.83
+    ]
+   },
+   "plain CNN": {
+    "T_F": [
+     0.22286779624996578,
+     0.31443542785202905,
+     0.5430111238999231
+    ],
+    "T_F_sd_seed": [
+     0.02002311766844853,
+     0.015368702530857007,
+     0.021910419722354735
+    ],
+    "operator_order": [
+     "O1_procrustes",
+     "O2_ridge",
+     "O8_conv_residual"
+    ],
+    "audited": [
+     0.22,
+     0.31,
+     0.54
+    ]
+   }
+  },
+  "source": "results/causal_cifar_summary.json:[ce8_stage1|z2_stage1]['90'].ops[*].rel_l2_vs_real (null ref ops.null.rel_l2_vs_real); sd from results/causal_cifar_{ce8,z2}_s{0,1,2}.json:deltas['90'].downstream"
+ },
+ "checks": [
+  {
+   "name": "A median per-cell hue error (deg)",
+   "recomputed": 3.36,
+   "audited": 3.4,
+   "tol": 0.1,
+   "ok": true
+  },
+  {
+   "name": "A cells <=30 deg, per-cell mean criterion",
+   "recomputed": 59.0,
+   "audited": 59,
+   "tol": 0,
+   "ok": true
+  },
+  {
+   "name": "A cells <=30 deg, summary.n_cells_err_le_thr",
+   "recomputed": 59.0,
+   "audited": 59,
+   "tol": 0,
+   "ok": true
+  },
+  {
+   "name": "A cells <=30 deg, per-cell median criterion",
+   "recomputed": 61.0,
+   "audited": 61,
+   "tol": 0,
+   "ok": true
+  },
+  {
+   "name": "A saturated corner (s=v=1) mean error (deg)",
+   "recomputed": 2.14,
+   "audited": 2.1,
+   "tol": 0.1,
+   "ok": true
+  },
+  {
+   "name": "A Delta=40 deg residual (deg)",
+   "recomputed": 2.36,
+   "audited": 2.4,
+   "tol": 0.05,
+   "ok": true
+  },
+  {
+   "name": "B min relative error of predicted map (%)",
+   "recomputed": 0.17,
+   "audited": 0.17,
+   "tol": 0.005,
+   "ok": true
+  },
+  {
+   "name": "B max relative error of predicted map (%)",
+   "recomputed": 0.4,
+   "audited": 0.4,
+   "tol": 0.005,
+   "ok": true
+  },
+  {
+   "name": "B min gain over copy (x)",
+   "recomputed": 6.7,
+   "audited": 6.7,
+   "tol": 0.05,
+   "ok": true
+  },
+  {
+   "name": "B max gain over copy (x)",
+   "recomputed": 16.6,
+   "audited": 16.6,
+   "tol": 0.05,
+   "ok": true
+  },
+  {
+   "name": "B min cosine",
+   "recomputed": 0.955,
+   "audited": 0.955,
+   "tol": 0.001,
+   "ok": true
+  },
+  {
+   "name": "B max cosine",
+   "recomputed": 0.976,
+   "audited": 0.976,
+   "tol": 0.001,
+   "ok": true
+  },
+  {
+   "name": "C region-level field shift (us)",
+   "recomputed": 20.8928,
+   "audited": 20.9,
+   "tol": 0.05,
+   "ok": true
+  },
+  {
+   "name": "C pixel recolour + re-forward (ms)",
+   "recomputed": 38.1334,
+   "audited": 38.1,
+   "tol": 0.05,
+   "ok": true
+  },
+  {
+   "name": "C ratio (x)",
+   "recomputed": 1825.1918,
+   "audited": 1825,
+   "tol": 1.0,
+   "ok": true
+  },
+  {
+   "name": "D CEConv (group-structured) T_F O1_procrustes",
+   "recomputed": 0.7521,
+   "audited": 0.75,
+   "tol": 0.01,
+   "ok": true
+  },
+  {
+   "name": "D CEConv (group-structured) T_F O2_ridge",
+   "recomputed": 0.7828,
+   "audited": 0.78,
+   "tol": 0.01,
+   "ok": true
+  },
+  {
+   "name": "D CEConv (group-structured) T_F O8_conv_residual",
+   "recomputed": 0.8332,
+   "audited": 0.83,
+   "tol": 0.01,
+   "ok": true
+  },
+  {
+   "name": "D plain CNN T_F O1_procrustes",
+   "recomputed": 0.2229,
+   "audited": 0.22,
+   "tol": 0.01,
+   "ok": true
+  },
+  {
+   "name": "D plain CNN T_F O2_ridge",
+   "recomputed": 0.3144,
+   "audited": 0.31,
+   "tol": 0.01,
+   "ok": true
+  },
+  {
+   "name": "D plain CNN T_F O8_conv_residual",
+   "recomputed": 0.543,
+   "audited": 0.54,
+   "tol": 0.01,
+   "ok": true
+  }
+ ],
+ "all_checks_pass": true
+}

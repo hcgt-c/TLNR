@@ -1,0 +1,1349 @@
+{
+ "n_scripts": 224,
+ "provenance": [
+  {
+   "file": "causal_cifar_summary.json",
+   "exists": true,
+   "writers": [
+    "136_causal_cifar.py",
+    "137_causal_summary.py",
+    "146_unseen_delta_cifar.py",
+    "149_paired_stats.py",
+    "167_capacity_controls.py",
+    "168_real_task_consumer.py",
+    "177_per_sample_projection.py",
+    "180_task_weighted_1x1.py",
+    "185_rotation_pilot.py",
+    "187_heat_semigroup_pilot.py",
+    "188_depth_map_harness.py",
+    "193_heat_intervention_cifar.py",
+    "194_composition_heat.py",
+    "197_consumer_swap.py",
+    "198_ceiling_regularisation.py",
+    "200_quotientization.py",
+    "204_action_fragmentation.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "causal_intervention_hue.json",
+   "exists": true,
+   "writers": [
+    "133_causal_intervention.py",
+    "142_causal_intervention_hue.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "detector_o8_multiseed.json",
+   "exists": true,
+   "writers": [
+    "156_detector_o8_multiseed.py",
+    "158_detector_o8_summary.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "yolo_hue_val.json",
+   "exists": true,
+   "writers": [
+    "173_record_yolo_val.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "identifiability_law.json",
+   "exists": true,
+   "writers": [
+    "117_identifiability_law.py",
+    "138_boundary_independent.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "boundary_independent.json",
+   "exists": true,
+   "writers": [
+    "138_boundary_independent.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "boundary_colorspace.json",
+   "exists": true,
+   "writers": [
+    "147_boundary_colorspace.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "boundary_covariates.json",
+   "exists": true,
+   "writers": [
+    "154_boundary_covariates.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "usage_rule_scale_strat.json",
+   "exists": true,
+   "writers": [
+    "111_usage_rule_scale.py",
+    "112_usage_rule_strat.py",
+    "138_boundary_independent.py",
+    "154_boundary_covariates.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "harmonic_controls.json",
+   "exists": true,
+   "writers": [
+    "134_harmonic_controls.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "causal_unseen_z2_s0_stage1.json",
+   "exists": true,
+   "writers": [
+    "146_unseen_delta_cifar.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "causal_unseen_z2_s1_stage1.json",
+   "exists": true,
+   "writers": [
+    "146_unseen_delta_cifar.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "causal_unseen_z2_s2_stage1.json",
+   "exists": true,
+   "writers": [
+    "146_unseen_delta_cifar.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "vit_causal_vitb16_b4_s0.json",
+   "exists": true,
+   "writers": [
+    "155_vit_intervention.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "vit_causal_vitb16_b4_s1.json",
+   "exists": true,
+   "writers": [
+    "155_vit_intervention.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "vit_causal_vitb16_b4_s2.json",
+   "exists": true,
+   "writers": [
+    "155_vit_intervention.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "vit_causal_dinov2b14_b4_s0.json",
+   "exists": true,
+   "writers": [
+    "155_vit_intervention.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "multiattr_summary.json",
+   "exists": true,
+   "writers": [
+    "161_multiattr_summary.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "real_task_consumer.json",
+   "exists": true,
+   "writers": [
+    "168_real_task_consumer.py",
+    "179_task_weighted_operator.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "boundary_largescale.json",
+   "exists": true,
+   "writers": [
+    "169_boundary_largescale.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "capacity_controls_z2_s0_d90.json",
+   "exists": true,
+   "writers": [
+    "167_capacity_controls.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "descriptor_cost.json",
+   "exists": true,
+   "writers": [
+    "124_descriptor_cost.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "second_attribute_chain.json",
+   "exists": true,
+   "writers": [
+    "176_second_attribute_chain.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "l2_consistency.json",
+   "exists": true,
+   "writers": [
+    "174_recompute_l2_consistency.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "yolo_ab_impact.json",
+   "exists": true,
+   "writers": [
+    "175_recompute_yolo_ab.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "per_sample_projection_z2_s0_d90.json",
+   "exists": true,
+   "writers": [
+    "177_per_sample_projection.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "hue_readout_regimes.json",
+   "exists": true,
+   "writers": [
+    "178_hue_readout_regimes.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "adaptive_code_selection.json",
+   "exists": true,
+   "writers": [
+    "116_adaptive_code.py",
+    "119_adaptive_gating.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "task_weighted_1x1_z2_s0_d90.json",
+   "exists": true,
+   "writers": [
+    "179_task_weighted_operator.py",
+    "180_task_weighted_1x1.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "task_weighted_1x1_z2_s1_d90.json",
+   "exists": true,
+   "writers": [
+    "179_task_weighted_operator.py",
+    "180_task_weighted_1x1.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "task_weighted_1x1_z2_s2_d90.json",
+   "exists": true,
+   "writers": [
+    "179_task_weighted_operator.py",
+    "180_task_weighted_1x1.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "adaptive_gating.json",
+   "exists": true,
+   "writers": [
+    "119_adaptive_gating.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "region_real_validation.json",
+   "exists": true,
+   "writers": [
+    "108_region_real_validation.py",
+    "138_boundary_independent.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "region_minimal_readout.json",
+   "exists": true,
+   "writers": [
+    "110b_minimal_readout.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "region_usage_variants.json",
+   "exists": true,
+   "writers": [
+    "110c_usage_variants.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "region_rho_demo.json",
+   "exists": true,
+   "writers": [
+    "109_region_rho_demo.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "code3d_sv_lowext.json",
+   "exists": true,
+   "writers": [
+    "106_color_entropy_scan.py",
+    "107_spatial_field_probe.py",
+    "108_region_real_validation.py",
+    "115_sv_lowext.py",
+    "176_second_attribute_chain.py",
+    "95_code3d_sv_map.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "spatial_field_probe.json",
+   "exists": true,
+   "writers": [
+    "107_spatial_field_probe.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "color_entropy_scan.json",
+   "exists": true,
+   "writers": [
+    "106_color_entropy_scan.py",
+    "117_identifiability_law.py",
+    "138_boundary_independent.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "stream_color_query.json",
+   "exists": true,
+   "writers": [
+    "104_stream_color_query.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "code3d_v3.json",
+   "exists": true,
+   "writers": [
+    "106_color_entropy_scan.py",
+    "107_spatial_field_probe.py",
+    "108_region_real_validation.py",
+    "115_sv_lowext.py",
+    "176_second_attribute_chain.py",
+    "79_code3d_v3.py",
+    "95_code3d_sv_map.py",
+    "97_coco_procrustes.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "m2c_downstream.json",
+   "exists": true,
+   "writers": [
+    "72_m2c_downstream.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "m2b_joint.json",
+   "exists": true,
+   "writers": [
+    "73_m2b_joint.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "m2a_code3d_v2.json",
+   "exists": true,
+   "writers": [
+    "70_m2a_code3d.py",
+    "71_m2a_code3d_v2.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "dense3d_sheets_v5.json",
+   "exists": true,
+   "writers": [
+    "61_summarize_sheets2.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "dense3d_holonomy.json",
+   "exists": true,
+   "writers": [
+    "57_summarize_holonomy.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "dense3d_v4.json",
+   "exists": true,
+   "writers": [
+    "47_summarize_3d.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "dense_continuous_v3.json",
+   "exists": true,
+   "writers": [
+    "39_summarize_dense.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "l2_consistency.json",
+   "exists": true,
+   "writers": [
+    "174_recompute_l2_consistency.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "resnet50_probe.json",
+   "exists": true,
+   "writers": [
+    "90_resnet50_probe.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "resnet50_readout.json",
+   "exists": true,
+   "writers": [
+    "90_resnet50_probe.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "clip_vit_probe.json",
+   "exists": true,
+   "writers": [
+    "91_clip_vit_probe.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "clip_vit_readout.json",
+   "exists": true,
+   "writers": [
+    "91_clip_vit_probe.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "vit_probe.json",
+   "exists": true,
+   "writers": [
+    "89_vit_probe.py",
+    "91_clip_vit_probe.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "parity.json",
+   "exists": true,
+   "writers": [
+    "92_parity.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "o2_abl.json",
+   "exists": true,
+   "writers": [
+    "93_o2_abl.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "o2_seeds.json",
+   "exists": true,
+   "writers": [
+    "93b_o2_seeds.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "perf_reforward_vs_rho.json",
+   "exists": true,
+   "writers": [
+    "100_perf_reforward_vs_rho.py",
+    "104_stream_color_query.py",
+    "109_region_rho_demo.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "yolo_ab_impact.json",
+   "exists": true,
+   "writers": [
+    "175_recompute_yolo_ab.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "coco_selfcheck.json",
+   "exists": true,
+   "writers": [
+    "80_coco_selfcheck.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "fruit_readout.json",
+   "exists": true,
+   "writers": [
+    "81_fruit_readout.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "fruit_adapt.json",
+   "exists": true,
+   "writers": [
+    "83_fruit_adapt.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "fruit_mask_compare.json",
+   "exists": true,
+   "writers": [
+    "84_fruit_mask_compare.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "mask_adapt.json",
+   "exists": true,
+   "writers": [
+    "85_mask_adapt.py",
+    "87_semantic_vs_pixel_code.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": false,
+   "pass": true
+  },
+  {
+   "file": "semantic_compare.json",
+   "exists": true,
+   "writers": [
+    "87_semantic_vs_pixel_code.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "coco_jitter_exp.json",
+   "exists": true,
+   "writers": [
+    "88_coco_jitter_exp.py",
+    "88b_coco_jitter_fair.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "coco_jitter_fair.json",
+   "exists": true,
+   "writers": [
+    "88_coco_jitter_exp.py",
+    "88b_coco_jitter_fair.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "ocode_anchor.json",
+   "exists": true,
+   "writers": [
+    "103_ocode_anchor.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  },
+  {
+   "file": "yolo_val500.json",
+   "exists": true,
+   "writers": [
+    "102_val_big.py"
+   ],
+   "has_writer": true,
+   "written_after_writer": true,
+   "pass": true
+  }
+ ],
+ "fake_scan": [
+  {
+   "script": "100_perf_reforward_vs_rho.py",
+   "line": 20,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "x = torch.randn(1, 3, 224, 224, device=DEV)",
+   "reviewed": "random input for a timing probe, not a metric"
+  },
+  {
+   "script": "136_causal_cifar.py",
+   "line": 148,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "A = torch.randn(d, d, generator=g)",
+   "reviewed": "random orthogonal control construction (QR of a Gaussian)"
+  },
+  {
+   "script": "136_causal_cifar.py",
+   "line": 394,
+   "why": "hard-coded metric literal",
+   "text": "\"acc_int\": acc_null, \"align_cos\": 0.0,",
+   "reviewed": "the no-op route's alignment metrics are zero by definition"
+  },
+  {
+   "script": "136_causal_cifar.py",
+   "line": 395,
+   "why": "hard-coded metric literal",
+   "text": "\"proj_coef_agg\": 0.0, \"proj_coef_median\": 0.0,",
+   "reviewed": "the no-op route's projection metrics are zero by definition"
+  },
+  {
+   "script": "187_heat_semigroup_pilot.py",
+   "line": 134,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "kk = torch.randn(1, 1, 3, 3, device=DEV)",
+   "reviewed": "random 3x3 kernel for the boundary-condition commutation check, not a metric"
+  },
+  {
+   "script": "187_heat_semigroup_pilot.py",
+   "line": 135,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "xk = torch.randn(1, 1, 32, 32, device=DEV)",
+   "reviewed": "random image for the boundary-condition commutation check, not a metric"
+  },
+  {
+   "script": "194_composition_heat.py",
+   "line": 147,
+   "why": "hard-coded metric literal",
+   "text": "out[\"no_op\"] = {\"transfer\": 0.0, \"proj_coef_agg\": 0.0, \"align_cos\": 0.0, \"win_rate\": 0.0,",
+   "reviewed": "the no-op route's transfer, projection, cosine and win rate are zero by definition"
+  },
+  {
+   "script": "199_depth_power_control.py",
+   "line": 101,
+   "why": "returns an empty result",
+   "text": "return {}",
+   "reviewed": "{} is the summary of an empty matched-pair set (no pairs), not a metric"
+  },
+  {
+   "script": "203_aggregate_mechanism.py",
+   "line": 146,
+   "why": "returns an empty result",
+   "text": "return {}",
+   "reviewed": "{} is the aggregate of an empty gain list (no powered cells), not a metric"
+  },
+  {
+   "script": "206_transport_theory.py",
+   "line": 46,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "x = data if data is not None else torch.randn(N, D, dtype=torch.float64)",
+   "reviewed": "random inputs for the theory check, not a metric"
+  },
+  {
+   "script": "206_transport_theory.py",
+   "line": 75,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "W = torch.randn(m, D, dtype=torch.float64)",
+   "reviewed": "random site map W for the theorem check, not a metric"
+  },
+  {
+   "script": "206_transport_theory.py",
+   "line": 86,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "W = torch.randn(m, D, dtype=torch.float64)",
+   "reviewed": "random site map W for the closed-form check, not a metric"
+  },
+  {
+   "script": "206_transport_theory.py",
+   "line": 94,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "C = t * torch.randn(m, D - m, dtype=torch.float64)",
+   "reviewed": "random mixing block C of the transformation, not a metric"
+  },
+  {
+   "script": "206_transport_theory.py",
+   "line": 112,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "W = torch.randn(m, D, dtype=torch.float64)",
+   "reviewed": "random site map W for the rank sweep, not a metric"
+  },
+  {
+   "script": "206_transport_theory.py",
+   "line": 127,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "W = torch.randn(16, D, dtype=torch.float64)",
+   "reviewed": "random site map W for the proxy check, not a metric"
+  },
+  {
+   "script": "207_deep_linear_transport.py",
+   "line": 45,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "M = torch.randn(K_TASK, D_IN - K_TASK, generator=g, dtype=torch.float64)",
+   "reviewed": "random within-block mixing generator, not a metric"
+  },
+  {
+   "script": "207_deep_linear_transport.py",
+   "line": 124,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "xt = torch.randn(N_DATA, D_IN, dtype=torch.float64)",
+   "reviewed": "random training data for the toy model, not a metric"
+  },
+  {
+   "script": "208_linear_dynamics_counterexample.py",
+   "line": 44,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "M = torch.randn(K_TASK, D_IN - K_TASK, generator=g, dtype=torch.float64)",
+   "reviewed": "random mixing generator, not a metric"
+  },
+  {
+   "script": "208_linear_dynamics_counterexample.py",
+   "line": 142,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "A_task = torch.randn(P_TASK, K_TASK, dtype=torch.float64)",
+   "reviewed": "random task subspace of the toy model, not a metric"
+  },
+  {
+   "script": "208_linear_dynamics_counterexample.py",
+   "line": 143,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "x = torch.randn(N_DATA, D_IN, dtype=torch.float64)",
+   "reviewed": "random training data for the toy model, not a metric"
+  },
+  {
+   "script": "c10_routeB_probe.py",
+   "line": 65,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "x = torch.randn(8, n_in, 32, 32, device=DEV)",
+   "reviewed": "random input for a timing probe, not a metric"
+  },
+  {
+   "script": "c10_routeB_probe.py",
+   "line": 72,
+   "why": "random tensor on its own line (check it is not a metric)",
+   "text": "xb = torch.randn(64, n_in, 32, 32, device=DEV)",
+   "reviewed": "random input for a timing probe, not a metric"
+  }
+ ],
+ "duplicate_families": [],
+ "leakage_scan": [],
+ "paperA_checks": [
+  {
+   "label": "CEConv (stage 1) effect",
+   "value": 0.3349,
+   "literal": "0.335",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 1) O1",
+   "value": 0.9401,
+   "literal": "0.940",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 1) O2",
+   "value": 0.9506,
+   "literal": "0.951",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 2) effect",
+   "value": 0.3349,
+   "literal": "0.335",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 2) O1",
+   "value": 0.9312,
+   "literal": "0.931",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "CEConv (stage 2) O2",
+   "value": 0.9534,
+   "literal": "0.953",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 1) effect",
+   "value": 0.3886,
+   "literal": "0.389",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 1) O1",
+   "value": 0.31,
+   "literal": "0.310",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 1) O2",
+   "value": 0.6083,
+   "literal": "0.608",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 2) effect",
+   "value": 0.3826,
+   "literal": "0.383",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 2) O1",
+   "value": 0.1538,
+   "literal": "0.154",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "plain CNN (stage 2) O2",
+   "value": 0.4531,
+   "literal": "0.453",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code-auxiliary (stage 1) effect",
+   "value": 0.369,
+   "literal": "0.369",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code-auxiliary (stage 1) O1",
+   "value": 0.2974,
+   "literal": "0.297",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code-auxiliary (stage 1) O2",
+   "value": 0.5953,
+   "literal": "0.595",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector null d30 F1",
+   "value": 0.2176,
+   "literal": "0.218",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector null d60 F1",
+   "value": 0.0163,
+   "literal": "0.016",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector null d90 F1",
+   "value": 0.0084,
+   "literal": "0.008",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O1_procrustes d30 F1",
+   "value": 0.5594,
+   "literal": "0.559",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O1_procrustes d60 F1",
+   "value": 0.6737,
+   "literal": "0.674",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O1_procrustes d90 F1",
+   "value": 0.7785,
+   "literal": "0.778",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O2_ridge d30 F1",
+   "value": 0.6965,
+   "literal": "0.696",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O2_ridge d60 F1",
+   "value": 0.775,
+   "literal": "0.775",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O2_ridge d90 F1",
+   "value": 0.9048,
+   "literal": "0.905",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O8_conv_residual d30 F1",
+   "value": 0.8832,
+   "literal": "0.883",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O8_conv_residual d60 F1",
+   "value": 0.8446,
+   "literal": "0.845",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O8_conv_residual d90 F1",
+   "value": 0.9651,
+   "literal": "0.965",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O6_random d30 F1",
+   "value": 0.0,
+   "literal": "0.000",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O6_random d60 F1",
+   "value": 0.0,
+   "literal": "0.000",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector O6_random d90 F1",
+   "value": 0.0,
+   "literal": "0.000",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "detector mAP50",
+   "value": 0.9871,
+   "literal": "0.987",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "law median_m",
+   "value": 0.836,
+   "literal": "0.84",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "law frac_m_ge_0.70",
+   "value": 0.675,
+   "literal": "67.5%",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "law m_lowest_ok",
+   "value": 0.75,
+   "literal": "m \u2265 0.75",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "law m_highest_failing",
+   "value": 0.6,
+   "literal": "m \u2264 0.60",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "law m_star_used",
+   "value": 0.7,
+   "literal": "m* = 0.70",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "law err_max_above_threshold",
+   "value": 5.69,
+   "literal": "5.69\u00b0",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "law err_min_below_threshold",
+   "value": 43.53,
+   "literal": "43.53\u00b0",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale test success hi",
+   "value": 0.7696,
+   "literal": "0.770",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale test success lo",
+   "value": 0.5321,
+   "literal": "0.532",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale gap",
+   "value": 0.2375,
+   "literal": "0.238",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale gap lo CI",
+   "value": 0.1283,
+   "literal": "0.128",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale gap hi CI",
+   "value": 0.3449,
+   "literal": "0.345",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale auc align",
+   "value": 0.6602,
+   "literal": "0.660",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale auc gtbox",
+   "value": 0.6617,
+   "literal": "0.662",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale auc raw",
+   "value": 0.5786,
+   "literal": "0.579",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale n regions",
+   "value": 750.0,
+   "literal": "750",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "largescale test n",
+   "value": 300.0,
+   "literal": "300",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "harmonic-control literal 0.966",
+   "value": null,
+   "literal": "0.966",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "harmonic-control literal 0.700",
+   "value": null,
+   "literal": "0.700",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "harmonic-control literal 0.906",
+   "value": null,
+   "literal": "0.906",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "harmonic-control literal 0.971",
+   "value": null,
+   "literal": "0.971",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code hue err high chroma",
+   "value": 1.35,
+   "literal": "1.35",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code hue err low chroma",
+   "value": 2.2,
+   "literal": "2.20",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code corr(l,v)",
+   "value": 0.998,
+   "literal": "0.998",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code corr(shat,s)",
+   "value": 0.996,
+   "literal": "0.996",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code sat binary acc",
+   "value": 0.9925,
+   "literal": "0.9925",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code raw sat acc reference",
+   "value": 0.9737,
+   "literal": "0.9737",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code decorrelation shat vs v",
+   "value": 0.048,
+   "literal": "0.048",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code rho(40deg) consistency",
+   "value": 2.36,
+   "literal": "2.36",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "code rho l/shat drift",
+   "value": 0.059,
+   "literal": "0.059",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "zero-shot readout 0.49 (vitb16_supervised_probe.json)",
+   "value": null,
+   "literal": "0.49",
+   "in_manuscript": true,
+   "pass": true
+  },
+  {
+   "label": "zero-shot readout 0.56 (dinov2_vitb14_probe.json)",
+   "value": null,
+   "literal": "0.56",
+   "in_manuscript": true,
+   "pass": true
+  }
+ ],
+ "paperA_pass": 63,
+ "paperA_total": 63,
+ "n_unreviewed_scan_hits": 0,
+ "verdict": "PASS"
+}

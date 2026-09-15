@@ -1,0 +1,119 @@
+\section{How Depth and Learning Reshape Operability}
+
+\subsection{Depth profiles of structure and performance}
+
+What these curves measure, in the theory's terms, is how the piecewise-affine structure of \S{}3.3 shows up layer by layer: a transformation that visits more distinct local rules costs more to realise with one operator, and the unit-level decomposition of \S{}6.6 measures where that cost lands. Operability declines with depth across \textbf{all eight} backbone$\times$family curves measured on real COCO images through four pretrained backbones, and survives the 24/24 re-cut controls and the mild-dissipation ($\sigma=1.0$, single seed) grid. \textbf{Table 10} gives all eight curves. Figure 7 shows the depth profiles and the crossed design together: the curves decline, and the decline follows the pair formed by the transformation and the readout rather than the algebra.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig07_depth.pdf}
+\caption*{\textbf{Figure 7.} How depth changes operability, and what it changes it to. (a) Transfer of the global linear family against relative depth for four frozen backbones under hue rotation and (b) under heat diffusion; every curve declines, and the final block of the two class-token transformers is causally unreachable, reading zero. (c) The crossed readout $\times$ transformation design summarised by its trend over depth: for each cell, the Spearman correlation between the chance-corrected consumer-visible share and depth, one marker per backbone (open) and the median (bar); the two aligned cells decline and the two off-diagonal cells do not. Seed 0 for all four cells, so the cells are comparable.}
+\end{figure*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table 10.} Downstream transfer of the global linear operator (ridge) against relative depth, real COCO crops, three seeds where noted; $T_F=1$ matches the real route, $0$ is no better than the no-op. The final block of both class-token transformers is causally unreachable and reads exactly $0.000$.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{family} & \textbf{d1} & \textbf{d2} & \textbf{d3} & \textbf{d4} & \textbf{trend (ridge)} \\
+\midrule
+ResNet-50 & hue & 0.602 & 0.588 & 0.464 & 0.099 & $\rho$ = -0.972 \\
+ConvNeXt-T & hue & 0.707 & 0.658 & 0.401 & 0.149 & $\rho$ = -0.972 \\
+ViT-B/16 & hue & 0.644 & 0.455 & 0.207 & -0.000 & $\rho$ = -0.949 \\
+DINOv2-B/14 & hue & 0.585 & 0.391 & 0.103 & -0.000 & $\rho$ = -0.949 \\
+ResNet-50 & heat & 0.515 & 0.471 & 0.374 & 0.054 & $\rho$ = -0.972 \\
+ConvNeXt-T & heat & 0.540 & 0.553 & 0.345 & 0.137 & $\rho$ = -0.820 \\
+ViT-B/16 & heat & 0.497 & 0.271 & 0.114 & 0.000 & $\rho$ = -0.949 \\
+DINOv2-B/14 & heat & 0.134 & 0.049 & -0.397 & 0.000 & $\rho$ = -0.949 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{The geometry of changing realisability}
+
+A geometric account accompanies the pairing without replacing it. What erodes with depth is the reach of fixed low-parameter families: orbit bending rises to a mean of 729$^\circ$ at the deepest measured layer (up to 760$^\circ$ in a single (shape, saturation, value) cell), closed-loop error worsens (up to 0.24 normalised), and per-shape readouts become switch-like as the continuous rotation field compresses toward discrete sign-like clusters --- three independent measurements agreeing that the coverage a global operator must span grows as the orbit bends, which is also why the local advantage of \S{}5.3 widens with depth. The stronger reading of the same evidence --- a symbolisation transition from continuous fields to discrete clusters --- remains a hypothesis: supported by the geometry, not isolated from the coverage growth that accompanies it.
+
+\subsection{The readout--transformation pairing}
+
+What the depth profiles of \S{}6.1 measure is not the algebra but the \textit{pairing} between the transformation and the readout. The test is a crossed design: two readouts --- a hue-aligned probe and a high-frequency probe --- against the two transformations, on four backbones, with the chance-corrected consumer-visible share as the statistic. If erosion were a property of the algebra, a readout that does not privilege hue would erode under either transformation, and a readout aligned to the dissipative family would be as robust for heat as the hue readout is for hue. Neither holds: each readout erodes only with the transformation it is aligned to, and the off-diagonal cells are flat.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 11.} The readout $\times$ transformation crossed design: number of backbones (of four) whose trend over depth is a decline, with the median Spearman $\rho$ across sites. ViT-B/16 is a floor case (its chance-corrected visible shares sit at $0.08$--$1.97$) and its flatness carries no information for this judgement; the statistic is the chance-corrected visible share (the visible share divided by the matched-rank random-projector share at the readout's effective rank), not the raw one.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{transformation} & \textbf{hue readout} & \textbf{high-frequency readout} \\
+\midrule
+hue $90^\circ$ (group) & \textbf{3/4 backbones decline}, median $\rho=-0.80$ & 2/4, median $\rho=+0.00$ \\
+heat $\sigma=2$ (semigroup) & 1/4, median $\rho=+0.30$ & \textbf{4/4 decline}, median $\rho=-0.60$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\textbf{Table 11} reports the design: two readouts (a hue-aligned probe and a high-frequency probe) crossed with the two transformations, four backbones, with the trend of the consumer-visible share over depth as the statistic. Each readout erodes \textbf{only with the transformation it is aligned to} --- the hue readout declines under hue on three of four backbones (median $\rho=-0.80$) and is flat under heat (two of four, median $\rho=+0.00$), while the high-frequency readout declines under heat on \textbf{all four} backbones (median $\rho=-0.60$) and is flat under hue. Depth erosion in this grid therefore follows the readout--transformation pairing, not the group-versus-semigroup distinction. The algebra alone does not predict which representations stay operable; the pair (transformation, consumer) does.
+
+The pairing is not an additional mechanism: it is the piecewise-linear layer of \S{}3.5 read correctly. Proposition D decomposes the effect of a transformation into a within-regime term and a term carried by the units whose gate changes, and a gate change is what makes two cells carry different local rules; whether one operator can serve them both is the joint system of Proposition C. The consumer-visible share of the change is a proxy for that sharing cost, not the cost itself. "A gate change counts only where the consumer reads it" is that statement, and the crossed design tests it. The mechanism numbers are consistent with it and quantitative: on ResNet-50 the consumer-visible gate-change share rises with depth under both algebras --- $0.220\to0.417\to0.627$ for hue and $0.252\to0.302\to0.516$ for heat, layers 2 to 4 --- and across the six (site, algebra) points it is the consumer-visible share of the change that orders the transfer score ($\rho=-0.886$), more tightly than the raw gate-change share ($\rho=-0.83$) and far more tightly than the flip count, which does not order it at all. The ordering, not the algebra, is what the depth trend tracks.
+
+Two consequences follow for how the section, and the paper, should be read. First, the depth trend is \textbf{not} a claim that deep layers represent fewer transformations: it is a claim that the reach of \textit{fixed low-parameter families} shrinks, because the transformation visits more distinct local rules as depth grows, and whether one operator can serve them is the joint system of Proposition C (\S{}3.5). Second, the pragmatic reading of a depth profile is conditional on the consumer: an operator that looks weak under one head can be adequate under another, which is why \S{}5.5 grades capability against the consumer's own baseline and why Table 11's flat cells are evidence rather than noise.
+
+\subsection{Learning in a controlled linear setting}
+
+The $\kappa$ theory generates a learning prediction: with the assumptions of \S{}3.4 held and $\kappa$ fixed, training cannot move the optimal score. Controlled linear networks bear this out --- near-total reorganisation of the retained subspace leaves $\Delta T_F$ at zero without weight decay and raises it only where $\kappa$ moves, and the observed changes track $\Delta\kappa$ ($\rho=-0.833$) rather than the row-space angle ($\rho=-0.146$). Rank and task loss do not describe operability; the induced mixing does. \textbf{Table 12} gives all eight runs with the compression, the loss reduction and the angles.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table 12.} Learning in the controlled linear setting: two geometries, two weight decays, two seeds, byte-identical across invocations. The runs compress the retained subspace by $3.8\times$ and reduce the loss by six orders of magnitude; the row-space angle to initialisation is $80$--$90^\circ$ in every run, the flat ones included.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{geometry} & \textbf{weight decay} & \textbf{$\Delta T_F$ (seed 0 / 1)} & \textbf{$\kappa$ before $\to$ after} & \textbf{largest principal angle to init} \\
+\midrule
+within-block rotation & $0$ & -0.000 / +0.026 & 0.72 $\to$ 0.72 / 0.75 $\to$ 0.75 & 89.7$^\circ$ / 80.3$^\circ$ \\
+within-block rotation & $10^{-3}$ & +0.096 / +0.111 & 0.72 $\to$ 0.67 / 0.75 $\to$ 0.68 & 86.2$^\circ$ / 87.8$^\circ$ \\
+cross-block shear & $0$ & +0.009 / +0.004 & 0.72 $\to$ 0.71 / 0.70 $\to$ 0.71 & 89.7$^\circ$ / 80.3$^\circ$ \\
+cross-block shear & $10^{-3}$ & +0.058 / +0.057 & 0.72 $\to$ 0.58 / 0.70 $\to$ 0.63 & 86.2$^\circ$ / 87.8$^\circ$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{A unified interpretation}
+
+One picture connects the section (Figure 7): the encoder merges and retains, the orbit supplies the realisation form, and the readout decides downstream visibility --- the compatibility principle of \S{}3.2 operating at three places at once. Where the linear law is extrapolated to real nonlinear sites, its closed form deviates systematically. We treat this as a \textit{deviation diagnosis} rather than a failure: the premises fail there independently, and the exact law remains the theory's linear layer, its breakdown pattern is diagnostic rather than predictive --- \S{}3.4 reports that its ordering is no better than the naive baselines --- and the structure--operability links above are measured, not extrapolated.
+
+These regularities say where to extract structure and what form to expect. The next section turns that understanding into design.
+
+\subsection{Where the realisation error goes: a unit-level diagnostic}
+
+The two-source decomposition of \S{}3.3 can be measured on real sites, and the measurement disciplines the mechanism. On a fit split of crops we fit (i) a per-channel affine law for each gate cell, (ii) a pooled per-channel affine law, and (iii) a linear operator in the top-$k$ principal subspace of the features; everything is then evaluated on a \textbf{held-out} split and normalised by the no-op displacement. \textbf{Table 13} gives the held-out realisation error at each site and algebra.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table 13.} Held-out realisation error, ResNet-50, COCO crops, hue $90^\circ$ and heat $\sigma=2$. $R_{\mathrm{diag}}$ is the channel-diagonal operator (equivalently the pooled per-channel law), $S_{\mathrm{cell}}$ the per-cell law, \textit{sharing} their difference, and $R_{\mathrm{full}}(k)$ the linear operator restricted to the top-$k$ principal subspace of the fit features.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{site} & \textbf{family} & \textbf{$R_{\mathrm{diag}}$} & \textbf{$S_{\mathrm{cell}}$} & \textbf{sharing} & \textbf{$R_{\mathrm{full}}(8)$} & \textbf{$R_{\mathrm{full}}(16)$} & \textbf{$R_{\mathrm{full}}(32)$} \\
+\midrule
+layer1 & hue & $0.412$ & $0.412$ & $0.000$ & $0.394$ & $0.213$ & $\mathbf{0.101}$ \\
+layer1 & heat & $0.084$ & $0.084$ & $0.000$ & $0.200$ & $0.099$ & $\mathbf{0.042}$ \\
+layer2 & hue & $0.347$ & $0.347$ & $0.000$ & $0.921$ & $0.627$ & $0.402$ \\
+layer3 & hue & $0.405$ & $0.405$ & $0.000$ & $1.691$ & $1.056$ & $0.846$ \\
+layer4 & hue & $0.692$ & $0.650$ & $0.042$ & $1.186$ & $1.114$ & $1.053$ \\
+layer4 & heat & $0.750$ & $0.696$ & $0.055$ & $1.365$ & $1.299$ & $1.243$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Two statements follow, and neither is the one an in-split measurement suggested. First, \textbf{the cost of sharing one operator across gate cells is negligible out of sample}: the per-cell and pooled channel laws agree to three decimals at the first three sites and differ only at the deepest. A decomposition evaluated inside the fit split reports a large sharing term because small cells are fitted where they are evaluated; held out, the term disappears, and the in-split variant (Table D.20) is retained only as the diagnostic it is. What grows with depth is the \textbf{pooled channel relation itself}. Second, \textbf{the benefit of cross-channel coupling reverses with depth}: a wide operator in the top principal subspace cuts the error substantially at the first layer, while at the last the full operator is worse than the diagonal restriction. Shallow layers let channels help each other; deep layers do not, and at depth the estimate is limited by the sample size available per channel.
+
+That is the mechanism this section can support with one backbone, two algebras and one split: a degrading pooled channel relation and the loss of cross-channel coupling. It is a unit-level diagnostic of \S{}3.3's decomposition, not the full-operator mechanism --- these are per-cell affine and channel-diagonal families fitted at one site, whereas the depth decline of \S{}6.1 is measured for a single global linear operator across layers. A dominant sharing cost is not what the held-out decomposition shows.
+

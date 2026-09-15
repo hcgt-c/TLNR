@@ -1,0 +1,1478 @@
+{
+ "cited_results": [
+  "results/boundary_covariates.json",
+  "results/boundary_independent.json",
+  "results/boundary_largescale.json",
+  "results/c10_routeB/",
+  "results/c10_routeB/summary.json",
+  "results/carrier_optimality_identity.json",
+  "results/causal_cifar_ce8_s0.json",
+  "results/causal_cifar_ce8_s0_stage2.json",
+  "results/causal_cifar_ce8_s1.json",
+  "results/causal_cifar_ce8_s1_stage2.json",
+  "results/causal_cifar_ce8_s2.json",
+  "results/causal_cifar_ce8_s2_stage2.json",
+  "results/causal_cifar_lcer8_s0.json",
+  "results/causal_cifar_lcer8_s1.json",
+  "results/causal_cifar_lcer8_s2.json",
+  "results/causal_cifar_ocode_s0.json",
+  "results/causal_cifar_ocode_s1.json",
+  "results/causal_cifar_ocode_s2.json",
+  "results/causal_cifar_summary.json",
+  "results/causal_cifar_z2_s0.json",
+  "results/causal_cifar_z2_s0_stage2.json",
+  "results/causal_cifar_z2_s1.json",
+  "results/causal_cifar_z2_s1_stage2.json",
+  "results/causal_cifar_z2_s2.json",
+  "results/causal_cifar_z2_s2_stage2.json",
+  "results/causal_cifar_z2hue_s0.json",
+  "results/causal_cifar_z2hue_s1.json",
+  "results/causal_cifar_z2hue_s2.json",
+  "results/causal_intervention_hue.json",
+  "results/ceiling_regularisation.json",
+  "results/clip_vit_probe.json",
+  "results/code3d_sv_lowext.json",
+  "results/code3d_v3.json",
+  "results/composition_heat.json",
+  "results/crossing_consumer_resnet50.json",
+  "results/deep_linear_transport.json",
+  "results/dense_continuous_v3.json",
+  "results/depth_map_convnext_heat.json",
+  "results/depth_map_convnext_hue.json",
+  "results/depth_map_dinov2b14_heat.json",
+  "results/depth_map_dinov2b14_hue.json",
+  "results/depth_map_resnet50_heat.json",
+  "results/depth_map_resnet50_hue.json",
+  "results/depth_map_summary.json",
+  "results/depth_map_vitb16_heat.json",
+  "results/depth_map_vitb16_hue.json",
+  "results/detector_o8_multiseed.json",
+  "results/dinov2_vitb14_probe.json",
+  "results/dinov2_vits14_probe.json",
+  "results/estimator_control.json",
+  "results/family_capacity.json",
+  "results/fig_composition.json",
+  "results/fig_correspondence.json",
+  "results/harmonic_controls.json",
+  "results/heat_semigroup_pilot.json",
+  "results/heat_semigroup_structure.json",
+  "results/heat_tables.json",
+  "results/hue_prediction_demo.json",
+  "results/hue_probe_app.json",
+  "results/interface_action_comparison.json",
+  "results/linear_dynamics_counterexample.json",
+  "results/lipschitz_resnet50.json",
+  "results/locality_resnet18_l2.json",
+  "results/locality_resnet18_l3.json",
+  "results/locality_yolo11n_y3.json",
+  "results/locality_yolo11n_y5.json",
+  "results/locality_yolo11n_y7.json",
+  "results/multiattr_summary.json",
+  "results/multipath_composition.json",
+  "results/perf_reforward_vs_rho.json",
+  "results/quotientization.json",
+  "results/real_site_closure.json",
+  "results/real_task_consumer.json",
+  "results/region_rho_demo.json",
+  "results/resnet50_probe.json",
+  "results/rotation_pilot.json",
+  "results/second_attribute_chain.json",
+  "results/star_existence_test.json",
+  "results/transport_theory.json",
+  "results/two_term_decomposition_resnet50.json",
+  "results/two_term_heldout_resnet50.json",
+  "results/usage_rule_scale_strat.json",
+  "results/vit_causal_dinov2b14_b4_s0.json",
+  "results/vit_causal_dinov2b14_b4_s1.json",
+  "results/vit_causal_dinov2b14_b4_s2.json",
+  "results/vit_causal_vitb16_b4_s0.json",
+  "results/vit_causal_vitb16_b4_s1.json",
+  "results/vit_causal_vitb16_b4_s2.json",
+  "results/vitb16_supervised_probe.json",
+  "results/yolo_hue_val.json"
+ ],
+ "cited_scripts": [
+  "scripts/01_gen_synthetic.py",
+  "scripts/07_locality_global_vs_local.py",
+  "scripts/100_perf_reforward_vs_rho.py",
+  "scripts/109_region_rho_demo.py",
+  "scripts/112_usage_rule_strat.py",
+  "scripts/115_sv_lowext.py",
+  "scripts/136_causal_cifar.py",
+  "scripts/138_boundary_independent.py",
+  "scripts/140_gen_yolo_hue.py",
+  "scripts/141_train_yolo_hue.py",
+  "scripts/146_unseen_delta_cifar.py",
+  "scripts/154_boundary_covariates.py",
+  "scripts/156_detector_o8_multiseed.py",
+  "scripts/157_multiattribute_intervention.py",
+  "scripts/159_realmultiattr_intervention.py",
+  "scripts/15_closure_check.py",
+  "scripts/161_multiattr_summary.py",
+  "scripts/169_boundary_largescale.py",
+  "scripts/173_record_yolo_val.py",
+  "scripts/188_depth_map_harness.py",
+  "scripts/194_composition_heat.py",
+  "scripts/198_ceiling_regularisation.py",
+  "scripts/20c_fourier_fit.py",
+  "scripts/218_estimator_control.py",
+  "scripts/229_star_existence_test.py",
+  "scripts/231_multipath_composition.py",
+  "scripts/234_fig_correspondence.py",
+  "scripts/252_update_real_multiattr_table.py",
+  "scripts/258_measure_lipschitz.py",
+  "scripts/259_carrier_optimality_identity.py",
+  "scripts/260_two_term_decomposition.py",
+  "scripts/261_real_site_closure.py",
+  "scripts/263_two_term_heldout.py",
+  "scripts/265_interface_action_comparison.py",
+  "scripts/30_gen_dense.py",
+  "scripts/31_dense_features.py",
+  "scripts/79_code3d_v3.py",
+  "scripts/95_code3d_sv_map.py",
+  "scripts/c10_routeB_full.py",
+  "scripts/c10_routeB_summary.py",
+  "scripts/c10_routeB_train.py"
+ ],
+ "cited_data": [],
+ "missing": [],
+ "orphan_results": [
+  "results/TA_dualchannel.json",
+  "results/_corrections_probe.json",
+  "results/_corrections_probe2.json",
+  "results/_pre_grouped_backup/multiattr_summary.json",
+  "results/_pre_grouped_backup/realmultiattr_intervention_dinov2b14_b4_s0.json",
+  "results/_pre_grouped_backup/realmultiattr_intervention_dinov2b14_b4_s1.json",
+  "results/_pre_grouped_backup/realmultiattr_intervention_vitb16_b4_s0.json",
+  "results/_pre_grouped_backup/realmultiattr_intervention_vitb16_b4_s1.json",
+  "results/_pre_grouped_backup/realmultiattr_intervention_vitb16_b4_s2.json",
+  "results/_result_to_script.json",
+  "results/action_fragmentation.json",
+  "results/adaptive_code_selection.json",
+  "results/adaptive_gating.json",
+  "results/arm_aux_code_eval.json",
+  "results/artifact_ledger.json",
+  "results/audit_d0a.json",
+  "results/bib_build.json",
+  "results/block_scan_yolo11n_y3.json",
+  "results/blockrot_yolo11n_y3_K6F3.json",
+  "results/boundary_colorspace.json",
+  "results/c10_routeB/_interim3.json",
+  "results/c10_routeB/_interim4.json",
+  "results/c10_routeB/ce8_s0.json",
+  "results/c10_routeB/ce8_s1.json",
+  "results/c10_routeB/ce8_s2.json",
+  "results/c10_routeB/lcer8_s0.json",
+  "results/c10_routeB/lcer8_s1.json",
+  "results/c10_routeB/lcer8_s2.json",
+  "results/c10_routeB/ocode_demo/ocode_demo_s0.json",
+  "results/c10_routeB/ocode_s0.json",
+  "results/c10_routeB/ocode_s1.json",
+  "results/c10_routeB/ocode_s2.json",
+  "results/c10_routeB/z2_s0.json",
+  "results/c10_routeB/z2_s1.json",
+  "results/c10_routeB/z2_s2.json",
+  "results/c10_routeB/z2heat_s0.json",
+  "results/c10_routeB/z2heat_s1.json",
+  "results/c10_routeB/z2heat_s2.json",
+  "results/c10_routeB/z2hue_s0.json",
+  "results/c10_routeB/z2hue_s1.json",
+  "results/c10_routeB/z2hue_s2.json",
+  "results/capacity_controls_z2_s0_d90.json",
+  "results/capacity_controls_z2_s1_d90.json",
+  "results/capacity_controls_z2_s2_d90.json",
+  "results/carrier_closure_theory.json",
+  "results/carrier_sufficiency.json",
+  "results/causal_intervention.json",
+  "results/causal_unseen_z2_s0_stage1.json",
+  "results/causal_unseen_z2_s1_stage1.json",
+  "results/causal_unseen_z2_s2_stage1.json",
+  "results/channel_vs_spatial_residual.json",
+  "results/clip_vit_readout.json",
+  "results/closure_check_resnet18_l2.json",
+  "results/closure_check_resnet18_l4.json",
+  "results/closure_check_yolo11n_y3.json",
+  "results/closure_check_yolo11n_y9.json",
+  "results/coco_jitter_exp.json",
+  "results/coco_jitter_fair.json",
+  "results/coco_procrustes.json",
+  "results/coco_selfcheck.json",
+  "results/code3d_sv_domain.json",
+  "results/code_audit.json",
+  "results/color_entropy_scan.json",
+  "results/complex_yolo11n_y3_g0.0.json",
+  "results/complex_yolo11n_y3_g0.3.json",
+  "results/complexity_source_resnet50.json",
+  "results/consumer_swap.json",
+  "results/corrections_values.json",
+  "results/curvature_resnet18_l1.json",
+  "results/curvature_resnet18_l2.json",
+  "results/curvature_resnet18_l3.json",
+  "results/curvature_resnet18_l4.json",
+  "results/curvature_yolo11n_y3.json",
+  "results/curvature_yolo11n_y5.json",
+  "results/curvature_yolo11n_y7.json",
+  "results/curvature_yolo11n_y9.json",
+  "results/deep_phi_l4_lam0.0.json",
+  "results/deep_phi_l4_lam1.0.json",
+  "results/deep_phi_l4_lam3.0.json",
+  "results/dense3d_holonomy.json",
+  "results/dense3d_sheets_v5.json",
+  "results/dense3d_v4.json",
+  "results/depth_map_convnext_heat_v1.json",
+  "results/depth_map_convnext_hue_v1.json",
+  "results/depth_map_dinov2b14_heat_v1.json",
+  "results/depth_map_dinov2b14_hue_v1.json",
+  "results/depth_map_resnet50_heat_v1.json",
+  "results/depth_map_resnet50_hue_v1.json",
+  "results/depth_map_vitb16_heat_v1.json",
+  "results/depth_map_vitb16_hue_v1.json",
+  "results/depth_power_control.json",
+  "results/depth_split_variation.json",
+  "results/descriptor_cost.json",
+  "results/detector_o8_seed0.json",
+  "results/detector_o8_seed1.json",
+  "results/detector_o8_seed2.json",
+  "results/detector_rotation_pilot.json",
+  "results/diag2_resnet18_l1.json",
+  "results/diag2_resnet18_l2.json",
+  "results/diag2_resnet18_l3.json",
+  "results/diag2_resnet18_l4.json",
+  "results/diag2_yolo11n_y3.json",
+  "results/diag2_yolo11n_y5.json",
+  "results/diag2_yolo11n_y7.json",
+  "results/diag2_yolo11n_y9.json",
+  "results/diag_resnet18_l1.json",
+  "results/diag_resnet18_l2.json",
+  "results/diag_resnet18_l3.json",
+  "results/diag_resnet18_l4.json",
+  "results/diag_yolo11n_y3.json",
+  "results/diag_yolo11n_y5.json",
+  "results/diag_yolo11n_y7.json",
+  "results/diag_yolo11n_y9.json",
+  "results/diagnostic_validation.json",
+  "results/equivariance_theory_check.json",
+  "results/external_consumer_pilot.json",
+  "results/field_measure_resnet18_l1.json",
+  "results/field_measure_resnet18_l2.json",
+  "results/field_measure_resnet18_l3.json",
+  "results/field_measure_resnet18_l4.json",
+  "results/field_measure_yolo11n_y3.json",
+  "results/field_measure_yolo11n_y5.json",
+  "results/field_measure_yolo11n_y7.json",
+  "results/field_measure_yolo11n_y9.json",
+  "results/fig_depth_law.json",
+  "results/fig_failure_taxonomy.json",
+  "results/fig_paper_map.json",
+  "results/fig_protocol.json",
+  "results/fig_random_contradiction.json",
+  "results/fig_scaling_rank.json",
+  "results/fig_three_alignments.json",
+  "results/figures_build.json",
+  "results/fourier_fit_yolo11n_y3_K3.json",
+  "results/fruit_adapt.json",
+  "results/fruit_mask_compare.json",
+  "results/fruit_readout.json",
+  "results/full_operator_mechanism_resnet50.json",
+  "results/gap_vs_region_resnet18_l2.json",
+  "results/gap_vs_region_yolo11n_y3.json",
+  "results/global_expA_resnet18_l2.json",
+  "results/global_expA_resnet18_l4.json",
+  "results/global_expA_yolo11n_y3.json",
+  "results/global_expA_yolo11n_y5.json",
+  "results/global_expA_yolo11n_y9.json",
+  "results/heat_carrier_interface.json",
+  "results/heat_carrier_v2.json",
+  "results/heat_carrier_v2_large_t.json",
+  "results/heat_carrier_v2_small_t.json",
+  "results/heat_conditioned_interface_main.json",
+  "results/heat_conditioned_interface_residual.json",
+  "results/heat_intervention_cifar.json",
+  "results/heat_power_pilot.json",
+  "results/hue_geom_resnet18_l1.json",
+  "results/hue_readout_regimes.json",
+  "results/identifiability_law.json",
+  "results/intfreq_yolo11n_y3.json",
+  "results/kappa_prediction_decomposition.json",
+  "results/kappa_predicts_transfer.json",
+  "results/l2_consistency.json",
+  "results/l2_consistency_legacy_adhoc.json",
+  "results/layer_choice_TA.json",
+  "results/linearize2_yolo11n_y3.json",
+  "results/linearize3_resnet18_l4.json",
+  "results/linearize3_yolo11n_y3.json",
+  "results/linearize_yolo11n_y3.json",
+  "results/m2a_code3d.json",
+  "results/m2a_code3d_v2.json",
+  "results/m2b_joint.json",
+  "results/m2c_downstream.json",
+  "results/mask_adapt.json",
+  "results/master_audit.json",
+  "results/mechanism_resnet18_l1_r24.json",
+  "results/mechanism_resnet18_l1_r32.json",
+  "results/mechanism_summary_partial.json",
+  "results/mechanism_summary_pilot.json",
+  "results/mechanism_yolo11n_y3_r32.json",
+  "results/modulated_resnet18_l2.json",
+  "results/modulated_resnet18_l4.json",
+  "results/modulated_yolo11n_y3.json",
+  "results/modulated_yolo11n_y5.json",
+  "results/modulated_yolo11n_y9.json",
+  "results/multiattr_intervention_vitb16_b4_s0.json",
+  "results/multiattr_intervention_vitb16_b4_s1.json",
+  "results/multiattr_intervention_vitb16_b4_s2.json",
+  "results/multiparam_resnet18_l2.json",
+  "results/multiparam_resnet18_l4.json",
+  "results/multiparam_yolo11n_y3.json",
+  "results/multiparam_yolo11n_y5.json",
+  "results/o2_abl.json",
+  "results/o2_seeds.json",
+  "results/ocode_anchor.json",
+  "results/paired_stats_z2_s0_stage1.json",
+  "results/paired_stats_z2_s1_stage1.json",
+  "results/paired_stats_z2_s2_stage1.json",
+  "results/paperB_numbers_check.json",
+  "results/parity.json",
+  "results/per_sample_projection_z2_s0_d90.json",
+  "results/portfolio_check.json",
+  "results/prestudy_colorcode.json",
+  "results/quotientization_pilot.json",
+  "results/realmultiattr_intervention_dinov2b14_b4_s0.json",
+  "results/realmultiattr_intervention_dinov2b14_b4_s1.json",
+  "results/realmultiattr_intervention_dinov2b14_b4_s2.json",
+  "results/realmultiattr_intervention_vitb16_b4_s0.json",
+  "results/realmultiattr_intervention_vitb16_b4_s1.json",
+  "results/realmultiattr_intervention_vitb16_b4_s2.json",
+  "results/region_minimal_readout.json",
+  "results/region_real_validation.json",
+  "results/region_transition_theory.json",
+  "results/region_usage_variants.json",
+  "results/resnet50_readout.json",
+  "results/review_experiments_summary.json",
+  "results/robust_yolo11n_y3.json",
+  "results/rotation_analysis_yolo11n_y3.json",
+  "results/rotation_pilot_ce8_s0.json",
+  "results/rotation_pilot_z2_s0.json",
+  "results/rule_drift.json",
+  "results/semantic_compare.json",
+  "results/smooth_omega_yolo11n_y3_K3.json",
+  "results/so2_yolo11n_y3_K16.json",
+  "results/spatial_field_probe.json",
+  "results/star_existence_check.json",
+  "results/stream_color_query.json",
+  "results/study_sv_code_axes.json",
+  "results/target_build.json",
+  "results/task_TA_compare.json",
+  "results/task_weighted_1x1_z2_s0_d90.json",
+  "results/task_weighted_1x1_z2_s1_d90.json",
+  "results/task_weighted_1x1_z2_s2_d90.json",
+  "results/task_weighted_operator.json",
+  "results/theta_rot_yolo11n_y3_K3.json",
+  "results/transportability_certificate_example.json",
+  "results/transportability_certificate_schema.json",
+  "results/usage_rule_scale.json",
+  "results/v15_audit.json",
+  "results/v15_audit_built.json",
+  "results/v15_build.json",
+  "results/v15_claim_inventory.json",
+  "results/v15_number_check.json",
+  "results/v16_audit.json",
+  "results/v17_audit.json",
+  "results/v17_build.json",
+  "results/v17_claim_inventory.json",
+  "results/v17_integration.json",
+  "results/vit_probe.json",
+  "results/yolo_ab_impact.json",
+  "results/yolo_ab_impact_legacy_adhoc.json",
+  "results/yolo_aux_boxdemo.json",
+  "results/yolo_val500.json"
+ ],
+ "orphan_scripts": [
+  "scripts/02_extract_features.py",
+  "scripts/03_diagnose_features.py",
+  "scripts/04_train_lie_operator.py",
+  "scripts/05_diagnose_hue_field.py",
+  "scripts/06_hue_geometry.py",
+  "scripts/08_train_so2.py",
+  "scripts/09_robustness.py",
+  "scripts/101_gen_yolo_val500.py",
+  "scripts/102_val_big.py",
+  "scripts/103_ocode_anchor.py",
+  "scripts/104_stream_color_query.py",
+  "scripts/106_color_entropy_scan.py",
+  "scripts/107_spatial_field_probe.py",
+  "scripts/108_region_real_validation.py",
+  "scripts/10_gap_vs_region.py",
+  "scripts/110_region_correct_usage.py",
+  "scripts/110b_minimal_readout.py",
+  "scripts/110c_usage_variants.py",
+  "scripts/111_usage_rule_scale.py",
+  "scripts/113_fig_usage_rule.py",
+  "scripts/114_consistency_check.py",
+  "scripts/116_adaptive_code.py",
+  "scripts/117_identifiability_law.py",
+  "scripts/118_restructure_en.py",
+  "scripts/119_adaptive_gating.py",
+  "scripts/11_curvature.py",
+  "scripts/120_zh_mirror_a.py",
+  "scripts/121_zh_mirror_b.py",
+  "scripts/122_zh_mirror_c.py",
+  "scripts/123_zh_mirror_d.py",
+  "scripts/124_descriptor_cost.py",
+  "scripts/125_package_paper.py",
+  "scripts/126_verify_numbers.py",
+  "scripts/127_build_html.py",
+  "scripts/128_tighten_v51_a.py",
+  "scripts/129_tighten_v51_b.py",
+  "scripts/12_linearize_color.py",
+  "scripts/130_fig_ladder.py",
+  "scripts/131_framing_v52_a.py",
+  "scripts/132_framing_v52_b.py",
+  "scripts/133_causal_intervention.py",
+  "scripts/134_harmonic_controls.py",
+  "scripts/135_controls_v53.py",
+  "scripts/137_causal_summary.py",
+  "scripts/13_field_measure.py",
+  "scripts/142_causal_intervention_hue.py",
+  "scripts/144_insert_control_limits.py",
+  "scripts/145_fig_transport_law.py",
+  "scripts/147_boundary_colorspace.py",
+  "scripts/148_verify_paperB_numbers.py",
+  "scripts/149_paired_stats.py",
+  "scripts/14_modulated_field.py",
+  "scripts/150_paperB_figures.py",
+  "scripts/151_add_paperA_fig25.py",
+  "scripts/153_compress_abstract.py",
+  "scripts/155_vit_intervention.py",
+  "scripts/158_detector_o8_summary.py",
+  "scripts/160_paperB_tpami.py",
+  "scripts/163_portfolio.py",
+  "scripts/164_sync_paperA_transport.py",
+  "scripts/165_build_submissions.py",
+  "scripts/166_polish_manuscripts.py",
+  "scripts/167_capacity_controls.py",
+  "scripts/168_real_task_consumer.py",
+  "scripts/16_global_expA.py",
+  "scripts/170_review_experiments_summary.py",
+  "scripts/172_code_audit.py",
+  "scripts/174_recompute_l2_consistency.py",
+  "scripts/175_recompute_yolo_ab.py",
+  "scripts/176_second_attribute_chain.py",
+  "scripts/177_per_sample_projection.py",
+  "scripts/178_hue_readout_regimes.py",
+  "scripts/179_task_weighted_operator.py",
+  "scripts/17_complex_exp.py",
+  "scripts/180_task_weighted_1x1.py",
+  "scripts/181_master_audit.py",
+  "scripts/182_build_target_paper.py",
+  "scripts/183_nameyear_bib.py",
+  "scripts/184_package_figures.py",
+  "scripts/185_rotation_pilot.py",
+  "scripts/186_external_consumer_pilot.py",
+  "scripts/187_heat_semigroup_pilot.py",
+  "scripts/189_fig_depth_law.py",
+  "scripts/18_analyze_rotation.py",
+  "scripts/190_aggregate_depth_map.py",
+  "scripts/191_channel_vs_spatial_residual.py",
+  "scripts/193_heat_intervention_cifar.py",
+  "scripts/195_tables_heat.py",
+  "scripts/196_master_insert_heat_tables.py",
+  "scripts/197_consumer_swap.py",
+  "scripts/199_depth_power_control.py",
+  "scripts/19_integer_freq.py",
+  "scripts/200_quotientization.py",
+  "scripts/201_fig_consumer_trap.py",
+  "scripts/203_aggregate_mechanism.py",
+  "scripts/204_action_fragmentation.py",
+  "scripts/205_integrate_new_results.py",
+  "scripts/206_transport_theory.py",
+  "scripts/207_deep_linear_transport.py",
+  "scripts/208_linear_dynamics_counterexample.py",
+  "scripts/209_fig_scaling_rank.py",
+  "scripts/20_theta_rotation.py",
+  "scripts/20b_smooth_omega.py",
+  "scripts/210_integrate_tpami_revision.py",
+  "scripts/211_fig_paper_map.py",
+  "scripts/212_fig_protocol.py",
+  "scripts/213_build_comprehensive.py",
+  "scripts/214_integrate_stage2.py",
+  "scripts/215_transportability_certificate.py",
+  "scripts/216_fig_failure_taxonomy.py",
+  "scripts/217_fig_random_contradiction.py",
+  "scripts/219_corrections_integration.py",
+  "scripts/21_multiparam.py",
+  "scripts/220_depth_law_rebase.py",
+  "scripts/221_mainline_structure_pass.py",
+  "scripts/222_diagnostic_validation.py",
+  "scripts/222_planA_structure_first.py",
+  "scripts/223_hardfix_pass.py",
+  "scripts/224_hardfix3_pass.py",
+  "scripts/225_recon_pass.py",
+  "scripts/226_hygiene_pass.py",
+  "scripts/227_theory_forward_pass.py",
+  "scripts/227_verify_manuscript.py",
+  "scripts/228_theory_positioning_pass.py",
+  "scripts/22_block_rot.py",
+  "scripts/230_star_existence_figure.py",
+  "scripts/232_fig_composition.py",
+  "scripts/233_kappa_predicts_transfer.py",
+  "scripts/235_fig_three_alignments.py",
+  "scripts/236_fig_composition.py",
+  "scripts/237_depth_split_variation.py",
+  "scripts/238_kappa_prediction_decomposition.py",
+  "scripts/239_bundle_papers.py",
+  "scripts/23_block_scan.py",
+  "scripts/240_flatten_papers.py",
+  "scripts/241_merge_papers_into_20.py",
+  "scripts/242_heat_carrier_interface.py",
+  "scripts/243_heat_carrier.py",
+  "scripts/244_heat_semigroup_structure.py",
+  "scripts/245_heat_conditioned_interface.py",
+  "scripts/246_heat_generator_interface.py",
+  "scripts/247_complexity_source.py",
+  "scripts/248_crossing_term_consumer_test.py",
+  "scripts/249_compose_v15_figures.py",
+  "scripts/24_task_TA_compare.py",
+  "scripts/250_audit_v15.py",
+  "scripts/251_build_v15.py",
+  "scripts/253_claim_inventory.py",
+  "scripts/255_recompute_numbers.py",
+  "scripts/256_region_transition_and_closure.py",
+  "scripts/257_carrier_sufficiency_and_drift.py",
+  "scripts/25_diagnose_TA.py",
+  "scripts/262_full_operator_mechanism.py",
+  "scripts/264_integrate_v17.py",
+  "scripts/266_artifact_ledger.py",
+  "scripts/267_md_to_tex.py",
+  "scripts/26_region_TA.py",
+  "scripts/270_fig01_object.py",
+  "scripts/271_fig02_defect.py",
+  "scripts/272_fig03_organisation.py",
+  "scripts/273_fig04_provenance.py",
+  "scripts/274_fig05_realisation.py",
+  "scripts/275_fig06_depth.py",
+  "scripts/276_fig07_interface.py",
+  "scripts/277_fig08_uses.py",
+  "scripts/278_fig09_fibre_test.py",
+  "scripts/279_fig10_action_comparison.py",
+  "scripts/27_deep_phi.py",
+  "scripts/280_make_caption_file.py",
+  "scripts/281_fig11_recovery.py",
+  "scripts/282_fig12_prediction.py",
+  "scripts/283_eqwidth_probe.py",
+  "scripts/28_layer_choice.py",
+  "scripts/29_TA_dualchannel.py",
+  "scripts/32_complex_structure.py",
+  "scripts/33_multicomplex.py",
+  "scripts/34_harmonic_op.py",
+  "scripts/35_dense_denoised.py",
+  "scripts/36_shared_plane_group.py",
+  "scripts/37_color_symmetry.py",
+  "scripts/38_composition_test.py",
+  "scripts/39_summarize_dense.py",
+  "scripts/40_theory_m1m3.py",
+  "scripts/41_gen_dense3d.py",
+  "scripts/42_extract_dense3d.py",
+  "scripts/43_preview_3d_sparse.py",
+  "scripts/44_3d_lattice.py",
+  "scripts/45_3d_rings.py",
+  "scripts/46_3d_curvature.py",
+  "scripts/47_summarize_3d.py",
+  "scripts/48_holonomy.py",
+  "scripts/49_gen_sheet.py",
+  "scripts/50_holonomy_fine.py",
+  "scripts/51_holonomy_subdiv.py",
+  "scripts/52_curvature_field.py",
+  "scripts/53_gauss_eq.py",
+  "scripts/54_cone_check.py",
+  "scripts/55_curvature_exact.py",
+  "scripts/56_flatness_cone.py",
+  "scripts/57_summarize_holonomy.py",
+  "scripts/58_gen_sheets2.py",
+  "scripts/59_sheets2_measure.py",
+  "scripts/60_diag_sv.py",
+  "scripts/61_summarize_sheets2.py",
+  "scripts/62_figures.py",
+  "scripts/63_extract_l2_dense.py",
+  "scripts/64_hue_prediction_demo.py",
+  "scripts/65_persist_prediction.py",
+  "scripts/66_l2_consistency.py",
+  "scripts/67_hue_probe_app.py",
+  "scripts/68_fig_shell3d.py",
+  "scripts/69_prestudy_codehead.py",
+  "scripts/70_d0a_audit.py",
+  "scripts/70_m2a_code3d.py",
+  "scripts/71_m2a_code3d_v2.py",
+  "scripts/71_study_sv_axes.py",
+  "scripts/72_m2c_downstream.py",
+  "scripts/73_m2b_joint.py",
+  "scripts/74_gen_yolo_det.py",
+  "scripts/75_gen_yolo_det2.py",
+  "scripts/76_train_offline.py",
+  "scripts/77_arm_aux.py",
+  "scripts/78_eval_aux.py",
+  "scripts/80_coco_selfcheck.py",
+  "scripts/81_fruit_readout.py",
+  "scripts/82_fruit_pixel_ref.py",
+  "scripts/83_fruit_adapt.py",
+  "scripts/84_fruit_mask_compare.py",
+  "scripts/85_mask_adapt.py",
+  "scripts/86_example_codes.py",
+  "scripts/87_semantic_vs_pixel_code.py",
+  "scripts/88_coco_jitter_exp.py",
+  "scripts/88b_coco_jitter_fair.py",
+  "scripts/89_vit_probe.py",
+  "scripts/90_resnet50_probe.py",
+  "scripts/91_clip_vit_probe.py",
+  "scripts/92_parity.py",
+  "scripts/93_o2_abl.py",
+  "scripts/93b_o2_seeds.py",
+  "scripts/94_dinov2_probe.py",
+  "scripts/96_yolo_aux_boxdemo.py",
+  "scripts/97_coco_procrustes.py",
+  "scripts/98_fig_value_boost.py",
+  "scripts/99_vitb16_supervised_probe.py",
+  "scripts/_split.py",
+  "scripts/c10_ocode_demo.py",
+  "scripts/c10_routeB_probe.py",
+  "scripts/common.py",
+  "scripts/demo_gif_code_control.py",
+  "scripts/fig_extra.py",
+  "scripts/fig_synth_structure.py",
+  "scripts/figpreview.py",
+  "scripts/figstyle.py"
+ ],
+ "by_label": {
+  "3.2 Compression\u2013transformation compatibility": {
+   "results": [
+    "results/star_existence_test.json"
+   ],
+   "scripts": [
+    "scripts/229_star_existence_test.py"
+   ],
+   "other": [],
+   "lines": [
+    7
+   ]
+  },
+  "Table 3": {
+   "results": [
+    "results/deep_linear_transport.json",
+    "results/transport_theory.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    8
+   ]
+  },
+  "3.5 The piecewise-linear layer: what a real encoder does": {
+   "results": [
+    "results/depth_map_summary.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    9
+   ]
+  },
+  "Table 5": {
+   "results": [
+    "results/dense_continuous_v3.json",
+    "results/harmonic_controls.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    10
+   ]
+  },
+  "4.6 When the measured carrier supports a linear action: a design condition": {
+   "results": [
+    "results/carrier_optimality_identity.json",
+    "results/real_site_closure.json"
+   ],
+   "scripts": [
+    "scripts/259_carrier_optimality_identity.py",
+    "scripts/261_real_site_closure.py"
+   ],
+   "other": [],
+   "lines": [
+    11,
+    12
+   ]
+  },
+  "Table 6": {
+   "results": [
+    "results/heat_semigroup_pilot.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    13
+   ]
+  },
+  "Table 7": {
+   "results": [
+    "results/family_capacity.json",
+    "results/hue_prediction_demo.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    14
+   ]
+  },
+  "Table 8": {
+   "results": [
+    "results/locality_resnet18_l2.json",
+    "results/locality_resnet18_l3.json",
+    "results/locality_yolo11n_y3.json",
+    "results/locality_yolo11n_y5.json",
+    "results/locality_yolo11n_y7.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    15
+   ]
+  },
+  "Table 9": {
+   "results": [
+    "results/multipath_composition.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    16
+   ]
+  },
+  "Table 10": {
+   "results": [
+    "results/depth_map_convnext_heat.json",
+    "results/depth_map_convnext_hue.json",
+    "results/depth_map_dinov2b14_heat.json",
+    "results/depth_map_dinov2b14_hue.json",
+    "results/depth_map_resnet50_heat.json",
+    "results/depth_map_resnet50_hue.json",
+    "results/depth_map_summary.json",
+    "results/depth_map_vitb16_heat.json",
+    "results/depth_map_vitb16_hue.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    17
+   ]
+  },
+  "Table 11": {
+   "results": [
+    "results/quotientization.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    19
+   ]
+  },
+  "Table 12": {
+   "results": [
+    "results/linear_dynamics_counterexample.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    20
+   ]
+  },
+  "Table 13": {
+   "results": [
+    "results/two_term_heldout_resnet50.json"
+   ],
+   "scripts": [
+    "scripts/263_two_term_heldout.py"
+   ],
+   "other": [],
+   "lines": [
+    21
+   ]
+  },
+  "7.2 The interface: learned encoding, fixed action": {
+   "results": [
+    "results/interface_action_comparison.json"
+   ],
+   "scripts": [
+    "scripts/265_interface_action_comparison.py"
+   ],
+   "other": [],
+   "lines": [
+    22
+   ]
+  },
+  "Table 14": {
+   "results": [
+    "results/hue_probe_app.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    23
+   ]
+  },
+  "Table 15": {
+   "results": [
+    "results/code3d_sv_lowext.json",
+    "results/detector_o8_multiseed.json",
+    "results/heat_tables.json",
+    "results/hue_probe_app.json",
+    "results/multipath_composition.json",
+    "results/region_rho_demo.json",
+    "results/usage_rule_scale_strat.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    24
+   ]
+  },
+  "Table 16": {
+   "results": [
+    "results/boundary_covariates.json",
+    "results/boundary_independent.json",
+    "results/boundary_largescale.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    25
+   ]
+  },
+  "8. Discussion": {
+   "results": [
+    "results/heat_semigroup_structure.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    26
+   ]
+  },
+  "Table A.3": {
+   "results": [
+    "results/boundary_largescale.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    27
+   ]
+  },
+  "Table B.1": {
+   "results": [
+    "results/deep_linear_transport.json",
+    "results/depth_map_summary.json",
+    "results/transport_theory.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    28,
+    29
+   ]
+  },
+  "Table C1": {
+   "results": [
+    "results/heat_semigroup_pilot.json"
+   ],
+   "scripts": [
+    "scripts/01_gen_synthetic.py",
+    "scripts/115_sv_lowext.py",
+    "scripts/188_depth_map_harness.py",
+    "scripts/30_gen_dense.py"
+   ],
+   "other": [],
+   "lines": [
+    31,
+    32
+   ]
+  },
+  "Table C2": {
+   "results": [
+    "results/depth_map_summary.json",
+    "results/locality_resnet18_l2.json",
+    "results/locality_resnet18_l3.json"
+   ],
+   "scripts": [
+    "scripts/188_depth_map_harness.py",
+    "scripts/31_dense_features.py"
+   ],
+   "other": [],
+   "lines": [
+    33
+   ]
+  },
+  "Table C3": {
+   "results": [
+    "results/depth_map_convnext_heat.json",
+    "results/depth_map_convnext_hue.json",
+    "results/depth_map_dinov2b14_heat.json",
+    "results/depth_map_dinov2b14_hue.json",
+    "results/depth_map_resnet50_heat.json",
+    "results/depth_map_resnet50_hue.json",
+    "results/depth_map_summary.json",
+    "results/depth_map_vitb16_heat.json",
+    "results/depth_map_vitb16_hue.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    34
+   ]
+  },
+  "Table C4": {
+   "results": [
+    "results/ceiling_regularisation.json",
+    "results/composition_heat.json",
+    "results/depth_map_convnext_heat.json",
+    "results/depth_map_convnext_hue.json",
+    "results/depth_map_dinov2b14_heat.json",
+    "results/depth_map_dinov2b14_hue.json",
+    "results/depth_map_resnet50_heat.json",
+    "results/depth_map_resnet50_hue.json",
+    "results/depth_map_summary.json",
+    "results/depth_map_vitb16_heat.json",
+    "results/depth_map_vitb16_hue.json",
+    "results/estimator_control.json",
+    "results/heat_semigroup_pilot.json",
+    "results/multipath_composition.json"
+   ],
+   "scripts": [
+    "scripts/136_causal_cifar.py",
+    "scripts/146_unseen_delta_cifar.py",
+    "scripts/188_depth_map_harness.py",
+    "scripts/194_composition_heat.py",
+    "scripts/198_ceiling_regularisation.py",
+    "scripts/218_estimator_control.py",
+    "scripts/231_multipath_composition.py"
+   ],
+   "other": [],
+   "lines": [
+    35,
+    36,
+    37
+   ]
+  },
+  "Table C5": {
+   "results": [
+    "results/depth_map_summary.json"
+   ],
+   "scripts": [
+    "scripts/188_depth_map_harness.py"
+   ],
+   "other": [],
+   "lines": [
+    38
+   ]
+  },
+  "Table C6": {
+   "results": [
+    "results/boundary_covariates.json",
+    "results/boundary_independent.json",
+    "results/boundary_largescale.json",
+    "results/fig_correspondence.json",
+    "results/region_rho_demo.json",
+    "results/usage_rule_scale_strat.json"
+   ],
+   "scripts": [
+    "scripts/109_region_rho_demo.py",
+    "scripts/112_usage_rule_strat.py",
+    "scripts/138_boundary_independent.py",
+    "scripts/154_boundary_covariates.py",
+    "scripts/169_boundary_largescale.py",
+    "scripts/234_fig_correspondence.py"
+   ],
+   "other": [],
+   "lines": [
+    39
+   ]
+  },
+  "Table C7": {
+   "results": [
+    "results/crossing_consumer_resnet50.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    40
+   ]
+  },
+  "Table D.1": {
+   "results": [
+    "results/clip_vit_probe.json",
+    "results/dinov2_vitb14_probe.json",
+    "results/dinov2_vits14_probe.json",
+    "results/harmonic_controls.json",
+    "results/resnet50_probe.json",
+    "results/vitb16_supervised_probe.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    41
+   ]
+  },
+  "Table D.2": {
+   "results": [
+    "results/dense_continuous_v3.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    42
+   ]
+  },
+  "Table D.3": {
+   "results": [
+    "results/harmonic_controls.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    43
+   ]
+  },
+  "Table D.4": {
+   "results": [
+    "results/depth_map_convnext_hue.json",
+    "results/depth_map_dinov2b14_hue.json",
+    "results/depth_map_resnet50_hue.json",
+    "results/depth_map_summary.json",
+    "results/depth_map_vitb16_hue.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    44,
+    45
+   ]
+  },
+  "Table D.5": {
+   "results": [
+    "results/depth_map_convnext_heat.json",
+    "results/depth_map_dinov2b14_heat.json",
+    "results/depth_map_resnet50_heat.json",
+    "results/depth_map_summary.json",
+    "results/depth_map_vitb16_heat.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    46,
+    47
+   ]
+  },
+  "Table D.6": {
+   "results": [
+    "results/depth_map_summary.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    48,
+    49
+   ]
+  },
+  "Table D.7": {
+   "results": [
+    "results/quotientization.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    50
+   ]
+  },
+  "Table D.8": {
+   "results": [
+    "results/quotientization.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    51,
+    52
+   ]
+  },
+  "Table D.9": {
+   "results": [
+    "results/fig_composition.json",
+    "results/multipath_composition.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    53
+   ]
+  },
+  "Table D.10": {
+   "results": [
+    "results/fig_composition.json",
+    "results/multipath_composition.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    54
+   ]
+  },
+  "Table D.11": {
+   "results": [
+    "results/composition_heat.json",
+    "results/heat_tables.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    55,
+    56
+   ]
+  },
+  "Table D.12": {
+   "results": [
+    "results/fig_composition.json",
+    "results/multipath_composition.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    57,
+    58
+   ]
+  },
+  "Table D.13": {
+   "results": [
+    "results/multiattr_summary.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    59,
+    60
+   ]
+  },
+  "Table D.14": {
+   "results": [
+    "results/multiattr_summary.json"
+   ],
+   "scripts": [
+    "scripts/159_realmultiattr_intervention.py",
+    "scripts/161_multiattr_summary.py",
+    "scripts/252_update_real_multiattr_table.py"
+   ],
+   "other": [],
+   "lines": [
+    61
+   ]
+  },
+  "Table D.15": {
+   "results": [
+    "results/second_attribute_chain.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    62
+   ]
+  },
+  "Table D.16": {
+   "results": [
+    "results/second_attribute_chain.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    63,
+    64
+   ]
+  },
+  "Table D.17": {
+   "results": [
+    "results/rotation_pilot.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    65
+   ]
+  },
+  "Table D.18": {
+   "results": [
+    "results/boundary_independent.json",
+    "results/boundary_largescale.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    66
+   ]
+  },
+  "Table D.19": {
+   "results": [
+    "results/boundary_covariates.json",
+    "results/crossing_consumer_resnet50.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    67,
+    68,
+    69
+   ]
+  },
+  "Table D.20": {
+   "results": [
+    "results/two_term_decomposition_resnet50.json"
+   ],
+   "scripts": [
+    "scripts/260_two_term_decomposition.py"
+   ],
+   "other": [],
+   "lines": [
+    70
+   ]
+  },
+  "Table D.21": {
+   "results": [
+    "results/real_site_closure.json"
+   ],
+   "scripts": [
+    "scripts/261_real_site_closure.py"
+   ],
+   "other": [],
+   "lines": [
+    71
+   ]
+  },
+  "Table D.22": {
+   "results": [
+    "results/lipschitz_resnet50.json"
+   ],
+   "scripts": [
+    "scripts/258_measure_lipschitz.py"
+   ],
+   "other": [],
+   "lines": [
+    72
+   ]
+  },
+  "Table D.23": {
+   "results": [
+    "results/star_existence_test.json"
+   ],
+   "scripts": [
+    "scripts/229_star_existence_test.py"
+   ],
+   "other": [],
+   "lines": [
+    73
+   ]
+  },
+  "Appendix E: Method boxes": {
+   "results": [
+    "results/code3d_sv_lowext.json",
+    "results/code3d_v3.json",
+    "results/detector_o8_multiseed.json",
+    "results/locality_resnet18_l2.json",
+    "results/locality_resnet18_l3.json",
+    "results/locality_yolo11n_y3.json",
+    "results/locality_yolo11n_y5.json",
+    "results/locality_yolo11n_y7.json",
+    "results/yolo_hue_val.json"
+   ],
+   "scripts": [
+    "scripts/07_locality_global_vs_local.py",
+    "scripts/115_sv_lowext.py",
+    "scripts/140_gen_yolo_hue.py",
+    "scripts/141_train_yolo_hue.py",
+    "scripts/156_detector_o8_multiseed.py",
+    "scripts/157_multiattribute_intervention.py",
+    "scripts/159_realmultiattr_intervention.py",
+    "scripts/15_closure_check.py",
+    "scripts/173_record_yolo_val.py",
+    "scripts/188_depth_map_harness.py",
+    "scripts/20c_fourier_fit.py",
+    "scripts/79_code3d_v3.py",
+    "scripts/95_code3d_sv_map.py"
+   ],
+   "other": [],
+   "lines": [
+    74,
+    75,
+    76
+   ]
+  },
+  "Table E1": {
+   "results": [
+    "results/perf_reforward_vs_rho.json",
+    "results/region_rho_demo.json"
+   ],
+   "scripts": [
+    "scripts/100_perf_reforward_vs_rho.py",
+    "scripts/109_region_rho_demo.py"
+   ],
+   "other": [],
+   "lines": [
+    77,
+    78
+   ]
+  },
+  "Table F.1": {
+   "results": [
+    "results/causal_cifar_ce8_s0.json",
+    "results/causal_cifar_ce8_s0_stage2.json",
+    "results/causal_cifar_ce8_s1.json",
+    "results/causal_cifar_ce8_s1_stage2.json",
+    "results/causal_cifar_ce8_s2.json",
+    "results/causal_cifar_ce8_s2_stage2.json",
+    "results/causal_cifar_lcer8_s0.json",
+    "results/causal_cifar_lcer8_s1.json",
+    "results/causal_cifar_lcer8_s2.json",
+    "results/causal_cifar_ocode_s0.json",
+    "results/causal_cifar_ocode_s1.json",
+    "results/causal_cifar_ocode_s2.json",
+    "results/causal_cifar_summary.json",
+    "results/causal_cifar_z2_s0.json",
+    "results/causal_cifar_z2_s0_stage2.json",
+    "results/causal_cifar_z2_s1.json",
+    "results/causal_cifar_z2_s1_stage2.json",
+    "results/causal_cifar_z2_s2.json",
+    "results/causal_cifar_z2_s2_stage2.json",
+    "results/causal_cifar_z2hue_s0.json",
+    "results/causal_cifar_z2hue_s1.json",
+    "results/causal_cifar_z2hue_s2.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    79,
+    80
+   ]
+  },
+  "Table F.2": {
+   "results": [
+    "results/c10_routeB/",
+    "results/c10_routeB/summary.json"
+   ],
+   "scripts": [
+    "scripts/c10_routeB_full.py",
+    "scripts/c10_routeB_summary.py",
+    "scripts/c10_routeB_train.py"
+   ],
+   "other": [],
+   "lines": [
+    81,
+    82
+   ]
+  },
+  "Table F.3": {
+   "results": [
+    "results/vit_causal_dinov2b14_b4_s0.json",
+    "results/vit_causal_dinov2b14_b4_s1.json",
+    "results/vit_causal_dinov2b14_b4_s2.json",
+    "results/vit_causal_vitb16_b4_s0.json",
+    "results/vit_causal_vitb16_b4_s1.json",
+    "results/vit_causal_vitb16_b4_s2.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    83
+   ]
+  },
+  "Table F.4": {
+   "results": [
+    "results/causal_intervention_hue.json",
+    "results/detector_o8_multiseed.json",
+    "results/fig_composition.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    84,
+    85
+   ]
+  },
+  "Table F.5": {
+   "results": [
+    "results/real_task_consumer.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    86,
+    87
+   ]
+  },
+  "Table F.6": {
+   "results": [
+    "results/boundary_covariates.json",
+    "results/boundary_largescale.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    88,
+    89
+   ]
+  },
+  "Table F.7": {
+   "results": [
+    "results/code3d_sv_lowext.json",
+    "results/code3d_v3.json",
+    "results/hue_probe_app.json",
+    "results/usage_rule_scale_strat.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    90
+   ]
+  },
+  "Table F.8": {
+   "results": [
+    "results/detector_o8_multiseed.json",
+    "results/multipath_composition.json",
+    "results/region_rho_demo.json",
+    "results/usage_rule_scale_strat.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    91
+   ]
+  },
+  "Table F.9": {
+   "results": [
+    "results/perf_reforward_vs_rho.json",
+    "results/region_rho_demo.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    92
+   ]
+  },
+  "Table F.10": {
+   "results": [
+    "results/interface_action_comparison.json"
+   ],
+   "scripts": [
+    "scripts/265_interface_action_comparison.py"
+   ],
+   "other": [],
+   "lines": [
+    93
+   ]
+  }
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "n_images": 200,
+ "n_boxes": 396,
+ "cached_forward_time_per_image_s": 0.0014,
+ "query_code_path_per_window_all_boxes_s": 2.618598334568863e-05,
+ "query_pixel_path_per_box_cold_s": 0.0010420707199955358,
+ "query_network_reforward_per_box_s": 0.03813338054489577,
+ "gating_agreement_code_vs_pixel": 0.9453,
+ "protocol": "200 val_big images; boxes from GT labels; code hue read from the single cached stride-8 forward per image; pixel hue from the same box region when pixels are available; gating over 12 hue windows of width 40 deg.",
+ "note": "In a feature-cached deployment the consumer keeps stride-8 features (and boxes) but not pixels: the code path answers color queries from cache, while the pixel path is unavailable without re-reading and re-decoding images. If the network's own color view is required, the pixel route additionally needs a full re-forward (38.1 ms/object) versus a 26 ns class rotation on cached codes."
+}

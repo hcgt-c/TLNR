@@ -1,0 +1,43 @@
+{
+ "paper": "paper/paper_v17.md",
+ "words_total": 36897,
+ "words_main_text": 18209,
+ "words_appendices": 16317,
+ "prose_numbers_main_text": 410,
+ "prose_numbers_appendices": 2731,
+ "prose_number_density_per_section": {
+  "1": 2.7,
+  "2": 3.1,
+  "3": 2.7,
+  "4": 2.3,
+  "5": 3.8,
+  "6": 2.8,
+  "7": 3.1,
+  "8": 3.7,
+  "9": 0.2,
+  "front": 1.2
+ },
+ "counts": {
+  "sections": 58,
+  "tables": 63,
+  "figures": 12,
+  "appendices": 7,
+  "boxes": 4,
+  "ledger_rows": 0,
+  "cited_paths_checked": 0,
+  "provenance_paths_checked": 135,
+  "external_supplement_tables": []
+ },
+ "depth_grid_reconciliation": {
+  "rows_checked": 48,
+  "mismatches": []
+ },
+ "citations": {
+  "references": 31,
+  "markers": 48,
+  "references_cited": 31
+ },
+ "errors": [],
+ "warnings": [],
+ "ok": true
+}

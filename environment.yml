@@ -1,0 +1,9 @@
+# conda env create -f environment.yml && conda activate transformation-laws
+name: transformation-laws
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - -r requirements.txt

@@ -1,0 +1,858 @@
+{
+ "resnet50_heat2.0": {
+  "backbone": "resnet50",
+  "family": "heat",
+  "param": 2.0,
+  "depths": [
+   1,
+   3
+  ],
+  "n_fit": 200,
+  "n_held": 100,
+  "n_bins": 12,
+  "sat_thresh": 0.15,
+  "protocol": "frozen backbone, one site, one transformation; the operator is fitted in feature space on the fit split; every consumer is read from the same intervened site tensor and evaluated on the same held-out images",
+  "sites": {
+   "layer1": {
+    "feature_shape": [
+     300,
+     256,
+     56,
+     56
+    ],
+    "consumer_power": {
+     "head": 0.5809224843978882,
+     "hue": 1.3864227533340454,
+     "dense": 0.16928772628307343,
+     "retrieval": 0.010880556888878345
+    },
+    "operators": {
+     "O1": {
+      "head": {
+       "transfer": 0.15752321481704712,
+       "transfer_squared": 0.14865605378352775,
+       "win_rate": 0.7400000095367432,
+       "mean_d_int": 11.86924934387207,
+       "mean_d_noop": 14.088518142700195
+      },
+      "hue": {
+       "transfer": 0.13648563623428345,
+       "transfer_squared": -0.015780149985489933,
+       "win_rate": 0.7300000190734863,
+       "mean_d_int": 4.339001178741455,
+       "mean_d_noop": 5.024816513061523
+      },
+      "dense": {
+       "transfer": -0.0032309293746948242,
+       "transfer_squared": 0.0025649912942535824,
+       "win_rate": 0.4399999976158142,
+       "mean_d_int": 4.943436145782471,
+       "mean_d_noop": 4.927515506744385
+      },
+      "retrieval": {
+       "transfer": 0.4205836057662964,
+       "transfer_squared": 0.43577878548782256,
+       "win_rate": 0.8799999952316284,
+       "mean_d_int": 0.048303376883268356,
+       "mean_d_noop": 0.08336556702852249
+      }
+     },
+     "O2": {
+      "head": {
+       "transfer": 0.5278295874595642,
+       "transfer_squared": 0.5201908540561013,
+       "win_rate": 1.0,
+       "mean_d_int": 6.652181625366211,
+       "mean_d_noop": 14.088518142700195
+      },
+      "hue": {
+       "transfer": 0.406646728515625,
+       "transfer_squared": 0.35381654361474757,
+       "win_rate": 0.8700000047683716,
+       "mean_d_int": 2.9814913272857666,
+       "mean_d_noop": 5.024816513061523
+      },
+      "dense": {
+       "transfer": 0.2829468846321106,
+       "transfer_squared": 0.3050114894574708,
+       "win_rate": 0.949999988079071,
+       "mean_d_int": 3.533290386199951,
+       "mean_d_noop": 4.927515506744385
+      },
+      "retrieval": {
+       "transfer": 0.9153674766421318,
+       "transfer_squared": 0.9121041469207101,
+       "win_rate": 1.0,
+       "mean_d_int": 0.007055438589304686,
+       "mean_d_noop": 0.08336556702852249
+      }
+     },
+     "O6": {
+      "head": {
+       "transfer": -1.3951280117034912,
+       "transfer_squared": -1.280810299014711,
+       "win_rate": 0.0,
+       "mean_d_int": 33.743804931640625,
+       "mean_d_noop": 14.088518142700195
+      },
+      "hue": {
+       "transfer": -27.288684844970703,
+       "transfer_squared": -24.400767308344015,
+       "win_rate": 0.0,
+       "mean_d_int": 142.14544677734375,
+       "mean_d_noop": 5.024816513061523
+      },
+      "dense": {
+       "transfer": -8.42202377319336,
+       "transfer_squared": -7.26828354425429,
+       "win_rate": 0.0,
+       "mean_d_int": 46.42716979980469,
+       "mean_d_noop": 4.927515506744385
+      },
+      "retrieval": {
+       "transfer": -88.73857116699219,
+       "transfer_squared": -75.70229281436566,
+       "win_rate": 0.0,
+       "mean_d_int": 7.481106758117676,
+       "mean_d_noop": 0.08336556702852249
+      }
+     },
+     "O8": {
+      "head": {
+       "transfer": 0.607680469751358,
+       "transfer_squared": 0.6031554097044499,
+       "win_rate": 1.0,
+       "mean_d_int": 5.527200698852539,
+       "mean_d_noop": 14.088518142700195
+      },
+      "hue": {
+       "transfer": 0.3639865517616272,
+       "transfer_squared": 0.3054683508663042,
+       "win_rate": 0.8500000238418579,
+       "mean_d_int": 3.1958508491516113,
+       "mean_d_noop": 5.024816513061523
+      },
+      "dense": {
+       "transfer": 0.2955845594406128,
+       "transfer_squared": 0.31530044092528153,
+       "win_rate": 0.9599999785423279,
+       "mean_d_int": 3.471018075942993,
+       "mean_d_noop": 4.927515506744385
+      },
+      "retrieval": {
+       "transfer": 0.9319548532366753,
+       "transfer_squared": 0.9294002959869034,
+       "win_rate": 1.0,
+       "mean_d_int": 0.005672622472047806,
+       "mean_d_noop": 0.08336556702852249
+      }
+     }
+    },
+    "criterion_consistency": {
+     "dense": {
+      "anisotropy": {
+       "effective_rank": 3.6830496017519168,
+       "cond": 1330.571604526569,
+       "out_dim": 13,
+       "in_dim": 256
+      },
+      "fit_space": "per-cell rows of the site activation",
+      "feature_space_ridge": {
+       "transfer": 0.2829468846321106,
+       "transfer_squared": 0.3050114894574708,
+       "win_rate": 0.949999988079071,
+       "mean_d_int": 3.533290386199951,
+       "mean_d_noop": 4.927515506744385
+      },
+      "criterion_consistent": {
+       "transfer": 0.15217101573944092,
+       "transfer_squared": 0.2111436338990218,
+       "win_rate": 0.6299999952316284,
+       "mean_d_int": 4.177690505981445,
+       "mean_d_noop": 4.927515506744385
+      },
+      "identity_check_vs_O2_operator": 0.0,
+      "feature_space_ridge_lambda_sweep": {
+       "0.0001": 0.28248876333236694,
+       "0.001": 0.2756273150444031,
+       "0.01": 0.15222221612930298,
+       "0.1": -0.37693047523498535,
+       "1.0": -1.3893675804138184,
+       "10.0": -2.4917333126068115,
+       "100.0": -3.1378660202026367
+      },
+      "best_swept_ridge": 0.28248876333236694
+     },
+     "hue": {
+      "anisotropy": {
+       "effective_rank": 1.5449128822647813,
+       "cond": 2052767.6324497692,
+       "out_dim": 13,
+       "in_dim": 256
+      },
+      "fit_space": "pooled site activation (the space this consumer reads)",
+      "feature_space_ridge": {
+       "transfer": -8.609073638916016,
+       "transfer_squared": -10.445182626457026,
+       "win_rate": 0.019999999552965164,
+       "mean_d_int": 48.28383255004883,
+       "mean_d_noop": 5.024816513061523
+      },
+      "criterion_consistent": {
+       "transfer": 0.2823333740234375,
+       "transfer_squared": 0.24249288343986442,
+       "win_rate": 0.7699999809265137,
+       "mean_d_int": 3.606142997741699,
+       "mean_d_noop": 5.024816513061523
+      },
+      "cell_space_O2_for_reference": 0.406646728515625,
+      "feature_space_ridge_lambda_sweep": {
+       "0.0001": 0.28282177448272705,
+       "0.001": 0.3089327812194824,
+       "0.01": 0.28233271837234497,
+       "0.1": 0.2542365789413452,
+       "1.0": 0.2162313461303711,
+       "10.0": 0.1438744068145752,
+       "100.0": 0.07713454961776733
+      },
+      "best_swept_ridge": 0.3089327812194824
+     }
+    }
+   },
+   "layer3": {
+    "feature_shape": [
+     300,
+     1024,
+     14,
+     14
+    ],
+    "consumer_power": {
+     "head": 0.5809224843978882,
+     "hue": 0.8805771470069885,
+     "dense": 0.3781832456588745,
+     "retrieval": 0.02321535535156727
+    },
+    "operators": {
+     "O1": {
+      "head": {
+       "transfer": 0.2604427933692932,
+       "transfer_squared": 0.2529526323601269,
+       "win_rate": 0.9700000286102295,
+       "mean_d_int": 10.419264793395996,
+       "mean_d_noop": 14.088518142700195
+      },
+      "hue": {
+       "transfer": 0.2270374298095703,
+       "transfer_squared": 0.19258352706864235,
+       "win_rate": 0.7200000286102295,
+       "mean_d_int": 1.3196536302566528,
+       "mean_d_noop": 1.707267165184021
+      },
+      "dense": {
+       "transfer": -0.0021897554397583008,
+       "transfer_squared": 0.0011491912878861532,
+       "win_rate": 0.49000000953674316,
+       "mean_d_int": 2.9268500804901123,
+       "mean_d_noop": 2.920454978942871
+      },
+      "retrieval": {
+       "transfer": -0.02673518657684326,
+       "transfer_squared": -0.08806369394348268,
+       "win_rate": 0.5,
+       "mean_d_int": 0.15866585075855255,
+       "mean_d_noop": 0.15453433990478516
+      }
+     },
+     "O2": {
+      "head": {
+       "transfer": 0.37472862005233765,
+       "transfer_squared": 0.37803653295373607,
+       "win_rate": 0.9700000286102295,
+       "mean_d_int": 8.809146881103516,
+       "mean_d_noop": 14.088518142700195
+      },
+      "hue": {
+       "transfer": 0.3659566640853882,
+       "transfer_squared": 0.36132282177433983,
+       "win_rate": 0.7699999809265137,
+       "mean_d_int": 1.0824813842773438,
+       "mean_d_noop": 1.707267165184021
+      },
+      "dense": {
+       "transfer": 0.1380959153175354,
+       "transfer_squared": 0.15131301266060304,
+       "win_rate": 0.9399999976158142,
+       "mean_d_int": 2.5171520709991455,
+       "mean_d_noop": 2.920454978942871
+      },
+      "retrieval": {
+       "transfer": 0.52191361784935,
+       "transfer_squared": 0.4776257253802201,
+       "win_rate": 0.8299999833106995,
+       "mean_d_int": 0.07388076186180115,
+       "mean_d_noop": 0.15453433990478516
+      }
+     },
+     "O6": {
+      "head": {
+       "transfer": -2.0265891551971436,
+       "transfer_squared": -1.8674380910250803,
+       "win_rate": 0.0,
+       "mean_d_int": 42.64015579223633,
+       "mean_d_noop": 14.088518142700195
+      },
+      "hue": {
+       "transfer": -4.557627201080322,
+       "transfer_squared": -4.217234900485083,
+       "win_rate": 0.019999999552965164,
+       "mean_d_int": 9.488354682922363,
+       "mean_d_noop": 1.707267165184021
+      },
+      "dense": {
+       "transfer": -2.8436779975891113,
+       "transfer_squared": -2.6760924092542595,
+       "win_rate": 0.0,
+       "mean_d_int": 11.225288391113281,
+       "mean_d_noop": 2.920454978942871
+      },
+      "retrieval": {
+       "transfer": -42.520790100097656,
+       "transfer_squared": -39.3865241633433,
+       "win_rate": 0.0,
+       "mean_d_int": 6.725456714630127,
+       "mean_d_noop": 0.15453433990478516
+      }
+     },
+     "O8": {
+      "head": {
+       "transfer": 0.37425321340560913,
+       "transfer_squared": 0.37768699461598787,
+       "win_rate": 0.9700000286102295,
+       "mean_d_int": 8.815844535827637,
+       "mean_d_noop": 14.088518142700195
+      },
+      "hue": {
+       "transfer": 0.36420416831970215,
+       "transfer_squared": 0.3599623925260117,
+       "win_rate": 0.7799999713897705,
+       "mean_d_int": 1.0854732990264893,
+       "mean_d_noop": 1.707267165184021
+      },
+      "dense": {
+       "transfer": 0.13814735412597656,
+       "transfer_squared": 0.15135193060579222,
+       "win_rate": 0.9399999976158142,
+       "mean_d_int": 2.5170018672943115,
+       "mean_d_noop": 2.920454978942871
+      },
+      "retrieval": {
+       "transfer": 0.5204991400241852,
+       "transfer_squared": 0.47602979317481264,
+       "win_rate": 0.8299999833106995,
+       "mean_d_int": 0.0740993469953537,
+       "mean_d_noop": 0.15453433990478516
+      }
+     }
+    },
+    "criterion_consistency": {
+     "dense": {
+      "anisotropy": {
+       "effective_rank": 5.520549154681782,
+       "cond": 154.57676621230596,
+       "out_dim": 13,
+       "in_dim": 1024
+      },
+      "fit_space": "per-cell rows of the site activation",
+      "feature_space_ridge": {
+       "transfer": 0.13809585571289062,
+       "transfer_squared": 0.15131301266060304,
+       "win_rate": 0.9399999976158142,
+       "mean_d_int": 2.5171523094177246,
+       "mean_d_noop": 2.920454978942871
+      },
+      "criterion_consistent": {
+       "transfer": 0.13870060443878174,
+       "transfer_squared": 0.15347235859502284,
+       "win_rate": 0.9200000166893005,
+       "mean_d_int": 2.5153861045837402,
+       "mean_d_noop": 2.920454978942871
+      },
+      "identity_check_vs_O2_operator": 5.960464477539063e-08,
+      "feature_space_ridge_lambda_sweep": {
+       "0.0001": 0.13812267780303955,
+       "0.001": 0.13832694292068481,
+       "0.01": 0.1387028694152832,
+       "0.1": 0.09992402791976929,
+       "1.0": -0.22452104091644287,
+       "10.0": -0.7015540599822998,
+       "100.0": -0.9391852617263794
+      },
+      "best_swept_ridge": 0.1387028694152832
+     },
+     "hue": {
+      "anisotropy": {
+       "effective_rank": 1.534570830106253,
+       "cond": 1945.0003926958398,
+       "out_dim": 13,
+       "in_dim": 1024
+      },
+      "fit_space": "pooled site activation (the space this consumer reads)",
+      "feature_space_ridge": {
+       "transfer": -41.466522216796875,
+       "transfer_squared": -46.36276390581891,
+       "win_rate": 0.0,
+       "mean_d_int": 72.50170135498047,
+       "mean_d_noop": 1.707267165184021
+      },
+      "criterion_consistent": {
+       "transfer": -0.21614015102386475,
+       "transfer_squared": -0.20109647683246235,
+       "win_rate": 0.4300000071525574,
+       "mean_d_int": 2.0762760639190674,
+       "mean_d_noop": 1.707267165184021
+      },
+      "cell_space_O2_for_reference": 0.3659566640853882,
+      "feature_space_ridge_lambda_sweep": {
+       "0.0001": -0.22757947444915771,
+       "0.001": -0.22632431983947754,
+       "0.01": -0.21614015102386475,
+       "0.1": -0.184914231300354,
+       "1.0": -0.20156562328338623,
+       "10.0": -0.26108527183532715,
+       "100.0": -0.3015044927597046
+      },
+      "best_swept_ridge": -0.184914231300354
+     }
+    }
+   }
+  }
+ },
+ "resnet50_hue90.0": {
+  "backbone": "resnet50",
+  "family": "hue",
+  "param": 90.0,
+  "depths": [
+   1,
+   3
+  ],
+  "n_fit": 200,
+  "n_held": 100,
+  "n_bins": 12,
+  "sat_thresh": 0.15,
+  "protocol": "frozen backbone, one site, one transformation; the operator is fitted in feature space on the fit split; every consumer is read from the same intervened site tensor and evaluated on the same held-out images",
+  "sites": {
+   "layer1": {
+    "feature_shape": [
+     300,
+     256,
+     56,
+     56
+    ],
+    "consumer_power": {
+     "head": 0.7388520836830139,
+     "hue": 1.4744397401809692,
+     "dense": 0.8222389817237854,
+     "retrieval": 0.021956173703074455
+    },
+    "operators": {
+     "O1": {
+      "head": {
+       "transfer": 0.36465007066726685,
+       "transfer_squared": 0.3582924737555384,
+       "win_rate": 0.949999988079071,
+       "mean_d_int": 11.522599220275879,
+       "mean_d_noop": 18.135831832885742
+      },
+      "hue": {
+       "transfer": -1.002913236618042,
+       "transfer_squared": -0.9965956749090352,
+       "win_rate": 0.25,
+       "mean_d_int": 11.546185493469238,
+       "mean_d_noop": 5.764695644378662
+      },
+      "dense": {
+       "transfer": 0.31948208808898926,
+       "transfer_squared": 0.33540475059122477,
+       "win_rate": 0.9100000262260437,
+       "mean_d_int": 16.436203002929688,
+       "mean_d_noop": 24.152490615844727
+      },
+      "retrieval": {
+       "transfer": 0.46423453092575073,
+       "transfer_squared": 0.39818509344015274,
+       "win_rate": 0.7599999904632568,
+       "mean_d_int": 0.09003128111362457,
+       "mean_d_noop": 0.16804233193397522
+      }
+     },
+     "O2": {
+      "head": {
+       "transfer": 0.6025256514549255,
+       "transfer_squared": 0.5980337595573109,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 7.2085280418396,
+       "mean_d_noop": 18.135831832885742
+      },
+      "hue": {
+       "transfer": 0.1455513834953308,
+       "transfer_squared": 0.19812652422247523,
+       "win_rate": 0.6100000143051147,
+       "mean_d_int": 4.925636291503906,
+       "mean_d_noop": 5.764695644378662
+      },
+      "dense": {
+       "transfer": 0.6762780249118805,
+       "transfer_squared": 0.6821457078911911,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 7.818692207336426,
+       "mean_d_noop": 24.152490615844727
+      },
+      "retrieval": {
+       "transfer": 0.9059611111879349,
+       "transfer_squared": 0.906424812874155,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 0.01580251380801201,
+       "mean_d_noop": 0.16804233193397522
+      }
+     },
+     "O6": {
+      "head": {
+       "transfer": -0.8428168296813965,
+       "transfer_squared": -0.7880420473001106,
+       "win_rate": 0.0,
+       "mean_d_int": 33.421016693115234,
+       "mean_d_noop": 18.135831832885742
+      },
+      "hue": {
+       "transfer": -24.00989532470703,
+       "transfer_squared": -17.397334167730126,
+       "win_rate": 0.0,
+       "mean_d_int": 144.1744384765625,
+       "mean_d_noop": 5.764695644378662
+      },
+      "dense": {
+       "transfer": -0.9382750988006592,
+       "transfer_squared": -0.8342667063250173,
+       "win_rate": 0.019999999552965164,
+       "mean_d_int": 46.814170837402344,
+       "mean_d_noop": 24.152490615844727
+      },
+      "retrieval": {
+       "transfer": -42.708736419677734,
+       "transfer_squared": -32.34806808014489,
+       "win_rate": 0.0,
+       "mean_d_int": 7.344918251037598,
+       "mean_d_noop": 0.16804233193397522
+      }
+     },
+     "O8": {
+      "head": {
+       "transfer": 0.642580658197403,
+       "transfer_squared": 0.6389466244236364,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 6.482097148895264,
+       "mean_d_noop": 18.135831832885742
+      },
+      "hue": {
+       "transfer": 0.1918584704399109,
+       "transfer_squared": 0.24938307658486136,
+       "win_rate": 0.6100000143051147,
+       "mean_d_int": 4.658689975738525,
+       "mean_d_noop": 5.764695644378662
+      },
+      "dense": {
+       "transfer": 0.6931865513324738,
+       "transfer_squared": 0.696582677459727,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 7.410308837890625,
+       "mean_d_noop": 24.152490615844727
+      },
+      "retrieval": {
+       "transfer": 0.919694110751152,
+       "transfer_squared": 0.9192587475932104,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 0.01349478866904974,
+       "mean_d_noop": 0.16804233193397522
+      }
+     }
+    },
+    "criterion_consistency": {
+     "dense": {
+      "anisotropy": {
+       "effective_rank": 3.6830496017519168,
+       "cond": 1330.571604526569,
+       "out_dim": 13,
+       "in_dim": 256
+      },
+      "fit_space": "per-cell rows of the site activation",
+      "feature_space_ridge": {
+       "transfer": 0.6762780249118805,
+       "transfer_squared": 0.6821457078911911,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 7.818692207336426,
+       "mean_d_noop": 24.152490615844727
+      },
+      "criterion_consistent": {
+       "transfer": 0.6705438792705536,
+       "transfer_squared": 0.6762126086162645,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 7.957185745239258,
+       "mean_d_noop": 24.152490615844727
+      },
+      "identity_check_vs_O2_operator": 0.0,
+      "feature_space_ridge_lambda_sweep": {
+       "0.0001": 0.6763113141059875,
+       "0.001": 0.6764252781867981,
+       "0.01": 0.6705500781536102,
+       "0.1": 0.6173291802406311,
+       "1.0": 0.4857434630393982,
+       "10.0": 0.32793545722961426,
+       "100.0": 0.2265809178352356
+      },
+      "best_swept_ridge": 0.6764252781867981
+     },
+     "hue": {
+      "anisotropy": {
+       "effective_rank": 1.5449128822647813,
+       "cond": 2052767.6324497692,
+       "out_dim": 13,
+       "in_dim": 256
+      },
+      "fit_space": "pooled site activation (the space this consumer reads)",
+      "feature_space_ridge": {
+       "transfer": -4.502395153045654,
+       "transfer_squared": -4.4472138547415145,
+       "win_rate": 0.03999999910593033,
+       "mean_d_int": 31.719627380371094,
+       "mean_d_noop": 5.764694690704346
+      },
+      "criterion_consistent": {
+       "transfer": 0.1491338610649109,
+       "transfer_squared": 0.24755326656563648,
+       "win_rate": 0.5799999833106995,
+       "mean_d_int": 4.9049835205078125,
+       "mean_d_noop": 5.764694690704346
+      },
+      "cell_space_O2_for_reference": 0.1455513834953308,
+      "feature_space_ridge_lambda_sweep": {
+       "0.0001": 0.13218939304351807,
+       "0.001": 0.14590692520141602,
+       "0.01": 0.14913350343704224,
+       "0.1": 0.07541102170944214,
+       "1.0": 0.01736372709274292,
+       "10.0": -0.030721426010131836,
+       "100.0": -0.052762389183044434
+      },
+      "best_swept_ridge": 0.14913350343704224
+     }
+    }
+   },
+   "layer3": {
+    "feature_shape": [
+     300,
+     1024,
+     14,
+     14
+    ],
+    "consumer_power": {
+     "head": 0.7388520836830139,
+     "hue": 1.0638554096221924,
+     "dense": 0.8240898251533508,
+     "retrieval": 0.020759236067533493
+    },
+    "operators": {
+     "O1": {
+      "head": {
+       "transfer": 0.3812516927719116,
+       "transfer_squared": 0.3805853048791842,
+       "win_rate": 0.9700000286102295,
+       "mean_d_int": 11.221515655517578,
+       "mean_d_noop": 18.135831832885742
+      },
+      "hue": {
+       "transfer": 0.19523680210113525,
+       "transfer_squared": 0.16849447193475242,
+       "win_rate": 0.7200000286102295,
+       "mean_d_int": 1.6695730686187744,
+       "mean_d_noop": 2.0746140480041504
+      },
+      "dense": {
+       "transfer": 0.3288431763648987,
+       "transfer_squared": 0.34514982459513965,
+       "win_rate": 0.9800000190734863,
+       "mean_d_int": 4.283707141876221,
+       "mean_d_noop": 6.382572650909424
+      },
+      "retrieval": {
+       "transfer": 0.430281400680542,
+       "transfer_squared": 0.39613646780038536,
+       "win_rate": 0.75,
+       "mean_d_int": 0.07870935648679733,
+       "mean_d_noop": 0.1381547898054123
+      }
+     },
+     "O2": {
+      "head": {
+       "transfer": 0.46984732151031494,
+       "transfer_squared": 0.4685001485097694,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 9.61475944519043,
+       "mean_d_noop": 18.135831832885742
+      },
+      "hue": {
+       "transfer": 0.3678091764450073,
+       "transfer_squared": 0.3599065390279692,
+       "win_rate": 0.800000011920929,
+       "mean_d_int": 1.3115519285202026,
+       "mean_d_noop": 2.0746140480041504
+      },
+      "dense": {
+       "transfer": 0.47928744554519653,
+       "transfer_squared": 0.49245980552897495,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 3.3234856128692627,
+       "mean_d_noop": 6.382572650909424
+      },
+      "retrieval": {
+       "transfer": 0.2665918469429016,
+       "transfer_squared": 0.3091848547548022,
+       "win_rate": 0.6700000166893005,
+       "mean_d_int": 0.10132385045289993,
+       "mean_d_noop": 0.1381547898054123
+      }
+     },
+     "O6": {
+      "head": {
+       "transfer": -1.3611273765563965,
+       "transfer_squared": -1.278601566627577,
+       "win_rate": 0.0,
+       "mean_d_int": 42.82101058959961,
+       "mean_d_noop": 18.135831832885742
+      },
+      "hue": {
+       "transfer": -3.5066046714782715,
+       "transfer_squared": -3.279044079621875,
+       "win_rate": 0.019999999552965164,
+       "mean_d_int": 9.349465370178223,
+       "mean_d_noop": 2.0746140480041504
+      },
+      "dense": {
+       "transfer": -0.6334960460662842,
+       "transfer_squared": -0.5905594600541408,
+       "win_rate": 0.009999999776482582,
+       "mean_d_int": 10.425907135009766,
+       "mean_d_noop": 6.382572650909424
+      },
+      "retrieval": {
+       "transfer": -47.09312057495117,
+       "transfer_squared": -40.82546017817113,
+       "win_rate": 0.0,
+       "mean_d_int": 6.6442952156066895,
+       "mean_d_noop": 0.1381547898054123
+      }
+     },
+     "O8": {
+      "head": {
+       "transfer": 0.4694831967353821,
+       "transfer_squared": 0.4681020283269347,
+       "win_rate": 0.9800000190734863,
+       "mean_d_int": 9.621363639831543,
+       "mean_d_noop": 18.135831832885742
+      },
+      "hue": {
+       "transfer": 0.36746716499328613,
+       "transfer_squared": 0.35949051198422377,
+       "win_rate": 0.800000011920929,
+       "mean_d_int": 1.3122614622116089,
+       "mean_d_noop": 2.0746140480041504
+      },
+      "dense": {
+       "transfer": 0.47930943965911865,
+       "transfer_squared": 0.4924749646940546,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 3.323345422744751,
+       "mean_d_noop": 6.382572650909424
+      },
+      "retrieval": {
+       "transfer": 0.26542192697525024,
+       "transfer_squared": 0.3081842152798534,
+       "win_rate": 0.6700000166893005,
+       "mean_d_int": 0.1014854833483696,
+       "mean_d_noop": 0.1381547898054123
+      }
+     }
+    },
+    "criterion_consistency": {
+     "dense": {
+      "anisotropy": {
+       "effective_rank": 5.520549154681782,
+       "cond": 154.57676621230596,
+       "out_dim": 13,
+       "in_dim": 1024
+      },
+      "fit_space": "per-cell rows of the site activation",
+      "feature_space_ridge": {
+       "transfer": 0.47928744554519653,
+       "transfer_squared": 0.49245980552897495,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 3.3234856128692627,
+       "mean_d_noop": 6.382572650909424
+      },
+      "criterion_consistent": {
+       "transfer": 0.4798405170440674,
+       "transfer_squared": 0.4930057559888482,
+       "win_rate": 0.9900000095367432,
+       "mean_d_int": 3.319955825805664,
+       "mean_d_noop": 6.382572650909424
+      },
+      "identity_check_vs_O2_operator": 0.0,
+      "feature_space_ridge_lambda_sweep": {
+       "0.0001": 0.47930455207824707,
+       "0.001": 0.479436457157135,
+       "0.01": 0.4798409938812256,
+       "0.1": 0.4697478413581848,
+       "1.0": 0.3866647481918335,
+       "10.0": 0.26657944917678833,
+       "100.0": 0.1975509524345398
+      },
+      "best_swept_ridge": 0.4798409938812256
+     },
+     "hue": {
+      "anisotropy": {
+       "effective_rank": 1.534570830106253,
+       "cond": 1945.0003926958398,
+       "out_dim": 13,
+       "in_dim": 1024
+      },
+      "fit_space": "pooled site activation (the space this consumer reads)",
+      "feature_space_ridge": {
+       "transfer": -29.072223663330078,
+       "transfer_squared": -32.912039133810524,
+       "win_rate": 0.0,
+       "mean_d_int": 62.38825607299805,
+       "mean_d_noop": 2.0746140480041504
+      },
+      "criterion_consistent": {
+       "transfer": -0.1206737756729126,
+       "transfer_squared": -0.1451517506930735,
+       "win_rate": 0.5099999904632568,
+       "mean_d_int": 2.324965476989746,
+       "mean_d_noop": 2.0746140480041504
+      },
+      "cell_space_O2_for_reference": 0.3678091764450073,
+      "feature_space_ridge_lambda_sweep": {
+       "0.0001": -0.12915754318237305,
+       "0.001": -0.12820255756378174,
+       "0.01": -0.1206737756729126,
+       "0.1": -0.10041224956512451,
+       "1.0": -0.11627376079559326,
+       "10.0": -0.18394935131072998,
+       "100.0": -0.2286365032196045
+      },
+      "best_swept_ridge": -0.10041224956512451
+     }
+    }
+   }
+  }
+ }
+}

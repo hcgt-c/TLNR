@@ -1,0 +1,1234 @@
+{
+ "findings": [
+  {
+   "group": "Table 2",
+   "cell": "closed-form max deviation, RMS score",
+   "manuscript": 0.0091,
+   "recomputed": 0.009112,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "closed-form max deviation, mean-ratio score",
+   "manuscript": 0.0102,
+   "recomputed": 0.010204,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "kappa sweep RMS at kappa=9.34",
+   "manuscript": 0.0041,
+   "recomputed": 0.004141,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "kernel-preserving T_F rank 8",
+   "manuscript": 0.9999992,
+   "recomputed": 0.999999,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "retained-rank sweep T_F rank 48",
+   "manuscript": 0.665,
+   "recomputed": 0.665314,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "retained-rank sweep T_F rank 4",
+   "manuscript": 0.341,
+   "recomputed": 0.340549,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "anisotropy sweep T_F low",
+   "manuscript": 0.069,
+   "recomputed": 0.068868,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "anisotropy sweep T_F high",
+   "manuscript": 0.429,
+   "recomputed": 0.429443,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "bottom-variance share, low",
+   "manuscript": 0.486,
+   "recomputed": 0.485985,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "bottom-variance share, high",
+   "manuscript": 0.44,
+   "recomputed": 0.439652,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 2",
+   "cell": "rho(kappa, T_F) on trained cells",
+   "manuscript": -0.968,
+   "recomputed": -0.968475,
+   "verdict": "ok",
+   "note": "n=32"
+  },
+  {
+   "group": "Table 2",
+   "cell": "rho(effective rank, T_F) on trained cells",
+   "manuscript": 0.502,
+   "recomputed": 0.502229,
+   "verdict": "ok",
+   "note": "n=32"
+  },
+  {
+   "group": "Table 2",
+   "cell": "median closed-form abs error, trained cells",
+   "manuscript": 0.014,
+   "recomputed": 0.013878,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O2 0.285",
+   "manuscript": 0.285,
+   "recomputed": 0.285435,
+   "verdict": "ok",
+   "note": "direct_fit|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O2 0.237",
+   "manuscript": 0.237,
+   "recomputed": 0.237267,
+   "verdict": "ok",
+   "note": "two_step_45+45|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O2 0.249",
+   "manuscript": 0.249,
+   "recomputed": 0.249161,
+   "verdict": "ok",
+   "note": "two_step_30+60|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O2 0.245",
+   "manuscript": 0.245,
+   "recomputed": 0.245288,
+   "verdict": "ok",
+   "note": "two_step_60+30 (order swap)|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O2 0.253",
+   "manuscript": 0.253,
+   "recomputed": 0.253281,
+   "verdict": "ok",
+   "note": "four_step_22.5x4|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O2 0.131",
+   "manuscript": 0.131,
+   "recomputed": 0.131252,
+   "verdict": "ok",
+   "note": "single_22.5|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O2 0.067",
+   "manuscript": 0.067,
+   "recomputed": 0.066632,
+   "verdict": "ok",
+   "note": "cyclic_120-120 (identity)|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O8 0.511",
+   "manuscript": 0.511,
+   "recomputed": 0.511495,
+   "verdict": "ok",
+   "note": "direct_fit|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O8 0.472",
+   "manuscript": 0.472,
+   "recomputed": 0.472381,
+   "verdict": "ok",
+   "note": "two_step_45+45|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O8 0.488",
+   "manuscript": 0.488,
+   "recomputed": 0.488344,
+   "verdict": "ok",
+   "note": "two_step_30+60|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O8 0.484",
+   "manuscript": 0.484,
+   "recomputed": 0.483871,
+   "verdict": "ok",
+   "note": "two_step_60+30 (order swap)|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O8 0.451",
+   "manuscript": 0.451,
+   "recomputed": 0.451449,
+   "verdict": "ok",
+   "note": "four_step_22.5x4|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O8 0.207",
+   "manuscript": 0.207,
+   "recomputed": 0.207199,
+   "verdict": "ok",
+   "note": "single_22.5|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "hue O8 0.254",
+   "manuscript": 0.254,
+   "recomputed": 0.253886,
+   "verdict": "ok",
+   "note": "cyclic_120-120 (identity)|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O2 0.61",
+   "manuscript": 0.61,
+   "recomputed": 0.610278,
+   "verdict": "ok",
+   "note": "direct_fit|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O2 0.514",
+   "manuscript": 0.514,
+   "recomputed": 0.514271,
+   "verdict": "ok",
+   "note": "two_step_1.0+1.0|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O2 0.437",
+   "manuscript": 0.437,
+   "recomputed": 0.437208,
+   "verdict": "ok",
+   "note": "four_step_0.7071x4|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O2 0.372",
+   "manuscript": 0.372,
+   "recomputed": 0.371712,
+   "verdict": "ok",
+   "note": "eight_step_0.5x8|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O2 0.572",
+   "manuscript": 0.572,
+   "recomputed": 0.571658,
+   "verdict": "ok",
+   "note": "single_0.5 (t*/8)|O2"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O8 0.76",
+   "manuscript": 0.76,
+   "recomputed": 0.759904,
+   "verdict": "ok",
+   "note": "direct_fit|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O8 0.679",
+   "manuscript": 0.679,
+   "recomputed": 0.678872,
+   "verdict": "ok",
+   "note": "two_step_1.0+1.0|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O8 0.625",
+   "manuscript": 0.625,
+   "recomputed": 0.625304,
+   "verdict": "ok",
+   "note": "four_step_0.7071x4|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O8 0.481",
+   "manuscript": 0.481,
+   "recomputed": 0.481324,
+   "verdict": "ok",
+   "note": "eight_step_0.5x8|O8"
+  },
+  {
+   "group": "Table 5",
+   "cell": "heat O8 0.597",
+   "manuscript": 0.597,
+   "recomputed": 0.596825,
+   "verdict": "ok",
+   "note": "single_0.5 (t*/8)|O8"
+  },
+  {
+   "group": "Table 6",
+   "cell": "resnet50 hue_90.0 d1",
+   "manuscript": 0.602,
+   "recomputed": 0.601837,
+   "verdict": "ok",
+   "note": "layer1"
+  },
+  {
+   "group": "Table 6",
+   "cell": "resnet50 hue_90.0 d2",
+   "manuscript": 0.588,
+   "recomputed": 0.58799,
+   "verdict": "ok",
+   "note": "layer2"
+  },
+  {
+   "group": "Table 6",
+   "cell": "resnet50 hue_90.0 d3",
+   "manuscript": 0.464,
+   "recomputed": 0.46364,
+   "verdict": "ok",
+   "note": "layer3"
+  },
+  {
+   "group": "Table 6",
+   "cell": "resnet50 hue_90.0 d4",
+   "manuscript": 0.099,
+   "recomputed": 0.09931,
+   "verdict": "ok",
+   "note": "layer4"
+  },
+  {
+   "group": "Table 6",
+   "cell": "convnext hue_90.0 d1",
+   "manuscript": 0.707,
+   "recomputed": 0.707268,
+   "verdict": "ok",
+   "note": "features1"
+  },
+  {
+   "group": "Table 6",
+   "cell": "convnext hue_90.0 d2",
+   "manuscript": 0.658,
+   "recomputed": 0.65828,
+   "verdict": "ok",
+   "note": "features3"
+  },
+  {
+   "group": "Table 6",
+   "cell": "convnext hue_90.0 d3",
+   "manuscript": 0.401,
+   "recomputed": 0.401229,
+   "verdict": "ok",
+   "note": "features5"
+  },
+  {
+   "group": "Table 6",
+   "cell": "convnext hue_90.0 d4",
+   "manuscript": 0.149,
+   "recomputed": 0.14869,
+   "verdict": "ok",
+   "note": "features7"
+  },
+  {
+   "group": "Table 6",
+   "cell": "vitb16 hue_90.0 d1",
+   "manuscript": 0.644,
+   "recomputed": 0.643887,
+   "verdict": "ok",
+   "note": "block2"
+  },
+  {
+   "group": "Table 6",
+   "cell": "vitb16 hue_90.0 d2",
+   "manuscript": 0.455,
+   "recomputed": 0.455056,
+   "verdict": "ok",
+   "note": "block5"
+  },
+  {
+   "group": "Table 6",
+   "cell": "vitb16 hue_90.0 d3",
+   "manuscript": 0.207,
+   "recomputed": 0.206575,
+   "verdict": "ok",
+   "note": "block8"
+  },
+  {
+   "group": "Table 6",
+   "cell": "vitb16 hue_90.0 d4 (unreachable)",
+   "manuscript": 0.0,
+   "recomputed": 0.0,
+   "verdict": "ok",
+   "note": "block11"
+  },
+  {
+   "group": "Table 6",
+   "cell": "dinov2b14 hue_90.0 d1",
+   "manuscript": 0.585,
+   "recomputed": 0.584958,
+   "verdict": "ok",
+   "note": "block2"
+  },
+  {
+   "group": "Table 6",
+   "cell": "dinov2b14 hue_90.0 d2",
+   "manuscript": 0.391,
+   "recomputed": 0.390556,
+   "verdict": "ok",
+   "note": "block5"
+  },
+  {
+   "group": "Table 6",
+   "cell": "dinov2b14 hue_90.0 d3",
+   "manuscript": 0.103,
+   "recomputed": 0.102571,
+   "verdict": "ok",
+   "note": "block8"
+  },
+  {
+   "group": "Table 6",
+   "cell": "dinov2b14 hue_90.0 d4 (unreachable)",
+   "manuscript": 0.0,
+   "recomputed": 0.0,
+   "verdict": "ok",
+   "note": "block11"
+  },
+  {
+   "group": "Table 6",
+   "cell": "resnet50 heat_2.0 d1",
+   "manuscript": 0.515,
+   "recomputed": 0.514903,
+   "verdict": "ok",
+   "note": "layer1"
+  },
+  {
+   "group": "Table 6",
+   "cell": "resnet50 heat_2.0 d2",
+   "manuscript": 0.471,
+   "recomputed": 0.470728,
+   "verdict": "ok",
+   "note": "layer2"
+  },
+  {
+   "group": "Table 6",
+   "cell": "resnet50 heat_2.0 d3",
+   "manuscript": 0.374,
+   "recomputed": 0.373611,
+   "verdict": "ok",
+   "note": "layer3"
+  },
+  {
+   "group": "Table 6",
+   "cell": "resnet50 heat_2.0 d4",
+   "manuscript": 0.054,
+   "recomputed": 0.053882,
+   "verdict": "ok",
+   "note": "layer4"
+  },
+  {
+   "group": "Table 6",
+   "cell": "convnext heat_2.0 d1",
+   "manuscript": 0.54,
+   "recomputed": 0.539859,
+   "verdict": "ok",
+   "note": "features1"
+  },
+  {
+   "group": "Table 6",
+   "cell": "convnext heat_2.0 d2",
+   "manuscript": 0.553,
+   "recomputed": 0.552937,
+   "verdict": "ok",
+   "note": "features3"
+  },
+  {
+   "group": "Table 6",
+   "cell": "convnext heat_2.0 d3",
+   "manuscript": 0.345,
+   "recomputed": 0.34491,
+   "verdict": "ok",
+   "note": "features5"
+  },
+  {
+   "group": "Table 6",
+   "cell": "convnext heat_2.0 d4",
+   "manuscript": 0.137,
+   "recomputed": 0.136787,
+   "verdict": "ok",
+   "note": "features7"
+  },
+  {
+   "group": "Table 6",
+   "cell": "vitb16 heat_2.0 d1",
+   "manuscript": 0.497,
+   "recomputed": 0.497072,
+   "verdict": "ok",
+   "note": "block2"
+  },
+  {
+   "group": "Table 6",
+   "cell": "vitb16 heat_2.0 d2",
+   "manuscript": 0.271,
+   "recomputed": 0.270733,
+   "verdict": "ok",
+   "note": "block5"
+  },
+  {
+   "group": "Table 6",
+   "cell": "vitb16 heat_2.0 d3",
+   "manuscript": 0.114,
+   "recomputed": 0.113739,
+   "verdict": "ok",
+   "note": "block8"
+  },
+  {
+   "group": "Table 6",
+   "cell": "vitb16 heat_2.0 d4 (unreachable)",
+   "manuscript": 0.0,
+   "recomputed": 0.0,
+   "verdict": "ok",
+   "note": "block11"
+  },
+  {
+   "group": "Table 6",
+   "cell": "dinov2b14 heat_2.0 d1",
+   "manuscript": 0.134,
+   "recomputed": 0.133587,
+   "verdict": "ok",
+   "note": "block2"
+  },
+  {
+   "group": "Table 6",
+   "cell": "dinov2b14 heat_2.0 d2",
+   "manuscript": 0.049,
+   "recomputed": 0.048696,
+   "verdict": "ok",
+   "note": "block5"
+  },
+  {
+   "group": "Table 6",
+   "cell": "dinov2b14 heat_2.0 d3",
+   "manuscript": -0.397,
+   "recomputed": -0.396888,
+   "verdict": "ok",
+   "note": "block8"
+  },
+  {
+   "group": "Table 6",
+   "cell": "dinov2b14 heat_2.0 d4 (unreachable)",
+   "manuscript": 0.0,
+   "recomputed": 0.0,
+   "verdict": "ok",
+   "note": "block11"
+  },
+  {
+   "group": "Table 7",
+   "cell": "backbones whose hue-readout hue trend declines (of 4)",
+   "manuscript": 3,
+   "recomputed": 3,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 8",
+   "cell": "within wd=0.0 seed0 dT_F",
+   "manuscript": -0.0,
+   "recomputed": -0.000346,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 8",
+   "cell": "within wd=0.0 seed1 dT_F",
+   "manuscript": 0.026,
+   "recomputed": 0.026291,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 8",
+   "cell": "within wd=0.001 seed0 dT_F",
+   "manuscript": 0.096,
+   "recomputed": 0.095623,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 8",
+   "cell": "within wd=0.001 seed1 dT_F",
+   "manuscript": 0.111,
+   "recomputed": 0.110701,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 8",
+   "cell": "cross wd=0.0 seed0 dT_F",
+   "manuscript": 0.009,
+   "recomputed": 0.008795,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 8",
+   "cell": "cross wd=0.0 seed1 dT_F",
+   "manuscript": 0.004,
+   "recomputed": 0.004226,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 8",
+   "cell": "cross wd=0.001 seed0 dT_F",
+   "manuscript": 0.058,
+   "recomputed": 0.057926,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "Table 8",
+   "cell": "cross wd=0.001 seed1 dT_F",
+   "manuscript": 0.057,
+   "recomputed": 0.056905,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue power mean",
+   "manuscript": 0.687,
+   "recomputed": 0.686615,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue power sd",
+   "manuscript": 0.009,
+   "recomputed": 0.00859,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue err null",
+   "manuscript": 81.8,
+   "recomputed": 81.804888,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue err real",
+   "manuscript": 36.4,
+   "recomputed": 36.364284,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue O1_procrustes transfer",
+   "manuscript": 0.65,
+   "recomputed": 0.649603,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue O5_mlp transfer",
+   "manuscript": 0.561,
+   "recomputed": 0.56138,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue O8_conv_residual transfer",
+   "manuscript": 0.517,
+   "recomputed": 0.516644,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue O6 transfer",
+   "manuscript": 0.023,
+   "recomputed": 0.023363,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 hue O6 win",
+   "manuscript": 0.482,
+   "recomputed": 0.481878,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation power mean",
+   "manuscript": 0.35,
+   "recomputed": 0.35025,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation power sd",
+   "manuscript": 0.007,
+   "recomputed": 0.006625,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation err null",
+   "manuscript": 0.177,
+   "recomputed": 0.17715,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation err real",
+   "manuscript": 0.108,
+   "recomputed": 0.108268,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation O1_procrustes transfer",
+   "manuscript": 0.587,
+   "recomputed": 0.587487,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation O5_mlp transfer",
+   "manuscript": 0.72,
+   "recomputed": 0.719784,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation O8_conv_residual transfer",
+   "manuscript": 0.719,
+   "recomputed": 0.719056,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation O6 transfer",
+   "manuscript": -0.871,
+   "recomputed": -0.871276,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 saturation O6 win",
+   "manuscript": 0.3,
+   "recomputed": 0.3,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value power mean",
+   "manuscript": 0.499,
+   "recomputed": 0.499492,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value power sd",
+   "manuscript": 0.005,
+   "recomputed": 0.004722,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value err null",
+   "manuscript": 0.17,
+   "recomputed": 0.170359,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value err real",
+   "manuscript": 0.081,
+   "recomputed": 0.080985,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value O1_procrustes transfer",
+   "manuscript": 0.707,
+   "recomputed": 0.706738,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value O5_mlp transfer",
+   "manuscript": 0.857,
+   "recomputed": 0.857039,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value O8_conv_residual transfer",
+   "manuscript": 0.85,
+   "recomputed": 0.849585,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value O6 transfer",
+   "manuscript": -1.995,
+   "recomputed": -1.995277,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "vitb16 value O6 win",
+   "manuscript": 0.154,
+   "recomputed": 0.154167,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue power mean",
+   "manuscript": 0.404,
+   "recomputed": 0.403887,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue power sd",
+   "manuscript": 0.004,
+   "recomputed": 0.004318,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue err null",
+   "manuscript": 83.7,
+   "recomputed": 83.74226,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue err real",
+   "manuscript": 68.6,
+   "recomputed": 68.57751,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue O1_procrustes transfer",
+   "manuscript": 0.576,
+   "recomputed": 0.57626,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue O5_mlp transfer",
+   "manuscript": 0.424,
+   "recomputed": 0.423644,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue O8_conv_residual transfer",
+   "manuscript": 0.507,
+   "recomputed": 0.506579,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue O6 transfer",
+   "manuscript": -0.411,
+   "recomputed": -0.411308,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 hue O6 win",
+   "manuscript": 0.145,
+   "recomputed": 0.144758,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation power mean",
+   "manuscript": 0.238,
+   "recomputed": 0.237917,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation power sd",
+   "manuscript": 0.006,
+   "recomputed": 0.005811,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation err null",
+   "manuscript": 0.284,
+   "recomputed": 0.28433,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation err real",
+   "manuscript": 0.233,
+   "recomputed": 0.233233,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation O1_procrustes transfer",
+   "manuscript": 0.592,
+   "recomputed": 0.592189,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation O5_mlp transfer",
+   "manuscript": 0.802,
+   "recomputed": 0.802402,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation O8_conv_residual transfer",
+   "manuscript": 0.763,
+   "recomputed": 0.762757,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation O6 transfer",
+   "manuscript": -3.16,
+   "recomputed": -3.15964,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 saturation O6 win",
+   "manuscript": 0.163,
+   "recomputed": 0.1625,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value power mean",
+   "manuscript": 0.338,
+   "recomputed": 0.338157,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value power sd",
+   "manuscript": 0.005,
+   "recomputed": 0.004651,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value err null",
+   "manuscript": 0.217,
+   "recomputed": 0.217223,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value err real",
+   "manuscript": 0.181,
+   "recomputed": 0.181199,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value O1_procrustes transfer",
+   "manuscript": 0.528,
+   "recomputed": 0.527995,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value O5_mlp transfer",
+   "manuscript": 0.623,
+   "recomputed": 0.622961,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value O8_conv_residual transfer",
+   "manuscript": 0.667,
+   "recomputed": 0.666828,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value O6 transfer",
+   "manuscript": -8.24,
+   "recomputed": -8.240039,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "D.14",
+   "cell": "dinov2b14 value O6 win",
+   "manuscript": 0.137,
+   "recomputed": 0.1375,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer2 hue no-op",
+   "manuscript": 18.08,
+   "recomputed": 18.07946,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer2 heat no-op",
+   "manuscript": 14.56,
+   "recomputed": 14.560034,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer2 hue T_F",
+   "manuscript": 0.588,
+   "recomputed": 0.58799,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer2 heat T_F",
+   "manuscript": 0.471,
+   "recomputed": 0.470728,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer2 hue residual",
+   "manuscript": 7.45,
+   "recomputed": 7.448915,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer2 heat residual",
+   "manuscript": 7.71,
+   "recomputed": 7.706218,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer2 relative difference %",
+   "manuscript": 3.3,
+   "recomputed": 3.338901,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer3 hue no-op",
+   "manuscript": 18.08,
+   "recomputed": 18.07946,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer3 heat no-op",
+   "manuscript": 14.56,
+   "recomputed": 14.560034,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer3 hue T_F",
+   "manuscript": 0.464,
+   "recomputed": 0.46364,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer3 heat T_F",
+   "manuscript": 0.374,
+   "recomputed": 0.373611,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer3 hue residual",
+   "manuscript": 9.7,
+   "recomputed": 9.697096,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer3 heat residual",
+   "manuscript": 9.12,
+   "recomputed": 9.120243,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer3 relative difference %",
+   "manuscript": 5.9,
+   "recomputed": 5.948719,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer4 hue no-op",
+   "manuscript": 18.08,
+   "recomputed": 18.07946,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer4 heat no-op",
+   "manuscript": 14.56,
+   "recomputed": 14.560034,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer4 hue T_F",
+   "manuscript": 0.099,
+   "recomputed": 0.09931,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer4 heat T_F",
+   "manuscript": 0.054,
+   "recomputed": 0.053882,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer4 hue residual",
+   "manuscript": 16.28,
+   "recomputed": 16.283993,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer4 heat residual",
+   "manuscript": 13.78,
+   "recomputed": 13.775511,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "C7",
+   "cell": "layer4 relative difference %",
+   "manuscript": 15.4,
+   "recomputed": 15.40459,
+   "verdict": "rounding",
+   "note": ""
+  }
+ ],
+ "summary": {
+  "checked": 153,
+  "ok": 153,
+  "mismatch": 0,
+  "unlocatable": 0
+ }
+}

@@ -1,0 +1,137 @@
+\section{From Measured Structure to Operable Interfaces}
+
+\subsection{Design from the measured organisation}
+
+Each measured fact specifies a design choice (Table 5): the low-order spectrum fixes the candidate band K; shared phase fixes a shared action; content-dependent amplitude calls for a content-dependent envelope; the measured degeneracy marks the operating domain; and the complexity of the raw features motivates an optional context branch. K = 2 in what follows is the measured choice, not a theoretical minimum.
+
+\subsection{The interface: learned encoding, fixed action}
+
+The interface is c = E\_$\theta$(z) with action A\_$\Delta$ = diag(I, R($\Delta$), R(2$\Delta$)) --- six dimensions for colour. The action is never fitted --- A\_$\Delta$ is fixed by the measured structure, while the read-in E\_$\theta$ is trained under supervision, so the correspondence is learned but its law is not. The construction's content is that existing features can be read into this structure accurately enough that E\_$\theta$($\psi$($\tau$s)) $\approx$ A\_$\tau$ E\_$\theta$($\psi$(s)) holds off the training manifold; whether a fitted action of equal capacity does better is measured below (Table F.10); the licence for the fixed action is that the two conditions the construction uses --- the retained carrier is closed and its planes align with the measured ones --- hold at the site, and both are measured (\S{}4.3, \S{}7.3). Training and anchoring protocols: method box, Appendix E.
+
+The contribution, stated precisely: the rotation-block form comes from the known structure of the circle group, and the \textit{measurement} decides which blocks are useful, how many are needed, and where the interface is valid; training maps existing features into those coordinates. "The action form is guided by measurement" is what the evidence supports; "the action form was discovered from the network" is not. Two constructions in this paper are also distinct and stay distinct in the wording: the local transporter of \S{}5.3 has its generator and Fourier coefficients fitted and then frozen at inference (Appendix E, Box E1), while the carrier rotation used here is never fitted at all (Box E2).
+
+\textbf{Compared with a learned action.} Whether the fixed action costs anything relative to learning it is now measured rather than left open. Under one read-in, one code supervision and one budget, four arms were trained: the fixed rotation, a learned generator, a learned linear action, and a generic conditioned map carrying more parameters than the fixed action has. The fixed action is exact in the increment it applies and in composition, and its read-out error is not worse than the others'; the learned generator comes closest, since one generator already composes exactly, the learned linear action fits the small increments it saw and fails on an unseen large one, and the generic map is worse than the fixed action on every action metric despite its extra capacity. Learning an action therefore buys nothing here that the measured form does not already give, and it can lose the two properties the construction exists to provide. Table F.10 carries all four arms, three seeds, the parameter counts and the protocol. Figure 8 gives the read-out error, the two never-fitted increments and the composition defect for each arm.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig08_action_comparison.pdf}
+\caption*{\textbf{Figure 8.} The measured action against learnable actions under one read-in, one supervision and one budget. (a) Zero-shot read-out error. (b) Increment error at the two never-fitted increments, $37^\circ$ (circles) and $90^\circ$ (squares). (c) Defect between a two-step composite and the direct step; the fixed action is exact by construction, and learning the action removes neither the increment error nor the composition defect. Markers are the three seeds.}
+\end{figure*}
+
+\subsection{What bounds the interface: the three error terms}
+
+\textbf{Theorem 5 (carrier sufficiency).} Let the carrier be $c$, the synthesis $B$, the target $z'=BAc+w'$ with $\|w'\|_{L^2}\le\delta'$, the read-in $E_\theta$ (any measurable map, in particular the learned MLP), and let the interface apply $A_{\mathrm{int}}$ and decode by $B$. Write $e(z)=E_\theta(z)-c$ for the read-in error. Then the identity
+\[\adjustbox{max width=\columnwidth}{$\displaystyle BA_{\mathrm{int}}E_\theta(z)-z'=BA_{\mathrm{int}}\,e(z)+B(A_{\mathrm{int}}-A)c-w'$}\]
+holds exactly, and hence, with no cross-term cancellation assumed,
+\[\adjustbox{max width=\columnwidth}{$\displaystyle \begin{aligned}
+\big\|BA_{\mathrm{int}}E_\theta(z)-z'\big\|_{L^2}\le{}&\|BA_{\mathrm{int}}\|\,\|e\|_{L^2}\\
+&+\|B(A_{\mathrm{int}}-A)\|\,\|c\|_{L^2}+\delta'.
+\end{aligned}
+$}\]
+\textit{Proof.} Add and subtract $BA_{\mathrm{int}}c$ and $BAc$; the first term is the read-in error, the second the action mismatch, the third the target's tail. The triangle inequality gives the bound. $\square$
+
+The theorem is an identity, not a conditional bound: it holds for any carrier, action and read-in, and what the measurements supply is the \textit{size} of its three terms rather than a hypothesis of the theorem. Three consequences fix how the bound is to be read. \textit{It applies to the interface as built}: $E_\theta$ need not be linear, and the linear read-in is the special case in which $\|e\|$ is written as an operator norm. \textit{The three terms are read-in error, action mismatch, and target tail} --- only the first is removed by training, and the second vanishes when the interface uses the true carrier action. \textit{Order of the mismatch term:} the bound is first order in $\|A_{\mathrm{int}}-A\|$, and the squared error is therefore second order in the plane misalignment; the measured quantity is the error norm, for which the log-log slope in the tilt angle is $0.99$. If the carrier tail is normalised as an energy fraction, $\mathbb E\|w\|^2\le\varepsilon_{\mathrm{tail}}^2\mathbb E\|z\|^2$, then the measured $12$--$16\%$ energy fraction corresponds to $\varepsilon_{\mathrm{tail}}\approx0.35$--$0.40$, not to $0.12$--$0.16$.
+
+The closure criterion of \S{}4.6 enters separately, and its scope is worth stating precisely: Proposition G bounds what a \textbf{fixed linear map on the measured features} can achieve, and it is that class --- not the interface --- which the measured closure defect limits. The interface escapes the bound exactly because $E_\theta$ is learned and may be nonlinear; what it cannot escape is the \textit{target's} tail and any mismatch between the action it applies and the action the carrier actually has. This is the sense in which the construction is sufficient: the action is fixed by measurement, the read-in is learned, and the two structural conditions --- closure of the retained blocks and alignment of the interface planes --- are checkable in advance on the measured organisation. The three-term inequality is sufficient rather than tight, and the ordering it predicts --- carrier error tracking the tail and the plane misalignment site by site --- is not tested here. \textbf{The framework's \textit{theory} is algebra-general; its \textit{interface} is not.} The hue interface exists because both conditions hold there (\S{}4.3); the dissipative family has no shared decay rate in any basis tested (\S{}8.3, Table 6), which is why it is carried in channel space rather than by the canonical spatial action and why its chains degrade monotonically. A carrier-sufficiency statement whose terms are measurable is a filter rather than a promise: it says which algebras to attempt to compile, and on this instance it returns a negative answer for the semigroup. One boundary of the statement belongs here: the theorem bounds a \textit{feature-space} error, while the interface's read-out figures are measured in degrees, and the link between the two is the decoder's local sensitivity rather than a second theorem. What the decomposition supplies for the capability claims is the attribution: of the three terms, only the read-in error is removed by training, and the few-degree read-out errors of \S{}7.4 are what remains.
+
+\subsection{Generalisation on unseen shapes and parameters}
+
+On shape-held-out grids the interface reads hue zero-shot at a median error of a few degrees --- $3.4^\circ$ by the per-cell-median criterion, $4.4^\circ$ by the per-cell-mean criterion, the two criteria differing in whether two more of the 64 cells pass --- and on real regions it holds wherever the usage rule of \S{}7.7 says it should, at $8.0^\circ$ against $10.0^\circ$ for the non-circular control, far below the $69.5^\circ$ of the unaligned route. The full grid, both criteria, the saturation floor and every route are Table C6. Failures concentrate at low saturation and low value --- the degenerate domain of \S{}4.4 --- and the applicability map they trace is part of the interface's specification, not an afterthought. Figure 9 shows the interface as built: the readout error over the $(s,v)$ domain, the code magnitude that bounds it, the real-region comparison against the pre-registered threshold, and the cost of an edit. \textbf{Figure 10} puts the recovery itself on the same footing, as four separate tests: the operator fitted on a shape it never saw against copying on that shape; the hue phase read out of the code against the hue that was rendered, cell by cell; the same error against how much hue the renderer itself put in the pixel; and the attribute the code reports after a scaling against the attribute the scaling realised.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig09_interface.pdf}
+\caption*{\textbf{Figure 9.} The interface as built, and where it holds. (a) Hue readout error over the (saturation, value) domain on unseen shapes, an $8\times8$ grid on a logarithmic colour scale, and (b) the magnitude of the code's fundamental on the same grid; the readout fails where the code magnitude collapses towards the grey axis. (c) Readout error against the hue-concentration statistic for 120 real COCO regions, with the pre-registered threshold at $0.70$ (dashed); above it the median error is $8.0^\circ$ against $19.6^\circ$ below. (d) Wall clock per operation for a region-level code shift and for a pixel re-colour with a re-forward, logarithmic axis ($20.9$ \textbackslash{}textmu\{\}s against $38.1$ ms).}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig10_recovery.pdf}
+\caption*{\textbf{Figure 10.} Reading the transformation back out of the features. (a) Relative error of an operator fitted on a shape it was never fitted on, for the pentagon and the hexagon at three and four harmonics, against the copy baseline on the same shape, on a logarithmic axis; the recovered operator is $6.7$--$16.6\times$ closer than copying, at cosine $0.96$--$0.98$. (b) Hue phase read from the code against the hue that was rendered, one point per hue, for three (saturation, value) cells of the dense lattice; the median error is $1.6^\circ$ and $1.1^\circ$ at the two chroma-rich cells, while the third is the degenerate cell whose twelve hues render to a single RGB value and whose phases therefore carry no hue. (c) Median recovery error against the range of the twelve rendered RGB values, logarithmic axes, one point per cell; the error falls with the range the renderer actually provides (Spearman $-0.93$ over the $61$ cells that have a reference) and the three cells with no range at all, the unidentifiable references, carry the largest errors. (d) Attribute the code reports after a multiplicative scaling of the physical attribute against the attribute that scaling realised, one point per trial and both arms, at magnifications $1.1$--$2.0$ with the gamut clip active; the report follows the realised value across the whole range at mean absolute error $0.010$ (value) and $0.031$ (saturation), including the trials whose request saturates the gamut, so the read follows the pixel rather than the request.}
+\end{figure*}
+
+\subsection{What the structure buys}
+
+Two comparisons decide what the structure is worth, and they belong to different experiments, so we keep them apart rather than pooling them into one ablation.
+
+\textbf{(a) Usefulness at matched supervision --- the interface.} Under sparse hue supervision (a $40^\circ$ band) the operator-based augmentation reaches $1.3^\circ$ median read-out error against $3.5^\circ$ for input-space interpolation and $25.5^\circ$ for real data only --- the structure substitutes for data the interface never saw, and it even beats the true-midpoint augmentation ceiling. The structured read-out also beats a plain probe on the same features, on the dense grid and on the held-out sheet. The capability table of \S{}7.6 carries both comparisons.
+
+\textbf{(b) Capacity and pairing --- the operator family, not the interface.} The matched-budget capacity controls are run on the plain-CNN stage-1 arm, and we label them as such rather than attaching them to the carrier. At identical architecture, optimiser, epochs and data budget the correct pairing wins and an untrained residual of the same width does not; rank-16 and rank-64 variants land at or below the structured family, so the gain is not width; and shuffling the pairing leaves the projection high while the win rate collapses, which is \S{}5.5's point in its most literal form. \textbf{Table 14} gives the numbers, with the arm named in the table itself.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 14.} Matched-budget capacity and pairing controls, plain-CNN stage-1 arm, hue $\Delta=90^\circ$, three seeds. These rows are an operator-family result; they are not an ablation of the carrier interface, whose matched-supervision comparison is (a) above.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{control} & \textbf{projection} & \textbf{paired win rate} \\
+\midrule
+$1\times3\times3$ residual, correct pairing & $0.816$ & $0.84$ \\
+same network, untrained residual & $0.590$ & $0.725$ \\
+shuffled pairing & $1.267$ & $0.11$ \\
+rank-16 $+$ MLP & $0.716$ & --- \\
+rank-16 $+$ $3\times3$ & $0.785$ & --- \\
+rank-64 wider family & $0.815$ & --- \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{Useful operations}
+
+\textbf{Table 15} lists every capability against \textbf{ground truth and its own baseline}, which is the rule the paper applies throughout: a capability claim without a baseline is not a claim. Feature-space augmentation cuts hue read-out error by an order of magnitude against the input-space interpolation baseline; composition reaches parameters never fitted (Table D.11); the detector keeps a third of its seen-shift AP50 at an unseen shift; and region editing costs microseconds against milliseconds because it replaces the re-render it is compared with. Figure 11 collects those uses on real images, each against its own baseline.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig11_uses.pdf}
+\caption*{\textbf{Figure 11.} What the interface does on real images. (a) Detector box F1 at IoU $0.5$ for a never-fitted hue shift, one marker per seed (open) and the mean (bar), for five routes; the structured residual family reaches $0.965$, the random orthogonal control $0.000$ and the no-intervention route $0.008$. (b) Median hue error per route on real regions. (c) Median hue error per category on the same regions, sorted, with the $30^\circ$ reference (dashed); eleven of the twelve categories fall below it.}
+\end{figure*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table 15.} Capability claims, each against ground truth and a baseline. Every row belongs to its stated setup; the table reports and the text does not inflate.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{capability} & \textbf{metric} & \textbf{baseline} & \textbf{result} & \textbf{setup} \\
+\midrule
+feature-space augmentation & hue read-out error & input-space interpolation $3.5^\circ$; true-midpoint ceiling $2.2^\circ$ & $25.5^\circ\to 1.3^\circ$ (median) & sparse hue training ($40^\circ$ band), synthetic \\
+structured read-out vs plain probe, same features & hue read-out error & plain probe $1.6^\circ$ / $3.7^\circ$ & $0.7^\circ$ dense grid / $0.9^\circ$ held-out sheet & interface, unseen shapes \\
+composition to a never-fitted parameter & $T_F$ at the composite & direct fit at that parameter & composed $0.844$ vs direct $0.807$ at $\sigma=1.803$ & plain CNN stage 1, seed 0; never-fitted composite (Table D.11) --- the fixed-total chains of Table 9, three seeds, score $0.451$--$0.488$ against a direct $0.511$ \\
+detector at a never-fitted shift & AP50 & seen shift $0.81$ & $0.37$ & YOLO11n, hue-bin classes \\
+detector, F1 at IoU $0.5$ & box agreement & null $0.008$ & $0.965$ structured; $0.000$ random & $\Delta=90^\circ$ \\
+region editing & wall-clock per operation & pixel re-render $38.1$ ms & $20.9$ $\mu$s ($1825\times$) & measured; the code-shift artefact does not record its device, so the ratio is reported, not a controlled benchmark (Appendix E, Box E4) \\
+zero-shot hue read-out & median per-cell error & copy baseline; unaligned route $69.5^\circ$ & $3.4^\circ$ synthetic (median criterion; $4.4^\circ$ mean) / $8.0^\circ$ real high-concentration ($10.0^\circ$ non-circular; $19.6^\circ$ low-concentration) & unseen shapes, 64-cell grid; 120 real regions (69 high-concentration) \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{Operating domain on real regions}
+
+The operating domain is \textbf{measurable in advance}, which is what makes the interface usable rather than merely demonstrable: on 750 pre-registered COCO regions a hue-concentration threshold separates success from failure on the test half, and the ranking power is moderate rather than sharp (ROC AUC $0.660$), so the rule is published with its calibration curve rather than as a threshold with an implied error bar. On the unaligned 120-region control the concentration statistic alone carries almost no discriminative power and the covariates do the work. \textbf{Table 16} gives every number and route.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 16.} The operating domain on real regions.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{sample} & \textbf{statistic} & \textbf{result} \\
+\midrule
+750 pre-registered COCO regions, test half & concentration threshold, aligned route & $0.770$ vs $0.532$; gap $0.238$, CI $[0.128,\allowbreak{}0.345]$ \\
+same & ground-truth-box route & gap $0.188$ \\
+same & raw, unaligned route & gap $0.085$ \\
+same & ROC AUC & $0.660$ / $0.662$ / $0.579$ (aligned / gtbox / raw) \\
+controlled calibration & AUC & $1.0$ \\
+120-region control & concentration alone & AUC $0.523$ / $0.480$ \\
+same & $+$ mask covariates & $0.754$ / $0.680$ \\
+same & $+$ category & $0.651$ / $0.616$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The path from the action question through structure to operation is complete. The discussion marks what is general, what is colour, and what comes next.
+

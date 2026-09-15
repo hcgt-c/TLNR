@@ -1,0 +1,45 @@
+{
+ "coordinatewise_monotone": {
+  "l2_error": 998.0620422227867,
+  "exact": false,
+  "family": "per-coordinate monotone functions of the parameter"
+ },
+ "fixed_basis_linear_3d": {
+  "l2_error": 924.4860601022519,
+  "exact": false,
+  "family": "best fixed linear map on the 3-d code"
+ },
+ "carrier_derived_3d": {
+  "l2_error": 924.486060102252,
+  "exact": false,
+  "operator": [
+   [
+    0.6018150231520484,
+    -0.7986355100472928,
+    0.0
+   ],
+   [
+    0.7986355100472928,
+    0.6018150231520484,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    -0.27563735581699905
+   ]
+  ],
+  "family": "act in the 4-d carrier, project back to the 3-d code"
+ },
+ "full_carrier_4d": {
+  "l2_error": 4.251645194117983e-28,
+  "exact": true,
+  "family": "the 4-d carrier code with the block action"
+ },
+ "optimal_linear_is_projected_carrier_action": {
+  "n_random_selections": 40,
+  "max_gap_to_PAP^T": 8.881784197001252e-16,
+  "criterion_agrees_with_residual": true,
+  "statement": "K* = P A P^T whenever the carrier coordinates are orthogonal with equal norms; the residual vanishes iff the retained coordinate set is A-invariant"
+ }
+}

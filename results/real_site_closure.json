@@ -1,0 +1,100 @@
+{
+ "yolo11n_y3": {
+  "full_carrier": {
+   "rel_tail_median": 0.045546900247496185,
+   "closure_defect_median": 3.2345275961953398e-15,
+   "heldout_global_fit_rel_err_median": 0.28214673577971944
+  },
+  "dropped_sin2h": {
+   "rel_tail_median": 0.05981182192361911,
+   "closure_defect_median": 1.9907471605496128e-15,
+   "heldout_global_fit_rel_err_median": 0.3342518754058883
+  },
+  "carrier_second_moment": [
+   [
+    1.0,
+    -0.0,
+    0.0,
+    -0.0,
+    -0.0
+   ],
+   [
+    -0.0,
+    0.5,
+    -0.0,
+    -0.0,
+    -0.0
+   ],
+   [
+    0.0,
+    -0.0,
+    0.5,
+    0.0,
+    -0.0
+   ],
+   [
+    -0.0,
+    -0.0,
+    0.0,
+    0.5,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    -0.0,
+    0.0,
+    0.5
+   ]
+  ]
+ },
+ "resnet18_l2": {
+  "full_carrier": {
+   "rel_tail_median": 0.06411031630423568,
+   "closure_defect_median": 3.532659389816224e-15,
+   "heldout_global_fit_rel_err_median": 0.41306077890969195
+  },
+  "dropped_sin2h": {
+   "rel_tail_median": 0.08696896386115888,
+   "closure_defect_median": 2.2682408672377497e-15,
+   "heldout_global_fit_rel_err_median": 0.3949513867940976
+  },
+  "carrier_second_moment": [
+   [
+    1.0,
+    -0.0,
+    0.0,
+    -0.0,
+    -0.0
+   ],
+   [
+    -0.0,
+    0.5,
+    -0.0,
+    -0.0,
+    -0.0
+   ],
+   [
+    0.0,
+    -0.0,
+    0.5,
+    0.0,
+    -0.0
+   ],
+   [
+    -0.0,
+    -0.0,
+    0.0,
+    0.5,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    -0.0,
+    0.0,
+    0.5
+   ]
+  ]
+ }
+}

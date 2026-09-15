@@ -1,0 +1,31 @@
+# raster previews of the figures: the release ships the vector PDFs only
+paper/figures_final/*.png
+
+# derived data: regenerate with the scripts in scripts/ (see docs/REPRODUCING.md)
+data/
+features/
+runs/
+figures/
+
+# python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+
+# LaTeX build products
+paper/latex_v17/*.aux
+paper/latex_v17/*.log
+paper/latex_v17/*.out
+paper/latex_v17/*.toc
+paper/latex_v17/*.synctex.gz
+paper/latex_v17/*.fls
+paper/latex_v17/*.fdb_latexmk
+paper/latex_v17/*.bbl
+paper/latex_v17/*.blg
+
+# editors and OS
+.DS_Store
+.vscode/
+.idea/
+*~

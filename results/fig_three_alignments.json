@@ -1,0 +1,1752 @@
+{
+ "figure": "paper/figures/F36_three_alignments.png",
+ "title": "Three kinds of alignment, and none of them is faithfulness",
+ "sources": {
+  "panel_A": "results/depth_map_summary.json",
+  "panel_B": "results/quotientization.json",
+  "panel_C": "results/estimator_control.json"
+ },
+ "style_reference": "scripts/217_fig_random_contradiction.py",
+ "panel_A_operator_level_extra": {
+  "y_axis": "symlog with linthresh=0.3; all 112 points drawn, no clipping",
+  "O6_transfer_quantiles": [
+   -4.6354,
+   -1.7506,
+   -1.2975,
+   -0.9649,
+   -0.3669
+  ]
+ },
+ "panel_A_operator_level": {
+  "source_file": "results/depth_map_summary.json",
+  "source_keys": [
+   "<backbone>|<family_key>.sites.<site>.reachable",
+   "<backbone>|<family_key>.sites.<site>.<op>_proj_coef_agg_mean",
+   "<backbone>|<family_key>.sites.<site>.<op>_transfer_mean",
+   "<backbone>|<family_key>.sites.<site>.<op>_win_rate_mean"
+  ],
+  "family_keys_used": [
+   "hue_90.0",
+   "heat_2.0"
+  ],
+  "families_excluded": {
+   "heat_1.0": "1 seed only; excluding it keeps the grid at n_seeds=3 and the 28-site count"
+  },
+  "operators": {
+   "O1": "O1 orthogonal",
+   "O2": "O2 linear",
+   "O8": "O8 content+neighbourhood",
+   "O6": "O6 random orthogonal control"
+  },
+  "n_points": 112,
+  "within_family_spearman_proj_vs_TF": {
+   "O1": 0.8226600985221675,
+   "O2": 0.9441707717569787,
+   "O8": 0.9408866995073891,
+   "O6": -0.2846195949644226
+  },
+  "within_family_spearman_by_family": {
+   "hue": {
+    "O1": 0.9252747252747253,
+    "O2": 0.9340659340659341,
+    "O8": 0.9384615384615385,
+    "O6": -0.3186813186813187
+   },
+   "heat": {
+    "O1": 0.5340659340659341,
+    "O2": 0.9164835164835166,
+    "O8": 0.9208791208791209,
+    "O6": -0.21318681318681318
+   }
+  },
+  "across_type": {
+   "pooled_O1_O2_O8_rho": 0.9056596132428876,
+   "pooled_all_four_rho": 0.6761796562681518,
+   "O6_alone_rho": -0.2846195949644226,
+   "mean_projection_per_type": {
+    "O1": 0.44725591791350217,
+    "O2": 0.6355890839227606,
+    "O8": 0.6598426415806725,
+    "O6": 0.5015809575007075
+   },
+   "mean_transfer_per_type": {
+    "O1": 0.2206605225801468,
+    "O2": 0.3466572002286003,
+    "O8": 0.32235098239921384,
+    "O6": -1.5946771672793794
+   },
+   "rho_of_type_mean_proj_vs_type_mean_TF": 0.6000000000000001
+  },
+  "site_counts": {
+   "n_reachable_cells": 28,
+   "O6_proj_gt_O2": 9,
+   "O6_proj_gt_O1": 17,
+   "O6_proj_gt_O8": 8,
+   "O6_highest_projection": 8,
+   "O8_highest_projection": 20,
+   "O2_highest_projection": 0,
+   "O1_highest_projection": 0,
+   "O6_win_rate_le_0p05": 27,
+   "O6_transfer_negative": 28
+  },
+  "points": [
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer1",
+    "depth": 1,
+    "op": "O1",
+    "projection": 0.7021071513493856,
+    "transfer": 0.36153070131937665,
+    "win_rate": 0.9300000071525574
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer1",
+    "depth": 1,
+    "op": "O2",
+    "projection": 0.9505369663238525,
+    "transfer": 0.6018368403116862,
+    "win_rate": 0.9633333285649618
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer1",
+    "depth": 1,
+    "op": "O8",
+    "projection": 0.9556844631830851,
+    "transfer": 0.6397491296132406,
+    "win_rate": 0.9666666587193807
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer1",
+    "depth": 1,
+    "op": "O6",
+    "projection": 0.5302099386850992,
+    "transfer": -0.9121881723403931,
+    "win_rate": 0.0033333332588275275
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer2",
+    "depth": 2,
+    "op": "O1",
+    "projection": 0.8078293005625407,
+    "transfer": 0.4979100823402405,
+    "win_rate": 0.9699999888737997
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer2",
+    "depth": 2,
+    "op": "O2",
+    "projection": 0.8840578397115072,
+    "transfer": 0.5879901746908823,
+    "win_rate": 0.9699999888737997
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer2",
+    "depth": 2,
+    "op": "O8",
+    "projection": 0.884161094824473,
+    "transfer": 0.5880275468031565,
+    "win_rate": 0.9699999888737997
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer2",
+    "depth": 2,
+    "op": "O6",
+    "projection": 0.5160601735115051,
+    "transfer": -0.8207917213439941,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer3",
+    "depth": 3,
+    "op": "O1",
+    "projection": 0.6282328764597574,
+    "transfer": 0.3855283856391907,
+    "win_rate": 0.9599999984105428
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer3",
+    "depth": 3,
+    "op": "O2",
+    "projection": 0.7602277596791586,
+    "transfer": 0.4636401931444804,
+    "win_rate": 0.9566666682561239
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer3",
+    "depth": 3,
+    "op": "O8",
+    "projection": 0.7604477802912394,
+    "transfer": 0.46357184648513794,
+    "win_rate": 0.953333338101705
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer3",
+    "depth": 3,
+    "op": "O6",
+    "projection": 0.4340859055519104,
+    "transfer": -1.2774663766225178,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer4",
+    "depth": 4,
+    "op": "O1",
+    "projection": 0.4250326951344808,
+    "transfer": 0.07538737853368123,
+    "win_rate": 0.6400000055631002
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer4",
+    "depth": 4,
+    "op": "O2",
+    "projection": 0.5546048680941263,
+    "transfer": 0.09930976231892903,
+    "win_rate": 0.6466666658719381
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer4",
+    "depth": 4,
+    "op": "O8",
+    "projection": 0.5600352684656779,
+    "transfer": 0.08780767520268758,
+    "win_rate": 0.6366666555404663
+   },
+   {
+    "backbone": "resnet50",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "layer4",
+    "depth": 4,
+    "op": "O6",
+    "projection": 0.4637279411156972,
+    "transfer": -0.8060839970906576,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features1",
+    "depth": 1,
+    "op": "O1",
+    "projection": 0.6952404578526815,
+    "transfer": 0.2982142964998881,
+    "win_rate": 0.9066666563351949
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features1",
+    "depth": 1,
+    "op": "O2",
+    "projection": 0.9298994739850363,
+    "transfer": 0.7072681585947672,
+    "win_rate": 0.9699999888737997
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features1",
+    "depth": 1,
+    "op": "O8",
+    "projection": 0.9446703990300497,
+    "transfer": 0.723863810300827,
+    "win_rate": 0.9699999888737997
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features1",
+    "depth": 1,
+    "op": "O6",
+    "projection": 0.4721839924653371,
+    "transfer": -0.9444064696629842,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features3",
+    "depth": 2,
+    "op": "O1",
+    "projection": 0.8100325465202332,
+    "transfer": 0.49957242608070374,
+    "win_rate": 0.9699999888737997
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features3",
+    "depth": 2,
+    "op": "O2",
+    "projection": 0.9019571344057719,
+    "transfer": 0.6582803428173065,
+    "win_rate": 0.9699999888737997
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features3",
+    "depth": 2,
+    "op": "O8",
+    "projection": 0.9196620583534241,
+    "transfer": 0.6677874724070231,
+    "win_rate": 0.9699999888737997
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features3",
+    "depth": 2,
+    "op": "O6",
+    "projection": 0.4191709061463674,
+    "transfer": -0.9717864592870077,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features5",
+    "depth": 3,
+    "op": "O1",
+    "projection": 0.48609928290049237,
+    "transfer": 0.2698978583017985,
+    "win_rate": 0.950000007947286
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features5",
+    "depth": 3,
+    "op": "O2",
+    "projection": 0.6755137840906779,
+    "transfer": 0.4012288252512614,
+    "win_rate": 0.9433333476384481
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features5",
+    "depth": 3,
+    "op": "O8",
+    "projection": 0.687787671883901,
+    "transfer": 0.390941321849823,
+    "win_rate": 0.950000007947286
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features5",
+    "depth": 3,
+    "op": "O6",
+    "projection": 0.4361988306045532,
+    "transfer": -1.2085405985514324,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features7",
+    "depth": 4,
+    "op": "O1",
+    "projection": 0.3521869381268819,
+    "transfer": 0.047759016354878746,
+    "win_rate": 0.5800000031789144
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features7",
+    "depth": 4,
+    "op": "O2",
+    "projection": 0.5176888505617777,
+    "transfer": 0.14868982632954916,
+    "win_rate": 0.7399999896685282
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features7",
+    "depth": 4,
+    "op": "O8",
+    "projection": 0.5384973883628845,
+    "transfer": 0.08185219764709473,
+    "win_rate": 0.6366666754086813
+   },
+   {
+    "backbone": "convnext",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "features7",
+    "depth": 4,
+    "op": "O6",
+    "projection": 0.4527943829695384,
+    "transfer": -1.1566545963287354,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O1",
+    "projection": 0.7542281945546468,
+    "transfer": 0.4656835397084554,
+    "win_rate": 0.9633333285649618
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O2",
+    "projection": 0.8868889808654785,
+    "transfer": 0.6438871125380198,
+    "win_rate": 0.9633333285649618
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O8",
+    "projection": 0.8919576406478882,
+    "transfer": 0.6399515072504679,
+    "win_rate": 0.9633333285649618
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O6",
+    "projection": 0.4768093327681224,
+    "transfer": -0.5437695582707723,
+    "win_rate": 0.03333333320915699
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O1",
+    "projection": 0.568418045838674,
+    "transfer": 0.35572969913482666,
+    "win_rate": 0.953333338101705
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O2",
+    "projection": 0.6904741923014323,
+    "transfer": 0.4550555348396301,
+    "win_rate": 0.9599999984105428
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O8",
+    "projection": 0.7045350472132365,
+    "transfer": 0.45404001077016193,
+    "win_rate": 0.953333338101705
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O6",
+    "projection": 0.486402690410614,
+    "transfer": -0.4839003086090088,
+    "win_rate": 0.049999999503294625
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O1",
+    "projection": 0.20888947943846384,
+    "transfer": 0.1265688935915629,
+    "win_rate": 0.9333333373069763
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O2",
+    "projection": 0.37241555253664654,
+    "transfer": 0.20657549301783243,
+    "win_rate": 0.9266666571299235
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O8",
+    "projection": 0.3901054362456004,
+    "transfer": 0.2086247205734253,
+    "win_rate": 0.9166666666666666
+   },
+   {
+    "backbone": "vitb16",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O6",
+    "projection": 0.41851258277893066,
+    "transfer": -0.36692309379577637,
+    "win_rate": 0.1133333295583725
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O1",
+    "projection": 0.7820369799931844,
+    "transfer": 0.49085169037183124,
+    "win_rate": 0.9599999984105428
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O2",
+    "projection": 0.8416426181793213,
+    "transfer": 0.5849577188491821,
+    "win_rate": 0.9599999984105428
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O8",
+    "projection": 0.8562416036923727,
+    "transfer": 0.5906252264976501,
+    "win_rate": 0.9599999984105428
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O6",
+    "projection": 0.5588201284408569,
+    "transfer": -1.325294812520345,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O1",
+    "projection": 0.5715523560841879,
+    "transfer": 0.32959238688151044,
+    "win_rate": 0.9366666674613953
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O2",
+    "projection": 0.6353967785835266,
+    "transfer": 0.39055564006169635,
+    "win_rate": 0.950000007947286
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O8",
+    "projection": 0.6472701827685038,
+    "transfer": 0.3929293950398763,
+    "win_rate": 0.9399999976158142
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O6",
+    "projection": 0.5633025765419006,
+    "transfer": -1.317517360051473,
+    "win_rate": 0.0033333332588275275
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O1",
+    "projection": 0.29844773809115094,
+    "transfer": 0.15391306082407633,
+    "win_rate": 0.8900000055631002
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O2",
+    "projection": 0.450990488131841,
+    "transfer": 0.10257097085316975,
+    "win_rate": 0.7266666690508524
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O8",
+    "projection": 0.4931605060895284,
+    "transfer": -0.11925903956095378,
+    "win_rate": 0.45999998847643536
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "hue",
+    "family_key": "hue_90.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O6",
+    "projection": 0.5229374766349792,
+    "transfer": -1.269189437230428,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer1",
+    "depth": 1,
+    "op": "O1",
+    "projection": 0.33410675326983136,
+    "transfer": 0.14632699886957803,
+    "win_rate": 0.7533333500226339
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer1",
+    "depth": 1,
+    "op": "O2",
+    "projection": 0.7782380779584249,
+    "transfer": 0.5149025817712148,
+    "win_rate": 1.0
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer1",
+    "depth": 1,
+    "op": "O8",
+    "projection": 0.851257304350535,
+    "transfer": 0.6018736064434052,
+    "win_rate": 1.0
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer1",
+    "depth": 1,
+    "op": "O6",
+    "projection": 0.5099014937877655,
+    "transfer": -1.3266230424245198,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer2",
+    "depth": 2,
+    "op": "O1",
+    "projection": 0.43405964970588684,
+    "transfer": 0.2540152470270793,
+    "win_rate": 0.9133333365122477
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer2",
+    "depth": 2,
+    "op": "O2",
+    "projection": 0.7913760940233866,
+    "transfer": 0.47072800000508624,
+    "win_rate": 0.996666669845581
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer2",
+    "depth": 2,
+    "op": "O8",
+    "projection": 0.7918122609456381,
+    "transfer": 0.47034064928690594,
+    "win_rate": 0.996666669845581
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer2",
+    "depth": 2,
+    "op": "O6",
+    "projection": 0.5702823599179586,
+    "transfer": -1.1716315746307373,
+    "win_rate": 0.006666666517655055
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer3",
+    "depth": 3,
+    "op": "O1",
+    "projection": 0.39396368463834125,
+    "transfer": 0.23824578523635864,
+    "win_rate": 0.953333338101705
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer3",
+    "depth": 3,
+    "op": "O2",
+    "projection": 0.6731945276260376,
+    "transfer": 0.3736111521720886,
+    "win_rate": 0.9633333484331766
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer3",
+    "depth": 3,
+    "op": "O8",
+    "projection": 0.6736309925715128,
+    "transfer": 0.37346814076105755,
+    "win_rate": 0.9633333484331766
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer3",
+    "depth": 3,
+    "op": "O6",
+    "projection": 0.3923725684483846,
+    "transfer": -1.7655190626780193,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer4",
+    "depth": 4,
+    "op": "O1",
+    "projection": 0.3697683314482371,
+    "transfer": 0.07865768671035767,
+    "win_rate": 0.6866666674613953
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer4",
+    "depth": 4,
+    "op": "O2",
+    "projection": 0.5012607375780741,
+    "transfer": 0.053881943225860596,
+    "win_rate": 0.6099999944368998
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer4",
+    "depth": 4,
+    "op": "O8",
+    "projection": 0.5019603669643402,
+    "transfer": 0.04689000050226847,
+    "win_rate": 0.5899999936421713
+   },
+   {
+    "backbone": "resnet50",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "layer4",
+    "depth": 4,
+    "op": "O6",
+    "projection": 0.5087053676446279,
+    "transfer": -1.1509521007537842,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features1",
+    "depth": 1,
+    "op": "O1",
+    "projection": 0.5810803572336832,
+    "transfer": 0.19900707403818765,
+    "win_rate": 0.8033333420753479
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features1",
+    "depth": 1,
+    "op": "O2",
+    "projection": 0.8275131384531657,
+    "transfer": 0.5398585796356201,
+    "win_rate": 0.9933333396911621
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features1",
+    "depth": 1,
+    "op": "O8",
+    "projection": 0.9104633927345276,
+    "transfer": 0.6470929483572642,
+    "win_rate": 1.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features1",
+    "depth": 1,
+    "op": "O6",
+    "projection": 0.631294310092926,
+    "transfer": -1.615557114283244,
+    "win_rate": 0.006666666517655055
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features3",
+    "depth": 2,
+    "op": "O1",
+    "projection": 0.5492140650749207,
+    "transfer": 0.319774071375529,
+    "win_rate": 0.9666666785875956
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features3",
+    "depth": 2,
+    "op": "O2",
+    "projection": 0.806559145450592,
+    "transfer": 0.5529365638891856,
+    "win_rate": 1.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features3",
+    "depth": 2,
+    "op": "O8",
+    "projection": 0.8375856677691141,
+    "transfer": 0.5794530908266703,
+    "win_rate": 1.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features3",
+    "depth": 2,
+    "op": "O6",
+    "projection": 0.6353786190350851,
+    "transfer": -1.610499620437622,
+    "win_rate": 0.006666666517655055
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features5",
+    "depth": 3,
+    "op": "O1",
+    "projection": 0.3625290592511495,
+    "transfer": 0.2444788416226705,
+    "win_rate": 0.9933333396911621
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features5",
+    "depth": 3,
+    "op": "O2",
+    "projection": 0.5786489645640055,
+    "transfer": 0.3449101249376933,
+    "win_rate": 0.9833333492279053
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features5",
+    "depth": 3,
+    "op": "O8",
+    "projection": 0.6066896915435791,
+    "transfer": 0.33496522903442383,
+    "win_rate": 0.9766666889190674
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features5",
+    "depth": 3,
+    "op": "O6",
+    "projection": 0.7056732177734375,
+    "transfer": -1.9383111794789631,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features7",
+    "depth": 4,
+    "op": "O1",
+    "projection": 0.20143570005893707,
+    "transfer": 0.04397477706273397,
+    "win_rate": 0.6299999952316284
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features7",
+    "depth": 4,
+    "op": "O2",
+    "projection": 0.42049585779507953,
+    "transfer": 0.1367866595586141,
+    "win_rate": 0.7733333309491476
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features7",
+    "depth": 4,
+    "op": "O8",
+    "projection": 0.47817716002464294,
+    "transfer": 0.07626630862553914,
+    "win_rate": 0.6099999944368998
+   },
+   {
+    "backbone": "convnext",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "features7",
+    "depth": 4,
+    "op": "O6",
+    "projection": 0.623294452826182,
+    "transfer": -1.909159262975057,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O1",
+    "projection": 0.22588375210762024,
+    "transfer": 0.10912974675496419,
+    "win_rate": 0.7733333309491476
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O2",
+    "projection": 0.7494577169418335,
+    "transfer": 0.4970724085966746,
+    "win_rate": 0.9766666889190674
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O8",
+    "projection": 0.7845405538876852,
+    "transfer": 0.5023020108540853,
+    "win_rate": 0.9766666889190674
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O6",
+    "projection": 0.41591275731722516,
+    "transfer": -1.8229509989420574,
+    "win_rate": 0.0033333332588275275
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O1",
+    "projection": 0.2049011637767156,
+    "transfer": 0.160975972811381,
+    "win_rate": 0.9133333365122477
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O2",
+    "projection": 0.44469836354255676,
+    "transfer": 0.2707325220108032,
+    "win_rate": 0.9366666674613953
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O8",
+    "projection": 0.47356359163920086,
+    "transfer": 0.27994110186894733,
+    "win_rate": 0.9433333277702332
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O6",
+    "projection": 0.3722849190235138,
+    "transfer": -1.7456353505452473,
+    "win_rate": 0.0033333332588275275
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O1",
+    "projection": 0.10664906352758408,
+    "transfer": 0.086925208568573,
+    "win_rate": 0.9366666674613953
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O2",
+    "projection": 0.20784821112950644,
+    "transfer": 0.1137390931447347,
+    "win_rate": 0.8433333237965902
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O8",
+    "projection": 0.22393691539764404,
+    "transfer": 0.11229731639226277,
+    "win_rate": 0.8333333333333334
+   },
+   {
+    "backbone": "vitb16",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O6",
+    "projection": 0.318893959124883,
+    "transfer": -1.4595437049865723,
+    "win_rate": 0.0033333332588275275
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O1",
+    "projection": 0.5018773476282755,
+    "transfer": -0.142515500386556,
+    "win_rate": 0.33666666348775226
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O2",
+    "projection": 0.5458592971165975,
+    "transfer": 0.13358728090922037,
+    "win_rate": 0.7300000190734863
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O8",
+    "projection": 0.5821300347646078,
+    "transfer": 0.13780651489893594,
+    "win_rate": 0.7366666793823242
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block2",
+    "depth": 1,
+    "op": "O6",
+    "projection": 0.5489487648010254,
+    "transfer": -4.635371685028076,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O1",
+    "projection": 0.1238408163189888,
+    "transfer": 0.06414286295572917,
+    "win_rate": 0.7700000007947286
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O2",
+    "projection": 0.2047255982955297,
+    "transfer": 0.048696160316467285,
+    "win_rate": 0.6733333269755045
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O8",
+    "projection": 0.22044780850410461,
+    "transfer": 0.04431412617365519,
+    "win_rate": 0.6566666762034098
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block5",
+    "depth": 2,
+    "op": "O6",
+    "projection": 0.5398481488227844,
+    "transfer": -4.628438631693522,
+    "win_rate": 0.0
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O1",
+    "projection": 0.04352191463112831,
+    "transfer": 0.01721644401550293,
+    "win_rate": 0.6400000055631002
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O2",
+    "projection": 0.2143233319123586,
+    "transfer": -0.3968880573908488,
+    "win_rate": 0.10666666800777118
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O8",
+    "projection": 0.30518168210983276,
+    "transfer": -0.9916963577270508,
+    "win_rate": 0.019999999552965164
+   },
+   {
+    "backbone": "dinov2b14",
+    "family": "heat",
+    "family_key": "heat_2.0",
+    "site": "block8",
+    "depth": 3,
+    "op": "O6",
+    "projection": 0.5202590127786001,
+    "transfer": -4.4662543932596845,
+    "win_rate": 0.0
+   }
+  ]
+ },
+ "panel_B_subspace_level": {
+  "source_file": "results/quotientization.json",
+  "source_keys": {
+   "hue_seeds": {
+    "resnet50,convnext,vitb16,dinov2b14_seed0": "backbones.resnet50.<layer{1..4}>.{visible_share_of_displacement,visible_share_isotropic_expectation,visible_share_over_isotropic,matched_rank_control.random_share_at_nominal,readout_effective_rank}",
+    "resnet50,convnext,vitb16,dinov2b14_seed1": "backbones.resnet50.<layer{1..4}>.{visible_share_of_displacement,visible_share_isotropic_expectation,visible_share_over_isotropic,matched_rank_control.random_share_at_nominal,readout_effective_rank}",
+    "resnet50,convnext,vitb16,dinov2b14_seed2": "backbones.resnet50.<layer{1..4}>.{visible_share_of_displacement,visible_share_isotropic_expectation,visible_share_over_isotropic,matched_rank_control.random_share_at_nominal,readout_effective_rank}"
+   },
+   "heat_seed0": "resnet50,convnext,vitb16,dinov2b14_seed0_heat2.0_rohf.backbones.resnet50.<layer{1..4}> (readout=hf)"
+  },
+  "backbone": "resnet50",
+  "depth_sites": [
+   "layer1",
+   "layer2",
+   "layer3",
+   "layer4"
+  ],
+  "hue_per_seed": {
+   "seed0": [
+    {
+     "site": "layer1",
+     "visible": 0.12745341658592224,
+     "isotropic": 0.05078125,
+     "over_isotropic": 2.5098518958458533,
+     "random_share": 0.05247002700343728,
+     "effective_rank": 3.6830496017519168,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer2",
+     "visible": 0.06234829127788544,
+     "isotropic": 0.025390625,
+     "over_isotropic": 2.455563471867488,
+     "random_share": 0.02513022383209318,
+     "effective_rank": 4.0332541923698955,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer3",
+     "visible": 0.02472298964858055,
+     "isotropic": 0.0126953125,
+     "over_isotropic": 1.947410876934345,
+     "random_share": 0.01264304667711258,
+     "effective_rank": 5.520549154681782,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer4",
+     "visible": 0.0033409560564905405,
+     "isotropic": 0.00634765625,
+     "over_isotropic": 0.5263290772071252,
+     "random_share": 0.006320549233350903,
+     "effective_rank": 7.038627684086155,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    }
+   ],
+   "seed1": [
+    {
+     "site": "layer1",
+     "visible": 0.11955427378416061,
+     "isotropic": 0.05078125,
+     "over_isotropic": 2.354299545288086,
+     "random_share": 0.051892045652493834,
+     "effective_rank": 3.327387503705642,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer2",
+     "visible": 0.060101836919784546,
+     "isotropic": 0.025390625,
+     "over_isotropic": 2.3670877309945912,
+     "random_share": 0.025941990199498832,
+     "effective_rank": 4.156406401368373,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer3",
+     "visible": 0.022409573197364807,
+     "isotropic": 0.0126953125,
+     "over_isotropic": 1.765184842623197,
+     "random_share": 0.012619726592674851,
+     "effective_rank": 5.086812868840317,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer4",
+     "visible": 0.0033509666100144386,
+     "isotropic": 0.00634765625,
+     "over_isotropic": 0.5279061244084284,
+     "random_share": 0.0063428369467146695,
+     "effective_rank": 5.6007928560165965,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    }
+   ],
+   "seed2": [
+    {
+     "site": "layer1",
+     "visible": 0.13105365633964539,
+     "isotropic": 0.05078125,
+     "over_isotropic": 2.5807489248422475,
+     "random_share": 0.04916194174438715,
+     "effective_rank": 4.063379703057259,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer2",
+     "visible": 0.06699583679437637,
+     "isotropic": 0.025390625,
+     "over_isotropic": 2.6386052645169773,
+     "random_share": 0.025082826032303274,
+     "effective_rank": 4.681258211849511,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer3",
+     "visible": 0.025562232360243797,
+     "isotropic": 0.0126953125,
+     "over_isotropic": 2.013517379760742,
+     "random_share": 0.012679481413215399,
+     "effective_rank": 5.8383187897258875,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    },
+    {
+     "site": "layer4",
+     "visible": 0.0037099618930369616,
+     "isotropic": 0.00634765625,
+     "over_isotropic": 0.5844616889953613,
+     "random_share": 0.006334887002594769,
+     "effective_rank": 6.2520376516357965,
+     "nominal_rank": 13,
+     "visible_dim": 13
+    }
+   ]
+  },
+  "hue_seed_mean": [
+   {
+    "site": "layer1",
+    "visible": 0.12602044890324274,
+    "isotropic": 0.05078125,
+    "over_isotropic": 2.4816334553253956,
+    "random_share": 0.05117467146677276,
+    "effective_rank": 3.691272269504939,
+    "nominal_rank": 13.0
+   },
+   {
+    "site": "layer2",
+    "visible": 0.06314865499734879,
+    "isotropic": 0.025390625,
+    "over_isotropic": 2.4870854891263523,
+    "random_share": 0.025385013354631763,
+    "effective_rank": 4.2903062685292594,
+    "nominal_rank": 13.0
+   },
+   {
+    "site": "layer3",
+    "visible": 0.024231598402063053,
+    "isotropic": 0.0126953125,
+    "over_isotropic": 1.908704366439428,
+    "random_share": 0.01264741822766761,
+    "effective_rank": 5.481893604415997,
+    "nominal_rank": 13.0
+   },
+   {
+    "site": "layer4",
+    "visible": 0.003467294853180647,
+    "isotropic": 0.00634765625,
+    "over_isotropic": 0.546232296870305,
+    "random_share": 0.006332757727553447,
+    "effective_rank": 6.297152730579516,
+    "nominal_rank": 13.0
+   }
+  ],
+  "heat_seed0_only": [
+   {
+    "site": "layer1",
+    "visible": 0.0455823615193367,
+    "isotropic": 0.05078125,
+    "over_isotropic": 0.8976218883807843,
+    "random_share": 0.05193274444900453,
+    "effective_rank": 8.189954937873987,
+    "nominal_rank": 13
+   },
+   {
+    "site": "layer2",
+    "visible": 0.03244252875447273,
+    "isotropic": 0.025390625,
+    "over_isotropic": 1.2777365170992339,
+    "random_share": 0.025724282721057534,
+    "effective_rank": 8.150699486749291,
+    "nominal_rank": 13
+   },
+   {
+    "site": "layer3",
+    "visible": 0.01406591385602951,
+    "isotropic": 0.0126953125,
+    "over_isotropic": 1.1079612145057092,
+    "random_share": 0.012658984458539635,
+    "effective_rank": 8.732319016158268,
+    "nominal_rank": 13
+   },
+   {
+    "site": "layer4",
+    "visible": 0.0040166485123336315,
+    "isotropic": 0.00634765625,
+    "over_isotropic": 0.6327766271737906,
+    "random_share": 0.006308546377113089,
+    "effective_rank": 12.06089804310892,
+    "nominal_rank": 13
+   }
+  ],
+  "heat_caveat": "documented script-200 JSON keying bug lost heat seeds 1-2; no heat trend is claimed",
+  "manuscript_audited": {
+   "visible_share": [
+    0.126,
+    0.063,
+    0.024,
+    0.004
+   ],
+   "over_isotropic": [
+    2.48,
+    2.49,
+    1.91,
+    0.55
+   ],
+   "matched_rank_random": [
+    0.051,
+    0.025,
+    0.013,
+    0.006
+   ]
+  }
+ },
+ "panel_C_statistic_level": {
+  "source_file": "results/estimator_control.json",
+  "source_keys": "cells.<backbone>|<family>|depth<n>.estimators.<name>.{feat_resid_over_displacement,transfer}",
+  "field_definition": "scripts/218_estimator_control.py line 123: feat_resid_over_displacement = ||pred - Y|| / ||Y - X||  (an ERROR ratio; larger = worse feature fit; verified equal to feat_err_to_real / feat_displacement_norm)",
+  "partial_method": "Spearman correlation of rank-residualised x and y, controlling rank(depth); all 32 cells for the headline, all 16 cells per family for the by-family split",
+  "per_estimator": {
+   "O2_pub": {
+    "label": "O2 published (linear)",
+    "n": 32,
+    "rho_raw": -0.8459001907507865,
+    "rho_partial_depth": -0.5123832645341458,
+    "by_family_partial_depth": {
+     "heat": -0.4709346381642081,
+     "hue": -0.023546731908210407
+    }
+   },
+   "ridge_tun": {
+    "label": "ridge tuned (validation)",
+    "n": 32,
+    "rho_raw": -0.8308570730666475,
+    "rho_partial_depth": -0.5413687839743159,
+    "by_family_partial_depth": {
+     "heat": -0.5916116391937866,
+     "hue": -0.1828916511866806
+    }
+   },
+   "O1": {
+    "label": "O1 orthogonal",
+    "n": 32,
+    "rho_raw": -0.7204185749465059,
+    "rho_partial_depth": -0.6143829405387949,
+    "by_family_partial_depth": {
+     "heat": -0.47976466262978706,
+     "hue": -0.15599709889189395
+    }
+   },
+   "rank1_ls": {
+    "label": "rank-1 least squares",
+    "n": 32,
+    "rho_raw": -0.5698039454504321,
+    "rho_partial_depth": -0.5149572977374646,
+    "by_family_partial_depth": {
+     "heat": -0.37380436904284026,
+     "hue": -0.3502576371346298
+    }
+   },
+   "rank1_mean": {
+    "label": "rank-1 mean-aligned",
+    "n": 32,
+    "rho_raw": -0.577142051637817,
+    "rho_partial_depth": -0.45661365751002103,
+    "by_family_partial_depth": {
+     "heat": -0.5592348828199972,
+     "hue": -0.47534965039699756
+    }
+   },
+   "rank1_rnd": {
+    "label": "rank-1 random dir.",
+    "n": 32,
+    "rho_raw": -0.5382500888446774,
+    "rho_partial_depth": -0.4665201008629906,
+    "by_family_partial_depth": {
+     "heat": -0.342184379639596,
+     "hue": -0.38263439350841916
+    }
+   }
+  },
+  "pooled_six_estimators": {
+   "n": 192,
+   "rho_raw": -0.8994010049197327,
+   "rho_partial_depth": -0.9056345352020675
+  },
+  "manuscript_audited": {
+   "O2_pub_rho": -0.846,
+   "ridge_tun_rho": -0.831,
+   "O2_pub_partial_depth": -0.512,
+   "ridge_tun_partial_depth": -0.541,
+   "ridge_tun_partial_heat": -0.592,
+   "ridge_tun_partial_hue": -0.183
+  },
+  "sign_discrepancy": "ALL audited numbers reproduce. The claimed direction does not: because the plotted x is an error ratio, rho<0 means better feature-space fit -> better downstream transfer. The manuscript's 'fitting the feature displacement more accurately goes with transporting it less faithfully' (paper/full/TPAMI_comprehensive_EN.md:486) is the opposite sign. The same statistic is read with this sign in paper/targets/TPAMI/reports/DIAGNOSTIC_VALIDATION_REPORT.md:134."
+ },
+ "reproduction_check": {
+  "panel_A": {
+   "audited": {
+    "within_family_rho_approx": 0.92,
+    "O6_proj_gt_O2": 9,
+    "O6_highest_projection": 8,
+    "O8_highest_projection": 20,
+    "O6_win_rate_le_0p05": 27,
+    "n_reachable_cells": 28
+   },
+   "reproduced": {
+    "within_family_rho": {
+     "O1": 0.8226600985221675,
+     "O2": 0.9441707717569787,
+     "O8": 0.9408866995073891,
+     "O6": -0.2846195949644226
+    },
+    "O6_proj_gt_O2": 9,
+    "O6_highest_projection": 8,
+    "O8_highest_projection": 20,
+    "O6_win_rate_le_0p05": 27,
+    "n_reachable_cells": 28,
+    "across_type_pooled_O1_O2_O8_rho": 0.9056596132428876,
+    "across_type_pooled_all_four_rho": 0.6761796562681518
+   },
+   "verdict": "MATCH on every count (9/8/20/27 of 28). The '+0.92' summary is the within-family value of the global-linear family (O2 hue +0.934, heat +0.916, mean 0.925); recomputed per family directly it is O1 +0.823, O2 +0.944, O8 +0.941 (n=28 each), so the '+0.92' holds for O2/O8 and understates O1 on heat."
+  },
+  "panel_B": {
+   "audited": {
+    "over_isotropic_first_three": [
+     2.48,
+     2.49,
+     1.91
+    ],
+    "over_isotropic_deepest": 0.55,
+    "visible_share": [
+     0.126,
+     0.063,
+     0.024,
+     0.004
+    ],
+    "matched_rank_random": [
+     0.051,
+     0.025,
+     0.013,
+     0.006
+    ]
+   },
+   "reproduced": {
+    "over_isotropic": [
+     2.4816,
+     2.4871,
+     1.9087,
+     0.5462
+    ],
+    "visible_share": [
+     0.12602,
+     0.06315,
+     0.02423,
+     0.00347
+    ],
+    "matched_rank_random": [
+     0.0512,
+     0.0254,
+     0.0126,
+     0.0063
+    ],
+    "heat_seed0_over_isotropic": [
+     0.8976,
+     1.2777,
+     1.108,
+     0.6328
+    ]
+   },
+   "verdict": "MATCH except the deepest visible share: the audited 0.004 is 0.00347 in the file (0.126/0.063/0.024/0.0035), i.e. the manuscript rounds 0.0035 up to 0.004. over-isotropic 2.4816/2.4871/1.9087/0.5462 -> 2.48/2.49/1.91/0.55 exactly; matched-rank random 0.0512/0.0254/0.0126/0.0063 -> 0.051/0.025/0.013/0.006 exactly. heat seed-0 over-isotropic 0.8976/1.2777/1.1080/0.6328 -> 0.898/1.278/1.108/0.633 exactly."
+  },
+  "panel_C": {
+   "audited": {
+    "O2_pub_rho": -0.846,
+    "ridge_tun_rho": -0.831,
+    "O2_pub_partial_depth": -0.512,
+    "ridge_tun_partial_depth": -0.541,
+    "ridge_tun_partial_heat": -0.592,
+    "ridge_tun_partial_hue": -0.183,
+    "rank1_ls_rho": -0.57,
+    "O1_rho": -0.72
+   },
+   "reproduced": {
+    "O2_pub_rho": -0.8459,
+    "ridge_tun_rho": -0.8309,
+    "O2_pub_partial_depth": -0.5124,
+    "ridge_tun_partial_depth": -0.5414,
+    "ridge_tun_partial_heat": -0.5916,
+    "ridge_tun_partial_hue": -0.1829,
+    "rank1_ls_rho": -0.5698,
+    "O1_rho": -0.7204
+   },
+   "verdict": "MATCH on all eight numbers (to 3 dp). ONE NON-NUMERIC DISCREPANCY: the direction. As stored, the x axis is an ERROR ratio, so rho<0 means a better feature-space fit gives a BETTER T_F; the manuscript's stated direction ('fitting better transports it worse') is the opposite sign and is not supported by these data."
+  }
+ }
+}

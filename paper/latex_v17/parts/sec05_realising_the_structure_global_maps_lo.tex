@@ -1,0 +1,116 @@
+\section{Realising the Structure: Global Maps, Local Transport, and Composition}
+
+\subsection{Prediction, transport, and composition}
+
+Three tasks, graded separately throughout: \textbf{prediction} --- from a fixed anchor, forecast features at other angles; \textbf{transport} --- apply a specified increment from a starting state never used in fitting; \textbf{composition} --- apply several operations whose product must equal one true total transformation, graded against the ground-truth composite target as well as for internal consistency. Each has its own holdouts (Appendix C). The three tasks are not three benchmarks but the three faces of Definition 1 weighed separately: prediction tests approximation along the orbit, transport tests transfer to states never fitted, and composition tests the homomorphism law $\rho$($\tau$ $_2$ $\tau$ $_1$) = $\rho$($\tau$ $_2$)$\circ$ $\rho$($\tau$ $_1$) itself.
+
+\subsection{Global realisations}
+
+Five natural global families were fitted at matched budgets, and exactly one of them combines fidelity with composition: the band-limited family predicts features of genuinely re-rendered inputs to \textbf{0.17--0.40\% relative MSE}, up to $16.6\times$ tighter than the copy baseline. Content conditioning does not rescue global forms (48 matched-capacity contrasts, including an oracle partition by the true displacement direction); \S{}4.6 states what that negative result does and does not imply about the cross-content reading of the residual error at measured sites. \textbf{Table 7} gives the numbers.
+
+One of the rejected families fails \textbf{by theorem rather than by observation}.
+
+\textbf{Theorem 3 (a closed orbit has no exact coordinate-monotone realisation).} A family $\{G_t\}$ whose members are coordinate-wise monotone in a fixed basis and whose dependence on the family parameter is monotone --- $G_t(z)_i=f_{i,t}(z_i)$ with $(t,u)\mapsto f_{i,t}(u)$ non-decreasing in both arguments --- realises an orbit only if every coordinate of that orbit is monotone in the parameter. Hence a closed non-degenerate orbit admits no exact realisation by such a family, and each coordinate that decreases by $A$ over intervals of length $\ell$ contributes $L^2$ error at least $A^2\ell/4$. (Proved in Appendix B.5.1; the two lemmas are B.7 and B.8.)
+
+The theorem says what the class cannot do; the measurement says what it costs. On the reference orbit the best coordinate-monotone fit carries $L^2$ error $998$ against $924$ for the best fixed linear map (Table 7), and both fail by a wide margin, while the carrier family that keeps the conjugate pair is exact. Segmenting the basis --- letting it follow the field locally, \S{}5.3 --- is the escape the theorem permits and the measurements confirm.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 7.} Global realisations at matched budget, each against the copy floor (\S{}3.7).}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{family} & \textbf{fidelity vs copy} & \textbf{composition} & \textbf{verdict} \\
+\midrule
+symmetric & $0.09$--$0.64\times$ & fails & rejected \\
+antisymmetric & $3.07\times$ & fails & rejected \\
+band-limited multi-frequency & $0.1$--$0.6\times$ & fails & rejected \\
+low-order discrete ($\mathbb Z_2/\mathbb Z_3$) & $\le 0.41$ & fails & rejected \\
+monotone per-dimension & no exact realisation of a closed orbit (Thm 3); best fit measured, $L^2=998$ on the reference orbit & fails by theorem and by measurement & rejected \\
+\textbf{band-limited, $K=3$--$4$} & \textbf{$0.17$--$0.40\%$ relative MSE; $6.7$--$16.6\times$ over copy} & passes & \textbf{the working global family} \\
+content-conditioned (48 matched contrasts) & mean gain $-0.167$, best $+0.017$ & --- & structurally ineffective, not merely weak \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Segmenting --- letting the basis follow the field locally --- is exactly the escape this theorem permits, which is the local transporter of \S{}5.3.
+
+\subsection{Local state-conditioned realisations}
+
+The successful realisation is \textbf{local and phase-conditioned}: the hue circle is divided into $40^\circ$ segments, each carrying a generator estimated from paired endpoint features, with the current phase read from the representation and the segment generator applied --- a nonlinear, state-dependent composite. It fits an order of magnitude tighter than the best global family and closes loops to $0.4\%$ on unseen shapes and starting states. \textbf{Table 8} collects the comparison. Two further gaps --- the median advantage of a local step over a global single direction at a fixed site, and how that gap grows with depth --- are not reported here, because no producing artefact exists for them.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 8.} Local versus global realisation at matched budget.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{quantity} & \textbf{value} & \textbf{} \\
+\midrule
+local vs copy, per site & $1.55$--$15.94\times$ &  \\
+global vs copy, same sites & $0.08$--$0.84\times$ &  \\
+generator: third-order Fourier fit in phase & $R^2 = 0.87$ & method box, Appendix E \\
+orbit bending rate across layers & $1.91\to2.35$ & Appendix D \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\textit{One mechanism hypothesis fits this evidence: the obstacle to global linearisation is shape--colour resonance rather than curvature or non-sharing. Leave-one-shape-out linearisation succeeds $4/4$ at the mid-level site and fails $2/4$ at the deep site, exactly where phase organisation destabilises --- the signature a resonance account predicts. It is stated as a hypothesis, not a result. Figure 6 contrasts the two realisations site by site and prices the composition of a fixed total transformation.}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig06_realisation.pdf}
+\caption*{\textbf{Figure 6.} Which realisations work, and what composing costs. (a) Gain over the copy baseline of the best local phase-conditioned transporter (circles) and of the best global family (squares) at five sites, logarithmic axis, with a dotted line at one (no better than copying); the local construction is $1.55$--$15.9\times$ the copy baseline while the global family is $0.08$--$0.84\times$. (b) Transfer at a fixed total hue rotation as a function of how the rotation is split into a chain, with the direct fit as a dashed reference; bars are means over three seeds and whiskers one standard deviation. (c) The same for the heat semigroup, whose chains degrade monotonically with length.}
+\end{figure*}
+
+\subsection{Composable transport and its price}
+
+Composition is where the algebra is tested. Holding the \textbf{total} transformation fixed and varying only its decomposition --- two- and four-step paths, an order swap, a cyclic round trip that must return to the identity, and, for heat, chains of two, four and eight steps against a single-step substitute control and a direct fit as the upper reference --- chains come within a few points of a direct fit for both algebras while the single-step substitute does not, and heat degrades monotonically in chain length. Path \textit{consistency} and path \textit{fidelity} come apart: the global linear family agrees most tightly between paths and transports worst, so a family of operators can be perfectly self-consistent and still fail to implement the transformation. \textbf{Table 9} names every path and carries every number, including the saturation caveat (the heat single step scores high because that total sits near saturation) and the cyclic round-trip measure.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 9.} Composition at a fixed total transformation (hue $90^\circ$; heat $t^\star=1.0$), plain-CNN stage 1, three seeds, zero split overlap between fit and evaluation.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{total} & \textbf{path} & \textbf{ridge $T_F$} & \textbf{conv-res $T_F$} \\
+\midrule
+hue $90^\circ$ & direct fit at $90^\circ$ & 0.285 $\pm$ 0.008 & 0.511 $\pm$ 0.019 \\
+hue $90^\circ$ & $45+45$ & 0.237 $\pm$ 0.013 & 0.472 $\pm$ 0.023 \\
+hue $90^\circ$ & $30+60$ & 0.249 $\pm$ 0.012 & 0.488 $\pm$ 0.027 \\
+hue $90^\circ$ & $60+30$ (order swap) & 0.245 $\pm$ 0.014 & 0.484 $\pm$ 0.028 \\
+hue $90^\circ$ & $22.5\times4$ & 0.253 $\pm$ 0.024 & 0.451 $\pm$ 0.032 \\
+hue $90^\circ$ & single $22.5^\circ$ ($1/4$ of total) & 0.131 $\pm$ 0.019 & 0.207 $\pm$ 0.010 \\
+hue $90^\circ$ & cyclic $+120/-120$ (identity) & 0.067 $\pm$ 0.029 & 0.254 $\pm$ 0.021 \\
+heat $t^\star=1.0$ & direct fit at $t^\star$ & 0.610 $\pm$ 0.107 & 0.760 $\pm$ 0.030 \\
+heat & two steps & 0.514 $\pm$ 0.132 & 0.679 $\pm$ 0.019 \\
+heat & four steps & 0.437 $\pm$ 0.112 & 0.625 $\pm$ 0.063 \\
+heat & eight steps & 0.372 $\pm$ 0.114 & 0.481 $\pm$ 0.025 \\
+heat & single step ($t^\star/8$) & 0.572 $\pm$ 0.025 & 0.597 $\pm$ 0.025 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+One law organises the whole table, and it is a statement about the \textit{truth} action rather than about any operator.
+
+\textbf{Theorem 4 (accumulation law).} Let the truth action $\tau$ be $L$-Lipschitz in the consumer's seminorm, and let a realised family have single-step error $E_1=\varepsilon$ uniformly on the states visited. Then the $n$-step chain error satisfies
+\[\adjustbox{max width=\columnwidth}{$\displaystyle \begin{aligned}
+E_n&\le\varepsilon+L\,E_{n-1},\qquad\text{equivalently}\\
+E_n&\le\varepsilon\frac{L^n-1}{L-1}\ (L\neq1),\qquad E_n\le n\varepsilon\ (L=1).
+\end{aligned}
+$}\]
+\textit{Proof.} Insert and subtract the truth's intermediate state: $\rho(\tau)^n z-g_{\tau^n}z=\big[\rho(\tau)(\rho(\tau)^{n-1}z)-g_\tau(\rho(\tau)^{n-1}z)\big]+\big[g_\tau(\rho(\tau)^{n-1}z)-g_\tau(g_{\tau^{n-1}}z)\big]$; the first bracket is at most $\varepsilon$ by the uniform single-step bound, the second at most $L\,E_{n-1}$ by Lipschitzness. Iterating gives the closed forms. Appendix B carries the full statement and the uniformity hypotheses. $\square$
+
+The bound separates three regimes by one property of the truth: $L<1$ (contractive) gives a \textbf{bounded} geometric accumulation $\varepsilon/(1-L)$; $L=1$ (isometric) gives \textbf{linear} accumulation $n\varepsilon$; $L>1$ (expansive) gives \textbf{exponential} growth $L^n$. The two tested families differ in how their chains behave, and the accumulation law is the tool that separates the possible causes: a contraction caps the chain error, an isometry accumulates it linearly, an expansion grows it exponentially. Which regime a site occupies must be \textit{measured} in the consumer's seminorm, not inferred from the generator. Two readings follow, and they are worth separating. Heat's monotone degradation in Table 9 is therefore \textbf{not} amplification by the truth action --- a contraction forbids that --- but a growing single-step error as the chain wanders into states where the fitted family is worse; and hue's flat chains, under the loosest of the three bounds, mean that its single-step error is already small rather than that the bound protects it. The regime that would actually blow up, $L>1$, is not instantiated in this paper. In all three cases the composition law itself is automatic; what the accumulation law prices is the realisation error. Estimating $\varepsilon$ and $L$ independently of the measured chain error, and instantiating the expansive class ($L>1$), where the bound predicts exponential growth, are not done here.
+
+\textbf{Metric distortion at real sites.} The one number Theorem 4 needs is how the truth action distorts distances in the consumer's seminorm, and it is measurable. Over pairs of held-out crops, ResNet-50, four depths and both algebras, the median ratio of feature distances after and before the transformation is below one for heat and near one for hue in the \textbf{site} metric --- the qualitative prediction of the generators --- but the same ratio in the \textbf{consumer's} response sits slightly above one for both algebras at every depth (Table D.22). An input-space contraction is not a contraction of what a downstream consumer reads. That is why Theorem 4 is stated with $L$ in the consumer's seminorm and why a site's regime is reported as a distribution of typical stretch rather than read off the generator.
+
+\subsection{Functional consequences of the realised action}
+
+Capability claims are graded on ground-truth targets and downstream behaviour, because the proxies can be gamed. The random orthogonal operator of \S{}1.3 attains the best projection score at $15$ of $42$ sites while its transfer is negative at every one of them and its detector agreement is $F_1=0.000$. Shuffled-pair controls and PCA-aligned subspace controls complete the picture, and the proxies are not worthless: within a family, projection correlates with transfer ($\rho=+0.93$), and the feature-residual ratio correlates with the correct sign --- each instrument is informative inside its scope and insufficient alone. The evaluation rule this paper uses follows directly: feature-target fidelity, composition behaviour, and downstream effect, each against its own baseline, jointly.
+
+Realisation capability varies across layers, and the variation is structured. The next section shows it follows the readout--transformation pairing, and what learning does to it.
+

@@ -1,0 +1,58 @@
+\section{Method boxes}
+
+Implementation-level specifications for the four components behind the paper's construction and measurement claims. Each box states its hyperparameters, what is fitted and what is not. Section numbers are those of the main text. Every value is copied from a file read while writing this appendix.
+
+\subsubsection{Box E1. Local phase-conditioned transporter (\S{}5.3)}
+
+\textbf{Partition.} The hue circle is divided into nine segments of $40^\circ$, with starts $h\in\{0^\circ,40^\circ,\dots,320^\circ\}$; a segment operator is trained on the paired endpoints $z(h)\to z(h+40^\circ)$.
+
+\textbf{Per-segment generator.} In a $D=24$ PCA subspace of the site's features, each segment carries an antisymmetric generator $A_k\in\mathfrak{so}(24)$, fitted so that $\exp(A_k\cdot40^\circ)\,z_1\approx z_2$ on the paired endpoints, using the four training shapes and all four $(s,v)$ pairs.
+
+\textbf{Smoothing and read-out at inference.} The nine per-segment generators are fitted by a third-order Fourier field, $\Omega(\theta)=\Omega_0+\sum_{k=1}^{3}\big(C_k\cos(k\omega\theta)+S_k\sin(k\omega\theta)\big)$ with $\omega=2\pi/360$, one coefficient matrix per basis element by least squares on the nine sampled phases; the fit reaches $R^2=0.8672$. Phases are shared across shapes, amplitudes are not, so the phase is read from the representation at inference and the segment generator is applied as a fixed function of the read phase: a step of size $\delta\le40^\circ$ is taken with the midpoint value $\Omega(\theta+\delta/2)$, $z\mapsto\exp(\Omega(\theta+\delta/2)\,\delta)\,z$. No operator is refitted on the test shape or the test starting state.
+
+\textbf{Fitting budget.} Adam, 800 epochs, learning rate $5\times10^{-3}$, minibatch 64, nine segments; the $D=24$ subspace and the Fourier coefficients are fixed after fitting. The locality comparison uses a separate per-segment rank-32 log-domain operator $z+U\big((e^{\lambda}-1)\odot(U^{\top}z)\big)$ with $U\in\mathbb{R}^{d\times32}$ (the site width; $d=64$ at stage 3), Adam, 150 epochs, learning rate $8\times10^{-3}$, trained on the four training shapes and tested on the two holdout shapes; across five sites it beats the copy baseline by $1.55$--$15.94\times$ while the global family reaches only $0.08$--$0.84\times$. The local construction closes a full $360^\circ$ loop to a relative error of $0.0037$ on stage 3 and $0.0062$ on ResNet-18 layer 2.
+
+\textbf{Parameter count, and what is not fitted.} Each generator has $D(D-1)/2=276$ free parameters in the $24$-dimensional subspace, and the smoothed field stores $1+2K=7$ coefficient matrices; this is the entire fitted object. The backbone is frozen; the action applied at inference is a fixed function of the read phase, not a fitted operator; no test-sample operator, template or per-shape calibration is fitted.
+
+\subsubsection{Box E2. The carrier interface: learned encoding, fixed action (\S{}7.2)}
+
+\textbf{Read-in.} $E_\theta:\mathbb{R}^{d}\to\mathbb{R}^6$ is a three-layer MLP of widths $64\to256\to256\to6$ with SiLU activations, applied to the stage 3 GAP feature divided by the training-pool standard deviation ($\texttt{feat\_std}=0.7240$). Its six outputs are read as $l=\mathrm{softplus}(o_0)$, $\hat s=\mathrm{sigmoid}(o_1)$ and $(z_{1x},z_{1y},z_{2x},z_{2y})=o_{2:6}$, so the code is $(l,\hat s,z_1,z_2)$ with $z_1$ the fundamental and $z_2$ the second harmonic.
+
+\textbf{Fixed action.} $A_\Delta=\mathrm{diag}(I_2,R(\Delta),R(2\Delta))$: the two scalar channels are held; the fundamental rotates by $\Delta$ and the second harmonic by $2\Delta$. $R$ is the standard plane rotation; the action carries no parameters and is never fitted, so only $E_\theta$ is learned.
+
+\textbf{Objective and anchoring.} The head is trained on rendered $(s,v,h)$ cells against the target $(v,\,s,\,m^\star\cos\theta,\,m^\star\sin\theta,\,m^\star\cos2\theta,\,m^\star\sin2\theta)$, with $\theta$ the nominal hue and $m^\star$ the measured per-$(s,v)$ orbit amplitude; the loss is the sum of mean-squared errors on the two scalar channels and the four harmonic coordinates. $m^\star$ is the amplitude anchor: it fixes the phase gauge by tying the code's radial scale to the measured orbit, which is what makes the read-out well posed. Where no semantic label is available the same six channels are additionally anchored on label-free pixel statistics --- the saturation-weighted dominant hue, saturation and value --- with only the code head trained and the backbone frozen. Hyperparameters: AdamW, learning rate $2\times10^{-3}$, weight decay $10^{-4}$, 1500 epochs, 24 minibatches per epoch, batch 96; trained on four shapes, evaluated zero-shot on the two unseen shapes.
+
+\textbf{Scope.} The action is fixed by the measured structure, so the correspondence is learned but its law is not. Whether a fitted action of equal capacity does better is measured in \S{}7.2 (Table F.10); the licence for the fixed action is that the two conditions the construction uses are measured to hold at the site (\S{}4.3, \S{}7.3). The two constructions differ in kind: the local transporter of Box E1 fits a generator and its Fourier coefficients and freezes them at inference, whereas the action here is never fitted and only the read-in is learned. One caveat belongs to the runtime figure of Box E4: the region-level timing artefact does not record its device, and the later verification runs are CPU-only, so the ratio is the reported measurement rather than a controlled head-to-head benchmark.
+
+\subsubsection{Box E3. Consumer heads}
+
+\textbf{ImageNet head.} For the depth grid and the transformer probes the consumer is the backbone's own frozen pretrained classifier head (torchvision \texttt{IMAGENET1K\_\allowbreak{}V2}/\texttt{V1}, DINOv2 with a frozen linear head on final pooled features). The criterion is label-free: it compares $F(Wz)$ with $F(g_\tau z)$, so no label enters, and the effect size --- the relative change of these logits under the real transformation --- licenses reading any operator result.
+
+\textbf{Attribute read-outs.} Hue, saturation and value are read by ridge probes fitted on the pooled final features of the base and variant images for that attribute; one probe is shared by every route so no operator is advantaged. The YOLO detector arm reads a 64-dimensional stage 3 GAP feature. The hue read-out reported in \S{}7.4 is the code head of Box E2, not a ridge probe.
+
+\textbf{YOLO hue-bin detector.} YOLO11n is trained on a synthetic set whose class \textit{is} the hue bin: eight bins of $45^\circ$ with the shape randomised across classes. Recipe: 60 epochs at $224$ px, batch 16, with every augmentation (mosaic, mixup, hue, saturation, value, horizontal and vertical flip) disabled, seed $0$; validation mAP50 $0.9871$ (mAP50-95 $0.9094$). Reading convention: box-level F1 at IoU $0.5$ against the detection obtained after a real recolour of the same scene, with a mid-layer transport at stage 3, 80 held-out scenes and three seeds. At $\Delta=90^\circ$ the null (no intervention) reaches F1 $0.008$, Procrustes $0.778$, ridge $0.905$, conv-res $0.965$ and the random orthogonal control random $0.000$; AP50 tracks F1 throughout.
+
+\subsubsection{Box E4. Hardware and runtime}
+
+Two configurations were used. The original training and measurement runs used a single NVIDIA GeForce RTX 2060 (6 GB); the device string is recorded with the timing artefact. The later verification runs are CPU-only, launched on four threads at low priority, which is the configuration recorded in the usage lines of the composition, split-control, and figure-composition scripts.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table E1.} Runtime figures already reported in the main text.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{operation} & \textbf{time} & \textbf{ratio} \\
+\midrule
+region-level code shift (both regions) & $20.89$ $\mu$s & $1825\times$ versus pixel route \\
+pixel re-colour + re-forward (same regions) & $38.13$ ms & reference \\
+backbone full forward, $224$ px, batch 1 & $22.92$ ms & --- \\
+pixel-side HSV shift, $224$ px & $15.21$ ms & --- \\
+code rotation, batched, per object & $27.6$ ns & $1.38\times10^{6}\times$ versus pixel re-colour \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Two caveats are part of the figure. First, the ratio is the cost of the \textit{operation}, not a whole-system speed-up: the region-level code shift edits an already-extracted code, while the pixel route re-renders and re-forwards. Second, the pixel-route device is recorded as the RTX 2060; the region-level artefact does not record its device, and the later verification runs are CPU-only, so the two columns of the first row are not guaranteed to be the same machine and the ratio should be read as the reported measurement, not as a controlled benchmark.
+

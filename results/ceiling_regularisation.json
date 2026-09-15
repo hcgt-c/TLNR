@@ -1,0 +1,578 @@
+{
+ "resnet50|heat2.0|depth4": {
+  "O1": {
+   "transfer": 0.07262104749679565,
+   "transfer_squared": 0.08557091255568339
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": 0.04249662160873413,
+    "transfer_squared": 0.05531571981834815
+   },
+   "0.001": {
+    "transfer": 0.04623579978942871,
+    "transfer_squared": 0.059675480782398815
+   },
+   "0.01": {
+    "transfer": 0.0713624358177185,
+    "transfer_squared": 0.08786231307392334
+   },
+   "0.1": {
+    "transfer": 0.13024860620498657,
+    "transfer_squared": 0.15244693287311084
+   },
+   "1.0": {
+    "transfer": 0.09963971376419067,
+    "transfer_squared": 0.13127644940579442
+   },
+   "10.0": {
+    "transfer": -0.1422865390777588,
+    "transfer_squared": -0.0933784452547497
+   },
+   "100.0": {
+    "transfer": -0.4801914691925049,
+    "transfer_squared": -0.41051713187974137
+   }
+  },
+  "O2_published": {
+   "transfer": 0.04205584526062012,
+   "transfer_squared": 0.05479697828357588
+  },
+  "best_lambda": "0.1",
+  "best_ridge": {
+   "transfer": 0.13024860620498657,
+   "transfer_squared": 0.15244693287311084
+  },
+  "inversion_published_norm": true,
+  "inversion_published_squared": true,
+  "inversion_survives_tuned_lambda": false
+ },
+ "resnet50|heat1.0|depth4": {
+  "O1": {
+   "transfer": -0.023981094360351562,
+   "transfer_squared": -0.005960491131097978
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": -0.16597676277160645,
+    "transfer_squared": -0.1360187670019939
+   },
+   "0.001": {
+    "transfer": -0.16063129901885986,
+    "transfer_squared": -0.1297658894265621
+   },
+   "0.01": {
+    "transfer": -0.1262434720993042,
+    "transfer_squared": -0.09105568678122355
+   },
+   "0.1": {
+    "transfer": -0.08845460414886475,
+    "transfer_squared": -0.044713867377037086
+   },
+   "1.0": {
+    "transfer": -0.3936361074447632,
+    "transfer_squared": -0.31702484828399435
+   },
+   "10.0": {
+    "transfer": -1.147089958190918,
+    "transfer_squared": -0.9969804979304804
+   },
+   "100.0": {
+    "transfer": -1.951777696609497,
+    "transfer_squared": -1.72109248348421
+   }
+  },
+  "O2_published": {
+   "transfer": -0.16660940647125244,
+   "transfer_squared": -0.13676581120062714
+  },
+  "best_lambda": "0.1",
+  "best_ridge": {
+   "transfer": -0.08845460414886475,
+   "transfer_squared": -0.044713867377037086
+  },
+  "inversion_published_norm": true,
+  "inversion_published_squared": true,
+  "inversion_survives_tuned_lambda": true
+ },
+ "dinov2b14|heat2.0|depth4": {
+  "O1": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 3.4416913763379853e-15
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.4416913763379853e-15
+   },
+   "0.001": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.4416913763379853e-15
+   },
+   "0.01": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.4416913763379853e-15
+   },
+   "0.1": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.4416913763379853e-15
+   },
+   "1.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.4416913763379853e-15
+   },
+   "10.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.4416913763379853e-15
+   },
+   "100.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.4416913763379853e-15
+   }
+  },
+  "O2_published": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 3.4416913763379853e-15
+  },
+  "best_lambda": "0.0001",
+  "best_ridge": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 3.4416913763379853e-15
+  },
+  "inversion_published_norm": false,
+  "inversion_published_squared": false,
+  "inversion_survives_tuned_lambda": false
+ },
+ "dinov2b14|hue90.0|depth4": {
+  "O1": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 6.661338147750939e-16
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 6.661338147750939e-16
+   },
+   "0.001": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 6.661338147750939e-16
+   },
+   "0.01": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 6.661338147750939e-16
+   },
+   "0.1": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 6.661338147750939e-16
+   },
+   "1.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 6.661338147750939e-16
+   },
+   "10.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 6.661338147750939e-16
+   },
+   "100.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 6.661338147750939e-16
+   }
+  },
+  "O2_published": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 6.661338147750939e-16
+  },
+  "best_lambda": "0.0001",
+  "best_ridge": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 6.661338147750939e-16
+  },
+  "inversion_published_norm": false,
+  "inversion_published_squared": false,
+  "inversion_survives_tuned_lambda": false
+ },
+ "resnet50|hue90.0|depth4": {
+  "O1": {
+   "transfer": 0.09689569473266602,
+   "transfer_squared": 0.10991826722692521
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": 0.11833590269088745,
+    "transfer_squared": 0.11800681378826317
+   },
+   "0.001": {
+    "transfer": 0.12152689695358276,
+    "transfer_squared": 0.12188935857302285
+   },
+   "0.01": {
+    "transfer": 0.1434522271156311,
+    "transfer_squared": 0.14746554643593313
+   },
+   "0.1": {
+    "transfer": 0.2007473111152649,
+    "transfer_squared": 0.20946200342448829
+   },
+   "1.0": {
+    "transfer": 0.21052700281143188,
+    "transfer_squared": 0.22057721908016215
+   },
+   "10.0": {
+    "transfer": 0.08577418327331543,
+    "transfer_squared": 0.10112213541343928
+   },
+   "100.0": {
+    "transfer": -0.13808929920196533,
+    "transfer_squared": -0.10844348615883503
+   }
+  },
+  "O2_published": {
+   "transfer": 0.1179611086845398,
+   "transfer_squared": 0.11754663552425881
+  },
+  "best_lambda": "1.0",
+  "best_ridge": {
+   "transfer": 0.21052700281143188,
+   "transfer_squared": 0.22057721908016215
+  },
+  "inversion_published_norm": false,
+  "inversion_published_squared": false,
+  "inversion_survives_tuned_lambda": false
+ },
+ "dinov2b14|heat1.0|depth4": {
+  "O1": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 3.750188470874605e-08
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.750188470874605e-08
+   },
+   "0.001": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.750188470874605e-08
+   },
+   "0.01": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.750188470874605e-08
+   },
+   "0.1": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.750188470874605e-08
+   },
+   "1.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.750188470874605e-08
+   },
+   "10.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.750188470874605e-08
+   },
+   "100.0": {
+    "transfer": -1.1920928955078125e-07,
+    "transfer_squared": 3.750188470874605e-08
+   }
+  },
+  "O2_published": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 3.750188470874605e-08
+  },
+  "best_lambda": "0.0001",
+  "best_ridge": {
+   "transfer": -1.1920928955078125e-07,
+   "transfer_squared": 3.750188470874605e-08
+  },
+  "inversion_published_norm": false,
+  "inversion_published_squared": false,
+  "inversion_survives_tuned_lambda": false
+ },
+ "dinov2b14|heat2.0|depth2": {
+  "O1": {
+   "transfer": 0.07576209306716919,
+   "transfer_squared": 0.07289458442034913
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": 0.05617934465408325,
+    "transfer_squared": 0.06042135372674784
+   },
+   "0.001": {
+    "transfer": 0.05471915006637573,
+    "transfer_squared": 0.05904368081155731
+   },
+   "0.01": {
+    "transfer": 0.03827548027038574,
+    "transfer_squared": 0.04379130619131566
+   },
+   "0.1": {
+    "transfer": -0.18021059036254883,
+    "transfer_squared": -0.15486947657601724
+   },
+   "1.0": {
+    "transfer": -1.7550020217895508,
+    "transfer_squared": -1.6340083244960892
+   },
+   "10.0": {
+    "transfer": -3.925893783569336,
+    "transfer_squared": -3.624907544093955
+   },
+   "100.0": {
+    "transfer": -4.595160961151123,
+    "transfer_squared": -4.21472925317693
+   }
+  },
+  "O2_published": {
+   "transfer": 0.056335270404815674,
+   "transfer_squared": 0.06056898603770844
+  },
+  "best_lambda": "0.0001",
+  "best_ridge": {
+   "transfer": 0.05617934465408325,
+   "transfer_squared": 0.06042135372674784
+  },
+  "inversion_published_norm": true,
+  "inversion_published_squared": true,
+  "inversion_survives_tuned_lambda": true
+ },
+ "dinov2b14|heat2.0|depth3": {
+  "O1": {
+   "transfer": 0.019333958625793457,
+   "transfer_squared": 0.017500296806726934
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": -0.19095468521118164,
+    "transfer_squared": -0.16376729464067008
+   },
+   "0.001": {
+    "transfer": -0.1890178918838501,
+    "transfer_squared": -0.15633803029403626
+   },
+   "0.01": {
+    "transfer": -0.6775978803634644,
+    "transfer_squared": -0.5951503748559168
+   },
+   "0.1": {
+    "transfer": -3.058305263519287,
+    "transfer_squared": -2.852735356963432
+   },
+   "1.0": {
+    "transfer": -4.274392604827881,
+    "transfer_squared": -3.941225864198305
+   },
+   "10.0": {
+    "transfer": -4.514919281005859,
+    "transfer_squared": -4.13696100433533
+   },
+   "100.0": {
+    "transfer": -4.512484073638916,
+    "transfer_squared": -4.131873291882554
+   }
+  },
+  "O2_published": {
+   "transfer": -0.19680547714233398,
+   "transfer_squared": -0.1704317074226771
+  },
+  "best_lambda": "0.001",
+  "best_ridge": {
+   "transfer": -0.1890178918838501,
+   "transfer_squared": -0.15633803029403626
+  },
+  "inversion_published_norm": true,
+  "inversion_published_squared": true,
+  "inversion_survives_tuned_lambda": true
+ },
+ "dinov2b14|hue90.0|depth2": {
+  "O1": {
+   "transfer": 0.32784777879714966,
+   "transfer_squared": 0.3256303087408947
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": 0.3943054676055908,
+    "transfer_squared": 0.4024145797248285
+   },
+   "0.001": {
+    "transfer": 0.3939129114151001,
+    "transfer_squared": 0.4020751140945342
+   },
+   "0.01": {
+    "transfer": 0.38972073793411255,
+    "transfer_squared": 0.3985597102761791
+   },
+   "0.1": {
+    "transfer": 0.3369028568267822,
+    "transfer_squared": 0.3554990481978564
+   },
+   "1.0": {
+    "transfer": -0.2055445909500122,
+    "transfer_squared": -0.14204539667436022
+   },
+   "10.0": {
+    "transfer": -0.9588921070098877,
+    "transfer_squared": -0.8436014930550535
+   },
+   "100.0": {
+    "transfer": -1.1978907585144043,
+    "transfer_squared": -1.0521454130765462
+   }
+  },
+  "O2_published": {
+   "transfer": 0.3943478465080261,
+   "transfer_squared": 0.4024512451102542
+  },
+  "best_lambda": "0.0001",
+  "best_ridge": {
+   "transfer": 0.3943054676055908,
+   "transfer_squared": 0.4024145797248285
+  },
+  "inversion_published_norm": false,
+  "inversion_published_squared": false,
+  "inversion_survives_tuned_lambda": false
+ },
+ "dinov2b14|hue90.0|depth3": {
+  "O1": {
+   "transfer": 0.13981562852859497,
+   "transfer_squared": 0.14212421880218895
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": 0.11429435014724731,
+    "transfer_squared": 0.14456158300394317
+   },
+   "0.001": {
+    "transfer": 0.10967230796813965,
+    "transfer_squared": 0.14185910252930345
+   },
+   "0.01": {
+    "transfer": -0.015654802322387695,
+    "transfer_squared": 0.03776070801180309
+   },
+   "0.1": {
+    "transfer": -0.705295205116272,
+    "transfer_squared": -0.6155666474252008
+   },
+   "1.0": {
+    "transfer": -1.115598201751709,
+    "transfer_squared": -0.9838711139997662
+   },
+   "10.0": {
+    "transfer": -1.2550456523895264,
+    "transfer_squared": -1.10066827402659
+   },
+   "100.0": {
+    "transfer": -1.2513751983642578,
+    "transfer_squared": -1.0960041839095878
+   }
+  },
+  "O2_published": {
+   "transfer": 0.11371153593063354,
+   "transfer_squared": 0.143895422638331
+  },
+  "best_lambda": "0.0001",
+  "best_ridge": {
+   "transfer": 0.11429435014724731,
+   "transfer_squared": 0.14456158300394317
+  },
+  "inversion_published_norm": true,
+  "inversion_published_squared": false,
+  "inversion_survives_tuned_lambda": true
+ },
+ "vitb16|heat2.0|depth3": {
+  "O1": {
+   "transfer": 0.09030789136886597,
+   "transfer_squared": 0.07342960844758939
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": 0.10527187585830688,
+    "transfer_squared": 0.10223555718840749
+   },
+   "0.001": {
+    "transfer": 0.10502475500106812,
+    "transfer_squared": 0.10202250692434256
+   },
+   "0.01": {
+    "transfer": 0.10209453105926514,
+    "transfer_squared": 0.09969056685114219
+   },
+   "0.1": {
+    "transfer": 0.06073504686355591,
+    "transfer_squared": 0.07048502196063633
+   },
+   "1.0": {
+    "transfer": -0.280475378036499,
+    "transfer_squared": -0.20380839488099745
+   },
+   "10.0": {
+    "transfer": -1.0621063709259033,
+    "transfer_squared": -0.8617876158922009
+   },
+   "100.0": {
+    "transfer": -1.4715259075164795,
+    "transfer_squared": -1.230847033209217
+   }
+  },
+  "O2_published": {
+   "transfer": 0.10529893636703491,
+   "transfer_squared": 0.10225908608602385
+  },
+  "best_lambda": "0.0001",
+  "best_ridge": {
+   "transfer": 0.10527187585830688,
+   "transfer_squared": 0.10223555718840749
+  },
+  "inversion_published_norm": false,
+  "inversion_published_squared": false,
+  "inversion_survives_tuned_lambda": false
+ },
+ "vitb16|hue90.0|depth3": {
+  "O1": {
+   "transfer": 0.13028907775878906,
+   "transfer_squared": 0.135986982375094
+  },
+  "ridge": {
+   "0.0001": {
+    "transfer": 0.21961206197738647,
+    "transfer_squared": 0.22663439604702296
+   },
+   "0.001": {
+    "transfer": 0.21959465742111206,
+    "transfer_squared": 0.22662516744377526
+   },
+   "0.01": {
+    "transfer": 0.21918821334838867,
+    "transfer_squared": 0.2263415697591855
+   },
+   "0.1": {
+    "transfer": 0.2091800570487976,
+    "transfer_squared": 0.21818940219135297
+   },
+   "1.0": {
+    "transfer": 0.11138337850570679,
+    "transfer_squared": 0.12911759786395738
+   },
+   "10.0": {
+    "transfer": -0.19617927074432373,
+    "transfer_squared": -0.15339628303626762
+   },
+   "100.0": {
+    "transfer": -0.3898128271102905,
+    "transfer_squared": -0.3396325225514445
+   }
+  },
+  "O2_published": {
+   "transfer": 0.2196136713027954,
+   "transfer_squared": 0.22663519714624958
+  },
+  "best_lambda": "0.0001",
+  "best_ridge": {
+   "transfer": 0.21961206197738647,
+   "transfer_squared": 0.22663439604702296
+  },
+  "inversion_published_norm": false,
+  "inversion_published_squared": false,
+  "inversion_survives_tuned_lambda": false
+ }
+}

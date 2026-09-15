@@ -1,0 +1,6165 @@
+{
+ "protocol": "222 diagnostic validation",
+ "pre_registration": {
+  "power_floor": 0.05,
+  "faithful_at": 0.8,
+  "partial_at": 0.4,
+  "reference_residual_max": 0.99,
+  "realization_residual_max": 1.0,
+  "depth_fail_at": 3,
+  "n_boot": 2000,
+  "n_rand": 2000,
+  "seed": 222,
+  "headline_operator": "O2 (published global linear, ridge)",
+  "primary_grid": "4 backbones x 4 depths x {hue_90.0, heat_2.0}",
+  "splits": [
+   "S1 dinov2b14",
+   "S2 heat",
+   "S3 depth 4",
+   "S4 vitb16",
+   "S5 heat 1.0"
+  ],
+  "prediction_rule": "G1 fail -> abstain; else any applicable gate fail -> failed; else partial; faithful is never predicted"
+ },
+ "data_sources": [
+  "results/depth_map_summary.json",
+  "results/depth_map_resnet50_{hue,heat}.json",
+  "results/depth_map_convnext_{hue,heat}.json",
+  "results/depth_map_vitb16_{hue,heat}.json",
+  "results/depth_map_dinov2b14_{hue,heat}.json",
+  "results/estimator_control.json",
+  "results/consumer_swap.json",
+  "results/quotientization.json",
+  "results/transportability_certificate_example.json"
+ ],
+ "units_primary": [
+  {
+   "id": "resnet50|hue_90.0|layer1",
+   "backbone": "resnet50",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "layer1",
+   "depth": 1,
+   "power_consumer": 0.7225977182388306,
+   "power_site": 0.3722291092077891,
+   "power": 0.7225977182388306,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.621479550545978,
+   "fit_rows": 150000,
+   "C2_over_K": 0.43690666666666667,
+   "T_F": 0.6018368403116862,
+   "T_F_sd": 0.002654236996701845,
+   "T_F_O8": 0.6397491296132406,
+   "T_F_O1": 0.36153070131937665,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|hue_90.0|layer2",
+   "backbone": "resnet50",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "layer2",
+   "depth": 2,
+   "power_consumer": 0.7225977182388306,
+   "power_site": 0.43593032161394757,
+   "power": 0.7225977182388306,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.6817375806732298,
+   "fit_rows": 150000,
+   "C2_over_K": 1.7476266666666667,
+   "T_F": 0.5879901746908823,
+   "T_F_sd": 0.0029046813065463726,
+   "T_F_O8": 0.5880275468031565,
+   "T_F_O1": 0.4979100823402405,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|hue_90.0|layer3",
+   "backbone": "resnet50",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "layer3",
+   "depth": 3,
+   "power_consumer": 0.7225977182388306,
+   "power_site": 0.5495572487513224,
+   "power": 0.7225977182388306,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.801302622186917,
+   "fit_rows": 39200,
+   "C2_over_K": 26.749387755102042,
+   "T_F": 0.4636401931444804,
+   "T_F_sd": 0.007408350605893392,
+   "T_F_O8": 0.46357184648513794,
+   "T_F_O1": 0.3855283856391907,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|hue_90.0|layer4",
+   "backbone": "resnet50",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "layer4",
+   "depth": 4,
+   "power_consumer": 0.7225977182388306,
+   "power_site": 0.9612785975138346,
+   "power": 0.7225977182388306,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 1.0125047248748384,
+   "fit_rows": 9800,
+   "C2_over_K": 427.99020408163267,
+   "T_F": 0.09930976231892903,
+   "T_F_sd": 0.04911075664434077,
+   "T_F_O8": 0.08780767520268758,
+   "T_F_O1": 0.07538737853368123,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 4,
+   "n_passed": 3,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "failed",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|hue_90.0|features1",
+   "backbone": "convnext",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "features1",
+   "depth": 1,
+   "power_consumer": 0.6985842784245809,
+   "power_site": 0.27202292283376056,
+   "power": 0.6985842784245809,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.6772099439782933,
+   "fit_rows": 150000,
+   "C2_over_K": 0.06144,
+   "T_F": 0.7072681585947672,
+   "T_F_sd": 0.0020590092396601707,
+   "T_F_O8": 0.723863810300827,
+   "T_F_O1": 0.2982142964998881,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "failed",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|hue_90.0|features3",
+   "backbone": "convnext",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "features3",
+   "depth": 2,
+   "power_consumer": 0.6985842784245809,
+   "power_site": 0.2346469759941101,
+   "power": 0.6985842784245809,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.7863470417140509,
+   "fit_rows": 150000,
+   "C2_over_K": 0.24576,
+   "T_F": 0.6582803428173065,
+   "T_F_sd": 0.006932419882078656,
+   "T_F_O8": 0.6677874724070231,
+   "T_F_O1": 0.49957242608070374,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|hue_90.0|features5",
+   "backbone": "convnext",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "features5",
+   "depth": 3,
+   "power_consumer": 0.6985842784245809,
+   "power_site": 0.18370799720287323,
+   "power": 0.6985842784245809,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.8680973009515169,
+   "fit_rows": 39200,
+   "C2_over_K": 3.7616326530612243,
+   "T_F": 0.4012288252512614,
+   "T_F_sd": 0.012431319699502247,
+   "T_F_O8": 0.390941321849823,
+   "T_F_O1": 0.2698978583017985,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|hue_90.0|features7",
+   "backbone": "convnext",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "features7",
+   "depth": 4,
+   "power_consumer": 0.6985842784245809,
+   "power_site": 0.86327197154363,
+   "power": 0.6985842784245809,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.9078039577239176,
+   "fit_rows": 9800,
+   "C2_over_K": 60.18612244897959,
+   "T_F": 0.14868982632954916,
+   "T_F_sd": 0.034217643987501635,
+   "T_F_O8": 0.08185219764709473,
+   "T_F_O1": 0.047759016354878746,
+   "observed": "failed",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|hue_90.0|block2",
+   "backbone": "vitb16",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "block2",
+   "depth": 1,
+   "power_consumer": 0.8081787625948588,
+   "power_site": 0.6077566941579183,
+   "power": 0.8081787625948588,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.457113108724991,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.6438871125380198,
+   "T_F_sd": 0.007117319235376736,
+   "T_F_O8": 0.6399515072504679,
+   "T_F_O1": 0.4656835397084554,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|hue_90.0|block5",
+   "backbone": "vitb16",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "block5",
+   "depth": 2,
+   "power_consumer": 0.8081787625948588,
+   "power_site": 0.5782290895779928,
+   "power": 0.8081787625948588,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.7368003962550125,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.4550555348396301,
+   "T_F_sd": 0.010272619991208867,
+   "T_F_O8": 0.45404001077016193,
+   "T_F_O1": 0.35572969913482666,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|hue_90.0|block8",
+   "backbone": "vitb16",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "block8",
+   "depth": 3,
+   "power_consumer": 0.8081787625948588,
+   "power_site": 0.6436612804730734,
+   "power": 0.8081787625948588,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.8284124362747884,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.20657549301783243,
+   "T_F_sd": 0.011689382337489881,
+   "T_F_O8": 0.2086247205734253,
+   "T_F_O1": 0.1265688935915629,
+   "observed": "failed",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|hue_90.0|block11",
+   "backbone": "vitb16",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "block11",
+   "depth": 4,
+   "power_consumer": 0.8081787625948588,
+   "power_site": 0.6227451761563619,
+   "power": 0.8081787625948588,
+   "reference_stat": null,
+   "reachable": false,
+   "realization_resid": 0.8742026413633424,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": -3.9736429850260414e-08,
+   "T_F_sd": 6.88255154120476e-08,
+   "T_F_O8": -3.9736429850260414e-08,
+   "T_F_O1": -3.9736429850260414e-08,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 4,
+   "n_passed": 3,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "failed",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": false,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|hue_90.0|block2",
+   "backbone": "dinov2b14",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "block2",
+   "depth": 1,
+   "power_consumer": 0.607852061589559,
+   "power_site": 0.4536965787410736,
+   "power": 0.607852061589559,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.5259084099591149,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": 0.5849577188491821,
+   "T_F_sd": 0.011306477266359765,
+   "T_F_O8": 0.5906252264976501,
+   "T_F_O1": 0.49085169037183124,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "failed",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|hue_90.0|block5",
+   "backbone": "dinov2b14",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "block5",
+   "depth": 2,
+   "power_consumer": 0.607852061589559,
+   "power_site": 0.45256031552950543,
+   "power": 0.607852061589559,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 0.7455836841956822,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": 0.39055564006169635,
+   "T_F_sd": 0.005945933650230056,
+   "T_F_O8": 0.3929293950398763,
+   "T_F_O1": 0.32959238688151044,
+   "observed": "failed",
+   "predicted": "partial",
+   "n_applicable": 4,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|hue_90.0|block8",
+   "backbone": "dinov2b14",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "block8",
+   "depth": 3,
+   "power_consumer": 0.607852061589559,
+   "power_site": 0.3673788209756215,
+   "power": 0.607852061589559,
+   "reference_stat": null,
+   "reachable": true,
+   "realization_resid": 1.1086569312961716,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": 0.10257097085316975,
+   "T_F_sd": 0.009660349764874633,
+   "T_F_O8": -0.11925903956095378,
+   "T_F_O1": 0.15391306082407633,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 4,
+   "n_passed": 3,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "failed",
+   "reference_only": "partial",
+   "random_uniform": "failed",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|hue_90.0|block11",
+   "backbone": "dinov2b14",
+   "family": "hue_90.0",
+   "family_base": "hue",
+   "site": "block11",
+   "depth": 4,
+   "power_consumer": 0.607852061589559,
+   "power_site": 0.5346035361289978,
+   "power": 0.607852061589559,
+   "reference_stat": null,
+   "reachable": false,
+   "realization_resid": 1.0590460072202263,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": -7.947285970052083e-08,
+   "T_F_sd": 6.88255154120476e-08,
+   "T_F_O8": -7.947285970052083e-08,
+   "T_F_O1": -7.947285970052083e-08,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 4,
+   "n_passed": 2,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "failed",
+   "realize_only": "failed",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": false
+    },
+    "G3": {
+     "pass": false,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|heat_2.0|layer1",
+   "backbone": "resnet50",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "layer1",
+   "depth": 1,
+   "power_consumer": 0.5925378402074178,
+   "power_site": 0.31478317578633624,
+   "power": 0.5925378402074178,
+   "reference_stat": 0.870257170461289,
+   "reachable": true,
+   "realization_resid": 0.6951696977974511,
+   "fit_rows": 150000,
+   "C2_over_K": 0.43690666666666667,
+   "T_F": 0.5149025817712148,
+   "T_F_sd": 0.014401344872764111,
+   "T_F_O8": 0.6018736064434052,
+   "T_F_O1": 0.14632699886957803,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|heat_2.0|layer2",
+   "backbone": "resnet50",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "layer2",
+   "depth": 2,
+   "power_consumer": 0.5925378402074178,
+   "power_site": 0.36984167496363324,
+   "power": 0.5925378402074178,
+   "reference_stat": 0.9614474879405955,
+   "reachable": true,
+   "realization_resid": 0.7551159434430645,
+   "fit_rows": 150000,
+   "C2_over_K": 1.7476266666666667,
+   "T_F": 0.47072800000508624,
+   "T_F_sd": 0.017125404092132753,
+   "T_F_O8": 0.47034064928690594,
+   "T_F_O1": 0.2540152470270793,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "failed",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|heat_2.0|layer3",
+   "backbone": "resnet50",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "layer3",
+   "depth": 3,
+   "power_consumer": 0.5925378402074178,
+   "power_site": 0.4657095472017924,
+   "power": 0.5925378402074178,
+   "reference_stat": 0.9910095434757448,
+   "reachable": true,
+   "realization_resid": 0.8553543902091982,
+   "fit_rows": 39200,
+   "C2_over_K": 26.749387755102042,
+   "T_F": 0.3736111521720886,
+   "T_F_sd": 0.024514651356726546,
+   "T_F_O8": 0.37346814076105755,
+   "T_F_O1": 0.23824578523635864,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|heat_2.0|layer4",
+   "backbone": "resnet50",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "layer4",
+   "depth": 4,
+   "power_consumer": 0.5925378402074178,
+   "power_site": 0.7886109550793966,
+   "power": 0.5925378402074178,
+   "reference_stat": 0.9979017795194102,
+   "reachable": true,
+   "realization_resid": 1.141887555864937,
+   "fit_rows": 9800,
+   "C2_over_K": 427.99020408163267,
+   "T_F": 0.053881943225860596,
+   "T_F_sd": 0.035332288608535406,
+   "T_F_O8": 0.04689000050226847,
+   "T_F_O1": 0.07865768671035767,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 3,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "failed",
+   "reference_only": "failed",
+   "random_uniform": "failed",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|heat_2.0|features1",
+   "backbone": "convnext",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "features1",
+   "depth": 1,
+   "power_consumer": 0.5016995271046957,
+   "power_site": 0.29993417859077454,
+   "power": 0.5016995271046957,
+   "reference_stat": 0.887870151072093,
+   "reachable": true,
+   "realization_resid": 0.6580984031986896,
+   "fit_rows": 150000,
+   "C2_over_K": 0.06144,
+   "T_F": 0.5398585796356201,
+   "T_F_sd": 0.030631234473374177,
+   "T_F_O8": 0.6470929483572642,
+   "T_F_O1": 0.19900707403818765,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|heat_2.0|features3",
+   "backbone": "convnext",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "features3",
+   "depth": 2,
+   "power_consumer": 0.5016995271046957,
+   "power_site": 0.2724413275718689,
+   "power": 0.5016995271046957,
+   "reference_stat": 0.9662571568371336,
+   "reachable": true,
+   "realization_resid": 0.7077889923920325,
+   "fit_rows": 150000,
+   "C2_over_K": 0.24576,
+   "T_F": 0.5529365638891856,
+   "T_F_sd": 0.023725311462994527,
+   "T_F_O8": 0.5794530908266703,
+   "T_F_O1": 0.319774071375529,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|heat_2.0|features5",
+   "backbone": "convnext",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "features5",
+   "depth": 3,
+   "power_consumer": 0.5016995271046957,
+   "power_site": 0.17934775352478027,
+   "power": 0.5016995271046957,
+   "reference_stat": 0.9948592490423561,
+   "reachable": true,
+   "realization_resid": 0.9547224076205865,
+   "fit_rows": 39200,
+   "C2_over_K": 3.7616326530612243,
+   "T_F": 0.3449101249376933,
+   "T_F_sd": 0.017614766369545374,
+   "T_F_O8": 0.33496522903442383,
+   "T_F_O1": 0.2444788416226705,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|heat_2.0|features7",
+   "backbone": "convnext",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "features7",
+   "depth": 4,
+   "power_consumer": 0.5016995271046957,
+   "power_site": 0.6471170584360758,
+   "power": 0.5016995271046957,
+   "reference_stat": 0.9979650127912953,
+   "reachable": true,
+   "realization_resid": 0.9846827720152482,
+   "fit_rows": 9800,
+   "C2_over_K": 60.18612244897959,
+   "T_F": 0.1367866595586141,
+   "T_F_sd": 0.01580464167504605,
+   "T_F_O8": 0.07626630862553914,
+   "T_F_O1": 0.04397477706273397,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "faithful",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|heat_2.0|block2",
+   "backbone": "vitb16",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "block2",
+   "depth": 1,
+   "power_consumer": 0.4426376223564148,
+   "power_site": 0.3331815004348755,
+   "power": 0.4426376223564148,
+   "reference_stat": 0.9872666277405694,
+   "reachable": true,
+   "realization_resid": 0.6434745615495393,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.4970724085966746,
+   "T_F_sd": 0.013690804649960768,
+   "T_F_O8": 0.5023020108540853,
+   "T_F_O1": 0.10912974675496419,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|heat_2.0|block5",
+   "backbone": "vitb16",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "block5",
+   "depth": 2,
+   "power_consumer": 0.4426376223564148,
+   "power_site": 0.4301038483778636,
+   "power": 0.4426376223564148,
+   "reference_stat": 0.989284601769398,
+   "reachable": true,
+   "realization_resid": 0.8790125398600185,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.2707325220108032,
+   "T_F_sd": 0.025975916129777177,
+   "T_F_O8": 0.27994110186894733,
+   "T_F_O1": 0.160975972811381,
+   "observed": "failed",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "failed",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|heat_2.0|block8",
+   "backbone": "vitb16",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "block8",
+   "depth": 3,
+   "power_consumer": 0.4426376223564148,
+   "power_site": 0.43544910351435345,
+   "power": 0.4426376223564148,
+   "reference_stat": 0.9898976056836691,
+   "reachable": true,
+   "realization_resid": 0.9745516154142522,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.1137390931447347,
+   "T_F_sd": 0.018300142298801975,
+   "T_F_O8": 0.11229731639226277,
+   "T_F_O1": 0.086925208568573,
+   "observed": "failed",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|heat_2.0|block11",
+   "backbone": "vitb16",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "block11",
+   "depth": 4,
+   "power_consumer": 0.4426376223564148,
+   "power_site": 0.4411529799302419,
+   "power": 0.4426376223564148,
+   "reference_stat": 0.9882631879041374,
+   "reachable": false,
+   "realization_resid": 0.9902279427039103,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 1.9868214925130207e-08,
+   "T_F_sd": 3.44127577060238e-08,
+   "T_F_O8": 1.9868214925130207e-08,
+   "T_F_O1": 1.9868214925130207e-08,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "failed",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "failed",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": false,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|heat_2.0|block2",
+   "backbone": "dinov2b14",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "block2",
+   "depth": 1,
+   "power_consumer": 0.24569176137447357,
+   "power_site": 0.3579014241695404,
+   "power": 0.24569176137447357,
+   "reference_stat": 0.9861588018730796,
+   "reachable": true,
+   "realization_resid": 0.6207248192351331,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": 0.13358728090922037,
+   "T_F_sd": 0.04326153680308329,
+   "T_F_O8": 0.13780651489893594,
+   "T_F_O1": -0.142515500386556,
+   "observed": "failed",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|heat_2.0|block5",
+   "backbone": "dinov2b14",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "block5",
+   "depth": 2,
+   "power_consumer": 0.24569176137447357,
+   "power_site": 0.29297444224357605,
+   "power": 0.24569176137447357,
+   "reference_stat": 0.988888488254264,
+   "reachable": true,
+   "realization_resid": 0.9381881417204389,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": 0.048696160316467285,
+   "T_F_sd": 0.012325789428039635,
+   "T_F_O8": 0.04431412617365519,
+   "T_F_O1": 0.06414286295572917,
+   "observed": "failed",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "faithful",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|heat_2.0|block8",
+   "backbone": "dinov2b14",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "block8",
+   "depth": 3,
+   "power_consumer": 0.24569176137447357,
+   "power_site": 0.3173179129759471,
+   "power": 0.24569176137447357,
+   "reference_stat": 0.9898950293234523,
+   "reachable": true,
+   "realization_resid": 1.2149210864553668,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": -0.3968880573908488,
+   "T_F_sd": 0.23158211646176205,
+   "T_F_O8": -0.9916963577270508,
+   "T_F_O1": 0.01721644401550293,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "failed",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|heat_2.0|block11",
+   "backbone": "dinov2b14",
+   "family": "heat_2.0",
+   "family_base": "heat",
+   "site": "block11",
+   "depth": 4,
+   "power_consumer": 0.24569176137447357,
+   "power_site": 0.3027847707271576,
+   "power": 0.24569176137447357,
+   "reference_stat": 0.9882321956114387,
+   "reachable": false,
+   "realization_resid": 1.1150792582841997,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": 1.9868214925130207e-08,
+   "T_F_sd": 1.5000173320910833e-07,
+   "T_F_O8": 1.9868214925130207e-08,
+   "T_F_O1": 1.9868214925130207e-08,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 3,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "failed",
+   "realize_only": "failed",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": false,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  }
+ ],
+ "units_aux_heat1": [
+  {
+   "id": "resnet50|heat_1.0|layer1",
+   "backbone": "resnet50",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "layer1",
+   "depth": 1,
+   "power_consumer": 0.2810598611831665,
+   "power_site": 0.167435884475708,
+   "power": 0.2810598611831665,
+   "reference_stat": 0.9511719475393215,
+   "reachable": true,
+   "realization_resid": 0.6951696977974511,
+   "fit_rows": 150000,
+   "C2_over_K": 0.43690666666666667,
+   "T_F": 0.507267028093338,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.5497617423534393,
+   "T_F_O1": 0.20520097017288208,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|heat_1.0|layer2",
+   "backbone": "resnet50",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "layer2",
+   "depth": 2,
+   "power_consumer": 0.2810598611831665,
+   "power_site": 0.20027534663677216,
+   "power": 0.2810598611831665,
+   "reference_stat": 0.9880748594011843,
+   "reachable": true,
+   "realization_resid": 0.7551159434430645,
+   "fit_rows": 150000,
+   "C2_over_K": 1.7476266666666667,
+   "T_F": 0.43740373849868774,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.4376985430717468,
+   "T_F_O1": 0.2593454122543335,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|heat_1.0|layer3",
+   "backbone": "resnet50",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "layer3",
+   "depth": 3,
+   "power_consumer": 0.2810598611831665,
+   "power_site": 0.2537746727466583,
+   "power": 0.2810598611831665,
+   "reference_stat": 0.9975211882960158,
+   "reachable": true,
+   "realization_resid": 0.8553543902091982,
+   "fit_rows": 39200,
+   "C2_over_K": 26.749387755102042,
+   "T_F": 0.29589182138442993,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.2956455945968628,
+   "T_F_O1": 0.18803977966308594,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "resnet50|heat_1.0|layer4",
+   "backbone": "resnet50",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "layer4",
+   "depth": 4,
+   "power_consumer": 0.2810598611831665,
+   "power_site": 0.43703556060791016,
+   "power": 0.2810598611831665,
+   "reference_stat": 0.9994308873123111,
+   "reachable": true,
+   "realization_resid": 1.141887555864937,
+   "fit_rows": 9800,
+   "C2_over_K": 427.99020408163267,
+   "T_F": -0.16660940647125244,
+   "T_F_sd": 0.0,
+   "T_F_O8": -0.19664216041564941,
+   "T_F_O1": -0.023981094360351562,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 3,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "failed",
+   "reference_only": "failed",
+   "random_uniform": "faithful",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|heat_1.0|features1",
+   "backbone": "convnext",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "features1",
+   "depth": 1,
+   "power_consumer": 0.26594066619873047,
+   "power_site": 0.16999582946300507,
+   "power": 0.26594066619873047,
+   "reference_stat": 0.9553216597064093,
+   "reachable": true,
+   "realization_resid": 0.6580984031986896,
+   "fit_rows": 150000,
+   "C2_over_K": 0.06144,
+   "T_F": 0.596043735742569,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.6314170062541962,
+   "T_F_O1": 0.1968538761138916,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "failed",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|heat_1.0|features3",
+   "backbone": "convnext",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "features3",
+   "depth": 2,
+   "power_consumer": 0.26594066619873047,
+   "power_site": 0.1532459408044815,
+   "power": 0.26594066619873047,
+   "reference_stat": 0.9890103786672462,
+   "reachable": true,
+   "realization_resid": 0.7077889923920325,
+   "fit_rows": 150000,
+   "C2_over_K": 0.24576,
+   "T_F": 0.529740035533905,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.5533440113067627,
+   "T_F_O1": 0.32216256856918335,
+   "observed": "partial",
+   "predicted": "partial",
+   "n_applicable": 5,
+   "n_passed": 5,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "partial",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": true,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|heat_1.0|features5",
+   "backbone": "convnext",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "features5",
+   "depth": 3,
+   "power_consumer": 0.26594066619873047,
+   "power_site": 0.10383456200361252,
+   "power": 0.26594066619873047,
+   "reference_stat": 0.9989842955745869,
+   "reachable": true,
+   "realization_resid": 0.9547224076205865,
+   "fit_rows": 39200,
+   "C2_over_K": 3.7616326530612243,
+   "T_F": 0.2893913984298706,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.27348071336746216,
+   "T_F_O1": 0.1994810700416565,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "convnext|heat_1.0|features7",
+   "backbone": "convnext",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "features7",
+   "depth": 4,
+   "power_consumer": 0.26594066619873047,
+   "power_site": 0.36226019263267517,
+   "power": 0.26594066619873047,
+   "reference_stat": 0.9994142542833078,
+   "reachable": true,
+   "realization_resid": 0.9846827720152482,
+   "fit_rows": 9800,
+   "C2_over_K": 60.18612244897959,
+   "T_F": 0.07091987133026123,
+   "T_F_sd": 0.0,
+   "T_F_O8": -0.028462886810302734,
+   "T_F_O1": 0.04104185104370117,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|heat_1.0|block2",
+   "backbone": "vitb16",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "block2",
+   "depth": 1,
+   "power_consumer": 0.1964121311903,
+   "power_site": 0.15422910451889038,
+   "power": 0.1964121311903,
+   "reference_stat": 0.9959083205394405,
+   "reachable": true,
+   "realization_resid": 0.6434745615495393,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.5024740695953369,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.4977332353591919,
+   "T_F_O1": 0.16391336917877197,
+   "observed": "partial",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "faithful",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|heat_1.0|block5",
+   "backbone": "vitb16",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "block5",
+   "depth": 2,
+   "power_consumer": 0.1964121311903,
+   "power_site": 0.20069126784801483,
+   "power": 0.1964121311903,
+   "reference_stat": 0.9973311728349287,
+   "reachable": true,
+   "realization_resid": 0.8790125398600185,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.24692237377166748,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.26335495710372925,
+   "T_F_O1": 0.1666129231452942,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|heat_1.0|block8",
+   "backbone": "vitb16",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "block8",
+   "depth": 3,
+   "power_consumer": 0.1964121311903,
+   "power_site": 0.20339897274971008,
+   "power": 0.1964121311903,
+   "reference_stat": 0.9972899266202945,
+   "reachable": true,
+   "realization_resid": 0.9745516154142522,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 0.07323580980300903,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.07763499021530151,
+   "T_F_O1": 0.0658801794052124,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "partial",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "vitb16|heat_1.0|block11",
+   "backbone": "vitb16",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "block11",
+   "depth": 4,
+   "power_consumer": 0.1964121311903,
+   "power_site": 0.21614179015159607,
+   "power": 0.1964121311903,
+   "reference_stat": 0.9968152124625105,
+   "reachable": false,
+   "realization_resid": 0.9902279427039103,
+   "fit_rows": 39200,
+   "C2_over_K": 15.046530612244897,
+   "T_F": 5.960464477539063e-08,
+   "T_F_sd": 0.0,
+   "T_F_O8": 5.960464477539063e-08,
+   "T_F_O1": 5.960464477539063e-08,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 3,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "failed",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": false,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|heat_1.0|block2",
+   "backbone": "dinov2b14",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "block2",
+   "depth": 1,
+   "power_consumer": 0.14406397938728333,
+   "power_site": 0.195639505982399,
+   "power": 0.14406397938728333,
+   "reference_stat": 0.9965194443462488,
+   "reachable": true,
+   "realization_resid": 0.6207248192351331,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": 0.11076277494430542,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.14587479829788208,
+   "T_F_O1": 0.011512935161590576,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "failed",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|heat_1.0|block5",
+   "backbone": "dinov2b14",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "block5",
+   "depth": 2,
+   "power_consumer": 0.14406397938728333,
+   "power_site": 0.16817115247249603,
+   "power": 0.14406397938728333,
+   "reference_stat": 0.9971626458180087,
+   "reachable": true,
+   "realization_resid": 0.9381881417204389,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": 0.029807209968566895,
+   "T_F_sd": 0.0,
+   "T_F_O8": 0.01329946517944336,
+   "T_F_O1": 0.020967960357666016,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 4,
+   "always_partial": "partial",
+   "depth_rule": "partial",
+   "reach_only": "partial",
+   "realize_only": "partial",
+   "reference_only": "failed",
+   "random_uniform": "faithful",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": true,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|heat_1.0|block8",
+   "backbone": "dinov2b14",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "block8",
+   "depth": 3,
+   "power_consumer": 0.14406397938728333,
+   "power_site": 0.1803995966911316,
+   "power": 0.14406397938728333,
+   "reference_stat": 0.9983561858456189,
+   "reachable": true,
+   "realization_resid": 1.2149210864553668,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": -0.14250123500823975,
+   "T_F_sd": 0.0,
+   "T_F_O8": -0.38825154304504395,
+   "T_F_O1": -0.0033632516860961914,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 3,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "partial",
+   "realize_only": "failed",
+   "reference_only": "failed",
+   "random_uniform": "failed",
+   "random_prior": "partial",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": true,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  },
+  {
+   "id": "dinov2b14|heat_1.0|block11",
+   "backbone": "dinov2b14",
+   "family": "heat_1.0",
+   "family_base": "heat",
+   "site": "block11",
+   "depth": 4,
+   "power_consumer": 0.14406397938728333,
+   "power_site": 0.1876078099012375,
+   "power": 0.14406397938728333,
+   "reference_stat": 0.9969016063554472,
+   "reachable": false,
+   "realization_resid": 1.1150792582841997,
+   "fit_rows": 51200,
+   "C2_over_K": 11.52,
+   "T_F": -1.1920928955078125e-07,
+   "T_F_sd": 0.0,
+   "T_F_O8": -1.1920928955078125e-07,
+   "T_F_O1": -1.1920928955078125e-07,
+   "observed": "failed",
+   "predicted": "failed",
+   "n_applicable": 5,
+   "n_passed": 2,
+   "always_partial": "partial",
+   "depth_rule": "failed",
+   "reach_only": "failed",
+   "realize_only": "failed",
+   "reference_only": "failed",
+   "random_uniform": "partial",
+   "random_prior": "failed",
+   "gates": {
+    "G0": {
+     "pass": true,
+     "applicable": true
+    },
+    "G1": {
+     "pass": true,
+     "applicable": true
+    },
+    "G2": {
+     "pass": false,
+     "applicable": true
+    },
+    "G3": {
+     "pass": false,
+     "applicable": true
+    },
+    "G4": {
+     "pass": false,
+     "applicable": true
+    }
+   }
+  }
+ ],
+ "primary": {
+  "n_units": 32,
+  "n_decided": 32,
+  "n_abstained": 0,
+  "coverage": 1.0,
+  "accuracy": 0.78125,
+  "macro_f1_present": 0.7793103448275862,
+  "macro_f1_all3": 0.5195402298850574,
+  "confusion_matrix": [
+   [
+    11,
+    7,
+    0
+   ],
+   [
+    0,
+    14,
+    0
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  "per_class": {
+   "failed": {
+    "precision": 1.0,
+    "recall": 0.6111111111111112,
+    "f1": 0.7586206896551725,
+    "support": 18
+   },
+   "partial": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1": 0.8,
+    "support": 14
+   },
+   "faithful": {
+    "precision": null,
+    "recall": null,
+    "f1": 0.0,
+    "support": 0
+   }
+  },
+  "class_support_observed": {
+   "failed": 18,
+   "partial": 14,
+   "faithful": 0
+  },
+  "predicted_counts": {
+   "failed": 11,
+   "partial": 21,
+   "faithful": 0
+  },
+  "ordinal": {
+   "n": 32,
+   "spearman": 0.694850277480552,
+   "spearman_p": 1.0209162017832625e-05,
+   "kendall": 0.5766682249241333,
+   "kendall_p": 0.0001093890773881649
+  }
+ },
+ "auxiliary_heat1": {
+  "n_units": 16,
+  "n_decided": 16,
+  "n_abstained": 0,
+  "coverage": 1.0,
+  "accuracy": 0.9375,
+  "macro_f1_present": 0.9227053140096619,
+  "macro_f1_all3": 0.6151368760064413,
+  "confusion_matrix": [
+   [
+    11,
+    0,
+    0
+   ],
+   [
+    1,
+    4,
+    0
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  "per_class": {
+   "failed": {
+    "precision": 0.9166666666666666,
+    "recall": 1.0,
+    "f1": 0.9565217391304348,
+    "support": 11
+   },
+   "partial": {
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1": 0.888888888888889,
+    "support": 5
+   },
+   "faithful": {
+    "precision": null,
+    "recall": null,
+    "f1": 0.0,
+    "support": 0
+   }
+  },
+  "class_support_observed": {
+   "failed": 11,
+   "partial": 5,
+   "faithful": 0
+  },
+  "predicted_counts": {
+   "failed": 12,
+   "partial": 4,
+   "faithful": 0
+  },
+  "ordinal": {
+   "n": 16,
+   "spearman": 0.7201579347479219,
+   "spearman_p": 0.001653831200138047,
+   "kendall": 0.6061032181989394,
+   "kendall_p": 0.005284500162983997
+  }
+ },
+ "gate_score_ordinal": {
+  "n": 32,
+  "spearman": 0.3792478660247226,
+  "spearman_p": 0.03229871028436849,
+  "kendall": 0.291695961801188,
+  "kendall_p": 0.03900647913486978
+ },
+ "baselines": {
+  "summary": {
+   "always_partial": {
+    "n_units": 32,
+    "n_decided": 32,
+    "n_abstained": 0,
+    "coverage": 1.0,
+    "accuracy": 0.4375,
+    "macro_f1_present": 0.30434782608695654,
+    "macro_f1_all3": 0.2028985507246377,
+    "confusion_matrix": [
+     [
+      0,
+      18,
+      0
+     ],
+     [
+      0,
+      14,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "per_class": {
+     "failed": {
+      "precision": null,
+      "recall": 0.0,
+      "f1": null,
+      "support": 18
+     },
+     "partial": {
+      "precision": 0.4375,
+      "recall": 1.0,
+      "f1": 0.6086956521739131,
+      "support": 14
+     },
+     "faithful": {
+      "precision": null,
+      "recall": null,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "class_support_observed": {
+     "failed": 18,
+     "partial": 14,
+     "faithful": 0
+    },
+    "predicted_counts": {
+     "failed": 0,
+     "partial": 32,
+     "faithful": 0
+    },
+    "ordinal": {
+     "n": 32,
+     "spearman": null,
+     "spearman_p": null,
+     "kendall": null,
+     "kendall_p": null,
+     "note": "prediction constant"
+    }
+   },
+   "depth_rule": {
+    "n_units": 32,
+    "n_decided": 32,
+    "n_abstained": 0,
+    "coverage": 1.0,
+    "accuracy": 0.8125,
+    "macro_f1_present": 0.8117647058823529,
+    "macro_f1_all3": 0.5411764705882353,
+    "confusion_matrix": [
+     [
+      14,
+      4,
+      0
+     ],
+     [
+      2,
+      12,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "per_class": {
+     "failed": {
+      "precision": 0.875,
+      "recall": 0.7777777777777778,
+      "f1": 0.823529411764706,
+      "support": 18
+     },
+     "partial": {
+      "precision": 0.75,
+      "recall": 0.8571428571428571,
+      "f1": 0.7999999999999999,
+      "support": 14
+     },
+     "faithful": {
+      "precision": null,
+      "recall": null,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "class_support_observed": {
+     "failed": 18,
+     "partial": 14,
+     "faithful": 0
+    },
+    "predicted_counts": {
+     "failed": 16,
+     "partial": 16,
+     "faithful": 0
+    },
+    "ordinal": {
+     "n": 32,
+     "spearman": 0.6972842434930306,
+     "spearman_p": 9.221926015230843e-06,
+     "kendall": 0.5786882152809495,
+     "kendall_p": 0.00010346699847920546
+    }
+   },
+   "reach_only": {
+    "n_units": 32,
+    "n_decided": 32,
+    "n_abstained": 0,
+    "coverage": 1.0,
+    "accuracy": 0.5625,
+    "macro_f1_present": 0.5151515151515151,
+    "macro_f1_all3": 0.3434343434343434,
+    "confusion_matrix": [
+     [
+      4,
+      14,
+      0
+     ],
+     [
+      0,
+      14,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "per_class": {
+     "failed": {
+      "precision": 1.0,
+      "recall": 0.2222222222222222,
+      "f1": 0.3636363636363636,
+      "support": 18
+     },
+     "partial": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 14
+     },
+     "faithful": {
+      "precision": null,
+      "recall": null,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "class_support_observed": {
+     "failed": 18,
+     "partial": 14,
+     "faithful": 0
+    },
+    "predicted_counts": {
+     "failed": 4,
+     "partial": 28,
+     "faithful": 0
+    },
+    "ordinal": {
+     "n": 32,
+     "spearman": 0.5322147931935151,
+     "spearman_p": 0.0017164546547972174,
+     "kendall": 0.4416942325792754,
+     "kendall_p": 0.003044126271943868
+    }
+   },
+   "realize_only": {
+    "n_units": 32,
+    "n_decided": 32,
+    "n_abstained": 0,
+    "coverage": 1.0,
+    "accuracy": 0.625,
+    "macro_f1_present": 0.6000000000000001,
+    "macro_f1_all3": 0.4000000000000001,
+    "confusion_matrix": [
+     [
+      6,
+      12,
+      0
+     ],
+     [
+      0,
+      14,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "per_class": {
+     "failed": {
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5,
+      "support": 18
+     },
+     "partial": {
+      "precision": 0.5384615384615384,
+      "recall": 1.0,
+      "f1": 0.7000000000000001,
+      "support": 14
+     },
+     "faithful": {
+      "precision": null,
+      "recall": null,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "class_support_observed": {
+     "failed": 18,
+     "partial": 14,
+     "faithful": 0
+    },
+    "predicted_counts": {
+     "failed": 6,
+     "partial": 26,
+     "faithful": 0
+    },
+    "ordinal": {
+     "n": 32,
+     "spearman": 0.5853748819172286,
+     "spearman_p": 0.0004325419769554594,
+     "kendall": 0.4858127067234718,
+     "kendall_p": 0.0011171529360785599
+    }
+   },
+   "reference_only": {
+    "n_units": 32,
+    "n_decided": 32,
+    "n_abstained": 0,
+    "coverage": 1.0,
+    "accuracy": 0.5625,
+    "macro_f1_present": 0.5151515151515151,
+    "macro_f1_all3": 0.3434343434343434,
+    "confusion_matrix": [
+     [
+      4,
+      14,
+      0
+     ],
+     [
+      0,
+      14,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "per_class": {
+     "failed": {
+      "precision": 1.0,
+      "recall": 0.2222222222222222,
+      "f1": 0.3636363636363636,
+      "support": 18
+     },
+     "partial": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 14
+     },
+     "faithful": {
+      "precision": null,
+      "recall": null,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "class_support_observed": {
+     "failed": 18,
+     "partial": 14,
+     "faithful": 0
+    },
+    "predicted_counts": {
+     "failed": 4,
+     "partial": 28,
+     "faithful": 0
+    },
+    "ordinal": {
+     "n": 32,
+     "spearman": 0.14328859816748485,
+     "spearman_p": 0.43400088446898144,
+     "kendall": 0.11891767800211261,
+     "kendall_p": 0.4249882151851523
+    }
+   },
+   "random_uniform": {
+    "n_units": 32,
+    "n_decided": 32,
+    "n_abstained": 0,
+    "coverage": 1.0,
+    "accuracy": 0.3125,
+    "macro_f1_present": 0.39076923076923076,
+    "macro_f1_all3": 0.2605128205128205,
+    "confusion_matrix": [
+     [
+      4,
+      6,
+      8
+     ],
+     [
+      3,
+      6,
+      5
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "per_class": {
+     "failed": {
+      "precision": 0.5714285714285714,
+      "recall": 0.2222222222222222,
+      "f1": 0.32,
+      "support": 18
+     },
+     "partial": {
+      "precision": 0.5,
+      "recall": 0.42857142857142855,
+      "f1": 0.4615384615384615,
+      "support": 14
+     },
+     "faithful": {
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "class_support_observed": {
+     "failed": 18,
+     "partial": 14,
+     "faithful": 0
+    },
+    "predicted_counts": {
+     "failed": 7,
+     "partial": 12,
+     "faithful": 13
+    },
+    "ordinal": {
+     "n": 32,
+     "spearman": 0.028190820662532912,
+     "spearman_p": 0.8782745772260904,
+     "kendall": 0.009881966902328093,
+     "kendall_p": 0.9442874942295822
+    }
+   },
+   "random_prior": {
+    "n_units": 32,
+    "n_decided": 32,
+    "n_abstained": 0,
+    "coverage": 1.0,
+    "accuracy": 0.5,
+    "macro_f1_present": 0.4980392156862745,
+    "macro_f1_all3": 0.33202614379084966,
+    "confusion_matrix": [
+     [
+      9,
+      9,
+      0
+     ],
+     [
+      7,
+      7,
+      0
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "per_class": {
+     "failed": {
+      "precision": 0.5625,
+      "recall": 0.5,
+      "f1": 0.5294117647058824,
+      "support": 18
+     },
+     "partial": {
+      "precision": 0.4375,
+      "recall": 0.5,
+      "f1": 0.4666666666666667,
+      "support": 14
+     },
+     "faithful": {
+      "precision": null,
+      "recall": null,
+      "f1": 0.0,
+      "support": 0
+     }
+    },
+    "class_support_observed": {
+     "failed": 18,
+     "partial": 14,
+     "faithful": 0
+    },
+    "predicted_counts": {
+     "failed": 16,
+     "partial": 16,
+     "faithful": 0
+    },
+    "ordinal": {
+     "n": 32,
+     "spearman": 0.10493112402079588,
+     "spearman_p": 0.5676298733822811,
+     "kendall": 0.08708414890150211,
+     "kendall_p": 0.5590643877025026
+    }
+   }
+  },
+  "bootstrap": {
+   "predicted": {
+    "accuracy": [
+     0.625,
+     0.90625
+    ],
+    "accuracy_mean": 0.783453125,
+    "macro_f1": [
+     0.6190476190476191,
+     0.906158357771261
+    ],
+    "macro_f1_mean": 0.7755847128387535,
+    "spearman": [
+     0.4876514949936964,
+     0.8258897238108608
+    ],
+    "spearman_mean": 0.686950236863557
+   },
+   "always_partial": {
+    "accuracy": [
+     0.28125,
+     0.625
+    ],
+    "accuracy_mean": 0.44065625,
+    "macro_f1": [
+     0.21951219512195122,
+     0.38461538461538464
+    ],
+    "macro_f1_mean": 0.3032335069972505,
+    "spearman": [
+     null,
+     null
+    ],
+    "spearman_mean": null
+   },
+   "depth_rule": {
+    "accuracy": [
+     0.6875,
+     0.9375
+    ],
+    "accuracy_mean": 0.81415625,
+    "macro_f1": [
+     0.6666666666666667,
+     0.9365079365079365
+    ],
+    "macro_f1_mean": 0.8084082669402621,
+    "spearman": [
+     0.47291950312906805,
+     0.8406336960044597
+    ],
+    "spearman_mean": 0.6909248888237469
+   },
+   "reach_only": {
+    "accuracy": [
+     0.375,
+     0.75
+    ],
+    "accuracy_mean": 0.565953125,
+    "macro_f1": [
+     0.3333333333333333,
+     0.6908212560386473
+    ],
+    "macro_f1_mean": 0.5097419619047815,
+    "spearman": [
+     0.2824475288082226,
+     0.7184212081070995
+    ],
+    "spearman_mean": 0.5195673159437745
+   },
+   "realize_only": {
+    "accuracy": [
+     0.46875,
+     0.78125
+    ],
+    "accuracy_mean": 0.629640625,
+    "macro_f1": [
+     0.41818181818181815,
+     0.7702564102564102
+    ],
+    "macro_f1_mean": 0.596326735286497,
+    "spearman": [
+     0.34997899712060615,
+     0.7513379546503619
+    ],
+    "spearman_mean": 0.5735411810552954
+   },
+   "reference_only": {
+    "accuracy": [
+     0.375,
+     0.71875
+    ],
+    "accuracy_mean": 0.562890625,
+    "macro_f1": [
+     0.33333333333333337,
+     0.6810631229235882
+    ],
+    "macro_f1_mean": 0.5059250796091909,
+    "spearman": [
+     -0.08209622188653484,
+     0.38095081177916545
+    ],
+    "spearman_mean": 0.1389794005890203
+   },
+   "random_uniform": {
+    "accuracy": [
+     0.15625,
+     0.46875
+    ],
+    "accuracy_mean": 0.31259375,
+    "macro_f1": [
+     0.21014130434782607,
+     0.5710328733766233
+    ],
+    "macro_f1_mean": 0.3799279755020261,
+    "spearman": [
+     -0.32558076456830337,
+     0.35772731143430214
+    ],
+    "spearman_mean": 0.020942496703504246
+   },
+   "random_prior": {
+    "accuracy": [
+     0.34375,
+     0.6875
+    ],
+    "accuracy_mean": 0.501484375,
+    "macro_f1": [
+     0.31250000000000006,
+     0.6761133603238867
+    ],
+    "macro_f1_mean": 0.4920055225092337,
+    "spearman": [
+     -0.2545256885806574,
+     0.47895905821104817
+    ],
+    "spearman_mean": 0.10699546367789001
+   }
+  }
+ },
+ "paired_vs_baselines": {
+  "always_partial": {
+   "mean_diff": 0.3455,
+   "ci95": [
+    0.1875,
+    0.5
+   ],
+   "frac_positive": 1.0
+  },
+  "depth_rule": {
+   "mean_diff": -0.03128125,
+   "ci95": [
+    -0.1875,
+    0.09375
+   ],
+   "frac_positive": 0.2535
+  },
+  "reach_only": {
+   "mean_diff": 0.221640625,
+   "ci95": [
+    0.09375,
+    0.375
+   ],
+   "frac_positive": 1.0
+  },
+  "realize_only": {
+   "mean_diff": 0.157609375,
+   "ci95": [
+    0.03125,
+    0.28125
+   ],
+   "frac_positive": 0.9975
+  },
+  "reference_only": {
+   "mean_diff": 0.218734375,
+   "ci95": [
+    0.09375,
+    0.375
+   ],
+   "frac_positive": 1.0
+  },
+  "random_uniform": {
+   "mean_diff": 0.467109375,
+   "ci95": [
+    0.28125,
+    0.65625
+   ],
+   "frac_positive": 1.0
+  },
+  "random_prior": {
+   "mean_diff": 0.282265625,
+   "ci95": [
+    0.0625,
+    0.5
+   ],
+   "frac_positive": 0.9905
+  }
+ },
+ "random_baseline": {
+  "mean": 0.336921875,
+  "sd": 0.08253643697019138,
+  "ci95": [
+   0.1875,
+   0.5
+  ],
+  "n_draws": 2000
+ },
+ "splits": {
+  "S1 hold-out backbone = dinov2b14": {
+   "n_units": 8,
+   "n_decided": 8,
+   "n_abstained": 0,
+   "coverage": 1.0,
+   "accuracy": 0.625,
+   "macro_f1_present": 0.5636363636363637,
+   "macro_f1_all3": 0.3757575757575758,
+   "confusion_matrix": [
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "per_class": {
+    "failed": {
+     "precision": 1.0,
+     "recall": 0.5714285714285714,
+     "f1": 0.7272727272727273,
+     "support": 7
+    },
+    "partial": {
+     "precision": 0.25,
+     "recall": 1.0,
+     "f1": 0.4,
+     "support": 1
+    },
+    "faithful": {
+     "precision": null,
+     "recall": null,
+     "f1": 0.0,
+     "support": 0
+    }
+   },
+   "class_support_observed": {
+    "failed": 7,
+    "partial": 1,
+    "faithful": 0
+   },
+   "predicted_counts": {
+    "failed": 4,
+    "partial": 4,
+    "faithful": 0
+   },
+   "ordinal": {
+    "n": 8,
+    "spearman": 0.7637626158259734,
+    "spearman_p": 0.027396043909112048,
+    "kendall": 0.6614378277661476,
+    "kendall_p": 0.043308142810791955
+   },
+   "reach_only_accuracy": 0.375,
+   "depth_rule_accuracy": 0.625,
+   "name": "S1",
+   "units": [
+    {
+     "id": "dinov2b14|hue_90.0|block2",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.5849577188491821,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|hue_90.0|block5",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.39055564006169635,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|hue_90.0|block8",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.10257097085316975,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|hue_90.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": -7.947285970052083e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block2",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.13358728090922037,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block5",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.048696160316467285,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block8",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": -0.3968880573908488,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": 1.9868214925130207e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    }
+   ]
+  },
+  "S2 hold-out family = heat (main grid)": {
+   "n_units": 16,
+   "n_decided": 16,
+   "n_abstained": 0,
+   "coverage": 1.0,
+   "accuracy": 0.75,
+   "macro_f1_present": 0.746031746031746,
+   "macro_f1_all3": 0.4973544973544974,
+   "confusion_matrix": [
+    [
+     7,
+     4,
+     0
+    ],
+    [
+     0,
+     5,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "per_class": {
+    "failed": {
+     "precision": 1.0,
+     "recall": 0.6363636363636364,
+     "f1": 0.7777777777777778,
+     "support": 11
+    },
+    "partial": {
+     "precision": 0.5555555555555556,
+     "recall": 1.0,
+     "f1": 0.7142857142857143,
+     "support": 5
+    },
+    "faithful": {
+     "precision": null,
+     "recall": null,
+     "f1": 0.0,
+     "support": 0
+    }
+   },
+   "class_support_observed": {
+    "failed": 11,
+    "partial": 5,
+    "faithful": 0
+   },
+   "predicted_counts": {
+    "failed": 7,
+    "partial": 9,
+    "faithful": 0
+   },
+   "ordinal": {
+    "n": 16,
+    "spearman": 0.5333403464017483,
+    "spearman_p": 0.03337823109707934,
+    "kendall": 0.4504233036389041,
+    "kendall_p": 0.0388645370439877
+   },
+   "reach_only_accuracy": 0.4375,
+   "depth_rule_accuracy": 0.8125,
+   "name": "S2",
+   "units": [
+    {
+     "id": "resnet50|heat_2.0|layer1",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.5149025817712148,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "resnet50|heat_2.0|layer2",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.47072800000508624,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "resnet50|heat_2.0|layer3",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.3736111521720886,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "resnet50|heat_2.0|layer4",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.053881943225860596,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_2.0|features1",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.5398585796356201,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_2.0|features3",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.5529365638891856,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_2.0|features5",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.3449101249376933,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_2.0|features7",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.1367866595586141,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block2",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.4970724085966746,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block5",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.2707325220108032,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block8",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.1137390931447347,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": 1.9868214925130207e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block2",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.13358728090922037,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block5",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.048696160316467285,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block8",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": -0.3968880573908488,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": 1.9868214925130207e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    }
+   ]
+  },
+  "S3 hold-out depth = 4": {
+   "n_units": 8,
+   "n_decided": 8,
+   "n_abstained": 0,
+   "coverage": 1.0,
+   "accuracy": 0.875,
+   "macro_f1_present": 0.9333333333333333,
+   "macro_f1_all3": 0.3111111111111111,
+   "confusion_matrix": [
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "per_class": {
+    "failed": {
+     "precision": 1.0,
+     "recall": 0.875,
+     "f1": 0.9333333333333333,
+     "support": 8
+    },
+    "partial": {
+     "precision": 0.0,
+     "recall": null,
+     "f1": 0.0,
+     "support": 0
+    },
+    "faithful": {
+     "precision": null,
+     "recall": null,
+     "f1": 0.0,
+     "support": 0
+    }
+   },
+   "class_support_observed": {
+    "failed": 8,
+    "partial": 0,
+    "faithful": 0
+   },
+   "predicted_counts": {
+    "failed": 7,
+    "partial": 1,
+    "faithful": 0
+   },
+   "ordinal": {
+    "n": 8,
+    "spearman": 0.5808178695515156,
+    "spearman_p": 0.13110228460382825,
+    "kendall": 0.5091750772173155,
+    "kendall_p": 0.12436687936260862
+   },
+   "reach_only_accuracy": 0.5,
+   "depth_rule_accuracy": 1.0,
+   "name": "S3",
+   "units": [
+    {
+     "id": "resnet50|hue_90.0|layer4",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.09930976231892903,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|hue_90.0|features7",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.14868982632954916,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|hue_90.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": -3.9736429850260414e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|hue_90.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": -7.947285970052083e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "resnet50|heat_2.0|layer4",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.053881943225860596,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_2.0|features7",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.1367866595586141,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": 1.9868214925130207e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_2.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": 1.9868214925130207e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    }
+   ]
+  },
+  "S4 hold-out backbone = vitb16": {
+   "n_units": 8,
+   "n_decided": 8,
+   "n_abstained": 0,
+   "coverage": 1.0,
+   "accuracy": 0.625,
+   "macro_f1_present": 0.6190476190476191,
+   "macro_f1_all3": 0.41269841269841273,
+   "confusion_matrix": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     0,
+     3,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "per_class": {
+    "failed": {
+     "precision": 1.0,
+     "recall": 0.4,
+     "f1": 0.5714285714285715,
+     "support": 5
+    },
+    "partial": {
+     "precision": 0.5,
+     "recall": 1.0,
+     "f1": 0.6666666666666666,
+     "support": 3
+    },
+    "faithful": {
+     "precision": null,
+     "recall": null,
+     "f1": 0.0,
+     "support": 0
+    }
+   },
+   "class_support_observed": {
+    "failed": 5,
+    "partial": 3,
+    "faithful": 0
+   },
+   "predicted_counts": {
+    "failed": 2,
+    "partial": 6,
+    "faithful": 0
+   },
+   "ordinal": {
+    "n": 8,
+    "spearman": 0.7559289460184545,
+    "spearman_p": 0.030019745287544374,
+    "kendall": 0.6546536707079772,
+    "kendall_p": 0.04550026389635839
+   },
+   "reach_only_accuracy": 0.625,
+   "depth_rule_accuracy": 0.875,
+   "name": "S4",
+   "units": [
+    {
+     "id": "vitb16|hue_90.0|block2",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.6438871125380198,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|hue_90.0|block5",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.4550555348396301,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|hue_90.0|block8",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.20657549301783243,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|hue_90.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": -3.9736429850260414e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": false
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block2",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.4970724085966746,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block5",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.2707325220108032,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block8",
+     "observed": "failed",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.1137390931447347,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_2.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": 1.9868214925130207e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    }
+   ]
+  },
+  "S5 hold-out parameter = heat 1.0": {
+   "n_units": 16,
+   "n_decided": 16,
+   "n_abstained": 0,
+   "coverage": 1.0,
+   "accuracy": 0.9375,
+   "macro_f1_present": 0.9227053140096619,
+   "macro_f1_all3": 0.6151368760064413,
+   "confusion_matrix": [
+    [
+     11,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "per_class": {
+    "failed": {
+     "precision": 0.9166666666666666,
+     "recall": 1.0,
+     "f1": 0.9565217391304348,
+     "support": 11
+    },
+    "partial": {
+     "precision": 1.0,
+     "recall": 0.8,
+     "f1": 0.888888888888889,
+     "support": 5
+    },
+    "faithful": {
+     "precision": null,
+     "recall": null,
+     "f1": 0.0,
+     "support": 0
+    }
+   },
+   "class_support_observed": {
+    "failed": 11,
+    "partial": 5,
+    "faithful": 0
+   },
+   "predicted_counts": {
+    "failed": 12,
+    "partial": 4,
+    "faithful": 0
+   },
+   "ordinal": {
+    "n": 16,
+    "spearman": 0.7201579347479219,
+    "spearman_p": 0.001653831200138047,
+    "kendall": 0.6061032181989394,
+    "kendall_p": 0.005284500162983997
+   },
+   "reach_only_accuracy": 0.4375,
+   "depth_rule_accuracy": 0.8125,
+   "name": "S5",
+   "units": [
+    {
+     "id": "resnet50|heat_1.0|layer1",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.507267028093338,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "resnet50|heat_1.0|layer2",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.43740373849868774,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "resnet50|heat_1.0|layer3",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.29589182138442993,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "resnet50|heat_1.0|layer4",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": -0.16660940647125244,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_1.0|features1",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.596043735742569,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_1.0|features3",
+     "observed": "partial",
+     "predicted": "partial",
+     "reachable": true,
+     "T_F": 0.529740035533905,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": true,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_1.0|features5",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.2893913984298706,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "convnext|heat_1.0|features7",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.07091987133026123,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_1.0|block2",
+     "observed": "partial",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.5024740695953369,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_1.0|block5",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.24692237377166748,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_1.0|block8",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.07323580980300903,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "vitb16|heat_1.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": 5.960464477539063e-08,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_1.0|block2",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.11076277494430542,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_1.0|block5",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": 0.029807209968566895,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": true,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_1.0|block8",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": true,
+     "T_F": -0.14250123500823975,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": true,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    },
+    {
+     "id": "dinov2b14|heat_1.0|block11",
+     "observed": "failed",
+     "predicted": "failed",
+     "reachable": false,
+     "T_F": -1.1920928955078125e-07,
+     "gates": {
+      "G0": {
+       "pass": true,
+       "applicable": true
+      },
+      "G1": {
+       "pass": true,
+       "applicable": true
+      },
+      "G2": {
+       "pass": false,
+       "applicable": true
+      },
+      "G3": {
+       "pass": false,
+       "applicable": true
+      },
+      "G4": {
+       "pass": false,
+       "applicable": true
+      }
+     }
+    }
+   ]
+  }
+ },
+ "variants": {
+  "tautological": {
+   "agreement_rate": 1.0,
+   "by_construction": true,
+   "explanation": "In the certificate as it shipped when this validation ran, the schema's `gate_4_realization.verdict` was `verdict(T_F)` and `certificate.faithfulness` was copied from it, so the certificate reproduced the observed class with agreement 1.000 by construction. A predictor defined as a function of the outcome cannot be validated against that outcome: its accuracy, per-class precision and recall are all exact and all carry zero out-of-sample information. The validation therefore uses only Gate 0-3 and the fit-side Gate 4 diagnostic, and reports the circular reading separately. The certificate has since been corrected (`scripts/215_transportability_certificate.py`): Gate 4 now thresholds the outcome-free fit-side realization residual at the pre-registered 1.00 and the summary verdict is the precondition conjunction, which cannot return 'faithful'. The non-circular primary rule's own accuracy is 0.781.",
+   "n_units": 32,
+   "accuracy": 1.0,
+   "out_of_sample_information": "none"
+  },
+  "sufficiency": {
+   "rule": "all applicable gates pass -> faithful, else failed (G1 fail -> abstain)",
+   "n_units": 32,
+   "n_decided": 32,
+   "n_abstained": 0,
+   "coverage": 1.0,
+   "accuracy": 0.34375,
+   "macro_f1_present": 0.37931034482758624,
+   "macro_f1_all3": 0.25287356321839083,
+   "confusion_matrix": [
+    [
+     11,
+     0,
+     7
+    ],
+    [
+     0,
+     0,
+     14
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "per_class": {
+    "failed": {
+     "precision": 1.0,
+     "recall": 0.6111111111111112,
+     "f1": 0.7586206896551725,
+     "support": 18
+    },
+    "partial": {
+     "precision": null,
+     "recall": 0.0,
+     "f1": null,
+     "support": 14
+    },
+    "faithful": {
+     "precision": 0.0,
+     "recall": null,
+     "f1": 0.0,
+     "support": 0
+    }
+   },
+   "class_support_observed": {
+    "failed": 18,
+    "partial": 14,
+    "faithful": 0
+   },
+   "predicted_counts": {
+    "failed": 11,
+    "partial": 0,
+    "faithful": 21
+   },
+   "ordinal": {
+    "n": 32,
+    "spearman": 0.694850277480552,
+    "spearman_p": 1.0209162017832625e-05,
+    "kendall": 0.5766682249241333,
+    "kendall_p": 0.0001093890773881649
+   }
+  },
+  "no_estimator_control_gate4": {
+   "n_units": 32,
+   "n_decided": 32,
+   "n_abstained": 0,
+   "coverage": 1.0,
+   "accuracy": 0.6875,
+   "macro_f1_present": 0.6761133603238866,
+   "macro_f1_all3": 0.4507422402159244,
+   "confusion_matrix": [
+    [
+     8,
+     10,
+     0
+    ],
+    [
+     0,
+     14,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "per_class": {
+    "failed": {
+     "precision": 1.0,
+     "recall": 0.4444444444444444,
+     "f1": 0.6153846153846153,
+     "support": 18
+    },
+    "partial": {
+     "precision": 0.5833333333333334,
+     "recall": 1.0,
+     "f1": 0.7368421052631579,
+     "support": 14
+    },
+    "faithful": {
+     "precision": null,
+     "recall": null,
+     "f1": 0.0,
+     "support": 0
+    }
+   },
+   "class_support_observed": {
+    "failed": 18,
+    "partial": 14,
+    "faithful": 0
+   },
+   "predicted_counts": {
+    "failed": 8,
+    "partial": 24,
+    "faithful": 0
+   },
+   "ordinal": {
+    "n": 32,
+    "spearman": 0.5159242371851935,
+    "spearman_p": 0.0025073725237749257,
+    "kendall": 0.4281744192888376,
+    "kendall_p": 0.004071806235186743
+   }
+  }
+ },
+ "input_provenance": {
+  "depth_map_summary.json": {
+   "exists": true,
+   "bytes": 102265,
+   "mtime": "2026-09-14T14:41:32",
+   "sha256": "ea7094228bd366ad82117b2401d5fcd347d1111598193d8673d21e231d2b036b"
+  },
+  "estimator_control.json": {
+   "exists": true,
+   "bytes": 140683,
+   "mtime": "2026-09-14T18:28:40",
+   "sha256": "78347e81a4e66a5fe877f8923d8de7a09f3ba4431f79f9905821727f4de0c63a"
+  },
+  "consumer_swap.json": {
+   "exists": true,
+   "bytes": 26257,
+   "mtime": "2026-09-14T10:15:39",
+   "sha256": "cb7bbcd54848c4af917a77b33224bb6013d611346529cce11d3ac18cb9fb2734"
+  },
+  "quotientization.json": {
+   "exists": true,
+   "bytes": 365448,
+   "mtime": "2026-09-14T16:33:59",
+   "sha256": "7a829577401418e3a11ac8ae21cb8433cf34001036b1efd8ad503245f6136951"
+  },
+  "transportability_certificate_example.json": {
+   "exists": true,
+   "bytes": 1627,
+   "mtime": "2026-09-14T18:37:45",
+   "sha256": "4ce4ca1b3c4c141f7048b9dd63458a5d2440e4b4c585be9269ce28b7cb36bde7"
+  },
+  "depth_map_resnet50_hue.json": {
+   "exists": true,
+   "bytes": 21961,
+   "mtime": "2026-09-14T10:59:56",
+   "sha256": "fab2d6c292823b3ce6f8400672f0d0abb5803d6b2bea057f685c733f54f3061a"
+  },
+  "depth_map_resnet50_heat.json": {
+   "exists": true,
+   "bytes": 32058,
+   "mtime": "2026-09-14T11:24:02",
+   "sha256": "888b66be08bdb9efc7dcc43e3b20d72fac6feb654212bc3071ce2f88fe6a9492"
+  },
+  "depth_map_convnext_hue.json": {
+   "exists": true,
+   "bytes": 22024,
+   "mtime": "2026-09-14T11:06:14",
+   "sha256": "6304857af8d058a696654775e539a57487c3ae6f60ff06600a223e60cab6d2cf"
+  },
+  "depth_map_convnext_heat.json": {
+   "exists": true,
+   "bytes": 31913,
+   "mtime": "2026-09-14T11:26:10",
+   "sha256": "4465969b5ec3f38e7d85225505049b16b9447a3d2ca02c3102a164cb9a056e97"
+  },
+  "depth_map_vitb16_hue.json": {
+   "exists": true,
+   "bytes": 22683,
+   "mtime": "2026-09-14T11:11:04",
+   "sha256": "e0d520d7f69a2930f949fab159f8180d4250e07ef391db09de7422afd481575b"
+  },
+  "depth_map_vitb16_heat.json": {
+   "exists": true,
+   "bytes": 32952,
+   "mtime": "2026-09-14T11:28:56",
+   "sha256": "63e5c468f297de8e74ac226fb6d7e8ac05432258f33f9d522d94049536ef31c9"
+  },
+  "depth_map_dinov2b14_hue.json": {
+   "exists": true,
+   "bytes": 22699,
+   "mtime": "2026-09-14T11:16:55",
+   "sha256": "ec96e0e3627a55b3b421ee5e9883e7fdae7fd6cf1c177a00860cd00f925e71e2"
+  },
+  "depth_map_dinov2b14_heat.json": {
+   "exists": true,
+   "bytes": 33175,
+   "mtime": "2026-09-14T11:32:06",
+   "sha256": "8e1ec69ac9085be5e29476c5d8811798fa35ff50d2c61647ecf649f0046ad129"
+  }
+ },
+ "sensitivity": {
+  "reference": [
+   {
+    "threshold": 0.95,
+    "accuracy": 0.8125,
+    "coverage": 1.0,
+    "macro_f1_present": 0.8125
+   },
+   {
+    "threshold": 0.98,
+    "accuracy": 0.875,
+    "coverage": 1.0,
+    "macro_f1_present": 0.875
+   },
+   {
+    "threshold": 0.99,
+    "accuracy": 0.78125,
+    "coverage": 1.0,
+    "macro_f1_present": 0.78125
+   },
+   {
+    "threshold": 0.995,
+    "accuracy": 0.71875,
+    "coverage": 1.0,
+    "macro_f1_present": 0.71875
+   },
+   {
+    "threshold": 0.999,
+    "accuracy": 0.6875,
+    "coverage": 1.0,
+    "macro_f1_present": 0.6875
+   }
+  ],
+  "realization": [
+   {
+    "threshold": 0.8,
+    "accuracy": 0.875,
+    "coverage": 1.0,
+    "macro_f1_present": 0.875
+   },
+   {
+    "threshold": 0.9,
+    "accuracy": 0.875,
+    "coverage": 1.0,
+    "macro_f1_present": 0.875
+   },
+   {
+    "threshold": 1.0,
+    "accuracy": 0.78125,
+    "coverage": 1.0,
+    "macro_f1_present": 0.78125
+   },
+   {
+    "threshold": 1.1,
+    "accuracy": 0.75,
+    "coverage": 1.0,
+    "macro_f1_present": 0.75
+   },
+   {
+    "threshold": 1.2,
+    "accuracy": 0.71875,
+    "coverage": 1.0,
+    "macro_f1_present": 0.71875
+   }
+  ]
+ },
+ "consumer_axis": {
+  "n_units": 16,
+  "n_decided": 12,
+  "n_abstained": 4,
+  "coverage": 0.75,
+  "accuracy": 0.5,
+  "macro_f1_present": 0.3333333333333333,
+  "macro_f1_all3": 0.2222222222222222,
+  "confusion_matrix": [
+   [
+    0,
+    6,
+    0
+   ],
+   [
+    0,
+    6,
+    0
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  "per_class": {
+   "failed": {
+    "precision": null,
+    "recall": 0.0,
+    "f1": null,
+    "support": 6
+   },
+   "partial": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6666666666666666,
+    "support": 6
+   },
+   "faithful": {
+    "precision": null,
+    "recall": null,
+    "f1": 0.0,
+    "support": 0
+   }
+  },
+  "class_support_observed": {
+   "failed": 7,
+   "partial": 7,
+   "faithful": 2
+  },
+  "predicted_counts": {
+   "failed": 0,
+   "partial": 12,
+   "faithful": 0
+  },
+  "ordinal": {
+   "n": 12,
+   "spearman": null,
+   "spearman_p": null,
+   "kendall": null,
+   "kendall_p": null,
+   "note": "prediction constant"
+  },
+  "units": [
+   {
+    "id": "resnet50|heat2.0|layer1|head",
+    "power": 0.5809224843978882,
+    "T_F": 0.5278295874595642,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|heat2.0|layer1|hue",
+    "power": 1.3864227533340454,
+    "T_F": 0.406646728515625,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|heat2.0|layer1|dense",
+    "power": 0.16928772628307343,
+    "T_F": 0.2829468846321106,
+    "observed": "failed",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|heat2.0|layer1|retrieval",
+    "power": 0.010880556888878345,
+    "T_F": 0.9153674766421318,
+    "observed": "faithful",
+    "predicted": null
+   },
+   {
+    "id": "resnet50|heat2.0|layer3|head",
+    "power": 0.5809224843978882,
+    "T_F": 0.37472862005233765,
+    "observed": "failed",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|heat2.0|layer3|hue",
+    "power": 0.8805771470069885,
+    "T_F": 0.3659566640853882,
+    "observed": "failed",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|heat2.0|layer3|dense",
+    "power": 0.3781832456588745,
+    "T_F": 0.1380959153175354,
+    "observed": "failed",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|heat2.0|layer3|retrieval",
+    "power": 0.02321535535156727,
+    "T_F": 0.52191361784935,
+    "observed": "partial",
+    "predicted": null
+   },
+   {
+    "id": "resnet50|hue90.0|layer1|head",
+    "power": 0.7388520836830139,
+    "T_F": 0.6025256514549255,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|hue90.0|layer1|hue",
+    "power": 1.4744397401809692,
+    "T_F": 0.1455513834953308,
+    "observed": "failed",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|hue90.0|layer1|dense",
+    "power": 0.8222389817237854,
+    "T_F": 0.6762780249118805,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|hue90.0|layer1|retrieval",
+    "power": 0.021956173703074455,
+    "T_F": 0.9059611111879349,
+    "observed": "faithful",
+    "predicted": null
+   },
+   {
+    "id": "resnet50|hue90.0|layer3|head",
+    "power": 0.7388520836830139,
+    "T_F": 0.46984732151031494,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|hue90.0|layer3|hue",
+    "power": 1.0638554096221924,
+    "T_F": 0.3678091764450073,
+    "observed": "failed",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|hue90.0|layer3|dense",
+    "power": 0.8240898251533508,
+    "T_F": 0.47928744554519653,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|hue90.0|layer3|retrieval",
+    "power": 0.020759236067533493,
+    "T_F": 0.2665918469429016,
+    "observed": "failed",
+    "predicted": null
+   }
+  ],
+  "low_power_abstained": {
+   "n": 4,
+   "mean_T_F": 0.6524585131555796,
+   "max_T_F": 0.9153674766421318,
+   "classes": {
+    "failed": 1,
+    "partial": 1,
+    "faithful": 2
+   }
+  }
+ },
+ "observability_axis": {
+  "n_units": 16,
+  "n_decided": 4,
+  "n_abstained": 12,
+  "coverage": 0.25,
+  "accuracy": 1.0,
+  "macro_f1_present": 1.0,
+  "macro_f1_all3": 0.3333333333333333,
+  "confusion_matrix": [
+   [
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    4,
+    0
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  "per_class": {
+   "failed": {
+    "precision": null,
+    "recall": null,
+    "f1": 0.0,
+    "support": 0
+   },
+   "partial": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 4
+   },
+   "faithful": {
+    "precision": null,
+    "recall": null,
+    "f1": 0.0,
+    "support": 0
+   }
+  },
+  "class_support_observed": {
+   "failed": 7,
+   "partial": 9,
+   "faithful": 0
+  },
+  "predicted_counts": {
+   "failed": 0,
+   "partial": 4,
+   "faithful": 0
+  },
+  "ordinal": {
+   "n": 4,
+   "spearman": null,
+   "spearman_p": null,
+   "kendall": null,
+   "kendall_p": null,
+   "note": "prediction constant"
+  },
+  "visible_over_isotropic_vs_TF": {
+   "spearman": 0.4794117647058824,
+   "p": 0.06023930250431595,
+   "n": 16
+  },
+  "units": [
+   {
+    "id": "resnet50|hue_90.0|layer1",
+    "visible_share": 0.12745341658592224,
+    "visible_over_isotropic": 2.5098518958458533,
+    "T_F": 0.6018368403116862,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|hue_90.0|layer2",
+    "visible_share": 0.06234829127788544,
+    "visible_over_isotropic": 2.455563471867488,
+    "T_F": 0.5879901746908823,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "resnet50|hue_90.0|layer3",
+    "visible_share": 0.02472298964858055,
+    "visible_over_isotropic": 1.947410876934345,
+    "T_F": 0.4636401931444804,
+    "observed": "partial",
+    "predicted": null
+   },
+   {
+    "id": "resnet50|hue_90.0|layer4",
+    "visible_share": 0.0033409560564905405,
+    "visible_over_isotropic": 0.5263290772071252,
+    "T_F": 0.09930976231892903,
+    "observed": "failed",
+    "predicted": null
+   },
+   {
+    "id": "convnext|hue_90.0|features1",
+    "visible_share": 0.14404845237731934,
+    "visible_over_isotropic": 1.063742417555589,
+    "T_F": 0.7072681585947672,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "convnext|hue_90.0|features3",
+    "visible_share": 0.05333375930786133,
+    "visible_over_isotropic": 0.7876985990084135,
+    "T_F": 0.6582803428173065,
+    "observed": "partial",
+    "predicted": "partial"
+   },
+   {
+    "id": "convnext|hue_90.0|features5",
+    "visible_share": 0.010307500138878822,
+    "visible_over_isotropic": 0.3044676964099591,
+    "T_F": 0.4012288252512614,
+    "observed": "partial",
+    "predicted": null
+   },
+   {
+    "id": "convnext|hue_90.0|features7",
+    "visible_share": 0.008167287334799767,
+    "visible_over_isotropic": 0.48249820562509393,
+    "T_F": 0.14868982632954916,
+    "observed": "failed",
+    "predicted": null
+   },
+   {
+    "id": "vitb16|hue_90.0|block2",
+    "visible_share": 0.0051756869070231915,
+    "visible_over_isotropic": 0.305763657276447,
+    "T_F": 0.6438871125380198,
+    "observed": "partial",
+    "predicted": null
+   },
+   {
+    "id": "vitb16|hue_90.0|block5",
+    "visible_share": 0.011058187112212181,
+    "visible_over_isotropic": 0.6532836693983812,
+    "T_F": 0.4550555348396301,
+    "observed": "partial",
+    "predicted": null
+   },
+   {
+    "id": "vitb16|hue_90.0|block8",
+    "visible_share": 0.011771906167268753,
+    "visible_over_isotropic": 0.6954479951124926,
+    "T_F": 0.20657549301783243,
+    "observed": "failed",
+    "predicted": null
+   },
+   {
+    "id": "vitb16|hue_90.0|block11",
+    "visible_share": 0.005988942924886942,
+    "visible_over_isotropic": 0.3538083204856286,
+    "T_F": -3.9736429850260414e-08,
+    "observed": "failed",
+    "predicted": null
+   },
+   {
+    "id": "dinov2b14|hue_90.0|block2",
+    "visible_share": 0.02535092458128929,
+    "visible_over_isotropic": 1.497654621417706,
+    "T_F": 0.5849577188491821,
+    "observed": "partial",
+    "predicted": null
+   },
+   {
+    "id": "dinov2b14|hue_90.0|block5",
+    "visible_share": 0.02140827849507332,
+    "visible_over_isotropic": 1.264735221862793,
+    "T_F": 0.39055564006169635,
+    "observed": "failed",
+    "predicted": null
+   },
+   {
+    "id": "dinov2b14|hue_90.0|block8",
+    "visible_share": 0.0006559721077792346,
+    "visible_over_isotropic": 0.03875281375188094,
+    "T_F": 0.10257097085316975,
+    "observed": "failed",
+    "predicted": null
+   },
+   {
+    "id": "dinov2b14|hue_90.0|block11",
+    "visible_share": 0.011322866193950176,
+    "visible_over_isotropic": 0.6689200951502874,
+    "T_F": -7.947285970052083e-08,
+    "observed": "failed",
+    "predicted": null
+   }
+  ]
+ },
+ "gate_statistic_quality": {
+  "power_consumer_logits": {
+   "n": 32,
+   "spearman": 0.37892246072598357,
+   "p": 0.03245941580591696,
+   "auc_failed_vs_rest": 0.29365079365079366,
+   "posthoc_separating_threshold": {
+    "threshold": 0.6985842784245809,
+    "accuracy": 0.6875,
+    "direction": "low"
+   }
+  },
+  "power_site_features": {
+   "n": 32,
+   "spearman": -0.2817340310613647,
+   "p": 0.11825145926332808,
+   "auc_failed_vs_rest": 0.6865079365079365,
+   "posthoc_separating_threshold": {
+    "threshold": 0.2724413275718689,
+    "accuracy": 0.65625,
+    "direction": "high"
+   }
+  },
+  "reference_intertwining_residual": {
+   "n": 16,
+   "spearman": -0.4900663578396291,
+   "p": 0.053974273162226576,
+   "auc_failed_vs_rest": 0.9818181818181818,
+   "posthoc_separating_threshold": {
+    "threshold": 0.9662571568371336,
+    "accuracy": 0.9375,
+    "direction": "high"
+   }
+  },
+  "realization_feature_residual": {
+   "n": 32,
+   "spearman": -0.8285216788532002,
+   "p": 4.7873131041952126e-09,
+   "auc_failed_vs_rest": 0.9285714285714286,
+   "posthoc_separating_threshold": {
+    "threshold": 0.801302622186917,
+    "accuracy": 0.90625,
+    "direction": "high"
+   }
+  },
+  "estimation_C2_over_K_log10": {
+   "n": 32,
+   "spearman": -0.5016036832343865,
+   "p": 0.0034465224680283353,
+   "auc_failed_vs_rest": 0.8015873015873016,
+   "posthoc_separating_threshold": {
+    "threshold": 0.2424486628959803,
+    "accuracy": 0.8125,
+    "direction": "high"
+   }
+  },
+  "depth": {
+   "n": 32,
+   "spearman": -0.7568810524708408,
+   "p": 5.364520755315401e-07,
+   "auc_failed_vs_rest": 0.8809523809523809,
+   "posthoc_separating_threshold": {
+    "threshold": 2.0,
+    "accuracy": 0.8125,
+    "direction": "high"
+   }
+  }
+ },
+ "outcome_variant_O8": {
+  "n_units": 32,
+  "n_decided": 32,
+  "n_abstained": 0,
+  "coverage": 1.0,
+  "accuracy": 0.75,
+  "macro_f1_present": 0.7490196078431373,
+  "macro_f1_all3": 0.4993464052287582,
+  "confusion_matrix": [
+   [
+    11,
+    8,
+    0
+   ],
+   [
+    0,
+    13,
+    0
+   ],
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  "per_class": {
+   "failed": {
+    "precision": 1.0,
+    "recall": 0.5789473684210527,
+    "f1": 0.7333333333333334,
+    "support": 19
+   },
+   "partial": {
+    "precision": 0.6190476190476191,
+    "recall": 1.0,
+    "f1": 0.7647058823529412,
+    "support": 13
+   },
+   "faithful": {
+    "precision": null,
+    "recall": null,
+    "f1": 0.0,
+    "support": 0
+   }
+  },
+  "class_support_observed": {
+   "failed": 19,
+   "partial": 13,
+   "faithful": 0
+  },
+  "predicted_counts": {
+   "failed": 11,
+   "partial": 21,
+   "faithful": 0
+  },
+  "ordinal": {
+   "n": 32,
+   "spearman": 0.709103616505794,
+   "spearman_p": 5.547367820286789e-06,
+   "kendall": 0.5884973167174488,
+   "kendall_p": 7.876671470533702e-05
+  }
+ },
+ "verdict": {
+  "verdict": "checklist / reporting discipline (not a validated predictor)",
+  "beats_every_baseline_with_ci_lower_gt_0": false,
+  "baselines_beaten": [
+   "always_partial",
+   "reach_only",
+   "realize_only",
+   "reference_only",
+   "random_uniform",
+   "random_prior"
+  ],
+  "min_paired_accuracy_diff_ci_lower": -0.1875,
+  "faithful_support_in_grid": 0,
+  "faithful_recall_estimable": false,
+  "protocol_ever_predicts_faithful": false,
+  "macro_f1_present": 0.7793103448275862,
+  "summary": "Not a validated three-way instrument as shipped: the pre-registered gate conjunction scores accuracy 0.781, never predicts faithful (the class is empty), and is beaten by the depth rule (0.812); but one outcome-free gate statistic, the fit-side realization residual, is a strong ordinal predictor (Spearman -0.829, AUC 0.929) that the certificate as validated did not use as a gate (it thresholded T_F; it has since been corrected to threshold this residual).",
+  "gate4_realization_auc": 0.9285714285714286,
+  "gate4_realization_spearman": -0.8285216788532002
+ },
+ "baseline_discussion": "The protocol clears the trivial baselines: against always-partial its accuracy advantage is 0.345 (95% CI [0.188, 0.500]), and against random assignment it is 0.467 (95% CI [0.281, 0.656]). That advantage is the causally unreachable sites, which both baselines must get wrong. It also beats **reachability alone** by 0.222 (95% CI [0.094, 0.375]), so the reference-validity gate (Gate 2) does add measurably on top of the reachability boolean. But it does **not** beat **depth alone**: the published depth law, applied as a fixed rule with no fitting, reaches accuracy 0.812 against the protocol's 0.781, a paired difference of -0.031 (95% CI [-0.188, 0.094]; the protocol is ahead in only 0.254 of resamples). A variable that is part of the phenomenon under study, and not a validity gate at all, therefore predicts the verdict better than the gates do. Baselines beaten with a paired CI lower bound above zero: always_partial, reach_only, realize_only, reference_only, random_uniform, random_prior.",
+ "split_discussion": "Held out by setting, the fixed rule transfers unevenly and always for the same reason: coverage is 1.0 on the main grid (G1 never fires at any site), and accuracy is bounded by the failed-to-partial confusion that no available gate resolves. S1 (dinov2b14, n=8) holds 7 failed and 1 partial sites and only 2 unreachable ones, so the reachability screen catches 2 and the protocol scores 0.625, below the depth rule's 0.625. S2 (heat, n=16) and S5 (the unseen heat-1.0 parameter, n=16) behave differently from each other because the reference screen fires far more often on the smaller heat parameter: S2 fails Gate 2 on 4 of 16 sites and Gate 3 on 2, scoring 0.750, while S5 fails Gate 2 on 12 of 16 sites and Gate 3 on 2, scoring 0.938. That is not transfer of a stable diagnostic: the same gate fires at a different rate under a different transformation parameter, which is a property of how the canonical residual is normalised, not of the operator's faithfulness. S3 (depth 4, n=8) is degenerate: every site is failed, so any rule that says 'not partial' scores between the protocol's 0.875 and the depth rule's 1.000. S4 (vitb16, n=8) is where reachability helps most (2 unreachable sites). None of this is out-of-sample *fitting*: no gate threshold was adjusted on any split, so the numbers are transfer of a fixed checklist, not generalisation of a learned predictor. In every split the depth rule is at least as accurate as the protocol.",
+ "sensitivity_discussion": "The primary thresholds were fixed from first principles (0.99 on the canonical intertwining residual, 1.00 on the feature realization residual) and were not chosen from these tables. The sweep shows the pre-registered Gate-2 value is *not* the accuracy-maximising one: an unpregistered 0.98 would give 0.875 against the primary 0.781. That is exactly the post-hoc threshold selection the pre-registration forbids, so it is reported and not adopted; and even the best swept setting produces no faithful prediction and does not change the qualitative picture. Accuracy across both sweeps lies in [0.688, 0.875], coverage stays 1.0, and the gate count (0-4 passed) correlates only weakly with $T_F$ (Spearman 0.379, p = 0.032). A gate family that only changes *which* failures it screens, never whether it can identify success, cannot be rescued by re-thresholding.",
+ "consumer_discussion": "This is the one slice on which Gate 1 is not vacuous, and it is the most instructive: the retrieval consumer's power is below the floor on 4 of 16 units (mean $T_F$ = 0.652, max 0.915). The protocol abstains there, which is exactly the behaviour Section 3.7 prescribes, because a consumer that barely responds cannot adjudicate. But the abstained units are the ones where O2 *looks best*: the raw $T_F$ that the pre-registered classes reward is highest precisely where the power gate says the number is uninformative. Validating the gates against the raw $T_F$ class therefore penalises the protocol for being epistemically correct, and inflates the baselines that never abstain. Coverage on this axis is 0.750, and the accuracy on the decided units is not comparable to the main grid for the same reason.",
+ "observability_discussion": "An observability statistic read from `results/quotientization.json` \u2014 the readout's visible share of the site displacement, `visible_share_of_displacement`, applied with the same 0.05 floor \u2014 covers only 4 of 16 hue sites and every one of the covered sites is observed partial {'failed': 0, 'partial': 4, 'faithful': 0}. It is therefore perfect on the quarter it keeps (accuracy 1.000) and abstains on the other three quarters (coverage 0.250); it cannot separate failed from partial at all, because it rejects every failed and every faithful site it sees. The isotropic-normalised version has only a weak rank relation to $T_F$ (Spearman 0.479, p = 0.060). No alternative observability statistic available in the published files turns Gate 1 into a usable three-way discriminator.",
+ "gate_statistic_quality_discussion": "This is the most important nuance in the validation, and it cuts both ways. The statistic behind **Gate 4** \u2014 the outcome-free held-out single-step feature realization residual `feat_resid_over_displacement` \u2014 is a strong ordinal predictor of $T_F$: Spearman $\\rho$ = -0.829 (p = 0.000, n = 32), AUC 0.929 for failed-vs-rest. It is a better ordinal predictor than depth ($\\rho$ = -0.757). The protocol's failure is therefore *not* that it has no usable signal; it is that the **certificate as validated did not use this statistic as a gate** (it thresholded $T_F$ itself; the corrected certificate now thresholds this residual), that the pre-registered Gate-4 cut of 1.00 \u2014 'no worse than the no-op' \u2014 is far too lax to separate partial from failed, and that the statistic is recorded for only 32 of 32 sites (absent for the whole held-out dinov2b14 backbone). A post-hoc cut on the residual would separate failed from not-failed at about 0.801 (accuracy 0.906), but choosing it here would be tuning on the evaluation set, and it still cannot produce a faithful prediction because no faithful site exists. The weaker gates are the ones the protocol emphasises: consumer power has the expected sign but little strength ($\\rho$ = 0.379, AUC 0.294 \u2014 failed sites do have lower power), and it never crosses the 0.05 floor on this grid; reachability is a binary that only fires off the grid edge. Among genuinely outcome-free statistics, then, exactly one (`feat_resid_over_displacement`) carries strong signal, and the protocol neither thresholds it usefully nor records it everywhere.",
+ "outcome_variant_discussion": "The qualitative picture is operator-independent, which is expected because O8 differs from O2 mainly at the shallow sites of the plain CNN and shares O2's deep-site failures. No faithful class appears under O8 either, so the protocol still cannot be validated on faithful sites. This confirms that the checklist's limitation is structural, not an artefact of the chosen published operator.",
+ "verdict_prose": "The protocol as shipped is a sound *necessary-condition* screen but not a validated three-way instrument. Its strengths are real: it never claims a site is faithful, the sites it rejects (causally unreachable; canonical intertwining residual at the 0.99 boundary) really are failures, and \u2014 the strongest positive finding here \u2014 the outcome-free fit-side realization residual behind Gate 4 is a strong ordinal predictor of $T_F$ (Spearman $\\rho$ = -0.829, AUC 0.929), better than depth. Its weaknesses are equally concrete: the conjunction as pre-registered cannot output faithful at all (the class is empty in the published grid), it is beaten as a classifier by the trivial depth rule, the certificate as validated (`scripts/215`) was circular in Gate 4 because it thresholded the outcome instead of the realization residual (this has since been corrected), its pre-registered Gate-4 cut of 1.00 is too lax to separate partial from failed, and its fit-side statistic is missing for 0 of 32 sites including the entire held-out dinov2b14 backbone. The honest label is therefore a **checklist / reporting discipline** whose one predictive component is not the one it currently reports, and whose thresholds would need a fresh pre-registered validation on unseen data before any three-way verdict is credited.",
+ "recommended_section4_sentence": "We report the five gates as a *diagnostic checklist and reporting discipline* rather than a validated predictor: on the 32-site cross-architecture grid the outcome-free gate conjunction screens out causally unreachable and reference-invalid failures (accuracy 0.781 versus 0.438 for always-partial) but leaves the failed-versus-partial boundary unresolved (macro-F1 0.779), is no better than the site's depth alone (depth-rule accuracy 0.812; paired difference -0.031 [-0.188, 0.094]), and can never return a faithful verdict because no site of the published grid reaches the pre-registered faithful threshold (max $T_F$ = 0.707), while the one gate statistic that carries strong ordinal signal is the outcome-free fit-side realization residual (Spearman $\\rho$ = -0.829, AUC 0.929), recorded for all 32 of 32 sites in the current files and thresholded at the pre-registered 1.00 \u2014 a cut too lax to separate partial from failed; the corrected certificate thresholds this residual rather than $T_F$.",
+ "applicability_domain": "**Applies.** Frozen pretrained backbones (resnet50, convnext, vitb16, dinov2b14) on COCO train2017 instance crops at four depths, hue-90 rotation (group, direct consumer) and the spectral heat semigroup (2.0 and 1.0), consumer = the backbone's own frozen head, headline operator = O2 global linear ridge. The gate statistics are read from `results/depth_map_summary.json`, the raw `results/depth_map_*.json` (consumer-level power), and `results/estimator_control.json` (fit-side realization).\n\n**Does not apply / not tested here.** (i) Attribute-mediated consumers where the reference can genuinely fail: Gate 2 is recorded only for heat and only as the canonical intertwining residual, so the reference-validity gate is untested where it matters most. (ii) Sites with power below the floor: the protocol abstains and no accuracy claim is made. (iii) Content-conditioned or nonlinear operator families: the observed outcome is O2 only, so the validation is about whether the gates predict *O2* faithfulness. (iv) The faithful class is absent from the published grid, so the protocol's behaviour on faithful sites is unvalidated by construction. (v) fit-SPLIT realization residuals were not recorded in the published files; the Gate-4 column uses the held-out feature residual, which is stated rather than hidden.",
+ "narrative_ready": true
+}

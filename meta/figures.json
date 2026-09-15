@@ -1,0 +1,322 @@
+{
+ "style": "scripts/figstyle.py",
+ "spec": "meta/FIGURE_SPEC.md",
+ "figures": [
+  {
+   "id": 1,
+   "name": "object",
+   "title": "The correspondence and its four blocks",
+   "panels": [
+    "a",
+    "b"
+   ],
+   "data": [],
+   "script": "scripts/270_fig01_object.py",
+   "outputs": [
+    "paper/figures_final/fig01_object.pdf",
+    "paper/figures_final/fig01_object.png"
+   ],
+   "audit": "20 text items, 2 panels, 0 problems",
+   "status": "done (template)",
+   "kind": "schematic",
+   "caption": "The correspondence between input transformations and feature-space operators. (a) A physical transformation $\\tau$ acts on the state space and the encoder $\\psi$ maps states to features; the operator $\\rho_\\tau$ is a representation of $\\tau$ on the feature space exactly when the diagram commutes, $\\rho_\\tau\\psi=\\psi\\tau$, which also delivers the composition law. (b) Four-block structure of the map induced by $\\tau$ when the encoder is linear, in the basis that splits the input into retained ($\\mathcal R$) and discarded ($\\mathcal K$) coordinates. Blocks $A$ and $B$ act inside one subspace, $D$ maps retained coordinates into the discarded one, and $C$ maps discarded coordinates back into the retained subspace; only $C$ can make a feature-space action fail to exist, because it is the only block whose contribution cannot be recovered from the retained features.",
+   "was": 1,
+   "plate": "fig01_object"
+  },
+  {
+   "id": 2,
+   "name": "fibre_test",
+   "title": "The fibre condition, tested directly",
+   "panels": [
+    "a",
+    "b",
+    "c"
+   ],
+   "data": [
+    "results/star_existence_test.json"
+   ],
+   "script": "scripts/278_fig09_fibre_test.py",
+   "outputs": [
+    "paper/figures_final/fig02_fibre_test.pdf",
+    "paper/figures_final/fig02_fibre_test.png"
+   ],
+   "audit": "46 text items, 3 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "design_note": "ratio-to-chance bars (baseline invisible on a linear axis) + per-site curves per algebra",
+   "caption": "The fibre condition tested directly. (a) Consumer-level preservation of base-equal pairs at tolerance quantile $q=0.01$, expressed as a multiple of the chance rate, for four backbones and both algebras; the chance rate is $q$ by construction. (b) Preservation at each probed site under hue rotation and (c) under heat diffusion, one curve per backbone, against the chance line (dotted); per-site preservation runs from $0.18$ to $0.82$.",
+   "was": 9,
+   "plate": "fig02_fibre_test"
+  },
+  {
+   "id": 3,
+   "name": "defect",
+   "title": "The defect law and what does not govern it",
+   "panels": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "data": [
+    "results/transport_theory.json"
+   ],
+   "script": "scripts/271_fig02_defect.py",
+   "outputs": [
+    "paper/figures_final/fig03_defect.pdf",
+    "paper/figures_final/fig03_defect.png"
+   ],
+   "audit": "66 text items, 4 panels, 0 problems",
+   "status": "done (template)",
+   "kind": "data",
+   "design_note": "sweep range only: 10 points in kappa [0.40, 9.34]; the two control entries are not plotted",
+   "caption": "The defect law over its measured range. (a) Defect of the best linear realisation, $1-T_{\\mathrm{RMS}}$, against the mixing ratio $\\kappa$ for retained ranks 16 (circles) and 32 (squares) on a logarithmic axis; the solid line is the closed form of Theorem 2 in the isometric setting, $\\kappa/\\sqrt{1+\\kappa^2}$. The sweep covers $\\kappa=0.40$--$9.34$, and the vertical axis is truncated to the swept range; the two $\\kappa\\to0$ entries of the same file lie outside it, being the kernel-preserving case with defect below $2\\times10^{-6}$. (b) Absolute difference between measurement and closed form over the same sweep against a dotted line at $0.01$; the deviation is largest ($0.0091$) near $\\kappa=1.2$ and an order of magnitude smaller at both ends. (c) Transfer against retained rank at fixed geometry: the score moves by about a factor of two while $\\kappa$ moves in the opposite direction. (d) Transfer, and the share of the displacement carried by the lowest-variance half of the directions, against input anisotropy: the score rises from $0.069$ to $0.429$ while the share stays between $0.43$ and $0.49$, so the score follows the geometry of the split rather than the discarded energy.",
+   "was": 2,
+   "plate": "fig03_defect"
+  },
+  {
+   "id": 4,
+   "name": "organisation",
+   "title": "Low-order, shared harmonic organisation",
+   "panels": [
+    "a",
+    "b",
+    "c"
+   ],
+   "data": [
+    "results/dense_continuous_v3.json",
+    "results/harmonic_controls.json",
+    "results/code3d_sv_lowext.json"
+   ],
+   "script": "scripts/272_fig03_organisation.py",
+   "outputs": [
+    "paper/figures_final/fig04_organisation.pdf",
+    "paper/figures_final/fig04_organisation.png"
+   ],
+   "audit": "52 text items, 3 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "caption": "The organisation of hue orbits in the frozen features. (a) Composition of the centred orbit energy by harmonic index for each shape of the dense orbit suite; the first two harmonics carry $0.84$--$0.88$ of the energy in every shape and the tail ($k\\ge3$) never exceeds $0.16$. (b) Alignment between each shape's rotation plane and the reference shape's, per harmonic index, shown as the range over the five non-reference shapes with the median marked and a dotted line at $\\cos=0.96$; alignment is $0.97$--$1.00$ for $k\\le2$ and falls to $0.54$--$0.92$ for $k\\ge7$, so the shared planes belong to the low harmonics. (c) The low-saturation limit: bars give the orbit energy at the grey end of the saturation range relative to the mid-saturation ring, and the line gives the alignment of the fundamental plane between the two rings; the orbit loses most of its energy while its harmonic plane survives, which bounds the operating domain.",
+   "was": 3,
+   "plate": "fig04_organisation"
+  },
+  {
+   "id": 5,
+   "name": "provenance",
+   "title": "Provenance: inherited, not learned",
+   "panels": [
+    "a",
+    "b",
+    "c"
+   ],
+   "data": [
+    "results/harmonic_controls.json",
+    "results/hue_probe_app.json"
+   ],
+   "script": "scripts/273_fig04_provenance.py",
+   "outputs": [
+    "paper/figures_final/fig05_provenance.pdf",
+    "paper/figures_final/fig05_provenance.png"
+   ],
+   "audit": "33 text items, 3 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "design_note": "categorical: 8 arms x 3 metrics -> three horizontal dot facets sharing the arm axis",
+   "caption": "Where the organisation comes from: eight arms under one protocol. (a) Share of orbit energy in the first two harmonics, raw and after standardisation; the untrained sites of the same architectures are at least as concentrated as the trained ones. (b) Cross-shape phase coherence: input pixels are exact by construction, and the untrained sites sit closer to that than the trained ones. (c) Zero-shot hue error on unseen shapes from the code head (circles) and from an MLP probe on the same features (squares), on a logarithmic axis. One seed per arm.",
+   "was": 4,
+   "plate": "fig05_provenance"
+  },
+  {
+   "id": 6,
+   "name": "realisation",
+   "title": "Realisation and composition",
+   "panels": [
+    "a",
+    "b",
+    "c"
+   ],
+   "data": [
+    "results/locality_*.json",
+    "results/multipath_composition.json",
+    "results/capacity_controls_z2_s*_d90.json"
+   ],
+   "script": "scripts/274_fig05_realisation.py",
+   "outputs": [
+    "paper/figures_final/fig06_realisation.pdf",
+    "paper/figures_final/fig06_realisation.png"
+   ],
+   "audit": "51 text items, 3 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "design_note": "paired dots on a log axis (site pairs) + two bar panels with a direct-fit reference line",
+   "caption": "Which realisations work, and what composing costs. (a) Gain over the copy baseline of the best local phase-conditioned transporter (circles) and of the best global family (squares) at five sites, logarithmic axis, with a dotted line at one (no better than copying); the local construction is $1.55$--$15.9\\times$ the copy baseline while the global family is $0.08$--$0.84\\times$. (b) Transfer at a fixed total hue rotation as a function of how the rotation is split into a chain, with the direct fit as a dashed reference; bars are means over three seeds and whiskers one standard deviation. (c) The same for the heat semigroup, whose chains degrade monotonically with length.",
+   "was": 5,
+   "plate": "fig06_realisation"
+  },
+  {
+   "id": 7,
+   "name": "depth",
+   "title": "Depth, and the pairing with the reader",
+   "panels": [
+    "a",
+    "b",
+    "c"
+   ],
+   "data": [
+    "results/depth_map_summary.json",
+    "results/quotientization.json"
+   ],
+   "script": "scripts/275_fig06_depth.py",
+   "outputs": [
+    "paper/figures_final/fig07_depth.pdf",
+    "paper/figures_final/fig07_depth.png"
+   ],
+   "audit": "52 text items, 3 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "design_note": "four ordinal depth curves per algebra + a strip of per-backbone rank correlations for the crossed design",
+   "caption": "How depth changes operability, and what it changes it to. (a) Transfer of the global linear family against relative depth for four frozen backbones under hue rotation and (b) under heat diffusion; every curve declines, and the final block of the two class-token transformers is causally unreachable, reading zero. (c) The crossed readout $\\times$ transformation design summarised by its trend over depth: for each cell, the Spearman correlation between the chance-corrected consumer-visible share and depth, one marker per backbone (open) and the median (bar); the two aligned cells decline and the two off-diagonal cells do not. Seed 0 for all four cells, so the cells are comparable.",
+   "was": 6,
+   "plate": "fig07_depth"
+  },
+  {
+   "id": 8,
+   "name": "action_comparison",
+   "title": "Fixed action against learnable actions",
+   "panels": [
+    "a",
+    "b",
+    "c"
+   ],
+   "data": [
+    "results/interface_action_comparison.json"
+   ],
+   "script": "scripts/279_fig10_action_comparison.py",
+   "outputs": [
+    "paper/figures_final/fig08_action_comparison.pdf",
+    "paper/figures_final/fig08_action_comparison.png"
+   ],
+   "audit": "27 text items, 3 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "design_note": "seed strips sharing the arm axis; linear because the fixed arm is exactly zero",
+   "caption": "The measured action against learnable actions under one read-in, one supervision and one budget. (a) Zero-shot read-out error. (b) Increment error at the two never-fitted increments, $37^\\circ$ (circles) and $90^\\circ$ (squares). (c) Defect between a two-step composite and the direct step; the fixed action is exact by construction, and learning the action removes neither the increment error nor the composition defect. Markers are the three seeds.",
+   "was": 10,
+   "plate": "fig08_action_comparison"
+  },
+  {
+   "id": 9,
+   "name": "interface",
+   "title": "The interface",
+   "panels": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "data": [
+    "results/code3d_v3.json",
+    "results/code3d_sv_lowext.json",
+    "results/usage_rule_scale_strat.json",
+    "results/region_rho_demo.json"
+   ],
+   "script": "scripts/276_fig07_interface.py",
+   "outputs": [
+    "paper/figures_final/fig09_interface.pdf",
+    "paper/figures_final/fig09_interface.png"
+   ],
+   "audit": "56 text items, 6 panels, 0 problems",
+   "status": "done",
+   "kind": "mixed",
+   "design_note": "two shared-axis heat maps over (s,v) + a 120-point scatter with a threshold line + two log-axis bars",
+   "caption": "The interface as built, and where it holds. (a) Hue readout error over the (saturation, value) domain on unseen shapes, an $8\\times8$ grid on a logarithmic colour scale, and (b) the magnitude of the code's fundamental on the same grid; the readout fails where the code magnitude collapses towards the grey axis. (c) Readout error against the hue-concentration statistic for 120 real COCO regions, with the pre-registered threshold at $0.70$ (dashed); above it the median error is $8.0^\\circ$ against $19.6^\\circ$ below. (d) Wall clock per operation for a region-level code shift and for a pixel re-colour with a re-forward, logarithmic axis ($20.9$ µs against $38.1$ ms).",
+   "was": 7,
+   "plate": "fig09_interface"
+  },
+  {
+   "id": 10,
+   "name": "recovery",
+   "title": "Reading the transformation back out of the features",
+   "panels": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "data": [
+    "results/fig_correspondence.json",
+    "results/code3d_sv_lowext.json",
+    "results/second_attribute_chain.json"
+   ],
+   "script": "scripts/281_fig11_recovery.py",
+   "outputs": [
+    "paper/figures_final/fig10_recovery.pdf",
+    "paper/figures_final/fig10_recovery.png"
+   ],
+   "audit": "61 text items, 4 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "design_note": "grouped log bars for the shape-held-out operator against copying; parity panels for the phase read and the attribute read; error against the renderer's own RGB range so the unidentifiable references stay visible instead of being dropped",
+   "caption": "Reading the transformation back out of the features. (a) Relative error of an operator fitted on a shape it was never fitted on, for the pentagon and the hexagon at three and four harmonics, against the copy baseline on the same shape, on a logarithmic axis; the recovered operator is $6.7$--$16.6\\times$ closer than copying, at cosine $0.96$--$0.98$. (b) Hue phase read from the code against the hue that was rendered, one point per hue, for three (saturation, value) cells of the dense lattice; the median error is $1.6°$ and $1.1°$ at the two chroma-rich cells, while the third is the degenerate cell whose twelve hues render to a single RGB value and whose phases therefore carry no hue. (c) Median recovery error against the range of the twelve rendered RGB values, logarithmic axes, one point per cell; the error falls with the range the renderer actually provides (Spearman $-0.93$ over the $61$ cells that have a reference) and the three cells with no range at all, the unidentifiable references, carry the largest errors. (d) Attribute the code reports after a multiplicative scaling of the physical attribute against the attribute that scaling realised, one point per trial and both arms, at magnifications $1.1$--$2.0$ with the gamut clip active; the report follows the realised value across the whole range at mean absolute error $0.010$ (value) and $0.031$ (saturation), including the trials whose request saturates the gamut, so the read follows the pixel rather than the request.",
+   "was": 11,
+   "plate": "fig10_recovery"
+  },
+  {
+   "id": 11,
+   "name": "uses",
+   "title": "Uses on real images",
+   "panels": [
+    "a",
+    "b",
+    "c"
+   ],
+   "data": [
+    "results/detector_o8_multiseed.json",
+    "results/usage_rule_scale_strat.json",
+    "results/region_rho_demo.json"
+   ],
+   "script": "scripts/277_fig08_uses.py",
+   "outputs": [
+    "paper/figures_final/fig11_uses.pdf",
+    "paper/figures_final/fig11_uses.png"
+   ],
+   "audit": "41 text items, 3 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "design_note": "seed strips + two horizontal bar panels for long category labels",
+   "caption": "What the interface does on real images. (a) Detector box F1 at IoU $0.5$ for a never-fitted hue shift, one marker per seed (open) and the mean (bar), for five routes; the structured residual family reaches $0.965$, the random orthogonal control $0.000$ and the no-intervention route $0.008$. (b) Median hue error per route on real regions. (c) Median hue error per category on the same regions, sorted, with the $30^\\circ$ reference (dashed); eleven of the twelve categories fall below it.",
+   "was": 8,
+   "plate": "fig11_uses"
+  },
+  {
+   "id": 12,
+   "name": "prediction",
+   "title": "What a fitted law predicts out of sample",
+   "panels": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ],
+   "data": [
+    "results/kappa_predicts_transfer.json",
+    "results/two_term_heldout_resnet50.json",
+    "results/two_term_decomposition_resnet50.json",
+    "results/heat_semigroup_structure.json"
+   ],
+   "script": "scripts/282_fig12_prediction.py",
+   "outputs": [
+    "paper/figures_final/fig12_prediction.pdf",
+    "paper/figures_final/fig12_prediction.png"
+   ],
+   "audit": "60 text items, 4 panels, 0 problems",
+   "status": "done",
+   "kind": "data",
+   "design_note": "parity for the closed form used as a predictor, with the identity line and the measured mean; paired log dumbbells for in-split against held-out sharing; ratio curves against depth for the rank-resolved coupling; log bars with each arm's dispersion for the shared-rate extrapolation",
+   "caption": "What a fitted law predicts out of sample. (a) Transfer predicted from each site's own mixing ratio by the closed form of Theorem 2 against the transfer measured at that site, one point per reachable site, with the identity line dotted and the measured mean dashed; the prediction is biased high by $0.40$ with mean absolute error $0.43$ against a measured mean of $0.31$, so across real sites the law orders no better than the naive baselines (Spearman $0.48$ between $\\kappa$ and transfer, Pearson $-0.44$ between prediction and measurement) — the negative result of §8.3 shown against the line it would have to lie on. (b) Sharing term as a share of the realisation error, evaluated inside the fit split and on held-out data, per depth and algebra, on a logarithmic axis; the in-split estimate of $0.70$--$0.97$ collapses to $10^{-9}$--$0.073$ out of sample, so a dominant sharing cost is an artefact of fitting and evaluating in the same cells. (c) Error of the rank-$k$ subspace operator relative to the diagonal restriction, against depth, for three ranks and both algebras, with parity dotted; letting channels correct one another pays only at the first block (down to $0.25$ at rank $32$ under hue rotation) and costs at every deeper site, where the diagonal restriction predicts better. (d) Extrapolation to a diffusion time that was never fitted, from the shared mean rate of the fit times, as a gain over the copy baseline; the exact synthetic carrier reaches $14.9\\times$ while the two real sites reach $0.83\\times$ and $0.75\\times$, and the number above each bar is that arm's rate dispersion ($0.91$ for the control against $17.5$ and $8.6$ at the two sites), which is why the shared-rate prediction does not transfer.",
+   "was": 12,
+   "plate": "fig12_prediction"
+  }
+ ],
+ "numbering": "Figure numbers were reordered by first citation on 2026-09-16 (the old number is kept in \"was\" and in the figure script docstring).  Scripts keep their pipeline ids (270-282), which are not figure numbers."
+}

@@ -1,0 +1,165 @@
+{
+ "note": "3D (h,s,v) y3 GAP 位姿平均 4var；lattice:12h x 4s x 4v；rings: 5 组(s,v) x 36h(10deg)",
+ "sphere_y3": {
+  "norm_std_mean_range": [
+   0.005,
+   0.0097,
+   0.0141,
+   0.0054,
+   0.01,
+   0.0106
+  ],
+  "mu_over_mean_norm": [
+   0.9979,
+   0.9947,
+   0.9915,
+   0.9974,
+   0.9949,
+   0.994
+  ],
+  "max_disp_over_norm": [
+   0.148,
+   0.252,
+   0.319,
+   0.16,
+   0.236,
+   0.262
+  ]
+ },
+ "lattice_metric": {
+  "hs": {
+   "mean": 0.03,
+   "std": 0.45
+  },
+  "hv": {
+   "mean": 0.0,
+   "std": 0.33
+  },
+  "sv": {
+   "mean": 0.495,
+   "std": 0.21
+  },
+  "hrad": {
+   "mean": 0.096,
+   "std": 0.06
+  },
+  "srad": {
+   "mean": 0.112,
+   "std": 0.06
+  },
+  "vrad": {
+   "mean": 0.112,
+   "std": 0.07
+  },
+  "aniso": {
+   "mean": 0.766,
+   "std": 0.23
+  },
+  "crossshape_share_ds": 0.855,
+  "crossshape_share_dv": 0.908,
+  "radius_drift_s": -0.0059,
+  "radius_drift_v": -0.0094
+ },
+ "cloud_dim": {
+  "triangle": {
+   "d80": 4,
+   "d95": 7
+  },
+  "rectangle": {
+   "d80": 4,
+   "d95": 8
+  },
+  "circle": {
+   "d80": 3,
+   "d95": 6
+  },
+  "star": {
+   "d80": 4,
+   "d95": 6
+  },
+  "pentagon": {
+   "d80": 3,
+   "d95": 6
+  },
+  "hexagon": {
+   "d80": 4,
+   "d95": 6
+  }
+ },
+ "embedding_curvature": {
+  "h-s": {
+   "mean": 0.366,
+   "p90": 0.548
+  },
+  "h-v": {
+   "mean": 0.294,
+   "p90": 0.44
+  },
+  "s-v": {
+   "mean": 0.386,
+   "p90": 0.564
+  }
+ },
+ "rings": {
+  "plane_align_gray_vs_mid": {
+   "triangle": [
+    0.952,
+    0.861
+   ],
+   "rectangle": [
+    0.964,
+    0.819
+   ],
+   "circle": [
+    0.966,
+    0.881
+   ],
+   "star": [
+    0.953,
+    0.907
+   ],
+   "pentagon": [
+    0.965,
+    0.85
+   ],
+   "hexagon": [
+    0.971,
+    0.846
+   ]
+  },
+  "k1_gray_vs_mid": {
+   "triangle": [
+    0.528,
+    0.645
+   ],
+   "rectangle": [
+    0.593,
+    0.649
+   ],
+   "circle": [
+    0.667,
+    0.77
+   ],
+   "star": [
+    0.463,
+    0.646
+   ],
+   "pentagon": [
+    0.63,
+    0.747
+   ],
+   "hexagon": [
+    0.644,
+    0.738
+   ]
+  },
+  "energy_gray_ratio": {
+   "triangle": 0.36,
+   "rectangle": 0.41,
+   "circle": 0.37,
+   "star": 0.35,
+   "pentagon": 0.38,
+   "hexagon": 0.42
+  }
+ }
+}

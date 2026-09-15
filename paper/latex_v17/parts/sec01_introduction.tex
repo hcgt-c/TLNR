@@ -1,0 +1,81 @@
+\section{Introduction}
+
+\subsection{The operational question}
+
+A network has encoded an object. Can we act on its internal state alone, and obtain the computation the network would have produced had the object's colour actually changed? The question is well posed because input-side changes come with their own algebra: hue rotates on a circle (a group, $SO(2)$), heat diffuses by $B_t=e^{-tL}$ with $B_tB_s=B_{t+s}$ (a semigroup), and saturation or value rescale until they clip (monoids, with degenerate points where fibres collapse). World states transform as $s\mapsto\tau s$; imaging $R$ and the first $\ell$ layers of a network compose into $\psi_\ell:\mathcal S\to Z_\ell$. The question is whether the algebra survives the trip. We ask for a homomorphism between two algebras of transformations --- the physical family $\tau\in M$ with its composition law, and operators on the feature space:
+\begin{equation*}\adjustbox{max width=\columnwidth}{$\displaystyle \begin{aligned}
+&\rho_\ell:M\to\operatorname{End}(Z_\ell),\qquad \psi_\ell(\tau s)\approx\rho_\ell(\tau)\psi_\ell(s),\\
+&\rho_\ell(\tau_2\tau_1)=\rho_\ell(\tau_2)\circ\rho_\ell(\tau_1),\qquad \rho_\ell(e)=I,
+\end{aligned}\tag{$\star$}
+$}\end{equation*}
+that is, the commutative diagram
+
+that is, the square drawn in Figure 1(a).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig01_object.pdf}
+\caption*{\textbf{Figure 1.} The correspondence between input transformations and feature-space operators. (a) A physical transformation $\tau$ acts on the state space and the encoder $\psi$ maps states to features; the operator $\rho_\tau$ is a representation of $\tau$ on the feature space exactly when the diagram commutes, $\rho_\tau\psi=\psi\tau$, which also delivers the composition law. (b) Four-block structure of the map induced by $\tau$ when the encoder is linear, in the basis that splits the input into retained ($\mathcal R$) and discarded ($\mathcal K$) coordinates. Blocks $A$ and $B$ act inside one subspace, $D$ maps retained coordinates into the discarded one, and $C$ maps discarded coordinates back into the retained subspace; only $C$ can make a feature-space action fail to exist, because it is the only block whose contribution cannot be recovered from the retained features.}
+\end{figure*}
+
+The object of study is therefore not a collection of isolated feature edits but a \textit{representation of the transformation algebra}: the composition law must survive into the feature space, not only the individual actions. Does such a $\rho_\ell$ exist, at which layers, in what form, and when does it degrade?
+
+\subsection{Three results}
+
+\textbf{Existence is an information condition, and its failure is priced twice over.} An induced action exists at a site exactly when the transformation preserves that site's fibres: states the encoder has merged must stay merged after the transformation. Existence is therefore a property of the encoder--transformation pair, and it is a single condition rather than two, because once the action is well defined its composition law is inherited from the physical one. In the linear layer the same condition has an explicit form --- a realising operator exists iff the transformation preserves the encoder's kernel --- and its four-block decomposition shows that \textit{only} the block that routes discarded information back into the retained subspace obstructs: discarding information is free, contradicting it is not. When a realising operator exists it is unique, being the solution of $\rho W=Wg$ with $W$ of full row rank; when it does not, the best achievable score is set by the mixing ratio \textit{in the metric the representation induces}, $1-T_{RMS}=\kappa_W/\sqrt{1+\kappa_W^2}$ under stated moment conditions, verified to $0.0091$ over a $\kappa$ sweep spanning sixteen orders of magnitude. Two consequences are counter-intuitive and both are measured: only mixing-back is poisonous, and retained rank is nearly irrelevant --- $\rho(\kappa,T_F)=-0.968$ against $\rho(\text{effective rank},T_F)=+0.502$ on trained weights. The law's tightness condition is explicit, and real backbones do not meet it; the paper reports the deviation rather than presenting a controlled-regime identity as a calibrated predictor. On a rectifier the failure to realise has two distinguishable sources: what the source region has already made unrecoverable on a transition cell, and what it costs to satisfy every cell the transformation visits with one operator. \textit{Earned at} \S{}3.2--3.5, \S{}8.3.
+
+\textbf{The measured organisation fixes which realisations can exist.} A continuous rotation action on features is block-diagonal in a suitable basis, so the measurement question is which blocks carry the energy and whether their planes are shared. For colour, the first two harmonics carry $84$--$88\%$ of the orbit energy and the planes are shared across shapes at $\cos\ge0.96$, and that form is prescriptive: for a carrier $B$ with action $A_\Delta$, a fixed linear realisation exists iff $A_\Delta\ker B\subseteq\ker B$, and then the least-squares optimal map is $K^\star=BA_\Delta B^\dagger$, whose residual is the energy of the retained-block directions the rotation carries back into view. The criterion is a \textit{design} condition for a compiled carrier --- it says which coordinate sets may be kept and what a chosen truncation costs. On the measured features the synthesis is injective, so closure holds exactly and the residual failure of a global fit is attributable to content dependence and tail instead; the paper keeps that distinction rather than blurring it. \textit{Earned at} \S{}4.2--4.6.
+
+\textbf{From the correspondence to operation: what it costs, and what it builds.} Global linear families fail where a local, phase-conditioned transporter succeeds; chains compose within a bound set by the truth action's Lipschitz constant in the consumer's seminorm, at a price that is measured rather than assumed; and the measured form fixes an interface whose action is never fitted, whose error has three named sources of which only one is removed by training, and whose operating domain is published as a threshold rule. \textit{Earned at} \S{}5, \S{}7.
+
+The rest of the paper develops these three results, measures the structure that fixes the realisable forms, and compiles that structure into an interface.
+
+\subsection{Reading is not transforming}
+
+The question is independent of attribute readout. Take $x=(u,v)$, let $f$ keep $u$, let the task read $u$, and let $\tau$ swap $u$ and $v$: the representation is perfectly task-sufficient --- the attribute reads out exactly --- and completely transformation-insufficient, because the transformed state is unrecoverable from what was kept. Reading an attribute and carrying its transformation law are different properties with different conditions, and the standard instruments of representation analysis measure the former. The symptom is sharper than a gap in coverage: a random orthogonal operator, fitted to nothing, can attain a higher projection score against a true hue rotation than a correctly fitted operator while destroying downstream behaviour entirely (\S{}5.5). Geometric proxies cannot by themselves tell a correspondence from a decoy, which is why every capability claim in this paper is graded against ground-truth targets and downstream behaviour.
+
+\subsection{What the measurements find}
+
+Colour gives the question a concrete instance. Densely sampled hue orbits in frozen vision features concentrate $84$--$88\%$ of their energy in the first two harmonics, with rotation planes shared across shapes (principal-angle cosine at least $0.96$) while amplitudes carry the shape-specific content; much of this is inherited from the input and from architecture rather than learned, and it erodes with depth. The organisation is strong enough to act on: operators built from it predict the features of genuinely re-rendered hue-rotated inputs to $0.17$--$0.40\%$ relative error, more than an order of magnitude tighter than the copy baseline. Three questions follow: why does this structure exist, which realisations can act on it, and what do training and depth do to it?
+
+\subsection{From structure to implementation}
+
+Predicting an orbit from a fixed anchor, transporting from a starting state never seen, and composing several operations into one true total transformation are capabilities of increasing difficulty, and the measured structure supports them unequally: global families fail where a local phase-conditioned transporter succeeds. Operability also changes through the network --- it erodes with depth along the readout--transformation pairing, not uniformly. Finally, the measured structure is prescriptive: it specifies a compact interface whose action is fixed rather than fitted, and \S{}7 shows that interface working on unseen shapes, never-fitted parameters and real regions.
+
+\subsection{Contributions}
+
+\begin{enumerate}
+\item \textbf{Theory: when a transformation law is realisable at all.} A realisability theory in three layers. \textit{General}: an induced action exists exactly when the transformation preserves the encoder's fibres, and existence already yields the homomorphism (\S{}3.2: the universal property of the quotient, with its two consequences). \textit{Single-region}: a linear operator exists iff the kernel is preserved, and its defect obeys the metric-weighted closed form of \S{}1.2 (Theorem 1, Theorem 2). \textit{Piecewise-linear}: on a rectifier encoder the effect decomposes exactly into a within-regime term and a term carried by the pairs of regions the transformation moves between; whether one fixed linear operator can satisfy every visited pair is a decidable joint system (Propositions C, D), and for the fixed-linear class the attainable score has an exact form, with the gate-change share as a measured proxy for its slack (Proposition E). Four further statements cover realisation and composition: a carrier admits a fixed linear action exactly when its retained blocks are closed, in which case the least-squares optimal map is the carrier action seen through the truncation (Propositions F--G); a closed orbit has no exact coordinate-monotone realisation (Theorem 3); chain error obeys a three-regime accumulation law set by the Lipschitz constant of the truth action in the consumer's seminorm (Theorem 4); and a carrier with band-limited orbits and shared rotation planes realises the fixed block-diagonal action with error bounded by the read-in error, the action mismatch and the target tail (Theorem 5).
+
+\item \textbf{Measurement: a protocol that decides whether an intervention realises a transformation} (\S{}3.7). Four quantities grade a candidate operator --- feature-target error, chain target, composition defect, consumer error --- and three premises gate every evaluation before scoring begins: the reference must be defined on the input, the consumer's classes must survive the transformation, and cross-transformation comparisons must match displacement. Every table carries its baseline by construction: copy for transport, the trivial depth rule for attribution, random and shuffled operators for capability.
+
+\item \textbf{Empirical law: the organisation of colour transformations and its erosion.} Orbits are low-order and shared, substantially inherited rather than learned, and operable in a way that erodes with depth along the readout--transformation pairing rather than along the algebra, measured on four pretrained backbones through four depths and two algebras (\S{}6.1), with the price of a chain measured at a fixed total transformation (\S{}5.4).
+
+\item \textbf{Construction: a structure-fixed interface and its measured uses} (\S{}7). Because the measured structure is prescriptive, it fixes an interface whose action is never fitted: $c=E_\theta(z)$ with $A_\Delta=\operatorname{diag}(I,R(\Delta),R(2\Delta))$. It reads hue zero-shot on unseen shapes, generalises to never-fitted parameters, and carries measured uses --- augmentation, composition, detection and microsecond region editing --- each against ground truth and its own baseline (Tables 15 and 16).
+\end{enumerate}
+
+\textbf{Table 1} collects the claims of this paper with the evidence that carries each one and its scope.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 1.} Main results at a glance: each row states the claim, the evidence that carries it, and its scope.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Claim} & \textbf{Key evidence} & \textbf{Scope} \\
+\midrule
+An induced action exists iff fibres are preserved, and existence yields the homomorphism & \S{}3.2 (one-line observation) & general encoders and algebras \\
+Realisation is governed by the mixing ratio in the induced metric; only mixing-back is poisonous; retained rank nearly irrelevant & $\kappa$ sweep $4.5\times10^{-16}\to9.34$, closed form within $0.0091$; $\rho(\kappa,\allowbreak{}T_F)=-0.968$ against $\rho(\text{rank})=+0.502$ & linear encoders, stated moments \\
+Hue orbits concentrate in harmonics $k\le2$; rotation planes are shared across shapes & $84$--$88\%$ of orbit energy; $\cos\ge0.96$ & measured colour instance \\
+The organisation is substantially inherited from input and architecture & untrained $0.976$ vs trained $0.868$ under one protocol & colour instance \\
+A carrier is usable iff its retained blocks are closed; then the optimal fixed linear map is the projected carrier action & closure criterion verified on 40 random selections; $K^\star=PAP^{\mathsf T}$ to $9\times10^{-16}$; $10\times$ tighter local transport & colour sites \\
+Chain error obeys a three-regime accumulation law & hue chains flat; heat chains degrade monotonically ($0.760\to0.481$); the regime at a site is measured in the consumer's seminorm (Table D.22) & any realised family \\
+The gate-change concentration orders the measured transfer, and a change of local rule counts only where the consumer reads it & $\rho=-0.886$ for the consumer-visible share against $+0.49$ (n.s.) for the flip count & piecewise-linear encoders, measured \\
+Operability declines with depth along the readout--transformation pairing & eight of eight backbone--family curves; re-cut control $24/24$ negative; ResNet-50 visible-to-random ratio $9.40\to1.14$ for hue against $1.43\to0.68$ for heat & four backbones, real images \\
+Learning moves operability only through $\Delta\kappa$ & $3.8\times$ compression and an $80$--$90^\circ$ row-space rotation leave $\Delta T_F\in\{-0.000,\allowbreak{}+0.026\}$ & controlled linear setting \\
+A structure-fixed interface reads hue zero-shot and edits regions in microseconds & $3.4^\circ$ synthetic / $8.0^\circ$ real high-concentration; detector AP50 $0.37$ unseen vs $0.81$ seen; $20.9$ $\mu$s vs $38.1$ ms & colour instance \\
+The operating domain is knowable in advance & $0.770$ vs $0.532$, gap CI $[0.128,\allowbreak{}0.345]$, AUC $0.660$ & 750 pre-registered real regions \\
+\bottomrule
+\end{tabularx}
+\end{table*}

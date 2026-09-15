@@ -1,0 +1,355 @@
+{
+ "arm": "ce8",
+ "seed": 1,
+ "stage": 2,
+ "n_train": 300,
+ "n_held": 200,
+ "device": "cuda",
+ "group_axis_flattened": true,
+ "input_kind": "rgb",
+ "operators": {},
+ "deltas": {
+  "30": {
+   "power": {
+    "rel_l2_y_real_vs_null": 0.14744366705417633,
+    "top1_flip_rate_real_vs_null": 0.054999999701976776,
+    "acc_null": 0.875,
+    "acc_real": 0.8399999737739563,
+    "hsv_roundtrip_max_abs": 0.874509871006012
+   },
+   "feature_fidelity": {
+    "O1_procrustes": {
+     "rel_l2": 0.12312594056129456,
+     "angle_deg": 6.889811992645264
+    },
+    "O2_ridge": {
+     "rel_l2": 0.11910794675350189,
+     "angle_deg": 6.675328254699707
+    },
+    "O4_blockrot": {
+     "rel_l2": 0.26663142442703247,
+     "angle_deg": 15.262042999267578
+    },
+    "O6_random": {
+     "rel_l2": 1.3894448280334473,
+     "angle_deg": 88.13444519042969
+    },
+    "null": {
+     "rel_l2": 0.27522021532058716,
+     "angle_deg": 15.771495819091797
+    }
+   },
+   "downstream": {
+    "O1_procrustes": {
+     "rel_l2_vs_real": 0.06064736098051071,
+     "rel_l2_vs_null": 0.1324833780527115,
+     "kl_real_int": 0.010937000624835491,
+     "top1_agree_real": 0.9749999642372131,
+     "acc_int": 0.8549999594688416,
+     "align_cos": 0.8548241257667542,
+     "proj_coef_agg": 0.8343982696533203,
+     "proj_coef_median": 0.8119755983352661,
+     "vs_null_win_rate": 0.955,
+     "vs_null_mean_gain": 0.09043796360492706,
+     "vs_null_gain_ci95": [
+      0.08003776709153317,
+      0.10056626712041906
+     ]
+    },
+    "O2_ridge": {
+     "rel_l2_vs_real": 0.05554007738828659,
+     "rel_l2_vs_null": 0.133151113986969,
+     "kl_real_int": 0.010124278254806995,
+     "top1_agree_real": 0.9699999690055847,
+     "acc_int": 0.8549999594688416,
+     "align_cos": 0.8764153718948364,
+     "proj_coef_agg": 0.8555371761322021,
+     "proj_coef_median": 0.8355762958526611,
+     "vs_null_win_rate": 0.955,
+     "vs_null_mean_gain": 0.09554525464773178,
+     "vs_null_gain_ci95": [
+      0.08515752928517759,
+      0.10551341997832059
+     ]
+    },
+    "O4_blockrot": {
+     "rel_l2_vs_real": 0.1332339644432068,
+     "rel_l2_vs_null": 0.021992262452840805,
+     "kl_real_int": 0.0743684470653534,
+     "top1_agree_real": 0.9549999833106995,
+     "acc_int": 0.8650000095367432,
+     "align_cos": 0.7841097116470337,
+     "proj_coef_agg": 0.12417933344841003,
+     "proj_coef_median": 0.12192261964082718,
+     "vs_null_win_rate": 0.97,
+     "vs_null_mean_gain": 0.01785135269165039,
+     "vs_null_gain_ci95": [
+      0.01620817614241969,
+      0.019522672948369287
+     ]
+    },
+    "O6_random": {
+     "rel_l2_vs_real": 1.036947250366211,
+     "rel_l2_vs_null": 1.0429061651229858,
+     "kl_real_int": 6.3092217445373535,
+     "top1_agree_real": 0.07999999821186066,
+     "acc_int": 0.07999999821186066,
+     "align_cos": 0.2581925690174103,
+     "proj_coef_agg": 1.9408806562423706,
+     "proj_coef_median": 2.01145601272583,
+     "vs_null_win_rate": 0.0,
+     "vs_null_mean_gain": -0.8858620524406433,
+     "vs_null_gain_ci95": [
+      -0.9258146242275834,
+      -0.8471376609876752
+     ]
+    },
+    "null": {
+     "rel_l2_vs_real": 0.15108533203601837,
+     "rel_l2_vs_null": 0.0,
+     "kl_real_int": 0.09141875803470612,
+     "top1_agree_real": 0.9449999928474426,
+     "acc_int": 0.875,
+     "align_cos": 0.0,
+     "proj_coef_agg": 0.0,
+     "proj_coef_median": 0.0,
+     "vs_null_win_rate": 0.0,
+     "vs_null_mean_gain": 0.0,
+     "vs_null_gain_ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "runtime_sec": 2.9
+  },
+  "60": {
+   "power": {
+    "rel_l2_y_real_vs_null": 0.252282053232193,
+    "top1_flip_rate_real_vs_null": 0.11499999463558197,
+    "acc_null": 0.875,
+    "acc_real": 0.8149999976158142,
+    "hsv_roundtrip_max_abs": 0.874509871006012
+   },
+   "feature_fidelity": {
+    "O1_procrustes": {
+     "rel_l2": 0.16217826306819916,
+     "angle_deg": 9.107576370239258
+    },
+    "O2_ridge": {
+     "rel_l2": 0.15361861884593964,
+     "angle_deg": 8.65772533416748
+    },
+    "O4_blockrot": {
+     "rel_l2": 0.4724082052707672,
+     "angle_deg": 27.332870483398438
+    },
+    "O6_random": {
+     "rel_l2": 1.387994647026062,
+     "angle_deg": 87.93620300292969
+    },
+    "null": {
+     "rel_l2": 0.4850746691226959,
+     "angle_deg": 28.134428024291992
+    }
+   },
+   "downstream": {
+    "O1_procrustes": {
+     "rel_l2_vs_real": 0.08015058189630508,
+     "rel_l2_vs_null": 0.2454981505870819,
+     "kl_real_int": 0.016559936106204987,
+     "top1_agree_real": 0.9749999642372131,
+     "acc_int": 0.8199999928474426,
+     "align_cos": 0.8995402455329895,
+     "proj_coef_agg": 0.9319777488708496,
+     "proj_coef_median": 0.913629412651062,
+     "vs_null_win_rate": 0.96,
+     "vs_null_mean_gain": 0.1891384869813919,
+     "vs_null_gain_ci95": [
+      0.16966773363482207,
+      0.2075416620383039
+     ]
+    },
+    "O2_ridge": {
+     "rel_l2_vs_real": 0.07036294788122177,
+     "rel_l2_vs_null": 0.24397750198841095,
+     "kl_real_int": 0.016040408983826637,
+     "top1_agree_real": 0.9799999594688416,
+     "acc_int": 0.8149999976158142,
+     "align_cos": 0.9180527925491333,
+     "proj_coef_agg": 0.9411082863807678,
+     "proj_coef_median": 0.9270352125167847,
+     "vs_null_win_rate": 0.965,
+     "vs_null_mean_gain": 0.19892612099647522,
+     "vs_null_gain_ci95": [
+      0.17930648998636753,
+      0.21736252725590016
+     ]
+    },
+    "O4_blockrot": {
+     "rel_l2_vs_real": 0.24058642983436584,
+     "rel_l2_vs_null": 0.039471592754125595,
+     "kl_real_int": 0.32636943459510803,
+     "top1_agree_real": 0.8899999856948853,
+     "acc_int": 0.8700000047683716,
+     "align_cos": 0.6939417123794556,
+     "proj_coef_agg": 0.11264463514089584,
+     "proj_coef_median": 0.11238287389278412,
+     "vs_null_win_rate": 0.95,
+     "vs_null_mean_gain": 0.028702661395072937,
+     "vs_null_gain_ci95": [
+      0.025783067432348615,
+      0.0317183054437628
+     ]
+    },
+    "O6_random": {
+     "rel_l2_vs_real": 1.0419448614120483,
+     "rel_l2_vs_null": 1.0429061651229858,
+     "kl_real_int": 6.229851722717285,
+     "top1_agree_real": 0.07999999821186066,
+     "acc_int": 0.07999999821186066,
+     "align_cos": 0.33053940534591675,
+     "proj_coef_agg": 1.4179339408874512,
+     "proj_coef_median": 1.3993979692459106,
+     "vs_null_win_rate": 0.0,
+     "vs_null_mean_gain": -0.7726557850837708,
+     "vs_null_gain_ci95": [
+      -0.8187505651861429,
+      -0.7291896806769073
+     ]
+    },
+    "null": {
+     "rel_l2_vs_real": 0.2692890763282776,
+     "rel_l2_vs_null": 0.0,
+     "kl_real_int": 0.39027640223503113,
+     "top1_agree_real": 0.8849999904632568,
+     "acc_int": 0.875,
+     "align_cos": 0.0,
+     "proj_coef_agg": 0.0,
+     "proj_coef_median": 0.0,
+     "vs_null_win_rate": 0.0,
+     "vs_null_mean_gain": 0.0,
+     "vs_null_gain_ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "runtime_sec": 2.6
+  },
+  "90": {
+   "power": {
+    "rel_l2_y_real_vs_null": 0.32374271750450134,
+    "top1_flip_rate_real_vs_null": 0.17499999701976776,
+    "acc_null": 0.875,
+    "acc_real": 0.7849999666213989,
+    "hsv_roundtrip_max_abs": 0.874509871006012
+   },
+   "feature_fidelity": {
+    "O1_procrustes": {
+     "rel_l2": 0.1990140676498413,
+     "angle_deg": 11.216004371643066
+    },
+    "O2_ridge": {
+     "rel_l2": 0.18403449654579163,
+     "angle_deg": 10.425917625427246
+    },
+    "O4_blockrot": {
+     "rel_l2": 0.6268824338912964,
+     "angle_deg": 36.7266731262207
+    },
+    "O6_random": {
+     "rel_l2": 1.3881382942199707,
+     "angle_deg": 88.05535888671875
+    },
+    "null": {
+     "rel_l2": 0.639954686164856,
+     "angle_deg": 37.62749481201172
+    }
+   },
+   "downstream": {
+    "O1_procrustes": {
+     "rel_l2_vs_real": 0.10043018311262131,
+     "rel_l2_vs_null": 0.3194662928581238,
+     "kl_real_int": 0.031065139919519424,
+     "top1_agree_real": 0.9399999976158142,
+     "acc_int": 0.8100000023841858,
+     "align_cos": 0.9177062511444092,
+     "proj_coef_agg": 0.9426359534263611,
+     "proj_coef_median": 0.9317658543586731,
+     "vs_null_win_rate": 0.97,
+     "vs_null_mean_gain": 0.2651556730270386,
+     "vs_null_gain_ci95": [
+      0.23863328905031084,
+      0.29007060888735575
+     ]
+    },
+    "O2_ridge": {
+     "rel_l2_vs_real": 0.0831216424703598,
+     "rel_l2_vs_null": 0.31632763147354126,
+     "kl_real_int": 0.02317071706056595,
+     "top1_agree_real": 0.9649999737739563,
+     "acc_int": 0.7999999523162842,
+     "align_cos": 0.9396220445632935,
+     "proj_coef_agg": 0.9509854316711426,
+     "proj_coef_median": 0.9421910643577576,
+     "vs_null_win_rate": 0.97,
+     "vs_null_mean_gain": 0.2824642062187195,
+     "vs_null_gain_ci95": [
+      0.256084744380787,
+      0.3077416163608432
+     ]
+    },
+    "O4_blockrot": {
+     "rel_l2_vs_real": 0.32655996084213257,
+     "rel_l2_vs_null": 0.06174683943390846,
+     "kl_real_int": 0.5884613394737244,
+     "top1_agree_real": 0.8299999833106995,
+     "acc_int": 0.8700000047683716,
+     "align_cos": 0.5786845684051514,
+     "proj_coef_agg": 0.11818461120128632,
+     "proj_coef_median": 0.1218758299946785,
+     "vs_null_win_rate": 0.9,
+     "vs_null_mean_gain": 0.03902588412165642,
+     "vs_null_gain_ci95": [
+      0.034385210900101805,
+      0.043939078488387164
+     ]
+    },
+    "O6_random": {
+     "rel_l2_vs_real": 1.068037748336792,
+     "rel_l2_vs_null": 1.0429061651229858,
+     "kl_real_int": 6.145773887634277,
+     "top1_agree_real": 0.07499999552965164,
+     "acc_int": 0.07999999821186066,
+     "align_cos": 0.36386969685554504,
+     "proj_coef_agg": 1.199475646018982,
+     "proj_coef_median": 1.1120452880859375,
+     "vs_null_win_rate": 0.02,
+     "vs_null_mean_gain": -0.7024518847465515,
+     "vs_null_gain_ci95": [
+      -0.752967041734606,
+      -0.6553792559951543
+     ]
+    },
+    "null": {
+     "rel_l2_vs_real": 0.3655858039855957,
+     "rel_l2_vs_null": 0.0,
+     "kl_real_int": 0.6729360222816467,
+     "top1_agree_real": 0.824999988079071,
+     "acc_int": 0.875,
+     "align_cos": 0.0,
+     "proj_coef_agg": 0.0,
+     "proj_coef_median": 0.0,
+     "vs_null_win_rate": 0.0,
+     "vs_null_mean_gain": 0.0,
+     "vs_null_gain_ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "runtime_sec": 2.5
+  }
+ }
+}

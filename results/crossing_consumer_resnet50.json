@@ -1,0 +1,93 @@
+{
+ "script": "248_crossing_term_consumer_test.py",
+ "backbone": "resnet50",
+ "theory": "z'-z = G*(a'-a) [within-regime, linear-expressible] + Delta_flip [crossing, O(1)]; the consumer cannot see the crossing term if it lands in directions the consumer ignores",
+ "definition": "crossing_consumer_share = 1 - ||F(z_noflip) - F(z)|| / ||F(z') - F(z)||, where z_noflip resets every flipped unit to its base value and keeps the rest",
+ "n": 300,
+ "n_fit": 200,
+ "seed": 0,
+ "sites": {
+  "layer2": {
+   "hue_90.0": {
+    "crossing_consumer_share": 0.22033101320266724,
+    "raw_feature_crossing_share": 0.2977813984026385,
+    "consumer_response_total": 18.07946014404297,
+    "consumer_response_without_crossing": 14.095993995666504,
+    "gate_flip_fraction": 0.09145382420546344,
+    "measured_O2_transfer": 0.5879901746908823
+   },
+   "heat_2.0": {
+    "crossing_consumer_share": 0.2519161105155945,
+    "raw_feature_crossing_share": 0.27335982028159794,
+    "consumer_response_total": 14.560033798217773,
+    "consumer_response_without_crossing": 10.89212703704834,
+    "gate_flip_fraction": 0.09386974516369048,
+    "measured_O2_transfer": 0.47072800000508624
+   }
+  },
+  "layer3": {
+   "hue_90.0": {
+    "crossing_consumer_share": 0.4168476462364197,
+    "raw_feature_crossing_share": 0.3685036219609483,
+    "consumer_response_total": 18.07946014404297,
+    "consumer_response_without_crossing": 10.543079376220703,
+    "gate_flip_fraction": 0.12607549758184525,
+    "measured_O2_transfer": 0.4636401931444804
+   },
+   "heat_2.0": {
+    "crossing_consumer_share": 0.30201441049575806,
+    "raw_feature_crossing_share": 0.30823690969823725,
+    "consumer_response_total": 14.560033798217773,
+    "consumer_response_without_crossing": 10.162693977355957,
+    "gate_flip_fraction": 0.10843824736926021,
+    "measured_O2_transfer": 0.3736111521720886
+   }
+  },
+  "layer4": {
+   "hue_90.0": {
+    "crossing_consumer_share": 0.6270934343338013,
+    "raw_feature_crossing_share": 0.6658917464617833,
+    "consumer_response_total": 18.07946014404297,
+    "consumer_response_without_crossing": 6.74194860458374,
+    "gate_flip_fraction": 0.06420197571215987,
+    "measured_O2_transfer": 0.09930976231892903
+   },
+   "heat_2.0": {
+    "crossing_consumer_share": 0.5161389112472534,
+    "raw_feature_crossing_share": 0.5244490224181324,
+    "consumer_response_total": 14.560033798217773,
+    "consumer_response_without_crossing": 7.045034408569336,
+    "gate_flip_fraction": 0.050660275829081634,
+    "measured_O2_transfer": 0.053881943225860596
+   }
+  }
+ },
+ "aggregate": {
+  "crossing_consumer_share": {
+   "spearman_vs_TF": -0.8857142857142858,
+   "p": 0.01884548104956266
+  },
+  "raw_feature_crossing_share": {
+   "spearman_vs_TF": -0.8285714285714287,
+   "p": 0.04156268221574334
+  },
+  "gate_flip_fraction": {
+   "spearman_vs_TF": 0.48571428571428577,
+   "p": 0.3287230320699709
+  },
+  "P1_heat_exceeds_hue": {
+   "layer2": {
+    "hue": 0.22033101320266724,
+    "heat": 0.2519161105155945
+   },
+   "layer3": {
+    "hue": 0.4168476462364197,
+    "heat": 0.30201441049575806
+   },
+   "layer4": {
+    "hue": 0.6270934343338013,
+    "heat": 0.5161389112472534
+   }
+  }
+ }
+}

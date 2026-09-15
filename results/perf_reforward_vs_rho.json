@@ -1,0 +1,10 @@
+{
+ "device": "NVIDIA GeForce RTX 2060",
+ "backbone_full_forward_224_batch1_s": 0.022923673369805327,
+ "pixel_hsv_shift_224_s": 0.015209707175090443,
+ "pixel_side_recolor_s": 0.03813338054489577,
+ "code_rotation_per_object_s_batched": 2.7646847593132406e-08,
+ "code_rotation_single_s": 2.645391449914314e-06,
+ "speedup_pixel_vs_code_batched": 1379303.026011843,
+ "note": "Pixel-side recoloring of an object = recolor pixels + full backbone forward. Code-side recoloring = one sparse 6x6 rotation per object on already-extracted features/code; no forward. 'per-object color view' is what changes; to also change downstream outputs a code-consuming head is required (e.g., the YOLO per-box head, Section 9), not a re-forward."
+}

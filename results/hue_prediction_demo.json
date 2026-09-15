@@ -1,0 +1,59 @@
+{
+ "dense5": [
+  {
+   "K": 3,
+   "relMSE_op": 0.004,
+   "copy": 0.0271,
+   "gain": 6.7,
+   "cos": 0.958,
+   "nn_op_deg": 32.0,
+   "nn_copy_deg": 32.0
+  },
+  {
+   "K": 4,
+   "relMSE_op": 0.0032,
+   "copy": 0.0271,
+   "gain": 8.4,
+   "cos": 0.955,
+   "nn_op_deg": 34.0,
+   "nn_copy_deg": 34.0
+  },
+  {
+   "K": 3,
+   "relMSE_op": 0.0026,
+   "copy": 0.029,
+   "gain": 11.1,
+   "cos": 0.974,
+   "nn_op_deg": 34.0,
+   "nn_copy_deg": 34.0
+  },
+  {
+   "K": 4,
+   "relMSE_op": 0.0017,
+   "copy": 0.029,
+   "gain": 16.6,
+   "cos": 0.976,
+   "nn_op_deg": 34.0,
+   "nn_copy_deg": 34.0
+  }
+ ],
+ "sheet_hv_10v": {
+  "K3": {
+   "gain_mean": 8.7,
+   "gain_range": [
+    4.3,
+    16.0
+   ],
+   "cos_mean": 0.967
+  },
+  "K4": {
+   "gain_mean": 13.0,
+   "gain_range": [
+    4.9,
+    25.6
+   ],
+   "cos_mean": 0.971
+  }
+ },
+ "protocol": "cross-shape zero-shot hue {20,260}; per-shape DC removed; anchor z(0); band-linear op fit on 4 train shapes"
+}

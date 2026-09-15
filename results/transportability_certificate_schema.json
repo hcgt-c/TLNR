@@ -1,0 +1,60 @@
+{
+ "artifact": "transportability certificate",
+ "purpose": "record, for one (backbone, transformation, site, operator family, consumer), whether a feature-space intervention passes the preconditions for reproducing the real transformation; the certificate screens failures and never certifies faithfulness",
+ "conventions": {
+  "power_floor": 0.05,
+  "faithful_at": 0.8,
+  "partial_at": 0.4,
+  "realization_at": 1.0,
+  "note": "thresholds are reporting conventions, not results; the raw numbers are always recorded. Gate 4 thresholds the outcome-free fit-side realization residual, not the transfer; the summary verdict is a conjunction of preconditions and never returns 'faithful'."
+ },
+ "fields": {
+  "site_id": "str: backbone|family|site",
+  "gate_0_transformation": {
+   "family": "str",
+   "exact": "bool",
+   "algebra": "group | semigroup | monoid"
+  },
+  "gate_1_observability": {
+   "powered": "bool",
+   "effect_size": "float",
+   "threshold": "float"
+  },
+  "gate_2_reference": {
+   "route": "direct | attribute-mediated",
+   "reference_valid": "bool",
+   "evidence": "str"
+  },
+  "gate_3_reachability": {
+   "reachable": "bool",
+   "evidence": "str"
+  },
+  "gate_4_realization": {
+   "operator_family": "str",
+   "realization_residual": "float",
+   "threshold": "float",
+   "verdict": "pass | fail",
+   "outcome_transfer_companion": "float",
+   "win_rate_companion": "float"
+  },
+  "composition": {
+   "assessed": "bool",
+   "verdict": "composable | lossy | not-assessed"
+  },
+  "certificate": {
+   "powered": "bool",
+   "reachable": "bool",
+   "reference_valid": "bool",
+   "realized": "bool",
+   "recommended_family": "orthogonal | global-linear | conditioned | none-found",
+   "verdict": "uninformative | failed | partial",
+   "observed_transfer_companion": "float",
+   "compositionality": "composable | lossy | not-assessed",
+   "recommended_depth": "str"
+  },
+  "provenance": {
+   "source_files": "list[str]",
+   "generated_by": "str"
+  }
+ }
+}

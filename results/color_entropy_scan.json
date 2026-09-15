@@ -1,0 +1,165 @@
+{
+ "protocol": "controlled renders, uniform-colour shapes with secondary-colour bands; 12 main hues x 4 poses per setting; code3d_v3 head on frozen y3 features; errors are circular hue errors in degrees",
+ "coverage_sweep": [
+  {
+   "setting": {
+    "cov": 0.0,
+    "bands": 20,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 1.62,
+   "code_vs_pixel_dominant": 1.62,
+   "pixel_dominant_vs_nominal_main": 0.0,
+   "z1_mag": 0.769,
+   "colour_entropy_bits": 0.0
+  },
+  {
+   "setting": {
+    "cov": 0.1,
+    "bands": 20,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 1.62,
+   "code_vs_pixel_dominant": 1.62,
+   "pixel_dominant_vs_nominal_main": 0.0,
+   "z1_mag": 0.769,
+   "colour_entropy_bits": 0.0
+  },
+  {
+   "setting": {
+    "cov": 0.25,
+    "bands": 20,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 5.69,
+   "code_vs_pixel_dominant": 6.16,
+   "pixel_dominant_vs_nominal_main": 1.25,
+   "z1_mag": 0.72,
+   "colour_entropy_bits": 0.165
+  },
+  {
+   "setting": {
+    "cov": 0.4,
+    "bands": 20,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 43.53,
+   "code_vs_pixel_dominant": 46.78,
+   "pixel_dominant_vs_nominal_main": 23.08,
+   "z1_mag": 0.454,
+   "colour_entropy_bits": 0.86
+  },
+  {
+   "setting": {
+    "cov": 0.55,
+    "bands": 20,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 63.78,
+   "code_vs_pixel_dominant": 55.91,
+   "pixel_dominant_vs_nominal_main": 82.17,
+   "z1_mag": 0.45,
+   "colour_entropy_bits": 0.96
+  },
+  {
+   "setting": {
+    "cov": 0.7,
+    "bands": 20,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 102.19,
+   "code_vs_pixel_dominant": 25.79,
+   "pixel_dominant_vs_nominal_main": 114.88,
+   "z1_mag": 0.572,
+   "colour_entropy_bits": 0.434
+  }
+ ],
+ "frequency_sweep": [
+  {
+   "setting": {
+    "cov": 0.5,
+    "bands": 2,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 120.03,
+   "code_vs_pixel_dominant": 1.62,
+   "pixel_dominant_vs_nominal_main": 120.0,
+   "z1_mag": 0.769,
+   "colour_entropy_bits": 0.0
+  },
+  {
+   "setting": {
+    "cov": 0.5,
+    "bands": 4,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 120.03,
+   "code_vs_pixel_dominant": 1.62,
+   "pixel_dominant_vs_nominal_main": 120.0,
+   "z1_mag": 0.769,
+   "colour_entropy_bits": 0.0
+  },
+  {
+   "setting": {
+    "cov": 0.5,
+    "bands": 8,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 120.03,
+   "code_vs_pixel_dominant": 1.62,
+   "pixel_dominant_vs_nominal_main": 120.0,
+   "z1_mag": 0.769,
+   "colour_entropy_bits": 0.0
+  },
+  {
+   "setting": {
+    "cov": 0.5,
+    "bands": 16,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 83.31,
+   "code_vs_pixel_dominant": 44.14,
+   "pixel_dominant_vs_nominal_main": 103.27,
+   "z1_mag": 0.489,
+   "colour_entropy_bits": 0.775
+  }
+ ],
+ "palette_sweep": [
+  {
+   "setting": {
+    "cov": 0.5,
+    "bands": 8,
+    "n_sub": 1
+   },
+   "code_vs_nominal_main": 120.03,
+   "code_vs_pixel_dominant": 1.62,
+   "pixel_dominant_vs_nominal_main": 120.0,
+   "z1_mag": 0.769,
+   "colour_entropy_bits": 0.0
+  },
+  {
+   "setting": {
+    "cov": 0.5,
+    "bands": 8,
+    "n_sub": 2
+   },
+   "code_vs_nominal_main": 138.15,
+   "code_vs_pixel_dominant": 41.81,
+   "pixel_dominant_vs_nominal_main": 179.92,
+   "z1_mag": 0.518,
+   "colour_entropy_bits": 1.0
+  },
+  {
+   "setting": {
+    "cov": 0.5,
+    "bands": 8,
+    "n_sub": 3
+   },
+   "code_vs_nominal_main": 87.3,
+   "code_vs_pixel_dominant": 89.61,
+   "pixel_dominant_vs_nominal_main": 58.42,
+   "z1_mag": 0.272,
+   "colour_entropy_bits": 1.585
+  }
+ ]
+}

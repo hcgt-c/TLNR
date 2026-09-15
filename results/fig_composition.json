@@ -1,0 +1,443 @@
+{
+ "script": "scripts/236_fig_composition.py",
+ "created": "2026-09-14T21:40:15",
+ "python": "3.10.20",
+ "sources": {
+  "panelA": "results/multipath_composition.json",
+  "panelB": "results/multipath_composition.json",
+  "panelC_detector": "results/detector_o8_multiseed.json",
+  "panelC_unseen": "results/causal_intervention_hue.json"
+ },
+ "panelA": {
+  "description": "T_F by decomposition at a fixed total transformation (mean over paths and seeds)",
+  "categories": [
+   "direct_fit",
+   "two_step",
+   "four_step",
+   "eight_step",
+   "single"
+  ],
+  "series": {
+   "hue|O2|direct_fit": {
+    "values": [
+     0.2790954113006592,
+     0.2823207974433899,
+     0.29488974809646606
+    ],
+    "mean": 0.2854353189468384,
+    "sd": 0.00834508549095976,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "hue|O2|two_step": {
+    "values": [
+     0.2255096435546875,
+     0.2391987442970276,
+     0.23442256450653076,
+     0.23489922285079956,
+     0.2456781268119812,
+     0.2398340106010437,
+     0.2513918876647949,
+     0.2626049518585205,
+     0.2616070508956909
+    ],
+    "mean": 0.24390513367123073,
+    "sd": 0.012601487074883119,
+    "n": 9,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "hue|O2|four_step": {
+    "values": [
+     0.23620939254760742,
+     0.2433912754058838,
+     0.2802429795265198
+    ],
+    "mean": 0.25328121582667035,
+    "sd": 0.023624084886030836,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "hue|O2|single": {
+    "values": [
+     0.12359976768493652,
+     0.11744648218154907,
+     0.15271097421646118
+    ],
+    "mean": 0.13125240802764893,
+    "sd": 0.018836620657147526,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "hue|O8|direct_fit": {
+    "values": [
+     0.4987415671348572,
+     0.5329602956771851,
+     0.5027821362018585
+    ],
+    "mean": 0.5114946663379669,
+    "sd": 0.018699237465544655,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   },
+   "hue|O8|two_step": {
+    "values": [
+     0.4588622450828552,
+     0.4759103059768677,
+     0.4756391644477844,
+     0.4994908571243286,
+     0.5192781388759613,
+     0.514554888010025,
+     0.45878952741622925,
+     0.4698444604873657,
+     0.4614179730415344
+    ],
+    "mean": 0.4815319511625502,
+    "sd": 0.023654920587121014,
+    "n": 9,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   },
+   "hue|O8|four_step": {
+    "values": [
+     0.4349331855773926,
+     0.48867887258529663,
+     0.4307345151901245
+    ],
+    "mean": 0.45144885778427124,
+    "sd": 0.03231041178658449,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   },
+   "hue|O8|single": {
+    "values": [
+     0.1991855502128601,
+     0.20448648929595947,
+     0.21792352199554443
+    ],
+    "mean": 0.20719852050145468,
+    "sd": 0.009658893910632486,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   },
+   "heat|O2|direct_fit": {
+    "values": [
+     0.533771425485611,
+     0.5647010505199432,
+     0.732360303401947
+    ],
+    "mean": 0.6102775931358337,
+    "sd": 0.10685177366628464,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "heat|O2|two_step": {
+    "values": [
+     0.4421563148498535,
+     0.43395453691482544,
+     0.666701465845108
+    ],
+    "mean": 0.5142707725365957,
+    "sd": 0.1320725349465558,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "heat|O2|four_step": {
+    "values": [
+     0.42955392599105835,
+     0.32930731773376465,
+     0.5527613759040833
+    ],
+    "mean": 0.43720753987630206,
+    "sd": 0.1119234666293192,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "heat|O2|eight_step": {
+    "values": [
+     0.47966253757476807,
+     0.25193262100219727,
+     0.38354188203811646
+    ],
+    "mean": 0.3717123468716939,
+    "sd": 0.11432489734186396,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "heat|O2|single": {
+    "values": [
+     0.5501932203769684,
+     0.5660035610198975,
+     0.5987765192985535
+    ],
+    "mean": 0.5716577668984731,
+    "sd": 0.024780269704222594,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O2].transfer"
+   },
+   "heat|O8|direct_fit": {
+    "values": [
+     0.7337380647659302,
+     0.7535081803798676,
+     0.7924651056528091
+    ],
+    "mean": 0.7599037835995356,
+    "sd": 0.029881334278105118,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   },
+   "heat|O8|two_step": {
+    "values": [
+     0.6623671054840088,
+     0.6748240292072296,
+     0.6994238793849945
+    ],
+    "mean": 0.6788716713587443,
+    "sd": 0.018857059108652995,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   },
+   "heat|O8|four_step": {
+    "values": [
+     0.5570716261863708,
+     0.6367650330066681,
+     0.6820765733718872
+    ],
+    "mean": 0.6253044108549753,
+    "sd": 0.06328561132114736,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   },
+   "heat|O8|eight_step": {
+    "values": [
+     0.45990848541259766,
+     0.47551268339157104,
+     0.5085503160953522
+    ],
+    "mean": 0.4813238282998403,
+    "sd": 0.024836142552762043,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   },
+   "heat|O8|single": {
+    "values": [
+     0.575785756111145,
+     0.6251808404922485,
+     0.589507669210434
+    ],
+    "mean": 0.5968247552712759,
+    "sd": 0.02549751755701737,
+    "n": 3,
+    "source_key": "records[*].paths[<path>|O8].transfer"
+   }
+  }
+ },
+ "panelB": {
+  "description": "path-consistency: same total vs different total",
+  "hue|O2": {
+   "same_total_values": [
+    0.02171381749212742,
+    0.011960607022047043,
+    0.08375217765569687,
+    0.015305533073842525,
+    0.08745583891868591,
+    0.08510350435972214,
+    0.01802605763077736,
+    0.01037895679473877,
+    0.06756797432899475,
+    0.012020379304885864,
+    0.07309673726558685,
+    0.0733083039522171,
+    0.019917530938982964,
+    0.01409587636590004,
+    0.08691410720348358,
+    0.013416755013167858,
+    0.08130557835102081,
+    0.07902496308088303
+   ],
+   "same_total_mean": 0.0474647054862645,
+   "different_total_values": [
+    0.34026995301246643,
+    0.32818058133125305,
+    0.3372955322265625,
+    0.3046562075614929,
+    0.348936527967453,
+    0.3407820463180542,
+    0.3487318456172943,
+    0.3139083683490753,
+    0.3657888174057007,
+    0.35360267758369446,
+    0.35878533124923706,
+    0.3196500837802887
+   ],
+   "different_total_mean": 0.3383823310335477,
+   "ratio": 7.129135798208417,
+   "source_key": "records[*].path_consistency[<equivalent> vs <single>]"
+  },
+  "hue|O8": {
+   "same_total_values": [
+    0.07079067826271057,
+    0.07373946905136108,
+    0.13495197892189026,
+    0.04441581666469574,
+    0.11507701873779297,
+    0.11728361248970032,
+    0.07266547530889511,
+    0.07129883766174316,
+    0.10914788395166397,
+    0.040852442383766174,
+    0.09912967681884766,
+    0.1081557497382164,
+    0.06297034025192261,
+    0.0605454258620739,
+    0.10058161616325378,
+    0.04709818214178085,
+    0.0984480082988739,
+    0.09929768741130829
+   ],
+   "same_total_mean": 0.08480277222891648,
+   "different_total_values": [
+    0.2907750606536865,
+    0.3068723976612091,
+    0.3013632893562317,
+    0.32435011863708496,
+    0.31904739141464233,
+    0.32070791721343994,
+    0.3205873966217041,
+    0.29997551441192627,
+    0.3324686884880066,
+    0.32868361473083496,
+    0.3406832814216614,
+    0.30177125334739685
+   ],
+   "different_total_mean": 0.3156071603298187,
+   "ratio": 3.7216608848336845,
+   "source_key": "records[*].path_consistency[<equivalent> vs <single>]"
+  },
+  "heat|O2": {
+   "same_total_values": [
+    0.09421267360448837,
+    0.2531501352787018,
+    0.20195205509662628,
+    0.19758495688438416,
+    0.3344396948814392,
+    0.14991271495819092,
+    0.2278171181678772,
+    0.4910425543785095,
+    0.2670992910861969
+   ],
+   "same_total_mean": 0.2463567993707127,
+   "different_total_values": [
+    0.8600032329559326,
+    0.8922175765037537,
+    0.8872209787368774,
+    0.8837264180183411,
+    0.9976256489753723,
+    1.0868343114852905,
+    0.6447088718414307,
+    0.6841936707496643,
+    0.7923778295516968
+   ],
+   "different_total_mean": 0.8587676154242622,
+   "ratio": 3.4858693472957736,
+   "source_key": "records[*].path_consistency[<equivalent> vs <single>]"
+  },
+  "heat|O8": {
+   "same_total_values": [
+    0.20629386603832245,
+    0.3819107413291931,
+    0.23880238831043243,
+    0.17699481546878815,
+    0.507968008518219,
+    0.40170297026634216,
+    0.1484413892030716,
+    0.5520921945571899,
+    0.4642449915409088
+   ],
+   "same_total_mean": 0.3420501516924964,
+   "different_total_values": [
+    0.8075552582740784,
+    0.904280424118042,
+    0.979613721370697,
+    0.7063519954681396,
+    0.7057847380638123,
+    0.8242624402046204,
+    0.6504334807395935,
+    0.6317176818847656,
+    0.6836062669754028
+   ],
+   "different_total_mean": 0.7659562230110168,
+   "ratio": 2.239309701285011,
+   "source_key": "records[*].path_consistency[<equivalent> vs <single>]"
+  },
+  "hue_pooled": {
+   "same_total_mean": 0.0661337388575905,
+   "different_total_mean": 0.32699474568168324,
+   "ratio": 4.94444668228753
+  }
+ },
+ "panelC": {
+  "description": "detector box agreement at delta=90 and AP50 at the never-fitted 90 shift",
+  "detector_delta90": {
+   "null": {
+    "label": "null\n(no transport)",
+    "f1_mean": 0.008391330891330892,
+    "f1_sd": 0.0031621780655772275,
+    "ap50_mean": 0.0030303030303030303,
+    "ap50_sd": 0.001417294464687099,
+    "proj_coef_mean": 0.0
+   },
+   "O1_procrustes": {
+    "label": "O1\northogonal",
+    "f1_mean": 0.7784671115921112,
+    "f1_sd": 0.029015560609490825,
+    "ap50_mean": 0.7847159090909092,
+    "ap50_sd": 0.026916688166485972,
+    "proj_coef_mean": 0.8019783581262562
+   },
+   "O2_ridge": {
+    "label": "O2\nlinear",
+    "f1_mean": 0.9047766354016353,
+    "f1_sd": 0.029722218485234243,
+    "ap50_mean": 0.9062373737373738,
+    "ap50_sd": 0.031214838396322896,
+    "proj_coef_mean": 0.8581697473081745
+   },
+   "O8_conv_residual": {
+    "label": "O8\ncontent+neigh.",
+    "f1_mean": 0.965130633255633,
+    "f1_sd": 0.012938347218723136,
+    "ap50_mean": 0.9685606060606061,
+    "ap50_sd": 0.012597188748724236,
+    "proj_coef_mean": 0.9193397642536185
+   },
+   "O6_random": {
+    "label": "O6\nrandom orth.",
+    "f1_mean": 0.0,
+    "f1_sd": 0.0,
+    "ap50_mean": 0.0,
+    "ap50_sd": 0.0,
+    "proj_coef_mean": 0.4570098417718074
+   }
+  },
+  "unseen_shift_90": {
+   "compose_W60W30": {
+    "label": "chain\n$W_{60}W_{30}$",
+    "ap50": 0.511
+   },
+   "generator_exp90": {
+    "label": "generator\nexp(90$G$)",
+    "ap50": 0.3654
+   },
+   "direct_fit_W90": {
+    "label": "direct fit\n$W_{90}$",
+    "ap50": 0.8052
+   }
+  },
+  "detector_source_key": "deltas.90.routes.<route>.{f1_mean,f1_sd,ap50_mean,ap50_sd,proj_coef_mean}",
+  "unseen_source_key": "generalisation_to_unseen_delta.<variant>.box_agreement_AP50"
+ },
+ "discrepancies": [
+  "Panel A: the audited hue chain range 0.237-0.249 (O2) / 0.472-0.488 (O8) reproduces for the three TWO-step paths (O2 0.2373/0.2492/0.2453; O8 0.4724/0.4883/0.4839). The hue FOUR-step path is 0.2533 (O2) and 0.4514 (O8), i.e. just outside the stated range. No data were adjusted; the 2-step bar is the mean of the three 2-step variants and the 4-step bar is plotted separately.",
+  "Panel C: results/detector_o8_multiseed.json contains no never-fitted-shift AP50. The audited 0.37 vs 0.81 pair comes from results/causal_intervention_hue.json generalisation_to_unseen_delta: generator_exp_90_from_log_W30 = 0.3654, per_delta_fitted_W90_reference = 0.8052 (and composition_of_fitted_30_and_60 = 0.5110).",
+  "Panel C: 'box-level agreement 0.008 to 0.965' is F1@IoU0.5 at delta=90 (null_unintervened vs O8_conv_residual) in detector_o8_multiseed.json; the AP50 pair at the same delta is 0.0030 vs 0.9686."
+ ]
+}

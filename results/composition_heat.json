@@ -1,0 +1,507 @@
+{
+ "z2_s0_stage1_sig1.0+1.5": {
+  "arm": "z2",
+  "seed": 0,
+  "stage": 1,
+  "sigma1": 1.0,
+  "sigma2": 1.5,
+  "sigma_composed": 1.8027756377319946,
+  "t1": 0.5,
+  "t2": 1.125,
+  "t12": 1.625,
+  "n_train": 300,
+  "n_held": 200,
+  "cell_subsample": 40,
+  "o8_epochs": 150,
+  "protocol": "fit at t1 and t2 only; evaluate at the never-fitted composed parameter t1+t2. Transfer is the absolute downstream score T_F; projection and win rate are companions.",
+  "power": {
+   "effect_size": 0.8806254863739014,
+   "top1_flip": 0.7949999570846558,
+   "acc_null": 0.9149999618530273,
+   "acc_real": 0.22499999403953552
+  },
+  "ops": {
+   "O2": {
+    "composed_never_fitted": {
+     "transfer": 0.6073567569255829,
+     "proj_coef_agg": 0.9124980568885803,
+     "align_cos": 0.8829905390739441,
+     "win_rate": 0.9549999833106995,
+     "top1_agree_real": 0.6100000143051147,
+     "acc_real": 0.22499999403953552
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.5698716044425964,
+     "proj_coef_agg": 0.8955921530723572,
+     "align_cos": 0.8604612350463867,
+     "win_rate": 0.9350000023841858,
+     "top1_agree_real": 0.6100000143051147,
+     "acc_real": 0.22499999403953552
+    },
+    "single_step_at_t1": {
+     "transfer": 0.44110536575317383,
+     "proj_coef_agg": 0.5929275751113892,
+     "align_cos": 0.7937677502632141,
+     "win_rate": 0.9649999737739563,
+     "top1_agree_real": 0.41999998688697815,
+     "acc_real": 0.22499999403953552
+    }
+   },
+   "O8": {
+    "composed_never_fitted": {
+     "transfer": 0.8437153846025467,
+     "proj_coef_agg": 0.9901982545852661,
+     "align_cos": 0.9780929088592529,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.7450000047683716,
+     "acc_real": 0.22499999403953552
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.8069753348827362,
+     "proj_coef_agg": 0.9545342922210693,
+     "align_cos": 0.9699972867965698,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.7799999713897705,
+     "acc_real": 0.22499999403953552
+    },
+    "single_step_at_t1": {
+     "transfer": 0.4223393201828003,
+     "proj_coef_agg": 0.5736433863639832,
+     "align_cos": 0.7907878160476685,
+     "win_rate": 0.9199999570846558,
+     "top1_agree_real": 0.3700000047683716,
+     "acc_real": 0.22499999403953552
+    }
+   }
+  },
+  "no_op": {
+   "transfer": 0.0,
+   "proj_coef_agg": 0.0,
+   "align_cos": 0.0,
+   "win_rate": 0.0,
+   "top1_agree_real": 0.20499999821186066,
+   "acc_real": 0.22499999403953552
+  },
+  "random_control": {
+   "transfer": -0.12032616138458252,
+   "proj_coef_agg": 1.1009591817855835,
+   "align_cos": 0.5721405744552612,
+   "win_rate": 0.3499999940395355,
+   "top1_agree_real": 0.44999998807907104,
+   "acc_real": 0.22499999403953552
+  }
+ },
+ "z2_s1_stage1_sig0.75+1.0": {
+  "arm": "z2",
+  "seed": 1,
+  "stage": 1,
+  "sigma1": 0.75,
+  "sigma2": 1.0,
+  "sigma_composed": 1.25,
+  "t1": 0.28125,
+  "t2": 0.5,
+  "t12": 0.78125,
+  "n_train": 300,
+  "n_held": 200,
+  "cell_subsample": 40,
+  "o8_epochs": 150,
+  "protocol": "fit at t1 and t2 only; evaluate at the never-fitted composed parameter t1+t2. Transfer is the absolute downstream score T_F; projection and win rate are companions. Fit and held-out blocks come from a single permutation and are disjoint by image index.",
+  "split_disjoint": true,
+  "split_fit_indices_head": [
+   3577,
+   8925,
+   1634,
+   485,
+   4753
+  ],
+  "split_held_indices_head": [
+   6059,
+   4695,
+   5207,
+   403,
+   5285
+  ],
+  "power": {
+   "effect_size": 0.8311617374420166,
+   "top1_flip": 0.7249999642372131,
+   "acc_null": 0.8849999904632568,
+   "acc_real": 0.2750000059604645
+  },
+  "ops": {
+   "O2": {
+    "composed_never_fitted": {
+     "transfer": 0.6873906552791595,
+     "proj_coef_agg": 0.9450964331626892,
+     "align_cos": 0.9423000812530518,
+     "win_rate": 0.9950000047683716,
+     "top1_agree_real": 0.6399999856948853,
+     "acc_real": 0.2750000059604645
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.6780611574649811,
+     "proj_coef_agg": 0.9795551896095276,
+     "align_cos": 0.9400497078895569,
+     "win_rate": 0.9950000047683716,
+     "top1_agree_real": 0.6449999809265137,
+     "acc_real": 0.2750000059604645
+    },
+    "single_step_at_t1": {
+     "transfer": 0.3047376871109009,
+     "proj_coef_agg": 0.3407837450504303,
+     "align_cos": 0.7950311899185181,
+     "win_rate": 0.9699999690055847,
+     "top1_agree_real": 0.35499998927116394,
+     "acc_real": 0.2750000059604645
+    }
+   },
+   "O8": {
+    "composed_never_fitted": {
+     "transfer": 0.8285138010978699,
+     "proj_coef_agg": 0.9588705897331238,
+     "align_cos": 0.98028564453125,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.8499999642372131,
+     "acc_real": 0.2750000059604645
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.8154162466526031,
+     "proj_coef_agg": 0.9720064401626587,
+     "align_cos": 0.9781666994094849,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.8199999928474426,
+     "acc_real": 0.2750000059604645
+    },
+    "single_step_at_t1": {
+     "transfer": 0.33999764919281006,
+     "proj_coef_agg": 0.38246825337409973,
+     "align_cos": 0.822884738445282,
+     "win_rate": 0.9799999594688416,
+     "top1_agree_real": 0.38499999046325684,
+     "acc_real": 0.2750000059604645
+    }
+   }
+  },
+  "no_op": {
+   "transfer": 0.0,
+   "proj_coef_agg": 0.0,
+   "align_cos": 0.0,
+   "win_rate": 0.0,
+   "top1_agree_real": 0.2750000059604645,
+   "acc_real": 0.2750000059604645
+  },
+  "random_control": {
+   "transfer": -0.7573479413986206,
+   "proj_coef_agg": 1.4044394493103027,
+   "align_cos": 0.5581029653549194,
+   "win_rate": 0.08999999612569809,
+   "top1_agree_real": 0.009999999776482582,
+   "acc_real": 0.2750000059604645
+  }
+ },
+ "z2_s2_stage1_sig0.75+1.0": {
+  "arm": "z2",
+  "seed": 2,
+  "stage": 1,
+  "sigma1": 0.75,
+  "sigma2": 1.0,
+  "sigma_composed": 1.25,
+  "t1": 0.28125,
+  "t2": 0.5,
+  "t12": 0.78125,
+  "n_train": 300,
+  "n_held": 200,
+  "cell_subsample": 40,
+  "o8_epochs": 150,
+  "protocol": "fit at t1 and t2 only; evaluate at the never-fitted composed parameter t1+t2. Transfer is the absolute downstream score T_F; projection and win rate are companions. Fit and held-out blocks come from a single permutation and are disjoint by image index.",
+  "split_disjoint": true,
+  "split_fit_indices_head": [
+   3577,
+   8925,
+   1634,
+   485,
+   4753
+  ],
+  "split_held_indices_head": [
+   6059,
+   4695,
+   5207,
+   403,
+   5285
+  ],
+  "power": {
+   "effect_size": 0.9774031043052673,
+   "top1_flip": 0.7949999570846558,
+   "acc_null": 0.8899999856948853,
+   "acc_real": 0.2149999886751175
+  },
+  "ops": {
+   "O2": {
+    "composed_never_fitted": {
+     "transfer": 0.748163253068924,
+     "proj_coef_agg": 1.050700306892395,
+     "align_cos": 0.9706065058708191,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.7099999785423279,
+     "acc_real": 0.2149999886751175
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.7370608150959015,
+     "proj_coef_agg": 1.052952766418457,
+     "align_cos": 0.969460129737854,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.7699999809265137,
+     "acc_real": 0.2149999886751175
+    },
+    "single_step_at_t1": {
+     "transfer": 0.2986030578613281,
+     "proj_coef_agg": 0.33437418937683105,
+     "align_cos": 0.8133094310760498,
+     "win_rate": 0.9950000047683716,
+     "top1_agree_real": 0.2849999964237213,
+     "acc_real": 0.2149999886751175
+    }
+   },
+   "O8": {
+    "composed_never_fitted": {
+     "transfer": 0.8597176969051361,
+     "proj_coef_agg": 0.9700546860694885,
+     "align_cos": 0.9891691207885742,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.8349999785423279,
+     "acc_real": 0.2149999886751175
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.8551682978868484,
+     "proj_coef_agg": 1.0034854412078857,
+     "align_cos": 0.988856315612793,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.824999988079071,
+     "acc_real": 0.2149999886751175
+    },
+    "single_step_at_t1": {
+     "transfer": 0.2934136390686035,
+     "proj_coef_agg": 0.3303408920764923,
+     "align_cos": 0.8067535161972046,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.29499998688697815,
+     "acc_real": 0.2149999886751175
+    }
+   }
+  },
+  "no_op": {
+   "transfer": 0.0,
+   "proj_coef_agg": 0.0,
+   "align_cos": 0.0,
+   "win_rate": 0.0,
+   "top1_agree_real": 0.20499999821186066,
+   "acc_real": 0.2149999886751175
+  },
+  "random_control": {
+   "transfer": -0.3115384578704834,
+   "proj_coef_agg": 0.8765181303024292,
+   "align_cos": 0.48979586362838745,
+   "win_rate": 0.2149999886751175,
+   "top1_agree_real": 0.009999999776482582,
+   "acc_real": 0.2149999886751175
+  }
+ },
+ "ce8_s0_stage1_sig0.75+1.0": {
+  "arm": "ce8",
+  "seed": 0,
+  "stage": 1,
+  "sigma1": 0.75,
+  "sigma2": 1.0,
+  "sigma_composed": 1.25,
+  "t1": 0.28125,
+  "t2": 0.5,
+  "t12": 0.78125,
+  "n_train": 300,
+  "n_held": 200,
+  "cell_subsample": 40,
+  "o8_epochs": 150,
+  "protocol": "fit at t1 and t2 only; evaluate at the never-fitted composed parameter t1+t2. Transfer is the absolute downstream score T_F; projection and win rate are companions.",
+  "power": {
+   "effect_size": 0.79939204454422,
+   "top1_flip": 0.7149999737739563,
+   "acc_null": 0.9049999713897705,
+   "acc_real": 0.2800000011920929
+  },
+  "ops": {
+   "O2": {
+    "composed_never_fitted": {
+     "transfer": 0.7049497961997986,
+     "proj_coef_agg": 0.9101703763008118,
+     "align_cos": 0.9331339597702026,
+     "win_rate": 0.9799999594688416,
+     "top1_agree_real": 0.6200000047683716,
+     "acc_real": 0.2800000011920929
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.6627200245857239,
+     "proj_coef_agg": 0.9045789241790771,
+     "align_cos": 0.9165701270103455,
+     "win_rate": 0.9749999642372131,
+     "top1_agree_real": 0.5649999976158142,
+     "acc_real": 0.2800000011920929
+    },
+    "single_step_at_t1": {
+     "transfer": 0.2612583041191101,
+     "proj_coef_agg": 0.35242345929145813,
+     "align_cos": 0.6676026582717896,
+     "win_rate": 0.8899999856948853,
+     "top1_agree_real": 0.3349999785423279,
+     "acc_real": 0.2800000011920929
+    }
+   },
+   "O8": {
+    "composed_never_fitted": {
+     "transfer": 0.8593171536922455,
+     "proj_coef_agg": 0.9450695514678955,
+     "align_cos": 0.986535906791687,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.824999988079071,
+     "acc_real": 0.2800000011920929
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.8445162624120712,
+     "proj_coef_agg": 0.9548012018203735,
+     "align_cos": 0.9829053282737732,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.7999999523162842,
+     "acc_real": 0.2800000011920929
+    },
+    "single_step_at_t1": {
+     "transfer": 0.28179287910461426,
+     "proj_coef_agg": 0.34110042452812195,
+     "align_cos": 0.7430539727210999,
+     "win_rate": 0.9399999976158142,
+     "top1_agree_real": 0.3199999928474426,
+     "acc_real": 0.2800000011920929
+    }
+   }
+  },
+  "no_op": {
+   "transfer": 0.0,
+   "proj_coef_agg": 0.0,
+   "align_cos": 0.0,
+   "win_rate": 0.0,
+   "top1_agree_real": 0.2849999964237213,
+   "acc_real": 0.2800000011920929
+  },
+  "random_control": {
+   "transfer": -0.2677415609359741,
+   "proj_coef_agg": 0.8881374597549438,
+   "align_cos": 0.43398162722587585,
+   "win_rate": 0.23999999463558197,
+   "top1_agree_real": 0.009999999776482582,
+   "acc_real": 0.2800000011920929
+  }
+ },
+ "z2_s0_stage1_sig0.75+1.0": {
+  "arm": "z2",
+  "seed": 0,
+  "stage": 1,
+  "sigma1": 0.75,
+  "sigma2": 1.0,
+  "sigma_composed": 1.25,
+  "t1": 0.28125,
+  "t2": 0.5,
+  "t12": 0.78125,
+  "n_train": 300,
+  "n_held": 200,
+  "cell_subsample": 40,
+  "o8_epochs": 150,
+  "protocol": "fit at t1 and t2 only; evaluate at the never-fitted composed parameter t1+t2. Transfer is the absolute downstream score T_F; projection and win rate are companions. Fit and held-out blocks come from a single permutation and are disjoint by image index.",
+  "split_disjoint": true,
+  "split_fit_indices_head": [
+   3577,
+   8925,
+   1634,
+   485,
+   4753
+  ],
+  "split_held_indices_head": [
+   6059,
+   4695,
+   5207,
+   403,
+   5285
+  ],
+  "power": {
+   "effect_size": 0.8292155265808105,
+   "top1_flip": 0.675000011920929,
+   "acc_null": 0.8849999904632568,
+   "acc_real": 0.32999998331069946
+  },
+  "ops": {
+   "O2": {
+    "composed_never_fitted": {
+     "transfer": 0.6985242068767548,
+     "proj_coef_agg": 0.9486072063446045,
+     "align_cos": 0.9445886015892029,
+     "win_rate": 0.98499995470047,
+     "top1_agree_real": 0.699999988079071,
+     "acc_real": 0.32999998331069946
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.6805864870548248,
+     "proj_coef_agg": 0.9561007022857666,
+     "align_cos": 0.9410775303840637,
+     "win_rate": 0.98499995470047,
+     "top1_agree_real": 0.675000011920929,
+     "acc_real": 0.32999998331069946
+    },
+    "single_step_at_t1": {
+     "transfer": 0.2831684947013855,
+     "proj_coef_agg": 0.3222169280052185,
+     "align_cos": 0.7747452259063721,
+     "win_rate": 0.9649999737739563,
+     "top1_agree_real": 0.38999998569488525,
+     "acc_real": 0.32999998331069946
+    }
+   },
+   "O8": {
+    "composed_never_fitted": {
+     "transfer": 0.8145706653594971,
+     "proj_coef_agg": 0.9732843637466431,
+     "align_cos": 0.9795287251472473,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.8299999833106995,
+     "acc_real": 0.32999998331069946
+    },
+    "direct_fit_at_t1t2": {
+     "transfer": 0.8176201283931732,
+     "proj_coef_agg": 0.9742977619171143,
+     "align_cos": 0.9810928106307983,
+     "win_rate": 1.0,
+     "top1_agree_real": 0.7899999618530273,
+     "acc_real": 0.32999998331069946
+    },
+    "single_step_at_t1": {
+     "transfer": 0.3102031946182251,
+     "proj_coef_agg": 0.35134539008140564,
+     "align_cos": 0.7998445630073547,
+     "win_rate": 0.9699999690055847,
+     "top1_agree_real": 0.4050000011920929,
+     "acc_real": 0.32999998331069946
+    }
+   }
+  },
+  "no_op": {
+   "transfer": 0.0,
+   "proj_coef_agg": 0.0,
+   "align_cos": 0.0,
+   "win_rate": 0.0,
+   "top1_agree_real": 0.32499998807907104,
+   "acc_real": 0.32999998331069946
+  },
+  "random_control": {
+   "transfer": -0.1827535629272461,
+   "proj_coef_agg": 1.3471693992614746,
+   "align_cos": 0.6893982291221619,
+   "win_rate": 0.3349999785423279,
+   "top1_agree_real": 0.41999998688697815,
+   "acc_real": 0.32999998331069946
+  }
+ }
+}

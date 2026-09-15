@@ -1,0 +1,37 @@
+{
+ "arm": "z2_stage1",
+ "delta_deg": 60.0,
+ "operators": {
+  "O1 orthogonal": {
+   "projection_mean": 0.2532784938812256,
+   "projection_sd": 0.018099224497518055,
+   "win_rate_mean": 0.7516666666666667,
+   "win_rate_sd": 0.04612031367340569
+  },
+  "O2 linear": {
+   "projection_mean": 0.5449274381001791,
+   "projection_sd": 0.026394062733682565,
+   "win_rate_mean": 0.6958333333333333,
+   "win_rate_sd": 0.016266017746619267
+  },
+  "O5 content": {
+   "projection_mean": 0.6725293199221293,
+   "projection_sd": 0.006458118789465747,
+   "win_rate_mean": 0.7808333333333334,
+   "win_rate_sd": 0.02428133714055577
+  },
+  "O8 content+neighbourhood": {
+   "projection_mean": 0.8150526086489359,
+   "projection_sd": 0.007959267642221986,
+   "win_rate_mean": 0.8625,
+   "win_rate_sd": 0.010000000000000009
+  },
+  "O6 random": {
+   "projection_mean": 0.8703364928563436,
+   "projection_sd": 0.08415651809493262,
+   "win_rate_mean": 0.0008333333333333334,
+   "win_rate_sd": 0.0014433756729740645
+  }
+ },
+ "source": "results/causal_cifar_summary.json"
+}

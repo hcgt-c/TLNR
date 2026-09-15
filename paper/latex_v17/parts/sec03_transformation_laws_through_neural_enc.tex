@@ -1,0 +1,205 @@
+\section{Transformation Laws through Neural Encoding}
+
+This section builds the theory that answers the paper's first question: operable content has explicit structural conditions --- how the encoder merges states decides whether an input action can be defined on features at all; which transformations remain distinguishable, and in what form an action can be realised, require further structure.
+
+\subsection{Actions, encoding, and operable content}
+
+Let $\mathcal{S}$ be a reference state space, M a transformation family acting on it (group, monoid, or semigroup), R: $\mathcal{S}$ $\to$ $\mathcal{X}$ an imaging or rendering map, f: $\mathcal{X}$ $\to$ $\mathbb{R}$\textasciicircum{}d a network site, and $\psi$ = f$\circ$R with image Z\_$\psi$ = $\psi$($\mathcal{S}$). Two spaces each carry an algebra of transformations: the physical space, where M acts with its composition law, and the feature space, where we seek a family of endomorphisms mirroring it.
+
+\textbf{Definition 1 (representation of the transformation algebra on features).} A \textit{representation of M at the site} is a map $\rho$: M $\to$ End(Z\_$\psi$) with $\rho$($\tau$)$\psi$(s) = $\psi$($\tau$s) for all s, $\tau$ --- so that $\rho$($\tau$ $_2$ $\tau$ $_1$) = $\rho$($\tau$ $_2$)$\circ$ $\rho$($\tau$ $_1$) and $\rho$(e) = I follow from the action's laws. (Approximate versions --- $\|$ $\rho$($\tau$)$\psi$(s) $-$ $\psi$($\tau$s)$\|$ $\le$ $\varepsilon$ in a stated norm over a stated state distribution --- are priced under composition in \S{}5.4, Theorem 4.)
+
+The exact induced action $\rho$\_$\tau$ (when it exists) and a fitted operator G\_$\tau$ from some family $\mathcal{P}$ are different objects throughout: the first belongs to the theory, the second to experiment, and a failure of the second is not, by itself, a fact about the first.
+
+\textbf{Definition 2 (representation level vs behavioural level).} The representation above acts on features. One level down, a consumer F: $\mathbb{R}$\textasciicircum{}d $\to$ $\mathbb{R}$\textasciicircum{}m (a probe, a head, a detector) sees only the quotient of Z that it reads; a \textit{behavioural representation} exists when the action descends to that quotient --- F($\rho$($\tau$)z) depending on z only through F(z) and matching F($\psi$($\tau$s)). The representation level asks what the features carry; the behavioural level asks what any given observer of the features can enact. They have independent conditions (\S{}3.2), and confusing them is the root of the proxy failures in \S{}5.5. Figure 1 fixes the two objects the paper compares: the action of a transformation on the world and the operator that stands in for it on features, and panel (b) shows which part of a linear encoder is responsible when the second cannot exist.
+
+\textbf{Nontriviality: which part of the algebra survives.} A constant representation satisfies ($\star$) trivially --- every transformation acts as identity. A representation of a transformation algebra is therefore informative only together with an account of \textit{which part of the algebra it represents faithfully}. Two objects carry this: the \textit{action kernel} --- the transformations acting trivially on all of Z\_$\psi$, the part of the algebra the encoding has merged away --- and the \textit{stabiliser} of a single state, the transformations fixing that state alone. For a group, the represented object is exactly the effective quotient M/ker. Either way, "invariance" and "information loss" become precise: they are the kernel and the stabilisers of the representation. Both are concrete in colour: an orbit built only from the second harmonic cannot distinguish hues $180^\circ$ apart, since $R(2\Delta)$ has kernel $\Delta=180^\circ$; and the grey axis ($s=0$) is stabilised by every hue rotation --- "grey has no hue" is an algebraic fact of the colour solid, and \S{}4.4 measures its operational extent. Two further sites --- six site$\times$parameter points --- in our real-network grid are causally unreachable in the same sense: the action exists in the world but is invisible at the site, whose transportability is exactly $0.000$ against a non-zero input-side displacement (Appendix C.3).
+
+\subsection{Compression--transformation compatibility}
+
+\textbf{Observation (fibre compatibility, and the inherited composition law).} The assignment $\rho_\tau(\psi(s)):=\psi(\tau s)$ is well defined exactly when the fibre condition holds,
+\[\adjustbox{max width=\columnwidth}{$\displaystyle (\mathrm F)\qquad \psi(s_1)=\psi(s_2)\ \Longrightarrow\ \psi(\tau s_1)=\psi(\tau s_2),$}\]
+and when it holds the composition law comes for free: for $z=\psi(s)$, $\rho_{\tau_2}\rho_{\tau_1}z=\rho_{\tau_2}\psi(\tau_1s)=\psi(\tau_2\tau_1s)=\rho_{\tau_2\tau_1}z$, and $\rho_e\psi(s)=\psi(s)$. This is the universal property of the quotient $Z_\psi$ written for a transformation family. We record it as an observation rather than a theorem because its content is definitional; it is the \textit{consequences} that carry weight, and there are two.
+
+\textbf{Consequence 1 (existence is one condition, not two).} The two requirements of ($\star$) --- well-definedness and the composition law --- are not independent burdens. A representation either exists and is automatically homomorphic, or it does not exist; there is no third case in which an action exists but fails to compose. The behavioural level descends by the same logic, and its condition is the consumer-side analogue of (F):
+
+\[\adjustbox{max width=\columnwidth}{$\displaystyle \begin{aligned}
+&(\star\text{-behavioural})\qquad F(z_1)=F(z_2)\\
+&\qquad\Longrightarrow\ F(\rho(\tau)z_1)=F(\rho(\tau)z_2)\quad\text{for every }\tau\in M.
+\end{aligned}
+$}\]
+
+Where it holds, the induced map on the consumer's outputs is well defined and, by the same one-line argument, a homomorphism; where it fails, no action on the consumer's visible state can be faithful however good the feature-level fit is, which is exactly how a full feature-space operation can succeed while the same intervention, read only through particular outputs, fails (\S{}5.5).
+
+\textbf{Consequence 2 (a composition experiment cannot falsify the group axiom).} Because the composition law is inherited rather than assumed, no network-level composition experiment tests it. What such an experiment measures is the defect of a \textit{fitted family} --- which is why \S{}5.4 grades a chain against the truth-level composite and against a direct refit, and not against the group axioms.
+
+\textbf{A direct check of the fibre condition (F).} The condition can be tested without fitting any operator. Two inputs that a frozen consumer maps to the same output must, if the correspondence exists, stay equal after the same physical transformation. Fixing the tolerance at the $q$-quantile of the consumer's base pair-distance distribution --- so that the random-pair preservation rate is $q$ by construction --- the fraction of base-equal pairs that remain equal after the transformation is $0.25$--$0.46$ for hue and $0.58$--$0.82$ for heat at $q=0.01$, across four frozen backbones, far above the chance rate that the tolerance quantile fixes by construction. Existence therefore holds approximately rather than exactly, and more strongly for the dissipative family, which merges states instead of moving them. The full grid, including the per-site rates and the effect sizes, is Table D.23. Figure 2 shows the same check per backbone and per site.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig02_fibre_test.pdf}
+\caption*{\textbf{Figure 2.} The fibre condition tested directly. (a) Consumer-level preservation of base-equal pairs at tolerance quantile $q=0.01$, expressed as a multiple of the chance rate, for four backbones and both algebras; the chance rate is $q$ by construction. (b) Preservation at each probed site under hue rotation and (c) under heat diffusion, one curve per backbone, against the chance line (dotted); per-site preservation runs from $0.18$ to $0.82$.}
+\end{figure*}
+
+\textbf{The organising principle.} Compression matters through its relation to the transformation, not through retained dimension. A transformation that mixes discarded information back into the retained subspace is the only source of principled obstruction. This single principle generates the paper's theory, and \textbf{Table 2} lists what it derives and where each consequence is earned.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 2.} What the organising principle derives, and where each consequence is earned.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{\#} & \textbf{Consequence} & \textbf{Derived how} & \textbf{Earned} \\
+\midrule
+T1 & A representing action exists iff the transformation preserves the encoder's fibres & mixing-back is the only obstruction to well-definedness & \S{}3.2 (observation) \\
+T2 & The defect law $1-T_{RMS}=\kappa_W/\sqrt{1+\kappa_W^2}$ in the induced metric & error = the $C$-block's energy against the demanded displacement, weighted by the encoder & \S{}3.4, Thm 2 (proof + sweep) \\
+T3 & Retained rank is nearly irrelevant; mixing is decisive & the law contains $\kappa_W$ alone; rank enters only through where the split is drawn & \S{}3.4 (rank sweep vs $\kappa$ sweep) \\
+T4 & Training moves operability only through $\Delta$ $\kappa$ & learning changes the encoder; the law sees only the induced mixing & \S{}6.4 (corollary + trajectories) \\
+T5 & The deviation of the linear law at trained sites is a change of local rule & Prop D decomposes the effect; the deviation is carried by the diversity of the realised rules & \S{}3.5, \S{}6.5 (proof + 42 sites) \\
+T6 & Depth erosion follows the pairing between the transformation and the readout & rule diversity is created by gate changes (Prop D), and a change of rule counts only where the consumer reads it & \S{}3.5, \S{}6.3 (proof + 2$\times$2 + visible share) \\
+T7 & The fixed-linear class attains the exact score $T_F^{\max}$, and the gate-change share is a measured proxy for its slack & Prop E & \S{}3.5 (proof + six-point check) \\
+T8 & A carrier admits a fixed action iff its retained blocks are closed, and then the optimal linear map is the projected carrier action & Prop F, Prop G & \S{}4.6 (proof + 40 random selections) \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+T1--T4 and T7--T8 are proved or proved-then-verified; T5--T6 are consequences of the piecewise-linear layer of \S{}3.5 read on real networks. One principle reaching existence, pricing, learning, and dynamics --- each consequence checked where it is derived.
+
+\subsection{Two sources of realisation error}
+
+With Z = $\psi$(S), Y\_$\tau$ = $\psi$($\tau$S), squared loss, and a candidate family $\mathcal{P}$:
+
+inf\_\{G$\in$ $\mathcal{P}$\} E$\|$G(Z) $-$ Y\_$\tau$ $\|$ $^2$ = E$\|$Y\_$\tau$ $-$ E[Y\_$\tau$|Z]$\|$ $^2$ + inf\_\{G$\in$ $\mathcal{P}$\} E$\|$G(Z) $-$ E[Y\_$\tau$|Z]$\|$ $^2$.
+
+The first term is irrecoverable information --- what the encoding discarded that the transformation moves; the second is family error --- how far the chosen $\mathcal{P}$ is from expressing the conditional expectation; finite-sample estimation adds a third, standard term. The two failures have different remedies and different meanings, and a minimal example keeps them apart: with z = u and v = (u$^2$ $-$1)/$\surd$2, the nonlinear map (u $\mapsto$ (u, u$^2$ $-$1)/$\surd$2) recovers v exactly from u alone --- no information is missing --- while every linear map fails; the irreducible term is zero and the family term carries everything. A fitted residual therefore measures the sum, and attribution between the terms is an experiment, not an assumption (\S{}3.7).
+
+\textbf{Two normalised scores, and they are not the same number.} The headline score throughout this paper is the \textit{mean-ratio transfer}
+\[\adjustbox{max width=\columnwidth}{$\displaystyle T_F\;=\;1-\frac{\mathbb E\lVert F(Gz)-F(\tau z)\rVert}{\mathbb E\lVert F(z)-F(\tau z)\rVert},$}\]
+while the quantity a least-squares fit actually optimises is the \textit{RMS-criterion transfer}
+\[\adjustbox{max width=\columnwidth}{$\displaystyle T_{RMS}\;=\;1-\sqrt{\frac{\mathbb E\lVert F(Gz)-F(\tau z)\rVert^{2}}{\mathbb E\lVert F(z)-F(\tau z)\rVert^{2}}}.$}\]
+Both are ratios in which $1$ matches the real transformed route and $0$ is no better than the no-op; they differ only in whether the average is taken before or after the ratio, and on the measured grids they agree to about one percent ($T_F=0.602$ against $T_{RMS}=0.603$ at the first ResNet-50 site). The distinction matters for exactly one statement: Theorem 2 is a theorem about $T_{RMS}$, because the closed form is derived from the squared-error normal equations. Every table states which of the two it reports, and no comparison in this paper mixes them.
+
+The same two-source structure appears concretely on a rectifier, and there it is measurable. A rectifier network partitions its input space into \textit{activation regions} $R_r$ indexed by the gate pattern, and on each region the site map is affine, $\phi(x)=A_rx+b_r$; the gate is recoverable from the site tensor itself, since $z=\mathrm{ReLU}(a)$ gives $G=\mathbf{1}[z>0]$. Write $u=\phi(x)=A_rx+b_r$ for the source feature and $v=\phi(Tx)=A_sTx+b_s$ for its image under a linear input transformation $T$, and index by \textit{transition cell} $(r,s)$ the inputs that start in region $r$ and land in region $s$. The realisation error of a fixed linear map decomposes into two terms with different meanings,
+\[\adjustbox{max width=\columnwidth}{$\displaystyle \begin{aligned}
+\min_K\ \mathbb E\|Ku-v\|^2={}&\underbrace{\sum_{r,s}w_{rs}\min_{K_{rs}}\mathbb E\big[\|K_{rs}u-v\|^2\,\big|\,(r,s)\big]}_{\text{within-cell}}\\
+&+\underbrace{\sum_{r,s}w_{rs}\,\mathbb E\big[\|(K_{rs}-K^\star)u\|^2\,\big|\,(r,s)\big]}_{\text{sharing cost}},
+\end{aligned}
+$}\]
+with $w_{rs}$ the cell weights, $K_{rs}$ the cell-wise least-squares operators and $K^\star$ the pooled one; the split is the orthogonal decomposition of a pooled regression into within-cell and between-cell parts.
+
+\textit{The first term need not vanish}, and its source is broader than information loss. On a cell $u$ and $v$ are both affine in $x$, which does not make $v$ affine in $u$: if the source rule has already discarded what the target rule needs --- one region covering everything, with $u=x_1$ and $v=x_2$ --- no choice of operator helps, and that is irrecoverability localised to a cell. But a positive within-cell term can also come from the restricted form of the family (a zero-intercept linear fit where the cell relation has an offset, say), so the within-cell term is the error of the \textit{best member of the family on that cell}, not a measure of discarded information. When the source rule does determine the target rule on the cell and the family can express it, the first term vanishes and the whole error is the cost of sharing.
+
+\textit{The second term is what a change of gate pattern can create.} A fixed linear $K$ realises the transformation on the visited cells iff the joint system of \S{}3.5 is consistent; since that system is linear in $K$, consistency is a rank condition, and its least-squares residual is the data-weighted sharing cost when the cell feature moments are matched --- the general statement is the moment-weighted version of the decomposition above. Two qualifications belong to it: the cells must cover the region with non-empty interior, or span it, for a zero finite-sample residual to imply the matrix identity on the region; and the criterion concerns the \textit{visited} cells, which is what a measurement can see.
+
+\subsection{A quantitative linear model}
+
+The linear case is the theory's exact layer, and it is the \textbf{single-region} case of \S{}3.5. Write the compression with retained block u and discarded block v, and the transformation in the same coordinates as [A C; D E]: A moves retained to retained, C mixes discarded into retained, D moves retained to discarded, E acts within the discarded block.
+
+\textbf{Theorem 1 (existence is kernel preservation).} A linear operator realising the transformation on the retained features exists \textbf{iff} the transformation preserves the encoder's kernel (proof in Appendix B).
+
+\textbf{Theorem 2 (defect law).} Under Assumptions B and C the best score is governed by the mixing ratio \textit{in the metric the representation actually induces}: with $A$ and $C$ the retained blocks and $W$ the encoder, the least-squares optimum satisfies
+\[\adjustbox{max width=\columnwidth}{$\displaystyle \begin{aligned}
+1-T_{RMS}&=\frac{\lVert WC\rVert_F}{\sqrt{\lVert W(A-I_{\mathcal R})\rVert_F^2+\lVert WC\rVert_F^2}}
+=\frac{\kappa_W}{\sqrt{1+\kappa_W^2}},\\
+\kappa_W&:=\frac{\lVert WC\rVert_F}{\lVert W(A-I_{\mathcal R})\rVert_F}.
+\end{aligned}
+$}\]
+When $W$ is an isometry on the retained subspace --- in particular on whitened features --- this is $\kappa=\lVert C\rVert_F/\lVert A-I\rVert_F$ with the optimum at $A$; in general the optimum is $W$-conjugate. \textit{Proof.} The residual is $WCx_K$ and the displacement is $W(A-I)x_R+WCx_K$; under isotropy $x_R\perp x_K$, so $\mathbb E\lVert WCx_K\rVert^2=\lVert WC\rVert_F^2$ and $\mathbb E\lVert W(A-I)x_R\rVert^2=\lVert W(A-I)\rVert_F^2$, and dividing through gives the displayed form. $\square$
+
+Two readings are counter-intuitive, and the first is metric-independent: \textbf{only mixing-back is poisonous} --- the $D$ block loses information harmlessly while $C$ contradicts it, so \textit{discarding information is not what hurts} --- and \textbf{retained rank barely matters}, since the split enters only through $\kappa_W$. The metric sets the magnitude rather than the mechanism, which is why a law calibrated at one site need not transfer to another with a different $W$. \textbf{Table 3} carries the controlled verification and the scope of the law.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 3.} Controlled verification of Theorems 1--2, and the measured scope of the law. The statistic is named per row: the $\kappa$ sweep is the $T_{RMS}$ of Theorem 2 (the quantity a least-squares fit optimises), the other rows are the mean-ratio $T_F$ of \S{}3.3; the two differ by about a percent where both are recorded.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{check} & \textbf{range} & \textbf{effect on the score} & \textbf{closed-form deviation} \\
+\midrule
+kernel-preserving $g$ (Thm 1) & retained rank 8 / 48 & $T_F = 0.9999992$ / $0.9999943$, residual $2.6\times10^{-5}$ vs displacement $34.3$ & --- \\
+$\kappa$ sweep at fixed rank & $4.5\times10^{-16}\to 9.34$ & $T_{RMS}$ $1.0000\to 0.0041$ (mean-ratio $T_F$ $1.0000\to 0.0041$) & max $0.0091$ for $T_{RMS}$, $0.0102$ for $T_F$ (both at $\kappa\approx1.2$) \\
+retained-rank sweep at fixed geometry & rank $8\to48$ & $0.374\to0.665$ (about $2\times$) & --- \\
+anisotropy sweep at fixed $W,\allowbreak{}g$ & --- & $0.069\to0.429$ & --- \\
+trained linear weights, 32 cells & --- & $\rho(\kappa,\allowbreak{}T_F)=-0.968$ vs $\rho(\text{eff. rank},\allowbreak{}T_F)=+0.502$ & median $0.014$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\textbf{Scope of the law.} The closed form is exact under isotropy (Assumption C), and its tightness condition is stated in Proposition B.3: under a general covariance the identity holds only when a cross-covariance term vanishes, and Corollary B.4 shows the score then depends on the input covariance. Real sites are strongly anisotropic, so the law is a statement about the controlled regime rather than a calibrated predictor for real backbones. On the 42 reachable sites of the depth grid, with three estimators of the retained subspace and five ranks and no constant fitted to the score, the prediction is biased high by $+0.40$ to $+0.65$ and orders no better than the naive baselines --- a metric mismatch, since each site brings its own $W$ and its own covariance. What transfers is the mechanism (alignment rather than retained rank) and the diagnostic reading of the deviation; the magnitude is a per-site quantity. Figure 3 shows the law in the controlled setting where it is exact, together with the two candidate explanations it rules out, retained rank and the amount of discarded energy.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig03_defect.pdf}
+\caption*{\textbf{Figure 3.} The defect law over its measured range. (a) Defect of the best linear realisation, $1-T_{\mathrm{RMS}}$, against the mixing ratio $\kappa$ for retained ranks 16 (circles) and 32 (squares) on a logarithmic axis; the solid line is the closed form of Theorem 2 in the isometric setting, $\kappa/\sqrt{1+\kappa^2}$. The sweep covers $\kappa=0.40$--$9.34$, and the vertical axis is truncated to the swept range; the two $\kappa\to0$ entries of the same file lie outside it, being the kernel-preserving case with defect below $2\times10^{-6}$. (b) Absolute difference between measurement and closed form over the same sweep against a dotted line at $0.01$; the deviation is largest ($0.0091$) near $\kappa=1.2$ and an order of magnitude smaller at both ends. (c) Transfer against retained rank at fixed geometry: the score moves by about a factor of two while $\kappa$ moves in the opposite direction. (d) Transfer, and the share of the displacement carried by the lowest-variance half of the directions, against input anisotropy: the score rises from $0.069$ to $0.429$ while the share stays between $0.43$ and $0.49$, so the score follows the geometry of the split rather than the discarded energy.}
+\end{figure*}
+
+\subsection{The piecewise-linear layer: what a real encoder does}
+
+\S{}3.4 is the single-region case. A rectifier network is not linear on its domain: it partitions the input space into \textbf{activation regions} $R_G$ indexed by the gate pattern $G(x)=\mathbf{1}[a(x)>0]$, and on each region the site map is affine, $\phi(x)=A_Gx+b_G$. Define the \textbf{crossing set} $\mathcal C_\tau=\{x: G(\tau x)\neq G(x)\}$ --- the inputs whose activity pattern the transformation changes.
+
+\textbf{Proposition C (region-transition criterion).} Let the site be affine on each visited region, $\phi=A_rx+b_r$, let $T$ be the input transformation, and let $(r,s)$ range over the realised transitions --- the cells on which $x$ starts in region $r$ and $Tx$ lands in region $s$, each with non-empty interior or spanning its region. Then a fixed linear $\rho$ with $\rho\phi=\phi\circ T$ on the visited cells exists \textbf{if and only if} the joint system
+\[\adjustbox{max width=\columnwidth}{$\displaystyle \rho A_r=A_sT,\qquad \rho b_r=b_s\qquad\text{for every realised }(r,s)$}\]
+is consistent. \textit{Proof.} On a cell, $\phi(Tx)=A_sTx+b_s$ and $\rho\phi(x)=\rho(A_rx+b_r)$; both sides are affine in $x$, and an identity between affine maps on a set with non-empty interior extends to the maps, so the system is necessary; conversely a solution satisfies it on every cell. $\square$
+
+\textbf{Corollary C.1 (no crossing).} If $T$ leaves the gate pattern of each visited region unchanged, the realised transitions are the diagonal cells and the system reduces to $\rho A_r=A_rT$, $\rho b_r=b_r$ for every visited $r$. \textit{Proof.} With the gate unchanged the realised transitions are the diagonal cells, so the joint system of Proposition C reduces to its diagonal part and nothing else is imposed. $\square$
+
+For a single visited region this is Theorem 1's kernel condition rewritten --- the linear layer is the single-region case.
+
+\textit{Consequence.} \textbf{Even with no gate change at all, the multi-region structure alone can obstruct a fixed linear action}: the visited regions must be simultaneously conjugate to the transformation. This is why enlarging the operator family buys little --- measured, a ridge-plus-$3\times3$-residual family differs from the global linear family by at most $0.087$ at every ResNet-50 site and $0.11$ at every ConvNeXt site, with a median gap of $0.005$ over the 32-site grid; the two separate only where both fail (DINOv2 heat $block8$: $-0.40$ against $-0.99$).
+
+\textbf{Proposition D (the decomposition, and where rule diversity comes from).} With $z=\mathrm{ReLU}(a)$, $a'=a+\Delta a$, $G=\mathbf{1}[a>0]$ and $G'=\mathbf{1}[a'>0]$,
+\[\adjustbox{max width=\columnwidth}{$\displaystyle z'-z=G\odot(a'-a)+(G'-G)\odot a',$}\]
+and on a unit whose gate changes the second term is $+a'$ (off$\to$on) or $-a'$ (on$\to$off). \textit{Proof.} $z'=G'\odot a'=G\odot a'+(G'-G)\odot a'$ and $z=G\odot a$. $\square$
+
+\textit{Neither direction of implication between gate changes and failure holds.} Take $\phi(x)=(\mathrm{ReLU}\,x,\mathrm{ReLU}(-x))$ with $Tx=-x$: every nonzero input changes one gate, and the fixed operator that swaps the two coordinates realises the transformation \textbf{exactly}, since $\phi(-x)=K\phi(x)$ for all $x$. For the other direction take the scalar site $\phi(x)=\mathrm{ReLU}(x_1)+\mathrm{ReLU}(x_2)$ with $T=\mathrm{diag}(2,3)$, which \textit{preserves every gate pattern}, since positive scalings do not change signs. On the region where the first unit is active, $u$ and $v$ are related by one factor; where the second is active, by the other. Each region is exactly realisable on its own, yet a single scalar $K$ would have to equal both factors at once. No gate change occurs and no shared operator exists. Gate changes are therefore the \textit{source} of rule diversity, not the obstruction; the obstruction is whether one operator satisfies every rule the transformation actually visits, which is the joint system of Proposition C.
+
+\textit{Consequence (which quantity governs).} The within-regime term is linear in $\Delta a$ and is what a linear-class action can reach. The gate-change term has magnitude $|a'|$ on the changed units, so it is not a constant that vanishes with the perturbation, and it carries a dependence on the discrete region index whose reachability by one fixed linear operator is the joint system of Proposition C rather than a matter of counting flips. What governs the achievable score is therefore the \textit{concentration} of the change and its visibility to the consumer, not the number of gate flips. Measured (ResNet-50, three depths $\times$ two algebras): the flip count does not order the score ($\rho=+0.49$, not significant), the gate-change share --- the share of the change carried by $\Delta_{\mathrm{flip}}$ --- does ($\rho=-0.83$), and the consumer-visible share orders it most tightly of all ($\rho=-0.886$; significance levels in Appendix D.7; the measured associations are proxies for the sharing cost of Proposition C, not the cost itself).
+
+\textbf{Proposition E (achievable score of the fixed-linear class).} Let $F$ be the consumer, $\lVert\cdot\rVert_F$ the seminorm its response induces, and $d=z'-z$. The best score attainable by any family whose members are fixed linear maps of $z$ is
+\[\adjustbox{max width=\columnwidth}{$\displaystyle T_F^{\max}=1-\frac{\lVert\mathrm{Proj}_F d^\perp\rVert_F}{\lVert\mathrm{Proj}_F d\rVert_F},$}\]
+where $d^\perp$ is the residual of the $L^2$ projection of $d$ on the consumer-visible linear span of $z$: the class reproduces the part of the change that is linearly predictable from $z$ and nothing else. \textit{Status.} This exact form is proved for linear consumers; no claim is made here for families outside the fixed-linear class. The proxy is evaluated against the measured transfer at six (site, algebra) points in \S{}6.3.
+
+\textbf{The gate-change share is a proxy, not a bound.} Writing the gate-change term of Proposition D as $\Delta_{\mathrm{flip}}:=(G'-G)\odot a'$, its consumer-visible share is a good proxy for the slack above whenever that term is the part of $d$ not linearly predictable from $z$ --- the generic case, and the reason the share orders the measured transfer scores of \S{}6.3. The proxy is an identity in neither direction: in the counterexample above every gate changes and the slack is zero, and a consumer blind to the change has zero visible share whatever the slack. The measured association is what the proxy licenses; the two-source decomposition of \S{}3.3 is what the failure actually consists of.
+
+This is the layer in which the paper's real-network results live. The deviation of the linear law at trained sites (\S{}6.5) is a change of local rule --- a quantity the framework predicts, not an anomaly --- and the depth trend (\S{}6.1) is the statement that the transformation visits more distinct rules as depth grows, which \S{}6.6 measures.
+
+\subsection{From existence to form}
+
+Existence says nothing about form; representation theory supplies the candidate. If a continuous finite-dimensional linear action of the circle exists on the features, then in an appropriate basis it decomposes into invariant blocks and harmonic rotation blocks --- so the measurement question is sharp: which harmonics carry the energy, are the rotation planes shared, how do amplitude and phase divide the content? The theory does not fix the answers (it does not predict that k $\le$ 2 should dominate), but it tells the measurement what to look for, and \S{}4 answers with numbers. The same premise warns against over-reading coordinates: the natural basis may be elliptical, frequencies need not be orthogonal, and multiple copies of one frequency may mix --- all of which matter for the operator comparisons of \S{}5.
+
+\subsection{Operational measurements}
+
+Four quantities grade any candidate operator: the \textit{feature-target error} (against re-rendered features), the \textit{chain target} (against the truth-level composite), the \textit{composition defect} ($\rho$($\tau$ $_2$)$\rho$($\tau$ $_1$) against $\rho$($\tau$ $_2$ $\tau$ $_1$)), and the \textit{consumer error} (downstream outputs). The no-op (copy) baseline is mandatory --- a transformation that barely moves the features makes copying look like transport --- and so is power: where the transformation does not move what the consumer reads, no operator can be graded and the site is excluded rather than scored. Full protocols: Appendix C. Every results table in this paper carries its baseline column by construction --- copy for transport, the trivial depth rule for attribution, random and shuffled operators for capability --- and the four-quantity rule above is the evaluation criteria box that all capability claims pass through.
+
+Three premises gate every evaluation before scoring begins. \textit{Reference identifiability}: where an attribute is not defined on a state --- a multicoloured region has no global hue --- readouts must fail without error, and no operator can repair a missing reference (\S{}4.4, \S{}7.7). \textit{Consumer-class integrity}: if a transformation tears apart states that a consumer merges, no action on the consumer's visible state can be faithful, however good the feature-level fit (\S{}5.5). \textit{Cross-transformation comparability}: $T_F$ is normalised by the no-op's own error, so a transformation that displaces the consumer further is scored more leniently \textbf{for the same absolute error}. At matched sites the two families' no-op errors differ by a fixed factor (heat is $0.81\times$ hue) while their absolute transport residuals agree to within about a fifth; the apparent group-versus-semigroup gap in $T_F$ ($0.588$ against $0.471$ at layer 2) is therefore a \textbf{denominator effect}, not a statement about how well the transformation is carried. The per-layer decomposition is Table C7. Any comparison of $T_F$ across transformations must report or match the displacement.
+
+All three premises are properties of the encoding and the task, not of any candidate operator --- which is why they are checked first.
+
+The theory now knows when an action can exist and what form to look for. The next section shows what real colour features actually present.
+
+\textbf{Table 4} fixes what is general and what is colour in one place.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 4.} Claim--scope: what is general, what is specific to the colour instance, and where each is earned.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Claim} & \textbf{Scope} & \textbf{Where earned} \\
+\midrule
+Existence condition and inherited composition law, risk decomposition & General: all encoders and transformation algebras & \S{}3.2--3.3 \\
+Kernel-preservation criterion, metric-weighted defect law & \textbf{Single-region (linear) encoders}, stated moment conditions & \S{}3.4 (proofs + controlled verification) \\
+Region-transition criterion (Prop C, Cor. C.1), gate-change decomposition (Prop D), exact score of the fixed-linear class (Prop E) & \textbf{Piecewise-linear encoders}; E for the fixed-linear class, with its proxy checked in \S{}6.3 & \S{}3.5 (proofs) \\
+Accumulation law (three-regime bound, Thm 4) & Any realised family, truth action with Lipschitz constant L & \S{}5.4 (proof; the regime at each site is measured in the consumer's seminorm, Table D.22) \\
+No exact coordinate-monotone realisation of a closed orbit (Thm 3) & Monotone parameter families in a fixed basis & \S{}5.2 (proof + measured best fit) \\
+Harmonic concentration, shared scaffold, inheritance & The measured colour instance (and, in specified cells, heat / clipped scalings / multi-attribute and spatial-rotation controls) & \S{}4, \S{}6; Appendix D \\
+Carrier closure and optimal linear realisation (Props F--G) & Any carrier and action; a \textbf{design} condition on the retained coordinates & \S{}4.6 (proofs + 40 selections) \\
+Carrier sufficiency (Thm 5) and the interface & Any carrier, action and read-in; the measured conditions size its terms, and it is instantiated for colour & \S{}7.3 (proof + measured conditions) \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The linear row is the theory's exact layer and the piecewise-linear row is the layer the measured networks live in; the fourth row is measurement, general as method and colour-specific as fact. Heat flow, clipped scalings, the multi-attribute grid, and spatial rotation appear throughout as the second-algebra and boundary evidence; the full protocol is instantiated for colour and for the composition, pairing and boundary arms of the others.
+

@@ -1,0 +1,108 @@
+\section{The Shared Structure of Colour Orbits}
+
+This section reports the paper's central empirical finding: colour variation in the measured frozen features has a shared, low-order organisation --- a candidate foundation for acting across objects.
+
+\subsection{Controlled orbit measurements}
+
+Orbits are rendered from parameters (hue swept densely at fixed (s,v) or per-shape), passed through frozen backbones (four architectures, one of them self-supervised [31], and a YOLO detector), and featurised at the probed sites with DC removed and pose averaged. The protocol table (Appendix C) fixes every definition once; we report results directly. One scope boundary, stated once: the physical transformations of this paper are transformations in rendering parameter space (hue rotation in HSV-like coordinates, heat diffusion on the image grid) --- the synthetic--real gap is measured, not assumed away, and it is visible in the numbers (3.4$^\circ$ synthetic median vs 8.0$^\circ$ on the high-concentration real regions, \S{}7.4).
+
+\subsection{Low-order harmonic organisation}
+
+\textbf{Table 5} collects the organisation measurements that \S{}4.2--\S{}4.5 rely on. Three readings carry the section: the organisation is \textbf{low-order and shared} (harmonics $k\le2$, rotation planes shared across shapes at $\cos\ge0.96$, phase coherence surviving depth while amplitude concentration halves), it is \textbf{substantially inherited} rather than learned (an untrained network preserves the algebraic shape more purely than a trained one, and no affine remixing of the untrained features can synthesise it), and it has \textbf{concrete degeneracies} that bound the operating domain (a $k=2$-only orbit cannot distinguish hues $180^\circ$ apart; the grey axis is stabilised by every hue rotation). Figure 4 shows what that organisation consists of: two harmonics carry almost all of the energy, their planes are shared across shapes, and the low-saturation end of the domain is where the orbit weakens while keeping its plane.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig04_organisation.pdf}
+\caption*{\textbf{Figure 4.} The organisation of hue orbits in the frozen features. (a) Composition of the centred orbit energy by harmonic index for each shape of the dense orbit suite; the first two harmonics carry $0.84$--$0.88$ of the energy in every shape and the tail ($k\ge3$) never exceeds $0.16$. (b) Alignment between each shape's rotation plane and the reference shape's, per harmonic index, shown as the range over the five non-reference shapes with the median marked and a dotted line at $\cos=0.96$; alignment is $0.97$--$1.00$ for $k\le2$ and falls to $0.54$--$0.92$ for $k\ge7$, so the shared planes belong to the low harmonics. (c) The low-saturation limit: bars give the orbit energy at the grey end of the saturation range relative to the mid-saturation ring, and the line gives the alignment of the fundamental plane between the two rings; the orbit loses most of its energy while its harmonic plane survives, which bounds the operating domain.}
+\end{figure*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table 5.} The shared structure of colour orbits: spectrum, scaffold, inheritance and degeneracy.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{quantity} & \textbf{value} \\
+\midrule
+harmonic share, $k=1{+}k=2$ & $84$--$88\%$ of orbit energy \\
+PCA participation ratio & $\approx 3$ \\
+spectral centroid & $2.0$--$2.8$ \\
+rotation-plane sharing across shapes & principal-angle $\cos\ge 0.96$; band-normalised $\ge 0.95$ \\
+phase coherence, trained early $\to$ late layer & $0.971\to 0.906$ \\
+phase coherence, input baseline (pixels, RGB) & $0.9997$ \\
+amplitude concentration over the same step & halves \\
+inheritance: untrained vs trained, same protocol & $0.976$ vs $0.868$ \\
+degeneracy: a $k=2$-only orbit cannot distinguish & $\Delta=180^\circ$ \\
+grey axis $s=0$ & stabilised by every hue rotation \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{A shared scaffold with content-dependent envelopes}
+
+The organisation decomposes cleanly into what is shared and what is specific. Rotation planes are shared across shapes while amplitudes carry the shape-specific content, and the division of labour survives depth \textbf{asymmetrically}: the phase that lets one operator serve every shape persists, while the radial structure that would calibrate magnitude erodes. These two measurements are the construction's conditions arriving as numbers --- band-limitation and plane sharing are the two measured conditions the interface's construction uses, quantified here before \S{}7 builds on them (Table 5).
+
+\subsection{Nontriviality and degenerate states}
+
+The abstract kernel and stabiliser of \S{}3.1 have concrete colour content. An orbit carrying only the second harmonic cannot distinguish hues $180^\circ$ apart, and the measured orbits carry both harmonics precisely where hue identity is preserved; the grey and black axes are stabilised by hue rotation, and the discriminative range contracts exactly as saturation approaches the axis. Degeneracy is therefore not noise around the structure but part of the structure: \textbf{the operable domain has a boundary}, and \S{}7.7 prices it for use.
+
+\subsection{Inheritance and reorganisation}
+
+Where does the organisation come from? Under the identical protocol an untrained network preserves the orbit's algebraic shape more purely than a trained one, and no affine remixing of the untrained features can synthesise that shape. Both scores are high --- training does not remove the structure. The conclusion rests on the \textbf{direction of the gap together with the control}: the shape exists at initialisation, exceeds its trained form in algebraic purity, and cannot be created by an affine remap, so its source is the architectural prior and the input statistics, and what training adds is selection and reorganisation rather than creation. Section 6 picks up what training and depth then do to operability. Figure 5 compares eight arms under one protocol and shows that the organisation is present before training, which is why the paper attributes it to the input statistics and the architecture rather than to learning.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig05_provenance.pdf}
+\caption*{\textbf{Figure 5.} Where the organisation comes from: eight arms under one protocol. (a) Share of orbit energy in the first two harmonics, raw and after standardisation; the untrained sites of the same architectures are at least as concentrated as the trained ones. (b) Cross-shape phase coherence: input pixels are exact by construction, and the untrained sites sit closer to that than the trained ones. (c) Zero-shot hue error on unseen shapes from the code head (circles) and from an MLP probe on the same features (squares), on a logarithmic axis. One seed per arm.}
+\end{figure*}
+
+\subsection{When the measured carrier supports a linear action: a design condition}
+
+The measurements above describe the \textit{form} of the orbit. What that form licenses has an exact answer, and it is a condition on the carrier one chooses to keep. Summarise the measured organisation by a carrier map $B$ from $m$ carrier coordinates $c$ (the harmonic blocks) into the feature space, $z=Bc$, and suppose the input transformation acts on the carrier by a known $A_\Delta$ --- for hue, the block rotations $R(k\Delta)$ on the $k$-th pair.
+
+\textbf{Proposition F (closure criterion).} There exists a fixed linear $K$ with $KB=BA_\Delta$ if and only if $A_\Delta\ker B\subseteq\ker B$. \textit{Proof.} $KB=BA_\Delta$ is solvable iff $BA_\Delta$ vanishes on $\ker B$. $\square$
+
+Closure is a property of the \textit{retained blocks}, decidable from the measured organisation alone: $\ker B$ consists of the harmonic directions the carrier does not keep, and the criterion asks whether the rotation carries them back into the retained ones.
+
+\textbf{Proposition G (optimal linear realisation).} Let $\mathbb E[cc^\top]=I$, $z=Bc$ and $z'=BA_\Delta c$. Then $K^\star=BA_\Delta B^\dagger$ is a least-squares minimiser and
+\[\adjustbox{max width=\columnwidth}{$\displaystyle \min_K\ \mathbb E\|Kz-z'\|^2=\big\|BA_\Delta P_{\ker B}\big\|_F^2,$}\]
+which vanishes exactly when Proposition F holds. For a coloured carrier, $\mathbb E[cc^\top]=\Sigma_c$, the residual is $\|BA_\Delta\Sigma_c^{1/2}P_{\ker(B\Sigma_c^{1/2})}\|_F^2$ with $K^\star=BA_\Delta\Sigma_cB^\top(B\Sigma_cB^\top)^{\dagger}$ and $\Sigma_c^{1/2}$ the \textbf{symmetric} square root. The projector must be taken \textit{after} whitening: correlation lets a retained coordinate predict a discarded one, so the optimal predictor is not the Euclidean projection onto $\ker B$. The two expressions coincide only for $\Sigma_c\propto I$. \textit{Proof.} $K^\star z-z'=BA_\Delta(B^\dagger B-I)c=-BA_\Delta P_{\ker B}c$, because $B^\dagger B$ is the orthogonal projector onto the row space of $B$; taking expectations with $\mathbb E[cc^\top]=I$ gives the Frobenius norm, and the coloured case follows by whitening. $\square$
+
+Three consequences make this a design statement. \textit{Existence:} the same expression that decides whether an action exists also prices its failure. \textit{Error source:} what a fixed linear map on the carrier cannot do is exactly to undo the carrier directions the rotation carries back into view --- the merged harmonics re-entering the retained subspace, the harmonic form of the mixing-back block of \S{}3.4. \textit{Design:} a carrier is usable iff its retained coordinate set is invariant under the action, which for a rotation with one two-dimensional block per frequency means keeping or dropping each conjugate pair \textbf{as a pair}. (The pair rule is stated for a full continuous rotation action written in one block per frequency, with selection along those coordinates; for a single fixed angle, or when frequencies repeat and their blocks may mix, the right object is the invariant subspace rather than the pair.)
+
+Two numerical checks fix the scale, and the full columns are Table D.21. On the three-dimensional code $z(h)=(\cos h,\sin h,\cos 2h)$ --- information-complete for the hue and entirely within the first two harmonics --- the best fixed linear map leaves residual $0.96$ and closure fails, because $\cos2h$ alone is not invariant: the rotation sends it into the missing $\sin2h$. Adding that one coordinate makes the action numerically exact with $A_\Delta=\operatorname{diag}(R(\Delta),R(2\Delta))$, and $K^\star$ is then the block rotation itself. Over random coordinate selections of a six-dimensional carrier, the minimiser equals the projected carrier action $PA_\Delta P^\top$ to machine precision, and the closure verdict coincides with the sign of the residual in every case.
+
+\textbf{What the criterion does and does not explain on measured features.} The same analysis, run on features rather than on a synthetic code, is informative in a different way. Taking the carrier of the known input hue and estimating the synthesis $B$ from the features, the reconstruction tail is a few percent at two sites, the closure defect is numerically zero --- because with a feature dimension far larger than five the synthesis is injective, so the exact carrier model is closed automatically --- and a global linear map fitted on half the hues nevertheless leaves a large relative error on the other half (Table D.21). On these sites the binding constraint is therefore neither closure nor the tail but \textit{cross-content inconsistency}: the carrier-to-feature map is content-dependent, which is the same fact as the shape-specific envelopes of \S{}4.3 and the local-versus-global gap of \S{}5.3. Dropping the $\sin2h$ coordinate raises the tail and leaves the closure defect at zero for an injective synthesis, as the pair rule predicts.
+
+That reading and the content-conditioning result of \S{}5.2 are compatible only if their settings are kept apart, and the paper states both rather than renaming one. Content conditioning did not rescue global forms in 48 matched-capacity contrasts, including an oracle partition by the true displacement direction (\S{}5.2); that experiment conditions a \textit{fitted operator} on content, at matched capacity, on the arms it names. The cross-content statement above is about a \textit{linear map on a measured carrier} whose synthesis is estimated per site, and it names content dependence as what remains after closure and tail are removed. The two differ in model, data, conditioning information and capacity: the content-conditioning contrasts fit a content-conditioned operator family at matched capacity on the arms they name, on synthetic orbits and COCO regions (\S{}5.2), whereas the cross-content statement here concerns a global linear map on a per-site carrier synthesis estimated from dense, controlled orbits. One conclusion follows from them jointly: a content-conditioned family that fails while \textit{using} content information is evidence that the failure is not cured by adding content \textit{capacity}. What the criterion is for, in this paper, is narrower and unambiguous --- it says which coordinate sets a compiled carrier may keep, and what a chosen truncation costs. The compiled interface of \S{}7 keeps all six coordinates, so the condition is satisfied there by construction; what it constrains is any \textit{reduced} carrier, and the dropped-coordinate variant of Table D.21 shows the price of a truncation that is not invariant under the action.
+
+The measured organisation therefore has operational content in a precise sense. Harmonic concentration (\S{}4.2) says a \textit{small} carrier suffices; the shared planes (\S{}4.3) say one $A_\Delta$ serves every shape; and Proposition F says which coordinates must be kept for the action to exist at all. \S{}5 starts from that carrier, and \S{}7 builds the interface on it.
+
+\subsection{Beyond hue: the protocol's reach}
+
+The protocol is not colour-specific, and three further algebras run through it: \textbf{heat as the second full family}, \textbf{clipped scalings as the monoid boundary}, and two perimeter families whose status is labelled rather than claimed. \textbf{Table 6} collects the algebras, what is exact at the truth level, how strongly each family moves a consumer, and how each behaves with depth; the three findings that matter are that heat is a \textit{true} semigroup whose chains degrade while its truth-level law composes exactly, that clipping is a measured failure of composition rather than an assumed one, and that spatial rotation is a \textbf{zero-power} family for an invariant head --- an evaluation-premise failure, not a negative result about representations.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table 6.} The transformation families, their algebras, and what is measured for each.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{family} & \textbf{algebra} & \textbf{truth-level check} & \textbf{consumer response} & \textbf{depth profile} & \textbf{status} \\
+\midrule
+hue, $\Delta=90^\circ$ & group, $SO(2)$ & exact, re-rendered & reference arm & erodes with depth (\S{}6.1) & in-depth instance \\
+heat, $B_t=e^{-tL}$ & semigroup & composes to $1.8\times10^{-7}$ in spectral norm; a truncated Gaussian kernel departs by 22\% & logit effect $0.199/0.707/0.912$ and top-1 flip $0.08/0.48/0.81$ at $\sigma=0.5/1/2$ & the canonical \textbf{spatial} action's residual \textit{rises} $0.389\to0.737\to0.852$ & second full family \\
+clipped saturation / value & monoid & non-composition measured, not assumed & headroom $\ge1$: realised $0.174$, error $0.0143$; headroom $<0.33$: clipped fraction $1.0$, realised $0.0$ & --- & boundary \\
+multi-attribute grid & mixed (continuous, cyclic, discrete) & --- & per-cell transfer and power & synthetic ViT-B/16 (3 seeds); real DINOv2 / ViT-B/16 (3 seeds each, image-grouped split) & perimeter \\
+spatial rotation & group & exact (rot90 round-trip $0.0$) & \textbf{zero} against an invariant head --- an evaluation-premise failure & --- & boundary: needs a rotation-sensitive consumer \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Two further families mark the protocol's perimeter. The \textit{multi-attribute grid} crosses attribute type (continuous, cyclic, discrete) with operator family, with per-cell transfer and power, on synthetic ViT-B/16 (three seeds) and real DINOv2/ViT-B/16 regions (three seeds each, image-grouped split --- boundary status). \textit{Spatial rotation} is the equivariance boundary: an equivariant backbone read by an invariant head has zero power for rotation --- the transformation moves nothing the consumer reads, exactly the evaluation-premise failure \S{}3.7 excludes --- so measuring rotation requires a three-tier consumer design: an ordinary CNN, an augmentation-invariant consumer as a low-power control, and a $C_4$-equivariant consumer with a rotation-sensitive head. Colour is the in-depth instance, heat is the second full family, and these families define the perimeter of what the protocol reaches here.
+
+The measured structure is shared, low-order, and partly inherited. Whether it can be operated depends on how the action is realised --- the next section compares realisations directly.
+

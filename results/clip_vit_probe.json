@@ -1,0 +1,14 @@
+{
+ "protocol": "CLIP ViT-B/32 offline TorchScript, final CLS, dense5, 4 pose avg, use_visual=True",
+ "k1k2_share_mean": 0.59,
+ "per_shape": {
+  "triangle": 0.548,
+  "rectangle": 0.583,
+  "circle": 0.613,
+  "star": 0.599,
+  "pentagon": 0.589,
+  "hexagon": 0.609
+ },
+ "mean_winding": 4.12,
+ "norm_std_mean": 0.0178
+}

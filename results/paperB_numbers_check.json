@@ -1,0 +1,1051 @@
+{
+ "draft": "paperB_manuscript_v0.md",
+ "checks": [
+  {
+   "label": "power plain stage1 d90",
+   "json": 0.3886,
+   "literal": "0.389",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O1 plain stage1 d90",
+   "json": 0.31,
+   "literal": "0.31",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O2 plain stage1 d90",
+   "json": 0.6083,
+   "literal": "0.61",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O5 plain stage1 d90",
+   "json": 0.728,
+   "literal": "0.73",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O8 plain stage1 d90",
+   "json": 0.8297,
+   "literal": "0.83",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O1 plain stage2 d90",
+   "json": 0.1538,
+   "literal": "0.15",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O2 plain stage2 d90",
+   "json": 0.4531,
+   "literal": "0.45",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O5 plain stage2 d90",
+   "json": 0.5493,
+   "literal": "0.55",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O8 plain stage2 d90",
+   "json": 0.6894,
+   "literal": "0.69",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O1 ce8 stage1 d90",
+   "json": 0.9401,
+   "literal": "0.94",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O8 ce8 stage1 d90",
+   "json": 0.9674,
+   "literal": "0.97",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O1 ce8 stage2 d90",
+   "json": 0.9312,
+   "literal": "0.93",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O1 ocode d90",
+   "json": 0.2974,
+   "literal": "0.30",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O1 hue-aug d90",
+   "json": 0.0492,
+   "literal": "0.049",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O1 lcer8 d90",
+   "json": 0.0454,
+   "literal": "0.045",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "power hue-aug d90",
+   "json": 0.1406,
+   "literal": "0.141",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "power lcer8 d90",
+   "json": 0.0134,
+   "literal": "0.013",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed null d30",
+   "json": 0.2176,
+   "literal": "0.218",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed null d60",
+   "json": 0.0163,
+   "literal": "0.016",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed null d90",
+   "json": 0.0084,
+   "literal": "0.008",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O1 d30",
+   "json": 0.5594,
+   "literal": "0.559",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O1 d60",
+   "json": 0.6737,
+   "literal": "0.674",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O1 d90",
+   "json": 0.7785,
+   "literal": "0.778",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O2 d30",
+   "json": 0.6965,
+   "literal": "0.696",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O2 d60",
+   "json": 0.775,
+   "literal": "0.775",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O2 d90",
+   "json": 0.9048,
+   "literal": "0.905",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O8 d30",
+   "json": 0.8832,
+   "literal": "0.883",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O8 d60",
+   "json": 0.8446,
+   "literal": "0.845",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O8 d90",
+   "json": 0.9651,
+   "literal": "0.965",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O8 AP50 d90",
+   "json": 0.9686,
+   "literal": "0.969",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed O6 d90",
+   "json": 0.0,
+   "literal": "0.000",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed gain O8-null d30",
+   "json": 0.6656,
+   "literal": "0.666",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed gain O8-null d60",
+   "json": 0.8283,
+   "literal": "0.828",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed gain O8-null d90",
+   "json": 0.9567,
+   "literal": "0.957",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed gain O8-O1 d30",
+   "json": 0.3238,
+   "literal": "0.324",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed gain O8-O1 d60",
+   "json": 0.1709,
+   "literal": "0.171",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "det multi-seed gain O8-O1 d90",
+   "json": 0.1867,
+   "literal": "0.187",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "unseen O8 composed proj (scaled)",
+   "json": 0.8103,
+   "literal": "0.810",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "unseen O8 ref proj (scaled)",
+   "json": 0.8077,
+   "literal": "0.808",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "unseen O8 composed win (scaled)",
+   "json": 0.8217,
+   "literal": "0.822",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "unseen O1 composed proj (scaled)",
+   "json": 0.3494,
+   "literal": "0.349",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "unseen O6 proj (scaled)",
+   "json": 0.8191,
+   "literal": "0.819",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "unseen O6 win (scaled)",
+   "json": 0.005,
+   "literal": "0.005",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "vitb16 effect",
+   "json": 0.793,
+   "literal": "0.79",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "vitb16 flip",
+   "json": 0.51,
+   "literal": "0.51",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "vitb16 O5 proj",
+   "json": 0.8854,
+   "literal": "0.885",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "vitb16 O8 proj",
+   "json": 0.8503,
+   "literal": "0.85",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "vitb16 acc real",
+   "json": 0.37,
+   "literal": "0.37",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "dinov2 effect",
+   "json": 0.1292,
+   "literal": "0.13",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "dinov2 O5 proj",
+   "json": 0.4586,
+   "literal": "0.46",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "paired O8 win min",
+   "json": 0.8375,
+   "literal": "0.84",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "paired O8 win max",
+   "json": 0.8775,
+   "literal": "0.88",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "paired O8 gain min",
+   "json": 0.2484,
+   "literal": "0.248",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "paired O8 gain max",
+   "json": 0.2794,
+   "literal": "0.279",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "paired O8 d max",
+   "json": 0.8509,
+   "literal": "0.85",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "paired O8 over O1 win min",
+   "json": 0.7675,
+   "literal": "0.77",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "dinov2 effect (3 seeds)",
+   "json": 0.1292,
+   "literal": "0.13",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "dinov2 O1 proj",
+   "json": 0.3663,
+   "literal": "0.37",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "dinov2 O5 proj",
+   "json": 0.4586,
+   "literal": "0.46",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "dinov2 O8 proj mean",
+   "json": 0.3012,
+   "literal": "0.30",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr power hue",
+   "json": 0.2881,
+   "literal": "0.288\u00b10.021",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr power saturation",
+   "json": 0.2127,
+   "literal": "0.213\u00b10.016",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr power value",
+   "json": 0.5099,
+   "literal": "0.510\u00b10.036",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr power quantity",
+   "json": 0.3661,
+   "literal": "0.366\u00b10.002",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr hue O1 transfer",
+   "json": 0.8672,
+   "literal": "0.867\u00b10.048",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr hue O1 proj",
+   "json": 0.8426,
+   "literal": "0.843\u00b10.054",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr hue O5 transfer",
+   "json": 0.9888,
+   "literal": "0.989\u00b10.016",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr hue O5 proj",
+   "json": 0.9392,
+   "literal": "0.939\u00b10.018",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr sat O1 transfer",
+   "json": 0.9465,
+   "literal": "0.946\u00b10.034",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr sat O8 transfer",
+   "json": 0.9713,
+   "literal": "0.971\u00b10.007",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr sat O8 proj",
+   "json": 0.9968,
+   "literal": "0.997\u00b10.017",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr value O1 transfer",
+   "json": 0.9473,
+   "literal": "0.947\u00b10.013",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr value O1 proj",
+   "json": 0.9285,
+   "literal": "0.928\u00b10.039",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr qty O1 transfer",
+   "json": 0.6056,
+   "literal": "0.606\u00b10.022",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr qty O1 proj",
+   "json": 0.4561,
+   "literal": "0.456\u00b10.012",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr qty O5 transfer",
+   "json": 0.6453,
+   "literal": "0.645\u00b10.055",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr qty O5 proj",
+   "json": 0.5007,
+   "literal": "0.501\u00b10.029",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr qty O6 proj",
+   "json": 4.7881,
+   "literal": "4.788\u00b11.523",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "multiattr qty O6 transfer",
+   "json": -3.6304,
+   "literal": "-3.630\u00b12.103",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 hue power",
+   "json": 0.6889,
+   "literal": "0.689\u00b10.020",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 sat power",
+   "json": 0.3506,
+   "literal": "0.351\u00b10.014",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 value power",
+   "json": 0.4825,
+   "literal": "0.483\u00b10.005",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 hue O1 transfer",
+   "json": 0.6551,
+   "literal": "0.655\u00b10.073",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 hue O8 transfer",
+   "json": 0.5633,
+   "literal": "0.563\u00b10.009",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 hue O6 transfer",
+   "json": 0.2216,
+   "literal": "0.222\u00b10.201",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 hue O6 win",
+   "json": 0.5385,
+   "literal": "0.539",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 sat O5 transfer",
+   "json": 0.7554,
+   "literal": "0.755\u00b10.041",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 sat O6 transfer",
+   "json": -1.2198,
+   "literal": "-1.220\u00b10.609",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 value O5 transfer",
+   "json": 0.8464,
+   "literal": "0.846\u00b10.081",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 value O6 transfer",
+   "json": -3.1585,
+   "literal": "-3.159\u00b10.837",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real vitb16 value O6 win",
+   "json": 0.0375,
+   "literal": "0.037",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real dinov2 hue O1 transfer",
+   "json": 0.4838,
+   "literal": "0.484",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real dinov2 sat O8 transfer",
+   "json": 0.992,
+   "literal": "0.992",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real dinov2 value O1 transfer",
+   "json": 0.9528,
+   "literal": "0.953",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real dinov2 value O6 transfer",
+   "json": -10.1039,
+   "literal": "-10.104",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "capacity O8 correct proj",
+   "json": 0.8116,
+   "literal": "0.812",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "capacity O8 correct win",
+   "json": 0.85,
+   "literal": "0.850",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "capacity O8 shuffled proj",
+   "json": 1.3854,
+   "literal": "1.385",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "capacity O8 shuffled cos",
+   "json": 0.5189,
+   "literal": "0.519",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "capacity O8 shuffled win",
+   "json": 0.1,
+   "literal": "0.100",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "capacity ridge-only proj",
+   "json": 0.6281,
+   "literal": "0.628",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "capacity ridge-only win",
+   "json": 0.7167,
+   "literal": "0.717",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real task accuracy",
+   "json": 0.7963,
+   "literal": "0.796",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real task effect",
+   "json": 0.9562,
+   "literal": "0.956",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real task O1 proj",
+   "json": 0.0706,
+   "literal": "0.07",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real task O2 proj",
+   "json": 0.7929,
+   "literal": "0.79",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real task O5 proj",
+   "json": 0.8598,
+   "literal": "0.86",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real task O8 proj",
+   "json": 0.8382,
+   "literal": "0.84",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real task O6 proj",
+   "json": 0.7455,
+   "literal": "0.75",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "real task O6 top1",
+   "json": 0.4,
+   "literal": "0.40",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "per-sample O8 agg",
+   "json": 0.8116,
+   "literal": "0.812",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "per-sample O8 median",
+   "json": 0.8241,
+   "literal": "0.824",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "per-sample O8 share<=0",
+   "json": 0.015,
+   "literal": "0.01",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "per-sample random agg",
+   "json": 0.8266,
+   "literal": "0.827",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "per-sample random share<=0",
+   "json": 0.305,
+   "literal": "0.30",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "per-sample random cosine",
+   "json": 0.2849,
+   "literal": "0.28",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O7 lowrank+mlp",
+   "json": 0.7162,
+   "literal": "0.716",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O9 lowrank+conv",
+   "json": 0.7845,
+   "literal": "0.785",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O9 shuffled",
+   "json": 1.2567,
+   "literal": "1.257",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "O10 wide capacity",
+   "json": 0.8146,
+   "literal": "0.815",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime raw err_real",
+   "json": 12.0452,
+   "literal": "12.0",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime raw err_null",
+   "json": 82.8884,
+   "literal": "82.9",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime raw transfer",
+   "json": 1.0212,
+   "literal": "1.02",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime raw proj",
+   "json": 1.0072,
+   "literal": "1.01",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime raw win",
+   "json": 0.9375,
+   "literal": "0.94",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime aligned transfer",
+   "json": 1.057,
+   "literal": "1.06",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime aligned win",
+   "json": 0.9125,
+   "literal": "0.91",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime quadratic transfer",
+   "json": 1.02,
+   "literal": "1.02",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "hue regime quadratic win",
+   "json": 0.95,
+   "literal": "0.95",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 proj",
+   "json": 0.6268,
+   "literal": "0.627 \u00b1 0.031",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 median",
+   "json": 0.6587,
+   "literal": "0.659 \u00b1 0.030",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 cos",
+   "json": 0.6779,
+   "literal": "0.678 \u00b1 0.016",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 win",
+   "json": 0.7217,
+   "literal": "0.722 \u00b1 0.006",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 top1",
+   "json": 0.8233,
+   "literal": "0.823 \u00b1 0.041",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 weighted err held",
+   "json": 2.0641,
+   "literal": "2.064 \u00b1 0.043",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 feat rel l2",
+   "json": 0.3924,
+   "literal": "0.392 \u00b1 0.011",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* proj",
+   "json": 0.6418,
+   "literal": "0.642 \u00b1 0.017",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* median",
+   "json": 0.6749,
+   "literal": "0.675 \u00b1 0.024",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* cos",
+   "json": 0.6918,
+   "literal": "0.692 \u00b1 0.018",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* win",
+   "json": 0.7433,
+   "literal": "0.743 \u00b1 0.025",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* top1",
+   "json": 0.8267,
+   "literal": "0.827 \u00b1 0.038",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* weighted err held",
+   "json": 2.0325,
+   "literal": "2.033 \u00b1 0.038",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* feat rel l2",
+   "json": 0.4015,
+   "literal": "0.402 \u00b1 0.012",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* weighted err train",
+   "json": 2.1249,
+   "literal": "2.125 \u00b1 0.021",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 weighted err train",
+   "json": 2.1633,
+   "literal": "2.163 \u00b1 0.022",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted W* acc int",
+   "json": 0.845,
+   "literal": "0.845 \u00b1 0.026",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "task-weighted O2 acc int",
+   "json": 0.84,
+   "literal": "0.840 \u00b1 0.010",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "detector mAP50",
+   "json": 0.9871,
+   "literal": "0.987",
+   "in_draft": true,
+   "pass": true
+  },
+  {
+   "label": "detector mAP50-95",
+   "json": 0.9094,
+   "literal": "0.909",
+   "in_draft": true,
+   "pass": true
+  }
+ ],
+ "n_pass": 149,
+ "n_total": 149,
+ "verdict": "PASS"
+}

@@ -1,0 +1,154 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""280_make_caption_file.py — write paper/figures_final/captions.json (number -> file + caption).
+
+The caption text is paper text: it is authored here once, read by `267_md_to_tex.py` when it builds
+the LaTeX figure blocks, and mirrored in `meta/FIGURE_SPEC.md`.  Numbers quoted in a caption are the
+ones measured in the corresponding figure script.
+"""
+import json
+import os
+
+WORK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(WORK, 'paper', 'figures_final', 'captions.json')
+
+CAPTIONS = [
+ (1, 'fig01_object', 1,
+  r"""The correspondence between input transformations and feature-space operators. (a) A physical
+  transformation $\tau$ acts on the state space and the encoder $\psi$ maps states to features; the
+  operator $\rho_\tau$ is a representation of $\tau$ on the feature space exactly when the diagram
+  commutes, $\rho_\tau\psi=\psi\tau$, which also delivers the composition law. (b) Four-block structure
+  of the map induced by $\tau$ when the encoder is linear, in the basis that splits the input into
+  retained ($\mathcal R$) and discarded ($\mathcal K$) coordinates. Blocks $A$ and $B$ act inside one
+  subspace, $D$ maps retained coordinates into the discarded one, and $C$ maps discarded coordinates
+  back into the retained subspace; only $C$ can make a feature-space action fail to exist, because it
+  is the only block whose contribution cannot be recovered from the retained features."""),
+ (2, 'fig02_fibre_test', 9,
+  r"""The fibre condition tested directly. (a) Consumer-level preservation of base-equal pairs at
+  tolerance quantile $q=0.01$, expressed as a multiple of the chance rate, for four backbones and both
+  algebras; the chance rate is $q$ by construction. (b) Preservation at each probed site under hue
+  rotation and (c) under heat diffusion, one curve per backbone, against the chance line (dotted);
+  per-site preservation runs from $0.18$ to $0.82$."""),
+ (3, 'fig03_defect', 2,
+  r"""The defect law over its measured range. (a) Defect of the best linear realisation,
+  $1-T_{\mathrm{RMS}}$, against the mixing ratio $\kappa$ for retained ranks 16 (circles) and 32
+  (squares) on a logarithmic axis; the solid line is the closed form of Theorem 2 in the isometric
+  setting, $\kappa/\sqrt{1+\kappa^2}$. The sweep covers $\kappa=0.40$--$9.34$, and the vertical axis is
+  truncated to the swept range; the two $\kappa\to0$ entries of the same file lie outside it, being the
+  kernel-preserving case with defect below $2\times10^{-6}$. (b) Absolute difference between
+  measurement and closed form over the same sweep against a dotted line at $0.01$; the deviation is
+  largest ($0.0091$) near $\kappa=1.2$ and an order of magnitude smaller at both ends. (c) Transfer
+  against retained rank at fixed geometry: the score moves by about a factor of two while $\kappa$
+  moves in the opposite direction. (d) Transfer, and the share of the displacement carried by the
+  lowest-variance half of the directions, against input anisotropy: the score rises from $0.069$ to
+  $0.429$ while the share stays between $0.43$ and $0.49$, so the score follows the geometry of the
+  split rather than the discarded energy."""),
+ (4, 'fig04_organisation', 3,
+  r"""The organisation of hue orbits in the frozen features. (a) Composition of the centred orbit
+  energy by harmonic index for each shape of the dense orbit suite; the first two harmonics carry
+  $0.84$--$0.88$ of the energy in every shape and the tail ($k\ge3$) never exceeds $0.16$.
+  (b) Alignment between each shape's rotation plane and the reference shape's, per harmonic index,
+  shown as the range over the five non-reference shapes with the median marked and a dotted line at
+  $\cos=0.96$; alignment is $0.97$--$1.00$ for $k\le2$ and falls to $0.54$--$0.92$ for $k\ge7$, so the
+  shared planes belong to the low harmonics. (c) The low-saturation limit: bars give the orbit energy
+  at the grey end of the saturation range relative to the mid-saturation ring, and the line gives the
+  alignment of the fundamental plane between the two rings; the orbit loses most of its energy while
+  its harmonic plane survives, which bounds the operating domain."""),
+ (5, 'fig05_provenance', 4,
+  r"""Where the organisation comes from: eight arms under one protocol. (a) Share of orbit energy in
+  the first two harmonics, raw and after standardisation; the untrained sites of the same architectures
+  are at least as concentrated as the trained ones. (b) Cross-shape phase coherence: input pixels are
+  exact by construction, and the untrained sites sit closer to that than the trained ones. (c)
+  Zero-shot hue error on unseen shapes from the code head (circles) and from an MLP probe on the same
+  features (squares), on a logarithmic axis. One seed per arm."""),
+ (6, 'fig06_realisation', 5,
+  r"""Which realisations work, and what composing costs. (a) Gain over the copy baseline of the best
+  local phase-conditioned transporter (circles) and of the best global family (squares) at five sites,
+  logarithmic axis, with a dotted line at one (no better than copying); the local construction is
+  $1.55$--$15.9\times$ the copy baseline while the global family is $0.08$--$0.84\times$. (b) Transfer
+  at a fixed total hue rotation as a function of how the rotation is split into a chain, with the direct
+  fit as a dashed reference; bars are means over three seeds and whiskers one standard deviation.
+  (c) The same for the heat semigroup, whose chains degrade monotonically with length."""),
+ (7, 'fig07_depth', 6,
+  r"""How depth changes operability, and what it changes it to. (a) Transfer of the global linear
+  family against relative depth for four frozen backbones under hue rotation and (b) under heat
+  diffusion; every curve declines, and the final block of the two class-token transformers is causally
+  unreachable, reading zero. (c) The crossed readout $\times$ transformation design summarised by its
+  trend over depth: for each cell, the Spearman correlation between the chance-corrected
+  consumer-visible share and depth, one marker per backbone (open) and the median (bar); the two
+  aligned cells decline and the two off-diagonal cells do not. Seed 0 for all four cells, so the cells
+  are comparable."""),
+ (8, 'fig08_action_comparison', 10,
+  r"""The measured action against learnable actions under one read-in, one supervision and one budget.
+  (a) Zero-shot read-out error. (b) Increment error at the two never-fitted increments, $37^\circ$
+  (circles) and $90^\circ$ (squares). (c) Defect between a two-step composite and the direct step; the
+  fixed action is exact by construction, and learning the action removes neither the increment error
+  nor the composition defect. Markers are the three seeds."""),
+ (9, 'fig09_interface', 7,
+  r"""The interface as built, and where it holds. (a) Hue readout error over the (saturation, value)
+  domain on unseen shapes, an $8\times8$ grid on a logarithmic colour scale, and (b) the magnitude of
+  the code's fundamental on the same grid; the readout fails where the code magnitude collapses towards
+  the grey axis. (c) Readout error against the hue-concentration statistic for 120 real COCO regions,
+  with the pre-registered threshold at $0.70$ (dashed); above it the median error is $8.0^\circ$
+  against $19.6^\circ$ below. (d) Wall clock per operation for a region-level code shift and for a
+  pixel re-colour with a re-forward, logarithmic axis ($20.9$ µs against $38.1$ ms)."""),
+ (10, 'fig10_recovery', 11,
+  r"""Reading the transformation back out of the features. (a) Relative error of an operator fitted on
+  a shape it was never fitted on, for the pentagon and the hexagon at three and four harmonics, against
+  the copy baseline on the same shape, on a logarithmic axis; the recovered operator is
+  $6.7$--$16.6\times$ closer than copying, at cosine $0.96$--$0.98$. (b) Hue phase read from the code
+  against the hue that was rendered, one point per hue, for three (saturation, value) cells of the dense
+  lattice; the median error is $1.6°$ and $1.1°$ at the two chroma-rich cells, while the third is the
+  degenerate cell whose twelve hues render to a single RGB value and whose phases therefore carry no
+  hue. (c) Median recovery error against the range of the twelve rendered RGB values, logarithmic axes,
+  one point per cell; the error falls with the range the renderer actually provides (Spearman $-0.93$
+  over the $61$ cells that have a reference) and the three cells with no range at all, the
+  unidentifiable references, carry the largest errors. (d) Attribute the code reports after a
+  multiplicative scaling of the physical attribute against the attribute that scaling realised, one
+  point per trial and both arms, at magnifications $1.1$--$2.0$ with the gamut clip active; the report
+  follows the realised value across the whole range at mean absolute error $0.010$ (value) and $0.031$
+  (saturation), including the trials whose request saturates the gamut, so the read follows the pixel
+  rather than the request."""),
+ (11, 'fig11_uses', 8,
+  r"""What the interface does on real images. (a) Detector box F1 at IoU $0.5$ for a never-fitted hue
+  shift, one marker per seed (open) and the mean (bar), for five routes; the structured residual family
+  reaches $0.965$, the random orthogonal control $0.000$ and the no-intervention route $0.008$.
+  (b) Median hue error per route on real regions. (c) Median hue error per category on the same
+  regions, sorted, with the $30^\circ$ reference (dashed); eleven of the twelve categories fall below
+  it."""),
+ (12, 'fig12_prediction', 12,
+  r"""What a fitted law predicts out of sample. (a) Transfer predicted from each site's own mixing
+  ratio by the closed form of Theorem 2 against the transfer measured at that site, one point per
+  reachable site, with the identity line dotted and the measured mean dashed; the prediction is biased
+  high by $0.40$ with mean absolute error $0.43$ against a measured mean of $0.31$, so across real
+  sites the law orders no better than the naive baselines (Spearman $0.48$ between $\kappa$ and
+  transfer, Pearson $-0.44$ between prediction and measurement) — the negative result of §8.3 shown
+  against the line it would have to lie on. (b) Sharing term as a share of the realisation error,
+  evaluated inside the fit split and on held-out data, per depth and algebra, on a logarithmic axis;
+  the in-split estimate of $0.70$--$0.97$ collapses to $10^{-9}$--$0.073$ out of sample, so a dominant
+  sharing cost is an artefact of fitting and evaluating in the same cells. (c) Error of the rank-$k$
+  subspace operator relative to the diagonal restriction, against depth, for three ranks and both
+  algebras, with parity dotted; letting channels correct one another pays only at the first block (down
+  to $0.25$ at rank $32$ under hue rotation) and costs at every deeper site, where the diagonal
+  restriction predicts better. (d) Extrapolation to a diffusion time that was never fitted, from the
+  shared mean rate of the fit times, as a gain over the copy baseline; the exact synthetic carrier
+  reaches $14.9\times$ while the two real sites reach $0.83\times$ and $0.75\times$, and the number
+  above each bar is that arm's rate dispersion ($0.91$ for the control against $17.5$ and $8.6$ at the
+  two sites), which is why the shared-rate prediction does not transfer."""),
+]
+
+
+def main():
+    out = []
+    for n, name, was, cap in CAPTIONS:
+        rel = f'figures_final/{name}'
+        if not os.path.exists(os.path.join(WORK, 'paper', rel + '.pdf')):
+            raise SystemExit(f'missing figure {rel}.pdf')
+        out.append({'n': n, 'was': was, 'file': rel, 'caption': ' '.join(cap.split())})
+    json.dump(out, open(OUT, 'w'), indent=1, ensure_ascii=False)
+    print(f'wrote {os.path.relpath(OUT, WORK)} with {len(out)} captions')
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

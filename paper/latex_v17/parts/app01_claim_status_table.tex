@@ -1,0 +1,90 @@
+\section{Claim status table}
+
+Every numbered claim and every headline measured claim of the paper in one place, with its status and the evidence that earns it. The labels are fixed: \textbf{Definition} fixes vocabulary; \textbf{Theorem/Proposition} is proved in Appendix B; \textbf{Definitional} is a one-line consequence of a definition, recorded as an observation rather than a theorem; \textbf{Verified} means proved \textit{and} checked in a controlled setting where the answer is known; \textbf{Measured} is an empirical statement with a stated scope, not a theorem; \textbf{Empirical bound} is a measured inequality that is not proved in general; \textbf{Hypothesis} is stated as such in the text and not isolated. No claim in the main text carries a stronger label than it carries here. \textbf{Table A.1}, \textbf{Table A.2} and \textbf{Table A.3} list every claim with the status it carries and the evidence that earns it.
+
+\subsubsection{Theory claims}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table A.1.} Claim status: the theory claims, with the evidence that earns each one and the scope in which it holds.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{\#} & \textbf{claim} & \textbf{status} & \textbf{evidence} & \textbf{scope} \\
+\midrule
+Def. 1 & representation of the transformation algebra: $\rho(\tau)\psi(s)=\psi(\tau s)$, with composition and identity inherited & Definition & --- & general encoders and algebras \\
+Def. 2 & representation level vs behavioural level & Definition & --- & general \\
+Observation & an induced action exists iff fibres are preserved, and existence inherits the composition law & \textbf{Definitional} (one-line, universal property of the quotient) & Appendix B.2 & general \\
+Thm. 1 & linear realisation exists iff $g\ker W\subseteq\ker W$ ($C=0$) & \textbf{Verified} & kernel-preserving $g$: $T_F=0.9999992$ (rank 8) to $0.9999943$ (rank 48); residual $2.6\times10^{-5}$ vs displacement $34.3$; Table 3 & linear sites \\
+Thm. 2 & $1-T_{RMS}=\kappa_W/\sqrt{1+\kappa_W^2}$ with $\kappa_W=\lVert WC\rVert_F/\lVert W(A-I_{\mathcal R})\rVert_F$; $\kappa$ when $W$ is an isometry on the retained subspace & \textbf{Verified} & $\kappa$ sweep $4.5\times10^{-16}\to9.34$; max deviation $0.0091$; median $0.014$ on 32 trained cells; Table 3 & Assumptions B, C \\
+Prop. B.3 & the closed form is tight iff the cross term vanishes & \textbf{Theorem} & Appendix B.3 & Assumption B \\
+Cor. B.4 & $T_F$ is not a property of $(W,\allowbreak{}g)$ alone & \textbf{Verified} & anisotropy sweep at fixed $W,\allowbreak{}g$: $T_F$ $0.069\to0.429$ & Assumption B \\
+Prop. B.5 & estimation-limited regime: measured $\le$ population $-$ $O(\sqrt{d^2/K})$ & \textbf{Theorem} & two worst cells are those with effective rank $4$ of $32$ & finite samples \\
+Prop. C & region-transition criterion: a fixed linear realisation exists iff the joint system over the realised transition cells is consistent (Cor. C.1 for the no-crossing case) & \textbf{Theorem} & Appendix B.4 & piecewise-linear sites \\
+Prop. D & $z'-z=G\odot(a'-a)+(G'-G)\odot a'$; gate changes are the source of rule diversity, not the obstruction & \textbf{Theorem} & Appendix B.4; two counterexamples in both directions & rectifier sites \\
+Prop. E & $T_F^{\max}=1-\lVert\mathrm{Proj}_F d^\perp\rVert_F/\lVert\mathrm{Proj}_F d\rVert_F$ for the fixed-linear class & \textbf{Theorem} for linear consumers; the gate-change share is an empirical proxy for its slack & evaluated against the measured transfer at six site--algebra points (\S{}6.3) & fixed-linear class \\
+Prop. F, G & closure criterion $A\ker B\subseteq\ker B$; optimal linear realisation $K^\star=BAB^\dagger$ with residual $\|BAP_{\ker B}\|_F^2$ (coloured carrier: after whitening) & \textbf{Theorem} + verified & Appendix B.3b; 40 random selections, gap $9\times10^{-16}$ & carrier and action; a \textbf{design} condition \\
+Thm. 3 & a closed orbit admits no exact coordinate-monotone realisation; per-coordinate cost bound & \textbf{Theorem} & Appendix B.5.1; best fit measured at $L^2=998$ against $924$ for the best linear map & monotone parameter families in a fixed basis \\
+Thm. 4 & accumulation law $E_n\le\varepsilon+LE_{n-1}$; bounded / linear / exponential by $L\lessgtr1$ & \textbf{Theorem}; the regime at a site is measured in the consumer's seminorm (\S{}5.4, Table D.22) & Appendix B.5.2; hue chains flat, heat chains monotone decreasing (Table 9) & any realised family, uniform single-step bound \\
+Thm. 5 & carrier sufficiency: three-term $L^2$ bound on read-in error, action mismatch and target tail & \textbf{Theorem} (an identity) & Appendix B.5.3; the measured conditions size its terms: tail energy $12$--$16\%$ ($\varepsilon_{\mathrm{tail}}\approx0.35$--$0.40$), mismatch exponent $0.99$ & any carrier, action and read-in; instantiated for colour \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsubsection{Measured claims: what the representation carries}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table A.2.} Claim status: the measured claims about the organisation of colour orbits and about which realisations work.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{claim} & \textbf{status} & \textbf{key numbers} & \textbf{scope} \\
+\midrule
+Hue orbits concentrate in low harmonics & Measured & $k\le2$ carries $84$--$88\%$ of orbit energy & measured colour instance \\
+Rotation planes are shared across shapes & Measured & $\cos\ge0.96$ between per-shape planes & measured colour instance \\
+Amplitude and phase divide the content differently & Measured & shared phase, shape-specific envelope; envelope erodes with depth & measured colour instance \\
+The organisation is inherited, not learned & Measured & untrained $0.976$ vs trained $0.868$ under one protocol & colour instance \\
+Degenerate states are algebraic, and measured & Measured & grey axis stabilised by every hue rotation; second-harmonic orbits cannot separate $\Delta=180^\circ$ & colour instance \\
+Global realisation is possible for one family only & Measured & band-limited $K=3$--$4$: $0.17$--$0.40\%$ relative MSE, $6.7$--$16.6\times$ over copy; other five families rejected & colour sites \\
+Local state-conditioned transport succeeds where global fails & Measured & local vs copy $1.55$--$15.94\times$; global vs copy $0.08$--$0.84\times$ at the same sites; loop closure $0.4\%$ & colour sites \\
+Chains come within a few points of a direct fit; single-step substitutes do not & Measured & hue $45{+}45$ $0.472$ vs direct $0.511$ (conv-res); single $22.5^\circ$ $0.207$; heat monotone $0.760\to0.481$ & plain-CNN stage 1, three seeds \\
+Path consistency is necessary but not sufficient & Measured & most consistent path is not the best transporting one & same \\
+Proxies can certify a decoy & Measured & random orthogonal: best projection at $15/42$ sites, negative transfer at $42/42$, detector F1 $0.000$ & cross-architecture grid \\
+Within a family, projection tracks transfer & Measured & $\rho=+0.93$ & same \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsubsection{Measured claims: depth, learning and the interface}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table A.3.} Claim status: the measured claims about depth, learning, the two negative results and the interface.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{claim} & \textbf{status} & \textbf{key numbers} & \textbf{scope} \\
+\midrule
+Operability declines with depth & Measured & $8/8$ curves, family-wise $\rho=-0.82$ to $-0.97$; re-cut $24/24$ negative & four backbones, real images \\
+The decline follows the read-out--transformation pairing & Measured & $2\times2$ crossed design; the off-diagonal cells are flat (Table 11) & four backbones \\
+The depth ceiling is not low power & Measured & $28/28$ matched pairs lower at depth, sign test $p=7.5\times10^{-9}$; partial $\rho=-0.662$ & 98 points \\
+The gate-change concentration, not the flip count, orders the measured transfer & Measured & gate-change share $\rho=-0.83$ ($p=0.042$); consumer-visible share $\rho=-0.886$ ($p=0.019$); flip count $\rho=+0.49$ n.s. & ResNet-50, $n=6$ \\
+Learning moves operability only through $\Delta\kappa$ & Measured & $\Delta T_F\in\{-0.000,\allowbreak{}+0.026\}$ flat without weight decay, $+0.096$/$+0.111$ with it; $\rho(\Delta\kappa,\allowbreak{}\Delta T_F)=-0.833$ & controlled linear setting \\
+The $\kappa$ law does not transfer as a calibrated predictor & Measured (negative) & bias $+0.40$ to $+0.65$; pooled $\rho\in[-0.48,\allowbreak{}+0.04]$ & 42 real sites \\
+The dissipative family needs a shared decay rate and fails & Measured (negative) & truth-level defect $1.8\times10^{-7}$ vs truncated Gaussian $0.2215$ ($\sigma=0.5$ effect $0.1993$) & heat family \\
+The interface reads hue zero-shot & Measured & $3.4^\circ$ median on synthetic shapes (median criterion); $8.0^\circ$ on high-concentration real regions, $10.0^\circ$ non-circular control & colour instance \\
+The interface transfers to a detector & Measured & AP50 $0.81$ seen vs $0.37$ at an unseen shift & YOLO11n, hue-bin classes \\
+Real-region editing is cheap & Measured & $20.9$ $\mu$s region-level shift vs $38.1$ ms pixel re-forward ($1825\times$) & measured hardware \\
+The operating domain is knowable in advance & Measured & $0.770$ vs $0.532$ on the pre-registered test half; gap $0.238$, CI $[0.128,\allowbreak{}0.345]$; AUC $0.660$ & 750 real regions \\
+The sharing term of the two-source decomposition is an in-split artefact & Measured (negative, held-out) & per-cell and pooled channel laws agree to $0.000$ at the first three sites and differ by $0.042$/$0.055$ at the last; what degrades is the pooled relation ($0.412\to0.347\to0.405\to0.692$ for hue) & ResNet-50, held-out split \\
+Input-space metric distortion does not transfer to the consumer & Measured (negative) & site metric $0.80$--$0.99$ (heat) and $0.97$--$1.07$ (hue); consumer response $1.02$--$1.06$ for both & ResNet-50, four depths \\
+The fixed action is not worse than learnable actions under identical supervision & Measured & fixed action exact in the increment and in composition; learned generator $1.0$--$1.3^\circ$; learned linear action $9.8^\circ$ at an unseen increment and $9.7^\circ$ composition defect; generic conditioned map worse on every action metric at $1.8\times$ the parameters & synthetic orbits, unseen shapes, three seeds \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+

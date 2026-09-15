@@ -1,0 +1,57 @@
+{
+ "site_id": "resnet50|hue_90.0|layer1",
+ "gate_0_transformation": {
+  "family": "hue_90.0",
+  "exact": true,
+  "algebra": "group",
+  "evidence": "controlled render at a specified hue, exact by construction (Section 3.1)"
+ },
+ "gate_1_observability": {
+  "powered": true,
+  "effect_size": 0.3722,
+  "threshold": 0.05
+ },
+ "gate_2_reference": {
+  "route": "attribute-mediated (direct route available; controlled render, exact ground truth)",
+  "reference_valid": true,
+  "evidence": "controlled render: hue is specified per object, so the description is a number for these inputs (Section 5)"
+ },
+ "gate_3_reachability": {
+  "reachable": true,
+  "evidence": "intervention at this site moves the consumer's own output by 0.372 relative (effect size)"
+ },
+ "gate_4_realization": {
+  "operator_family": "O2 (unconstrained global linear, ridge)",
+  "realization_residual": 0.6215,
+  "threshold": 1.0,
+  "verdict": "pass",
+  "outcome_transfer_companion": 0.6018,
+  "win_rate_companion": 0.9633,
+  "companions": {
+   "O1_orthogonal_transfer": 0.3615,
+   "O8_conditioned_transfer": 0.6397
+  }
+ },
+ "composition": {
+  "assessed": false,
+  "verdict": "not-assessed"
+ },
+ "certificate": {
+  "powered": true,
+  "reachable": true,
+  "reference_valid": true,
+  "realized": true,
+  "recommended_family": "conditioned",
+  "verdict": "partial",
+  "observed_transfer_companion": 0.6018,
+  "compositionality": "not-assessed",
+  "recommended_depth": "layer1"
+ },
+ "provenance": {
+  "source_files": [
+   "results/depth_map_summary.json",
+   "results/estimator_control.json"
+  ],
+  "generated_by": "scripts/215_transportability_certificate.py"
+ }
+}

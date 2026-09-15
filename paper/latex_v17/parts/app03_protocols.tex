@@ -1,0 +1,160 @@
+\section{Protocols}
+
+This appendix fixes, once, the definitions behind every measured number in the paper. Each subsection ends with the producing script(s) and result file(s); section numbers are those of the main text.
+
+\subsubsection{Synthetic orbit construction}
+
+Orbits are single-shape $224\times224$ px images on white; centre, radius and orientation are jittered ($\pm12$ px, $[70,92]$ px, uniform) and colour is written by HSV$\to$RGB. Training shapes are $\{$triangle, rectangle, circle, star$\}$, shape holdout $\{$pentagon, hexagon$\}$, colour holdout hue $\{20^\circ,260^\circ\}$.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table C1.} Rendering grids of the orbit suite.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{grid} & \textbf{shapes} & \textbf{hues} & \textbf{$(s,\allowbreak{}v)$} & \textbf{variants/cell} \\
+\midrule
+warm-up & 6 & $11$ ($\{0,\allowbreak{}40,\allowbreak{}\dots,\allowbreak{}320\}\cup\{20,\allowbreak{}260\}$) & $2\times2$ & 12 \\
+the dense orbit suite & 6 & $72$ (step $5^\circ$) & $(1,\allowbreak{}1)$ & 4 \\
+rings & 6 & $36$ (step $10^\circ$) & 5 pairs & 4 \\
+lattice & 6 & $12$ (step $30^\circ$) & $4\times4$ & 4 \\
+low-extension & 2 holdout & $12$ (step $30^\circ$) & $8\times8$ & 2 poses \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Both transformations are exact in their stated space. \textbf{Hue} rotates per pixel in HSV-like coordinates (RGB$\to(h,s,v)$, $h\mapsto h+\Delta/360 \pmod 1$, back). \textbf{Heat} is the exact discrete semigroup $B_t=\exp(-tL)$ by DCT spectral multiplication per channel, with $t=\sigma^2/2$ and site rescaling $t_{\mathrm{site}}=(\sigma^2/2)(H/224)^2$; it composes to $1.83\times10^{-7}$ relative error, while a truncated Gaussian kernel departs by $22.1\%$. The exact reference is the re-rendered recolour (hue) or the spectral multiplication (heat).
+
+\subsubsection{Sites and backbones}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table C2.} Backbones, probed sites, and site read-out.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{weights} & \textbf{probed sites} & \textbf{read-out} \\
+\midrule
+ResNet-50 & \texttt{IMAGENET1K\_\allowbreak{}V2} & \texttt{layer1}--\texttt{layer4} & all locations \\
+ConvNeXt-T & \texttt{IMAGENET1K\_\allowbreak{}V1} & \texttt{features1,3,5,7} & all locations \\
+ViT-B/16 & \texttt{IMAGENET1K\_\allowbreak{}V1} & \texttt{block2,5,8,11} & patch tokens only; CLS preserved \\
+DINOv2-B/14 & \texttt{dinov2\_\allowbreak{}vitb14} & \texttt{block2,5,8,11} & patch tokens only; CLS preserved \\
+ResNet-18 & \texttt{IMAGENET1K\_\allowbreak{}V1} & \texttt{layer2}--\texttt{layer4} & GAP 128-d \\
+YOLO11n & \texttt{yolo11n.pt} & stage 3, stage 5, stage 7 & GAP 64-d \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The \textbf{orbit} read-out is a GAP vector with the per-shape DC component removed and pose variants averaged. The \textbf{depth-grid} read-out flattens the spatial activation to rows and applies a matrix at every location; on token sites the class token is split off, the map applied to the patch tokens, and re-attached.
+
+\subsubsection{Depth-grid protocol}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table C3.} Probed sites (four per backbone) and reachability.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{sites 1--4} & \textbf{reachable} & \textbf{unreachable} \\
+\midrule
+ResNet-50 & \texttt{layer1}--\texttt{layer4} & 4 & 0 \\
+ConvNeXt-T & \texttt{features1,3,5,7} & 4 & 0 \\
+ViT-B/16 & \texttt{block2,5,8,11} & 3 & \texttt{block11} \\
+DINOv2-B/14 & \texttt{block2,5,8,11} & 3 & \texttt{block11} \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table C4.} Depth-grid factors, seeds and $\sigma$ grid.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{factor} & \textbf{setting} \\
+\midrule
+parameters & hue $\Delta=90^\circ$; heat $\sigma=2.0$; heat $\sigma=1.0$ (mild dissipation) \\
+seeds & hue 3; heat $\sigma=2.0$ 3; heat $\sigma=1.0$ 1 \\
+split & 300 COCO crops, 200 fit / 100 held out, one split \\
+operator sweep & Procrustes, ridge, conv-res, random \\
+fit row cap & $K=\min(n_{\text{fit}}HW,\allowbreak{}\,\allowbreak{}150{,\allowbreak{}}000)$ rows \\
+conv-res budget & ridge $1\times1$ + $3\times3$ residual, hidden 32, 150 epochs, lr $10^{-3}$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Fourteen sites are reachable per parameter, giving \textbf{42 reachable site$\times$parameter points}; the remaining six --- the final block of both class-token transformers --- are causally unreachable and marked, not scored: their interventions change the logits by exactly $0$ while their input-side displacement is $0.188$--$0.623$. The $\sigma=1.0$ grid is single-seed; the heat pilot sweeps $\sigma\in\{0.5,1.0,2.0\}$ on CIFAR plain CNN.
+
+\subsubsection{The three tasks and their holdouts}
+
+\textbf{Prediction} fits on a fixed anchor and forecasts other angles; the probe is fitted on four shapes at training hues and evaluated zero-shot on the two unseen shapes at hues $\{20^\circ,260^\circ\}$. \textbf{Transport} applies a specified increment from a state never fitted; CIFAR fit indices index the train pool and evaluation indices the test pool, which are disjoint, and the depth grid draws both from one permutation of 300 crops. \textbf{Composition} holds the total fixed and varies the decomposition: for hue $\Delta=90^\circ$, $45{+}45$, $30{+}60$, the order swap $60{+}30$, four steps of $22.5^\circ$ and a cyclic $+120/-120$ round trip; for heat the total is $t^\star=1.0$ ($\sigma^\star=\sqrt2$), decomposed as two steps of $\sigma=1.0$ ($t=0.5$), four of $\sigma=0.7071$ ($t=0.25$) and eight of $\sigma=0.5$ ($t=0.125$), with a single step at $t^\star/8$ as substitute control and a direct fit at $t^\star$ as upper reference. Never-fitted composites are read off without refitting: hue $90^\circ$ from fits at $30^\circ$ and $60^\circ$, heat $\sigma=1.25$ from fits at $\sigma=0.75$ and $1.0$, heat $\sigma=1.8028$ from fits at $\sigma=1.0$ and $1.5$. Fit and held-out blocks are disjoint by image index (no fit/held-out overlap); consistency and fidelity are reported separately, with the mandatory controls beside every path.
+
+\subsubsection{Fitting protocol}
+
+Operators are fitted by ridge-regularised least squares with default $\lambda=10^{-3}$ ($ridge$ is therefore a ridge-regularised linear fit, not literal unconstrained least squares --- "unconstrained linear" names the family, and a tuned-$\lambda$ control exists); Procrustes is orthogonal Procrustes, ridge+MLP is ridge plus a residual MLP, random is a random orthogonal matrix from the same seed, and conv-res a ridge $1\times1$ map plus a $3\times3$ residual convolution trained by Adam. \textbf{Fitting budgets differ between arms.} The plain-CNN stage-1 arm fits on 1000 images and evaluates on 400, while the other four arms of the five-arm grid fit on 300 and evaluate on 200, so the five-arm stage-1 ranking is not at a matched fitting budget; within each arm the fit and evaluation splits are disjoint. No cross-arm comparison is drawn from the mismatched budget. Other budgets: 200 / 100 for the depth grid, 400 / 200 for the per-sample capacity fits, 40 / 80 held-out scenes for the detector. A tuned-$\lambda$ ceiling is recorded at the twelve deepest sites: over seven values the best is $10^{-4}$ at 8 sites, $0.1$ at 2, and $10^{-3}$ or $1.0$ at 1 each, and the published Procrustes-versus-ridge inversion survives the tuned $\lambda$ at 4 of 12 sites. Fitting is estimation-limited when the dimension is large relative to the row count: the measured score is at least the population value minus $O(\sqrt{d^2/K})$, and the ratio is computable per site from the stored dimension and row count --- $d^2/K=428.0$ at ResNet-50, heat, depth 4 ($d=2048$, fitted rows $=9800$).
+
+\subsubsection{Power gate and baselines}
+
+The gate is the consumer-level effect size, the normalised change of the consumer's output under the real transformation; a site is powered at an effect size of at least $0.05$. Where the transformation does not move what the consumer reads, the site is excluded rather than scored, and a low-power arm is carried as a driven control. Mandatory baselines are the no-op (copy), the trivial depth rule for attribution, random, and a shuffled-pair control sharing the conv-res architecture, optimiser and budget with the pairing permuted. A site whose random intervention leaves the logits unchanged is marked unreachable, never read as a zero transport score (the harness records whether the intervention reaches the consumer and whether a random operator changes the logits).
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table C5.} Representative control values.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{control} & \textbf{setting} & \textbf{result} \\
+\midrule
+random random orthogonal & ResNet-50 hue \texttt{layer1} & $T_F=-0.912$, win rate $0.003$, projection $0.530$ \\
+shuffled pair, conv-res & seeds 0/1/2 & win rate $0.110$/$0.105$/$0.085$; projection $1.267$/$1.506$/$1.383$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsubsection{Real-region protocol}
+
+The real-region study uses 750 pre-registered COCO train2017 instance regions, non-crowd, side $\ge80$ px, area $\ge20{,}000$ px$^2$, split 60/40 into a fit half (450) and test half (300). The concentration threshold $m^\star=0.70$ is fixed before the test half is read and success is a hue error of at most $30^\circ$. Four presentations are compared: raw box, dominant-colour fill, a fill shifted by $+40^\circ$ (non-circular control) and a GrabCut fill. On the test half the aligned route separates high- from low-concentration regions by $0.238$ ($0.770$ versus $0.532$, CI $[0.128,0.345]$), the ground-truth-box route by $0.188$ and the raw route by $0.085$ (AUCs $0.660$/$0.662$/$0.579$). The 120-region control repeats the test on a disjoint sample: concentration alone is at chance (AUC $0.523$ at threshold 10, $0.480$ at 20), while mask covariates raise it to $0.754$/$0.680$ and category to $0.651$/$0.616$.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table C6.} Measured operating domain.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{route} & \textbf{value} \\
+\midrule
+synthetic, 64-cell $(s,\allowbreak{}v)$ grid & median of per-cell \textbf{median} errors $3.4^\circ$ (median of per-cell \textbf{mean} errors $4.4^\circ$); $61/64$ cells within $30^\circ$ by the median criterion, $59/64$ by the mean criterion; $2.14^\circ$ at $(s,\allowbreak{}v)=(1,\allowbreak{}1)$ \\
+real COCO region shift, 12 errors & median $9.25^\circ$ \\
+real COCO read-out, high-concentration subset & $8.0^\circ$ ($n=69$); non-circular $+40^\circ$ control $10.0^\circ$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\tiny
+\caption*{\textbf{Table C7.} Cross-transformation comparability at matched sites (ResNet-50, hue $90^\circ$ against heat $\sigma=2.0$, same data and consumer). The no-op error is the consumer displacement $\lVert F(z)-F(g_\tau z)\rVert$, which is the denominator of $T_F$; the absolute transport residual is the numerator, recomputed here as no-op $\times(1-T_F)$ from the stored values. The point of the table is the last two columns: the \textit{ratios} differ substantially while the absolute residuals agree to within about a fifth.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{site} & \textbf{hue no-op} & \textbf{heat no-op} & \textbf{heat $/$ hue} & \textbf{hue $T_F$} & \textbf{heat $T_F$} & \textbf{hue residual} & \textbf{heat residual} & \textbf{relative difference} \\
+\midrule
+layer2 & $18.08$ & $14.56$ & $0.805$ & $0.588$ & $0.471$ & $7.45$ & $7.71$ & $3.3\%$ \\
+layer3 & $18.08$ & $14.56$ & $0.805$ & $0.464$ & $0.374$ & $9.70$ & $9.12$ & $5.9\%$ \\
+layer4 & $18.08$ & $14.56$ & $0.805$ & $0.099$ & $0.054$ & $16.28$ & $13.78$ & $15.4\%$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Three COCO numbers exist and they are different quantities, so all three are named here rather than collapsed into one: the stratified high-concentration read-out, held out of the pre-registration, ($m\ge0.7$, $n=69$) at $8.0^\circ$ median with the non-circular $+40^\circ$ route at $10.0^\circ$, which is what \S{}7.4 and Table 15 now quote; the smaller earlier probe gives median $9.25^\circ$ over twelve code-versus-real region-shift errors; and a third run records the same protocol on a different region set. The controlled-calibration AUC of $1.0$ is reported in Appendix C.
+
+\textbf{Scope of the grids.} The multi-attribute grid's real-image arm and the depth grid are three seeds; the gate-change and semigroup-structure studies and the mild-dissipation ($\sigma=1$) grid are single-seed, and are never pooled with three-seed cells. The spatial-rotation family has no scored operator: an invariant head has zero power for it by construction, so the three-tier consumer described in \S{}4.7 is what a measurement would require.
+

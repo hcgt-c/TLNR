@@ -1,0 +1,154 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""266_artifact_ledger.py — build the workspace artifact ledger from the manuscript.
+
+Reads the provenance ledger `meta/SOURCES.md` (written by `scripts/264_integrate_v17.py` from the
+`*Source:` lines of the manuscript, which the paper itself no longer carries), pairs every entry with
+the table or figure it belongs to, and cross-references the cited `results/`, `scripts/` and `data/`
+paths against what exists on disk.  Outputs:
+
+  meta/ARTIFACTS.md             human-readable ledger: label -> result files -> scripts, plus orphans
+  results/artifact_ledger.json  the same data, machine-readable
+
+Nothing here changes the paper; it only reads it.  Usage:
+  python scripts/266_artifact_ledger.py [--paper paper/paper_v17.md]
+"""
+import argparse
+import collections
+import json
+import os
+import re
+import sys
+
+WORK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LABEL = re.compile(r'^\*\*(Table\s+[A-Z]?\d+(?:\.\d+)?|F\d)\.\*\*')
+PATH = re.compile(r'`((?:results|scripts|data|features)/[^`\s]+?)`')
+
+
+def expand(p):
+    """Expand the manuscript's brace/glob/<backbone> conventions into concrete paths."""
+    if '{' in p and '}' in p:
+        head, rest = p.split('{', 1)
+        body, tail = rest.split('}', 1)
+        out = []
+        for item in body.split(','):
+            out += expand(head + item + tail)
+        return out
+    if '<backbone>' in p:
+        return sum((expand(p.replace('<backbone>', b)) for b in
+                    ['resnet50', 'convnext', 'vitb16', 'dinov2b14']), [])
+    if '*' in p or '?' in p:
+        import glob as _g
+        return sorted(os.path.relpath(x, WORK) for x in _g.glob(os.path.join(WORK, p)))
+    return [p]
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--paper', default='paper/paper_v17.md')
+    a = ap.parse_args()
+    s = open(os.path.join(WORK, a.paper)).read()
+
+    # Provenance lives in meta/SOURCES.md: the paper itself no longer carries `*Source:` lines (D6),
+    # so the ledger reads the file the build wrote when it stripped them.  The manuscript is still
+    # scanned as a fallback, so the tool keeps working on an older manuscript.
+    entries = []            # {'label':…, 'paths':[…], 'line':…}
+    srcs = os.path.join(WORK, 'meta', 'SOURCES.md')
+    if os.path.exists(srcs):
+        for i, ln in enumerate(open(srcs).read().split('\n'), 1):
+            m = re.match(r'^\| (.+?) \| (.+?) \|$', ln)
+            if not m or m.group(1) in ('where', '---'):
+                continue
+            paths = []
+            for p in PATH.findall(m.group(2)):
+                paths += expand(p)
+            entries.append({'label': m.group(1), 'line': i, 'paths': sorted(set(paths))})
+    else:
+        print('warning: meta/SOURCES.md not found; falling back to the manuscript\'s *Source: lines')
+        cur = 'front matter'
+        for i, ln in enumerate(s.split('\n'), 1):
+            m = LABEL.match(ln)
+            if m:
+                cur = m.group(1).replace('  ', ' ')
+            if ln.lstrip().startswith('*Source'):
+                paths = []
+                for p in PATH.findall(ln):
+                    paths += expand(p)
+                entries.append({'label': cur, 'line': i, 'paths': sorted(set(paths))})
+
+    cited_results, cited_scripts, cited_data = set(), set(), set()
+    by_label = collections.OrderedDict()
+    for e in entries:
+        for p in e['paths']:
+            if p.startswith('results/'):
+                cited_results.add(p)
+            elif p.startswith('scripts/'):
+                cited_scripts.add(p)
+            elif p.startswith('data/') or p.startswith('features/'):
+                cited_data.add(p)
+        if e['paths']:
+            by_label.setdefault(e['label'], {'results': set(), 'scripts': set(), 'other': set(), 'lines': []})
+            for p in e['paths']:
+                if p.startswith('results/'):
+                    by_label[e['label']]['results'].add(p)
+                elif p.startswith('scripts/'):
+                    by_label[e['label']]['scripts'].add(p)
+                else:
+                    by_label[e['label']]['other'].add(p)
+            by_label[e['label']]['lines'].append(e['line'])
+
+    all_results = sorted(os.path.relpath(os.path.join(dp, f), WORK)
+                         for dp, _, fs in os.walk(os.path.join(WORK, 'results')) for f in fs
+                         if f.endswith('.json'))
+    all_scripts = sorted('scripts/' + f for f in os.listdir(os.path.join(WORK, 'scripts'))
+                         if f.endswith('.py'))
+    missing = sorted(p for p in cited_results | cited_scripts | cited_data
+                     if not os.path.exists(os.path.join(WORK, p)))
+    orphan_results = [p for p in all_results if p not in cited_results]
+    orphan_scripts = [p for p in all_scripts if p not in cited_scripts]
+
+    md = []
+    md.append('# Artifact ledger\n')
+    md.append(f'Generated by `scripts/266_artifact_ledger.py` from `{a.paper}`. '
+              f'{len(by_label)} captions carry a source line; {len(cited_results)} result files, '
+              f'{len(cited_scripts)} scripts and {len(cited_data)} data files are cited; '
+              f'{len(missing)} cited paths are missing; {len(orphan_results)} result files are not '
+              f'cited by any caption.\n')
+    md.append('The `*Source:` lines are the audit trail; the build moves them out of the paper into '
+              '`meta/SOURCES.md` (decision D6) and this ledger indexes that file.\n')
+    md.append('## 1. Caption → artifacts\n')
+    md.append('| caption | result files | scripts | other |')
+    md.append('|---|---|---|---|')
+    for label, v in by_label.items():
+        r = '<br>'.join(f'`{x}`' for x in sorted(v['results'])) or '—'
+        sc = '<br>'.join(f'`{x}`' for x in sorted(v['scripts'])) or '—'
+        o = '<br>'.join(f'`{x}`' for x in sorted(v['other'])) or '—'
+        md.append(f'| {label} | {r} | {sc} | {o} |')
+    md.append('\n## 2. Gaps\n')
+    md.append('Cited but missing on disk:\n' if missing else 'None: every cited path exists.\n')
+    for p in missing:
+        md.append(f'- `{p}`')
+    md.append(f'\n## 3. Orphan result files ({len(orphan_results)})\n')
+    md.append('Result files no caption cites. They are the working bench: intermediate scans, pilots, '
+              'superseded runs. Kept for reproducibility, not part of the paper.\n')
+    for p in orphan_results:
+        md.append(f'- `{p}`')
+    md.append(f'\n## 4. Scripts not cited by a caption ({len(orphan_scripts)} of {len(all_scripts)})\n')
+    md.append('Most scripts are support code (data generation, training, figure composition); only the '
+              'ones a caption names as producing a table are listed as cited.\n')
+    for p in orphan_scripts:
+        md.append(f'- `{p}`')
+    open(os.path.join(WORK, 'meta', 'ARTIFACTS.md'), 'w').write('\n'.join(md) + '\n')
+    json.dump({'cited_results': sorted(cited_results), 'cited_scripts': sorted(cited_scripts),
+               'cited_data': sorted(cited_data), 'missing': missing,
+               'orphan_results': orphan_results, 'orphan_scripts': orphan_scripts,
+               'by_label': {k: {kk: sorted(vv) for kk, vv in v.items()} for k, v in by_label.items()}},
+              open(os.path.join(WORK, 'results', 'artifact_ledger.json'), 'w'), indent=1)
+    print(f"captions with sources {len(by_label)} | cited results {len(cited_results)} | missing {len(missing)} "
+          f"| orphan results {len(orphan_results)} | orphan scripts {len(orphan_scripts)}")
+    print('-> meta/ARTIFACTS.md, results/artifact_ledger.json')
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

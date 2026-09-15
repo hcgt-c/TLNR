@@ -1,0 +1,509 @@
+\section{Full grids}
+
+This appendix carries the per-backbone, per-site and per-cell grids behind Tables 5--16 of Sections 4--7. Notation is the main text's: downstream transfer $T_F = 1 - \mathbb E\lVert F(Wz)-F(g_\tau z)\rVert / \mathbb E\lVert F(z)-F(g_\tau z)\rVert$, where $1$ matches the real transformed route, $0$ is no better than the no-op (copy) and $<0$ is worse; every $T_F$ is reported with the site effect size that licenses reading it (the power gate of \S{}3.7). Operator families are Procrustes = global orthogonal (Procrustes), ridge = unconstrained linear (ridge, the paper's default), conv-res is a ridge $1\times1$ map plus a $3\times3$ residual convolution, random = orthogonal control; ridge+MLP is content-conditioned (ridge plus a residual MLP) appears only where the source protocol fitted it, never in the depth grid.
+
+\subsubsection{Harmonic spectra grid}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.1.} Per-site harmonic structure of the measured hue orbits: $k_1{+}k_2$ share of centred orbit energy, mean winding (spectral first moment) and, where stored, the cross-shape zero-shot hue read-out. DC ($k=0$) is removed in every row, so the $k=0$ share is $0$ by construction; the $k=1$, $k=2$, $k\ge3$ split exists only for the YOLO11n stage 3 arm (Table D.2).}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone / probe} & \textbf{site} & \textbf{$k_1{+}k_2$} & \textbf{winding} & \textbf{read-out} \\
+\midrule
+ResNet-50 & layer 1 / layer 2 / layer 3 / layer 4 & 0.934 / 0.881 / 0.743 / 0.654 & 1.69 / 2.14 / 3.83 / 5.15 & --- / 0.71$^\circ$ / 11.47$^\circ$ / --- \\
+ViT-B/16 (supervised) & blocks 0--3 & 0.978 / 0.891 / 0.883 / 0.838 & 1.26 / 1.88 / 1.99 / 2.50 & 0.49$^\circ$ / 1.83$^\circ$ / 0.86$^\circ$ / 1.29$^\circ$ \\
+ViT-B/16 & blocks 4--7 & 0.762 / 0.712 / 0.659 / 0.638 & 3.25 / 3.94 / 4.84 / 5.24 & 1.41$^\circ$ / 2.97$^\circ$ / 4.27$^\circ$ / 4.32$^\circ$ \\
+ViT-B/16 & blocks 8--11 & 0.628 / 0.625 / 0.610 / 0.601 & 5.46 / 5.55 / 5.89 / 5.98 & 1.62$^\circ$ / 4.72$^\circ$ / 2.87$^\circ$ / 1.27$^\circ$ \\
+DINOv2-B/14 & blocks 0--3 & 0.939 / 0.848 / 0.858 / 0.821 & 1.60 / 2.30 / 2.34 / 2.77 & 2.74$^\circ$ / 3.37$^\circ$ / 2.82$^\circ$ / 1.13$^\circ$ \\
+DINOv2-B/14 & blocks 4--7 & 0.756 / 0.670 / 0.609 / 0.573 & 3.69 / 5.28 / 6.57 / 7.36 & 0.56$^\circ$ / 3.44$^\circ$ / 4.64$^\circ$ / 12.89$^\circ$ \\
+DINOv2-B/14 & blocks 8--11 & 0.526 / 0.533 / 0.510 / 0.504 & 8.30 / 8.42 / 8.80 / 8.96 & 30.15$^\circ$ / 35.09$^\circ$ / 38.58$^\circ$ / 35.87$^\circ$ \\
+DINOv2-S/14 & blocks 0--3 & 0.942 / 0.922 / 0.905 / 0.838 & 1.59 / 1.83 / 2.08 / 2.75 & 5.49$^\circ$ / 1.28$^\circ$ / 1.41$^\circ$ / 1.70$^\circ$ \\
+DINOv2-S/14 & blocks 4--7 & 0.803 / 0.725 / 0.665 / 0.631 & 3.49 / 4.73 / 5.64 / 6.17 & 1.25$^\circ$ / 6.00$^\circ$ / 4.09$^\circ$ / 6.61$^\circ$ \\
+DINOv2-S/14 & blocks 8--11 & 0.530 / 0.569 / 0.541 / 0.526 & 7.99 / 7.40 / 8.17 / 8.52 & 15.06$^\circ$ / 12.05$^\circ$ / 11.14$^\circ$ / 42.40$^\circ$ \\
+CLIP ViT-B/32 (final CLS) & --- & 0.590 & 4.12 & 14.47$^\circ$ \\
+YOLO11n (trained) & stage 3 / stage 5 / stage 7 & 0.868 / 0.730 / 0.661 & not recorded & $\approx$1$^\circ$ (code head) / --- / --- \\
+ResNet-18 & layer 2 & 0.775 (0.618--0.830) & not recorded & not recorded \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The ResNet-50 mid layer supports zero-shot readout at 0.71$^\circ$, the same order as the dedicated code head on stage 3; the contrastively trained CLIP model is the weakest probe at its final CLS.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.2.} Full harmonic breakdown, recorded for the YOLO11n stage 3 arm only (the dense orbit suite: six shapes $\times$ 72 hues $\times$ 4 poses; pose-averaged GAP features, per-shape DC removal), with the cross-shape rotation-plane alignment (cosine of the unit-normalised per-frequency response against the triangle reference). \texttt{$k_3{+}$} is the stored tail share.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{shape} & \textbf{$k_1$} & \textbf{$k_2$} & \textbf{$k_3{+}$} & \textbf{winding} & \textbf{plane $\cos$ $k_1$ / $k_2$} \\
+\midrule
+circle & 0.606 & 0.275 & 0.120 & 2.033 & 0.983 / 0.971 \\
+hexagon & 0.573 & 0.303 & 0.124 & 2.006 & 0.988 / 0.981 \\
+pentagon & 0.561 & 0.318 & 0.121 & 2.011 & 0.991 / 0.985 \\
+rectangle & 0.519 & 0.322 & 0.160 & 2.795 & 0.992 / 0.987 \\
+star & 0.385 & 0.481 & 0.134 & 2.287 & 0.994 / 0.997 \\
+triangle & 0.438 & 0.427 & 0.135 & 2.419 & reference \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.3.} Shared-plane and inheritance controls (identical protocol), plus 3D-lattice plane sharing. \textit{phase cosine} is the mean pairwise cosine of unit-normalised per-frequency responses in the $k=1..3$ band; \textit{readout} is the ridge probe fitted on four shapes excluding hues $\{20^\circ,260^\circ\}$ and evaluated zero-shot on the two unseen shapes at those hues.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{arm} & \textbf{$k_1{+}k_2$} & \textbf{variance-normalised} & \textbf{phase cosine} & \textbf{readout (median)} \\
+\midrule
+pixels, hue statistics (2-d) & 1.000 & 1.000 & 1.000 & 0.005$^\circ$ \\
+pixels, mean RGB (3-d) & 0.9496 & 0.9496 & 0.9997 & 0.925$^\circ$ \\
+random-init YOLO11n stage 3 / stage 5 / stage 7 & 0.976 / 0.976 / 0.975 & 0.966 / 0.960 / 0.951 & 0.993 / 0.991 / 0.989 & 1.46$^\circ$ / 0.84$^\circ$ / 0.55$^\circ$ \\
+pretrained YOLO11n stage 3 / stage 5 / stage 7 & 0.868 / 0.730 / 0.661 & 0.700 / 0.535 / 0.474 & 0.971 / 0.943 / 0.906 & 6.93$^\circ$ / 9.58$^\circ$ / 2.59$^\circ$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsubsection{Depth grid (hue and heat)}
+
+$T_F$ for the four operator families is listed as Procrustes / ridge / conv-res / random, against the site effect size that gates it. The extra $T_{RMS}$ column is the RMS-criterion transfer defined in \S{}3.3 --- the statistic a least-squares fit optimises and the one Theorem 2 is stated for; it is \textbf{not} the square of $T_F$, and the two agree to about a percent on these grids. Hue and heat $\sigma=2$ blocks are three seeds; the $\sigma=1$ block is one seed per backbone (the mild-dissipation control). \texttt{NO} marks a site no intervention can reach (final-block class-token head). Reproduces Table 10; no value disagrees with it.
+
+
+\begin{table*}[t]
+\centering
+\tiny
+\caption*{\textbf{Table D.4.} Hue $90^\circ$ depth grid, all four backbones, three seeds. Columns: site, depth, effect size, $T_F$ Procrustes/ridge/conv-res/random (mean-ratio), ridge $T_{RMS}$ (RMS criterion, \S{}3.3), ridge projection, ridge win rate, reachable.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{site} & \textbf{d} & \textbf{effect} & \textbf{$T_F$ Procrustes/ridge/conv-res/random} & \textbf{ridge $T_{RMS}$} & \textbf{ridge proj} & \textbf{ridge win} & \textbf{reach.} \\
+\midrule
+ResNet-50 & layer1 & 1 & 0.372 & 0.36/0.60/0.64/-0.91 & 0.603 & 0.951 $\pm$ 0.006 & 0.96 & yes \\
+ResNet-50 & layer2 & 2 & 0.436 & 0.50/0.59/0.59/-0.82 & 0.592 & 0.884 $\pm$ 0.016 & 0.97 & yes \\
+ResNet-50 & layer3 & 3 & 0.550 & 0.39/0.46/0.46/-1.28 & 0.472 & 0.760 $\pm$ 0.010 & 0.96 & yes \\
+ResNet-50 & layer4 & 4 & 0.961 & 0.08/0.10/0.09/-0.81 & 0.116 & 0.555 $\pm$ 0.019 & 0.65 & yes \\
+ConvNeXt-T & features1 & 1 & 0.272 & 0.30/0.71/0.72/-0.94 & 0.704 & 0.930 $\pm$ 0.005 & 0.97 & yes \\
+ConvNeXt-T & features3 & 2 & 0.235 & 0.50/0.66/0.67/-0.97 & 0.655 & 0.902 $\pm$ 0.008 & 0.97 & yes \\
+ConvNeXt-T & features5 & 3 & 0.184 & 0.27/0.40/0.39/-1.21 & 0.408 & 0.676 $\pm$ 0.009 & 0.94 & yes \\
+ConvNeXt-T & features7 & 4 & 0.863 & 0.05/0.15/0.08/-1.16 & 0.159 & 0.518 $\pm$ 0.007 & 0.74 & yes \\
+ViT-B/16 & block2 & 1 & 0.608 & 0.47/0.64/0.64/-0.54 & 0.636 & 0.887 $\pm$ 0.008 & 0.96 & yes \\
+ViT-B/16 & block5 & 2 & 0.578 & 0.36/0.46/0.45/-0.48 & 0.458 & 0.690 $\pm$ 0.017 & 0.96 & yes \\
+ViT-B/16 & block8 & 3 & 0.644 & 0.13/0.21/0.21/-0.37 & 0.219 & 0.372 $\pm$ 0.025 & 0.93 & yes \\
+ViT-B/16 & block11 & 4 & 0.623 & -0.00/-0.00/-0.00/-0.00 & 0.000 & -0.000 $\pm$ 0.000 & 0.04 & NO \\
+DINOv2-B/14 & block2 & 1 & 0.454 & 0.49/0.58/0.59/-1.33 & 0.586 & 0.842 $\pm$ 0.005 & 0.96 & yes \\
+DINOv2-B/14 & block5 & 2 & 0.453 & 0.33/0.39/0.39/-1.32 & 0.397 & 0.635 $\pm$ 0.007 & 0.95 & yes \\
+DINOv2-B/14 & block8 & 3 & 0.367 & 0.15/0.10/-0.12/-1.27 & 0.140 & 0.451 $\pm$ 0.015 & 0.73 & yes \\
+DINOv2-B/14 & block11 & 4 & 0.535 & -0.00/-0.00/-0.00/-0.00 & -0.000 & -0.000 $\pm$ 0.000 & 0.05 & NO \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Depth trend (Spearman over sites $\times$ seeds): ResNet-50 Procrustes $-0.39$ ($p=0.21$, n=12), ridge $=-0.97$ ($p=1.4\times10^{-7}$), conv-res $=-0.97$, random $=0.00$; ConvNeXt-T Procrustes $-0.78$ ($p=0.003$), ridge $-0.97$, conv-res $-0.97$, random $-0.73$ ($p=0.007$); ViT-B/16 Procrustes $-0.95$ ($p=9.6\times10^{-5}$, n=9), ridge $-0.95$, conv-res $-0.95$, random $+0.90$ ($p=0.001$); DINOv2-B/14 Procrustes $-0.95$, ridge $-0.95$, conv-res $-0.95$, random $+0.26$ ($p=0.49$).
+
+
+\begin{table*}[t]
+\centering
+\tiny
+\caption*{\textbf{Table D.5.} Heat $\sigma=2.0$ depth grid, all four backbones, three seeds. Same columns as Table D.4.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{site} & \textbf{d} & \textbf{effect} & \textbf{$T_F$ Procrustes/ridge/conv-res/random} & \textbf{ridge $T_{RMS}$} & \textbf{ridge proj} & \textbf{ridge win} & \textbf{reach.} \\
+\midrule
+ResNet-50 & layer1 & 1 & 0.315 & 0.15/0.51/0.60/-1.33 & 0.503 & 0.778 $\pm$ 0.019 & 1.00 & yes \\
+ResNet-50 & layer2 & 2 & 0.370 & 0.25/0.47/0.47/-1.17 & 0.471 & 0.791 $\pm$ 0.017 & 1.00 & yes \\
+ResNet-50 & layer3 & 3 & 0.466 & 0.24/0.37/0.37/-1.77 & 0.379 & 0.673 $\pm$ 0.014 & 0.96 & yes \\
+ResNet-50 & layer4 & 4 & 0.789 & 0.08/0.05/0.05/-1.15 & 0.073 & 0.501 $\pm$ 0.011 & 0.61 & yes \\
+ConvNeXt-T & features1 & 1 & 0.300 & 0.20/0.54/0.65/-1.62 & 0.518 & 0.828 $\pm$ 0.024 & 0.99 & yes \\
+ConvNeXt-T & features3 & 2 & 0.272 & 0.32/0.55/0.58/-1.61 & 0.549 & 0.807 $\pm$ 0.021 & 1.00 & yes \\
+ConvNeXt-T & features5 & 3 & 0.179 & 0.24/0.34/0.33/-1.94 & 0.351 & 0.579 $\pm$ 0.020 & 0.98 & yes \\
+ConvNeXt-T & features7 & 4 & 0.647 & 0.04/0.14/0.08/-1.91 & 0.151 & 0.420 $\pm$ 0.013 & 0.77 & yes \\
+ViT-B/16 & block2 & 1 & 0.333 & 0.11/0.50/0.50/-1.82 & 0.489 & 0.749 $\pm$ 0.011 & 0.98 & yes \\
+ViT-B/16 & block5 & 2 & 0.430 & 0.16/0.27/0.28/-1.75 & 0.265 & 0.445 $\pm$ 0.033 & 0.94 & yes \\
+ViT-B/16 & block8 & 3 & 0.435 & 0.09/0.11/0.11/-1.46 & 0.113 & 0.208 $\pm$ 0.024 & 0.84 & yes \\
+ViT-B/16 & block11 & 4 & 0.441 & 0.00/0.00/0.00/0.00 & 0.000 & 0.000 $\pm$ 0.000 & 0.06 & NO \\
+DINOv2-B/14 & block2 & 1 & 0.358 & -0.14/0.13/0.14/-4.64 & 0.135 & 0.546 $\pm$ 0.049 & 0.73 & yes \\
+DINOv2-B/14 & block5 & 2 & 0.293 & 0.06/0.05/0.04/-4.63 & 0.055 & 0.205 $\pm$ 0.003 & 0.67 & yes \\
+DINOv2-B/14 & block8 & 3 & 0.317 & 0.02/-0.40/-0.99/-4.47 & -0.369 & 0.214 $\pm$ 0.047 & 0.11 & yes \\
+DINOv2-B/14 & block11 & 4 & 0.303 & 0.00/0.00/0.00/0.00 & 0.000 & 0.000 $\pm$ 0.000 & 0.06 & NO \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Depth trend: ResNet-50 Procrustes $-0.32$ ($p=0.30$, n=12), ridge $-0.97$, conv-res $-0.97$, random $+0.13$; ConvNeXt-T Procrustes $-0.39$ ($p=0.21$), ridge $-0.82$ ($p=0.001$), conv-res $-0.97$, random $-0.76$ ($p=0.004$); ViT-B/16 Procrustes $-0.26$ ($p=0.49$, n=9), ridge $-0.95$, conv-res $-0.95$, random $+0.84$ ($p=0.004$); DINOv2-B/14 Procrustes $+0.47$ ($p=0.20$), ridge $-0.95$, conv-res $-0.95$, random $+0.58$ ($p=0.10$).
+
+
+\begin{table*}[t]
+\centering
+\tiny
+\caption*{\textbf{Table D.6.} $\sigma=1.0$ single-seed heat grid (the mild-dissipation control of \S{}6.1). Same columns as Table D.4.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{site} & \textbf{d} & \textbf{effect} & \textbf{$T_F$ Procrustes/ridge/conv-res/random} & \textbf{ridge $T_{RMS}$} & \textbf{ridge proj} & \textbf{ridge win} & \textbf{reach.} \\
+\midrule
+ResNet-50 & layer1 & 1 & 0.167 & 0.21/0.51/0.55/-3.93 & 0.494 & 0.743 & 1.00 & yes \\
+ResNet-50 & layer2 & 2 & 0.200 & 0.26/0.44/0.44/-3.47 & 0.442 & 0.692 & 0.98 & yes \\
+ResNet-50 & layer3 & 3 & 0.254 & 0.19/0.30/0.30/-5.24 & 0.306 & 0.537 & 0.96 & yes \\
+ResNet-50 & layer4 & 4 & 0.437 & -0.02/-0.17/-0.20/-3.54 & -0.137 & 0.339 & 0.21 & yes \\
+ConvNeXt-T & features1 & 1 & 0.170 & 0.20/0.60/0.63/-3.98 & 0.567 & 0.812 & 1.00 & yes \\
+ConvNeXt-T & features3 & 2 & 0.153 & 0.32/0.53/0.55/-4.30 & 0.499 & 0.709 & 1.00 & yes \\
+ConvNeXt-T & features5 & 3 & 0.104 & 0.20/0.29/0.27/-4.16 & 0.281 & 0.454 & 0.99 & yes \\
+ConvNeXt-T & features7 & 4 & 0.362 & 0.04/0.07/-0.03/-4.31 & 0.078 & 0.296 & 0.69 & yes \\
+ViT-B/16 & block2 & 1 & 0.154 & 0.16/0.50/0.50/-4.94 & 0.493 & 0.669 & 0.98 & yes \\
+ViT-B/16 & block5 & 2 & 0.201 & 0.17/0.25/0.26/-4.88 & 0.237 & 0.352 & 0.89 & yes \\
+ViT-B/16 & block8 & 3 & 0.203 & 0.07/0.07/0.08/-4.11 & 0.073 & 0.132 & 0.76 & yes \\
+ViT-B/16 & block11 & 4 & 0.216 & 0.00/0.00/0.00/0.00 & -0.000 & 0.000 & 0.05 & NO \\
+DINOv2-B/14 & block2 & 1 & 0.196 & 0.01/0.11/0.15/-8.63 & 0.135 & 0.463 & 0.64 & yes \\
+DINOv2-B/14 & block5 & 2 & 0.168 & 0.02/0.03/0.01/-8.59 & 0.034 & 0.117 & 0.50 & yes \\
+DINOv2-B/14 & block8 & 3 & 0.180 & -0.00/-0.14/-0.39/-8.34 & -0.114 & 0.042 & 0.16 & yes \\
+DINOv2-B/14 & block11 & 4 & 0.188 & -0.00/-0.00/-0.00/-0.00 & 0.000 & 0.000 & 0.05 & NO \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Trends are stored for ResNet-50 (ridge $\rho=-1.00$, conv-res $\rho=-1.00$, random $\rho=0.00$) and ConvNeXt-T (ridge $\rho=-1.00$, conv-res $\rho=-1.00$, random $\rho=-0.80$) over four points; ViT-B/16 and DINOv2-B/14 trends are \textit{not recorded}.
+
+\subsubsection{Readout $\times$ transformation crossed grid}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.7.} Raw consumer-visible share of the transformation displacement, per backbone $\times$ site, for the four crossed arms (transformation $\to$ readout; \S{}6.3, Table 11).}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{site} & \textbf{hue$\to$hue} & \textbf{hue$\to$hf} & \textbf{heat$\to$hue} & \textbf{heat$\to$hf} \\
+\midrule
+ResNet-50 & layer1--4 & 0.127 / 0.062 / 0.025 / 0.003 & 0.029 / 0.020 / 0.011 / 0.004 & 0.008 / 0.008 / 0.008 / 0.004 & 0.046 / 0.032 / 0.014 / 0.004 \\
+ConvNeXt-T & features1/3/5/7 & 0.144 / 0.053 / 0.010 / 0.008 & 0.089 / 0.029 / 0.007 / 0.007 & 0.020 / 0.010 / 0.003 / 0.007 & 0.033 / 0.020 / 0.004 / 0.007 \\
+ViT-B/16 & blocks 2/5/8/11 & 0.005 / 0.011 / 0.012 / 0.006 & 0.001 / 0.004 / 0.007 / 0.004 & 0.001 / 0.002 / 0.005 / 0.003 & 0.007 / 0.007 / 0.008 / 0.004 \\
+DINOv2-B/14 & blocks 2/5/8/11 & 0.025 / 0.021 / 0.001 / 0.011 & 0.006 / 0.009 / 0.000 / 0.009 & 0.014 / 0.009 / 0.000 / 0.007 & 0.026 / 0.011 / 0.000 / 0.007 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.8.} Chance-corrected visible share (visible share divided by the matched-rank random-projector share at the readout's effective rank --- the control that reproduces the Table 11 ordering) and the over-isotropic share, same arms and sites, each cell as corrected / isotropic.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{hue$\to$hue} & \textbf{hue$\to$hf} & \textbf{heat$\to$hue} & \textbf{heat$\to$hf} \\
+\midrule
+ResNet-50 & 9.01/2.51, 8.35/2.46, 4.26/1.95, 0.99/0.53 & 0.94/0.57, 1.29/0.80, 1.21/0.83, 0.60/0.56 & 0.52/0.15, 1.04/0.31, 1.29/0.60, 1.04/0.56 & 1.43/0.90, 2.03/1.28, 1.60/1.11, 0.68/0.63 \\
+ConvNeXt-T & 4.13/1.06, 2.76/0.79, 1.08/0.30, 0.89/0.48 & 2.56/0.66, 1.50/0.43, 0.34/0.20, 0.46/0.42 & 0.62/0.15, 0.48/0.14, 0.36/0.10, 0.71/0.39 & 1.02/0.25, 1.01/0.30, 0.22/0.13, 0.47/0.43 \\
+ViT-B/16 & 0.64/0.31, 1.44/0.65, 1.52/0.70, 0.94/0.35 & 0.08/0.07, 0.27/0.22, 0.51/0.42, 0.25/0.23 & 0.12/0.05, 0.31/0.14, 0.69/0.31, 0.51/0.19 & 0.48/0.40, 0.50/0.40, 0.59/0.48, 0.26/0.24 \\
+DINOv2-B/14 & 3.29/1.50, 3.48/1.26, 0.10/0.04, 1.47/0.67 & 0.39/0.33, 0.59/0.51, 0.03/0.02, 0.60/0.55 & 1.71/0.81, 1.36/0.52, 0.03/0.01, 0.87/0.40 & 1.84/1.52, 0.77/0.65, 0.01/0.01, 0.47/0.42 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Trend summary over the four sites (Spearman of the corrected share against depth, per backbone): hue$\to$hue 3/4 backbones decline, median $\rho=-0.80$; hue$\to$hf 2/4, median $+0.00$; heat$\to$hue 1/4, median $+0.30$; heat$\to$hf 4/4, median $\rho=-0.60$ --- Table 11 exactly. Per-arm power gate (effect size of the readout) and full-rank ceiling $T_F$: hue arms $0.739/0.603$, $0.723/0.708$, $0.837/0.639$, $0.618/0.587$; heat arms $0.581/0.528$, $0.523/0.575$, $0.465/0.505$, $0.251/0.160$, in the ResNet-50 / ConvNeXt-T / ViT-B/16 / DINOv2-B/14 order.
+
+\subsubsection{Composition grids}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table D.9.} Composition at a fixed total hue $90^\circ$, plain CNN stage 1, three seeds.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{path} & \textbf{ridge $T_F$} & \textbf{conv-res $T_F$} \\
+\midrule
+direct fit at $90^\circ$ & 0.285 $\pm$ 0.008 & 0.511 $\pm$ 0.019 \\
+$45+45$ & 0.237 $\pm$ 0.013 & 0.472 $\pm$ 0.023 \\
+$30+60$ & 0.249 $\pm$ 0.012 & 0.488 $\pm$ 0.027 \\
+$60+30$ (order swap) & 0.245 $\pm$ 0.014 & 0.484 $\pm$ 0.028 \\
+$22.5\times4$ & 0.253 $\pm$ 0.024 & 0.451 $\pm$ 0.032 \\
+single $22.5^\circ$ ($1/4$ of total) & 0.131 $\pm$ 0.019 & 0.207 $\pm$ 0.010 \\
+cyclic $+120/-120$ (identity) & 0.067 $\pm$ 0.029 & 0.254 $\pm$ 0.021 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table D.10.} Composition at a fixed total heat $t^\star=1.0$, plain CNN stage 1, three seeds.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{path} & \textbf{ridge $T_F$} & \textbf{conv-res $T_F$} \\
+\midrule
+direct fit at $t^\star$ & 0.610 $\pm$ 0.107 & 0.760 $\pm$ 0.030 \\
+two steps & 0.514 $\pm$ 0.132 & 0.679 $\pm$ 0.019 \\
+four steps & 0.437 $\pm$ 0.112 & 0.625 $\pm$ 0.063 \\
+eight steps & 0.372 $\pm$ 0.114 & 0.481 $\pm$ 0.025 \\
+single step ($t^\star/8$) & 0.572 $\pm$ 0.025 & 0.597 $\pm$ 0.025 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.11.} The never-fitted composite under the dissipative semigroup: operators fitted at $t_1,t_2$ only, evaluated at the composed parameter that was never fitted. \textit{direct} is fitted at the composed parameter (upper reference); \textit{single} is the $t_1$ operator evaluated on the composite.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{arm} & \textbf{composite} & \textbf{operator} & \textbf{composed} & \textbf{direct} & \textbf{single} \\
+\midrule
+plain CNN (3 seeds) & $\sigma$ 0.75+1.0 $\to$ 1.250 & ridge & 0.711 $\pm$ 0.032 & 0.699 $\pm$ 0.033 & 0.296 $\pm$ 0.011 \\
+plain CNN (3 seeds) & $\sigma$ 0.75+1.0 $\to$ 1.250 & conv-res & 0.834 $\pm$ 0.023 & 0.829 $\pm$ 0.022 & 0.315 $\pm$ 0.024 \\
+plain CNN (seed 0) & $\sigma$ 1.0+1.5 $\to$ 1.803 & ridge & 0.607 & 0.570 & 0.441 \\
+plain CNN (seed 0) & $\sigma$ 1.0+1.5 $\to$ 1.803 & conv-res & 0.844 & 0.807 & 0.422 \\
+colour-equivariant CNN (seed 0) & $\sigma$ 0.75+1.0 $\to$ 1.250 & ridge & 0.705 & 0.663 & 0.261 \\
+colour-equivariant CNN (seed 0) & $\sigma$ 0.75+1.0 $\to$ 1.250 & conv-res & 0.859 & 0.845 & 0.282 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Power gate of the composite (plain CNN seed 0, $\sigma$ 1.0+1.5): effect size 0.881, top-1 flip 0.795, accuracy 0.915 $\to$ 0.225. Random-orthogonal control at these points: $T_F$ from $-0.76$ to $-0.17$.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table D.12.} Path agreement (feature-space consistency between operators of the same family under different totals), pooled over three seeds.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{family / operator} & \textbf{same total} & \textbf{different total} & \textbf{ratio} \\
+\midrule
+hue, ridge & 0.047 & 0.338 & 7.13 \\
+hue, conv-res & 0.085 & 0.316 & 3.72 \\
+heat, ridge & 0.246 & 0.859 & 3.49 \\
+heat, conv-res & 0.342 & 0.766 & 2.24 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Stored per-pair examples: hue $45+45$ against $30+60$ $0.020 \pm 0.002$ (ridge); heat two-step against four-step $0.173 \pm 0.070$ (ridge). The global linear family agrees most tightly between paths and transports worst --- the consistency--fidelity split of \S{}5.4.
+
+\subsubsection{Attribute and perimeter grids}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.13.} Multi-attribute intervention on frozen ViT-B/16 (block 4), three seeds, 180 synthetic scenes each (100 fit / 80 held-out): transfer and projection per operator family, with the attribute's own input power. \textit{transfer} is the fraction of the no-op $\to$ real read-out error removed.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{attribute (power)} & \textbf{Procrustes} & \textbf{ridge+MLP} & \textbf{conv-res} & \textbf{random random} \\
+\midrule
+hue (0.288 $\pm$ 0.021) & 0.867 $\pm$ 0.048 / 0.843 & 0.989 $\pm$ 0.016 / 0.939 & 0.989 $\pm$ 0.014 / 0.940 & -0.119 $\pm$ 0.087 / 0.460 \\
+saturation (0.213 $\pm$ 0.016) & 0.946 $\pm$ 0.034 / 0.910 & 0.966 $\pm$ 0.010 / 0.982 & 0.971 $\pm$ 0.007 / 0.997 & -2.178 $\pm$ 1.103 / -1.756 \\
+value (0.510 $\pm$ 0.036) & 0.947 $\pm$ 0.013 / 0.928 & 0.947 $\pm$ 0.015 / 0.935 & 0.946 $\pm$ 0.013 / 0.934 & -0.137 $\pm$ 0.623 / -0.115 \\
+quantity (0.366 $\pm$ 0.002) & 0.606 $\pm$ 0.022 / 0.456 & 0.645 $\pm$ 0.055 / 0.501 & 0.634 $\pm$ 0.055 / 0.500 & -3.630 $\pm$ 2.103 / 4.788 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Each cell is transfer / projection (projection sd omitted for width; hue Procrustes 0.054, ridge+MLP 0.018, conv-res 0.022, random 0.028). Null probe error $\to$ real probe error: hue $88.10\to18.89$, saturation $0.370\to0.070$, value $0.368\to0.044$, quantity $0.980\to0.256$.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.14.} The same protocol on real COCO instance crops (240 regions; both backbones three seeds, fitting on 150 and evaluating on 80, all under the image-grouped split so that no two crops of one image can straddle fit and evaluation). Errors are degrees for hue and attribute units otherwise.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{attribute (power)} & \textbf{err null $\to$ real} & \textbf{Procrustes} & \textbf{ridge+MLP} & \textbf{conv-res} & \textbf{random random} & \textbf{random win} \\
+\midrule
+ViT-B/16 (3) & hue (0.687 $\pm$ 0.009) & 81.8 $\to$ 36.4 & 0.650 $\pm$ 0.061 & 0.561 $\pm$ 0.067 & 0.517 $\pm$ 0.097 & 0.023 $\pm$ 0.472 & 0.482 \\
+ViT-B/16 (3) & saturation (0.350 $\pm$ 0.007) & 0.177 $\to$ 0.108 & 0.587 $\pm$ 0.043 & 0.720 $\pm$ 0.046 & 0.719 $\pm$ 0.014 & -0.871 $\pm$ 1.165 & 0.300 \\
+ViT-B/16 (3) & value (0.499 $\pm$ 0.005) & 0.170 $\to$ 0.081 & 0.707 $\pm$ 0.107 & 0.857 $\pm$ 0.090 & 0.850 $\pm$ 0.060 & -1.995 $\pm$ 1.327 & 0.154 \\
+DINOv2-B/14 (3) & hue (0.404 $\pm$ 0.004) & 83.7 $\to$ 68.6 & 0.576 $\pm$ 0.129 & 0.424 $\pm$ 0.066 & 0.507 $\pm$ 0.138 & -0.411 $\pm$ 0.145 & 0.145 \\
+DINOv2-B/14 (3) & saturation (0.238 $\pm$ 0.006) & 0.284 $\to$ 0.233 & 0.592 $\pm$ 0.103 & 0.802 $\pm$ 0.136 & 0.763 $\pm$ 0.145 & -3.160 $\pm$ 2.136 & 0.163 \\
+DINOv2-B/14 (3) & value (0.338 $\pm$ 0.005) & 0.217 $\to$ 0.181 & 0.528 $\pm$ 0.050 & 0.623 $\pm$ 0.072 & 0.667 $\pm$ 0.133 & -8.240 $\pm$ 3.346 & 0.137 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table D.15.} Second-attribute chain: identification, geometry and the spatial fallback. The code head reads value and saturation as monotone scalars, so unlike hue neither has an identifiability floor.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{block} & \textbf{quantity} & \textbf{value} \\
+\midrule
+identify & value MAE / max ($\hat l$ vs $v$) & 0.054 / 0.172 \\
+identify & saturation MAE / max ($\hat s$ vs $s$) & 0.067 / 0.251 \\
+geometry & cross-shape cosine, saturation / value & 0.732 (min 0.553) / 0.718 (min 0.614) \\
+geometry & read-out MAE $s$/$v$ at stage 3, stage 5, stage 7 & 0.066/0.035, 0.069/0.038, 0.057/0.033 \\
+spatial fallback & global pooled scalar (two objects, gap 0.5) & 0.250 (= the mathematical floor) \\
+spatial fallback & object-mask pool / raw local window & 0.146 (0.03--0.35) / 0.454 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table D.16.} Clipped-scaling family (monoid boundary, Table 6 row 3): realised report change / read-out error / clipped fraction, by headroom to the gamut clip.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{attribute} & \textbf{headroom $\ge1$ (n=48)} & \textbf{$0.33$--$1$ (n=24)} & \textbf{$<0.33$ (n=24)} \\
+\midrule
+saturation & 0.173 / 0.035 / 0.125 & 0.191 / 0.054 / 0.500 & 0.000 / 0.036 / 1.000 \\
+value & 0.174 / 0.014 / 0.125 & 0.191 / 0.009 / 0.500 & 0.000 / 0.012 / 1.000 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The false-confidence control records a mean absolute report change of exactly $0.0$ (n=24) in the fully clipped bin for both attributes. The Table 6 entry (realised report change $0.174$, read-out error $0.0143$) is the value row of the headroom $\ge1$ column.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.17.} Spatial-rotation control ($\mathrm{rot}90$ on the YOLO11n feature site, stride 2, 200 images, one seed). The transformation is exact at the truth level ($0.0$ max abs difference on a double rotation); it is \textbf{zero-power} for an invariant head, so no operator is scored: measuring it requires a consumer that reads rotation, which an invariant head does not.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{arm} & \textbf{logit effect} & \textbf{top-1 flip} & \textbf{$\mathrm{rot}90$ residual} & \textbf{aligned shift-4 residual} & \textbf{exactness} \\
+\midrule
+plain CNN & 0.762 & 0.640 & 1.031 & 0.405 & 0.0 \\
+colour-equivariant CNN (hue-equivariant) & 0.669 & 0.610 & 0.951 & 0.364 & 0.0 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsubsection{Boundary grids}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table D.18.} The 750-region pre-registered operating domain (COCO instance regions, statistic $m$, window $\pm30^\circ$, success at $30^\circ$; fit half 450, test half 300, threshold $m^\star=0.70$ fixed in advance).}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{route / statistic} & \textbf{value} & \textbf{95\% CI} \\
+\midrule
+$m^\star$; median $m$; fraction $m\ge m^\star$ & 0.70; 0.824; 0.644 & --- \\
+test half, aligned: success $m\ge m^\star$ vs $m<m^\star$ & 0.770 vs 0.532; gap 0.238 & [0.128, 0.345] \\
+test half, ground-truth-box / raw unaligned route & gap 0.188 / 0.085 & not recorded \\
+ROC AUC aligned / gtbox / raw & 0.660 / 0.662 / 0.579 & aligned [0.588, 0.725] \\
+fit half, aligned & 0.805 vs 0.551; gap 0.254 & --- \\
+controlled calibration (fit on controlled domain) & AUC 1.0 & [1.0, 1.0] \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table D.19.} The unaligned 120-region covariate control (5-fold CV; AUC for success classification at thresholds 10 and 20). Concentration alone carries almost no power; the covariates do the work.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{covariate set} & \textbf{AUC (thr 10)} & \textbf{AUC (thr 20)} & \textbf{gain over concentration} \\
+\midrule
+concentration $m$ alone & 0.523 & 0.480 & --- \\
+$+$ mask covariates & 0.754 & 0.680 & +0.231 / +0.199 \\
+$+$ category & 0.651 & 0.616 & +0.127 / +0.135 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Regression targets are near zero for all three sets (CV $R^2$: $-0.018$, $+0.010$, $-0.095$), so the control bounds ranking power, not calibrated error.
+
+\subsubsection{Cross-cutting note}
+
+The depth grid and the gate-change diagnosis agree. On ResNet-50 the consumer-visible crossing share rises with depth from 0.220 (hue) and 0.252 (heat) at layer 2 to 0.627 and 0.516 at layer 4, while the gate flip fraction falls over the same range (0.091 and 0.094 to 0.064 and 0.051). Over the six (site, algebra) points, Spearman against $T_F$ is $-0.829$ for the raw gate-change share, $-0.886$ for the consumer-visible gate-change share, and $+0.486$ ($p=0.33$, n.s.) for the flip fraction.
+
+\subsubsection{Realisation-error and metric diagnostics}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.20.} The two sources of realisation error measured \textit{inside the fit split} --- the in-split diagnostic whose held-out version is Table 13 of the main text: the within-cell term, the cost of sharing one operator across the realised transition cells, and the share of the within-cell term contributed by the off$\to$on cell (where the source activation is zero while the target varies).}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{site} & \textbf{hue within-cell} & \textbf{hue sharing (share of total)} & \textbf{heat within-cell} & \textbf{heat sharing (share of total)} & \textbf{off$\to$on share of within (hue / heat)} & \textbf{units} \\
+\midrule
+\texttt{layer1} & 0.0836 & 0.2000 (71\%) & 0.1583 & 0.4655 (75\%) & 6\% / 17\% & 1135.0 \\
+\texttt{layer2} & 0.0789 & 0.2085 (73\%) & 0.1104 & 0.3485 (76\%) & 8\% / 15\% & 2615.0 \\
+\texttt{layer3} & 0.0535 & 0.1697 (76\%) & 0.0669 & 0.2458 (79\%) & 13\% / 20\% & 5640.0 \\
+\texttt{layer4} & 0.0131 & 0.3133 (96\%) & 0.0112 & 0.3622 (97\%) & 59\% / 63\% & 8834.0 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.21.} The closure criterion instantiated on measured features: the carrier of the known input hue against the estimated synthesis $B$, with the relative reconstruction tail, the closure defect of $B$ against $A_\Delta$, and the held-out relative error of a global linear map fitted on half the hues; the last three columns repeat the analysis with the $\sin2h$ coordinate dropped.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{site} & \textbf{tail} & \textbf{closure defect} & \textbf{held-out global fit} & \textbf{tail (no $\sin2h$)} & \textbf{defect (no $\sin2h$)} & \textbf{held-out (no $\sin2h$)} \\
+\midrule
+YOLO11n stage 3 & 0.046 & 3.2e-15 & 0.282 & 0.060 & 2.0e-15 & 0.334 \\
+ResNet-18 layer 2 & 0.064 & 3.5e-15 & 0.413 & 0.087 & 2.3e-15 & 0.395 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.22.} Metric distortion of the truth action in the site metric and in the consumer's response, ResNet-50, four depths, both algebras: median and p90 of the pairwise ratio of feature distances after and before the transformation, over 120 COCO crops with a 60-crop subsample; the consumer column is the same at every site because the consumer is the network's own output.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{site} & \textbf{hue: site metric (median / p90)} & \textbf{heat: site metric (median / p90)} & \textbf{hue: consumer response} & \textbf{heat: consumer response} \\
+\midrule
+layer1 & $1.067$ / $1.376$ & $0.847$ / $0.989$ & $1.056$ & $1.015$ \\
+layer2 & $0.995$ / $1.094$ & $0.800$ / $0.900$ & $1.056$ & $1.015$ \\
+layer3 & $0.974$ / $1.035$ & $0.877$ / $0.946$ & $1.056$ & $1.015$ \\
+layer4 & $1.027$ / $1.180$ & $0.990$ / $1.140$ & $1.056$ & $1.015$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsubsection{Direct test of the fibre condition}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table D.23.} The fibre condition tested directly at the consumer and at each site: the fraction of base-equal pairs that remain equal after the transformation, at tolerance quantiles $q=0.01$ and $q=0.05$ of the base pair-distance distribution (the random-pair baseline is $q$ by construction), with the transformation's effect size on the consumer and the per-site rates at $q=0.01$. Shallow to deep, left to right.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{family} & \textbf{effect size} & \textbf{consumer $q=0.01$} & \textbf{consumer $q=0.05$} & \textbf{per-site $q=0.01$ (four sites, shallow$\to$deep)} \\
+\midrule
+ResNet-50 & hue & 0.724 & 0.327 & 0.499 & 0.59 / 0.67 / 0.63 / 0.31 \\
+ResNet-50 & heat & 0.594 & 0.595 & 0.655 & 0.61 / 0.57 / 0.51 / 0.61 \\
+ConvNeXt-T & hue & 0.708 & 0.454 & 0.599 & 0.55 / 0.56 / 0.31 / 0.45 \\
+ConvNeXt-T & heat & 0.517 & 0.577 & 0.612 & 0.55 / 0.51 / 0.35 / 0.18 \\
+ViT-B/16 & hue & 0.812 & 0.249 & 0.332 & 0.67 / 0.70 / 0.59 / 0.38 \\
+ViT-B/16 & heat & 0.465 & 0.710 & 0.727 & 0.62 / 0.62 / 0.70 / 0.56 \\
+DINOv2-B/14 & hue & 0.659 & 0.463 & 0.609 & 0.74 / 0.76 / 0.69 / 0.57 \\
+DINOv2-B/14 & heat & 0.262 & 0.815 & 0.879 & 0.75 / 0.80 / 0.75 / 0.82 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+

@@ -1,0 +1,187 @@
+{
+ "arch": "torchvision ViT-B/16 (IMAGENET1K_V1, supervised)",
+ "protocol": "same as 94_dinov2_probe",
+ "n_blocks": 12,
+ "blocks": {
+  "0": {
+   "k1k2": 0.978,
+   "per_shape_k1k2": {
+    "triangle": 0.976,
+    "rectangle": 0.972,
+    "circle": 0.981,
+    "star": 0.975,
+    "pentagon": 0.981,
+    "hexagon": 0.98
+   },
+   "winding": 1.26,
+   "norm_std": 0.1138,
+   "read_err_deg": 0.49,
+   "D": 768
+  },
+  "1": {
+   "k1k2": 0.891,
+   "per_shape_k1k2": {
+    "triangle": 0.905,
+    "rectangle": 0.877,
+    "circle": 0.879,
+    "star": 0.911,
+    "pentagon": 0.889,
+    "hexagon": 0.886
+   },
+   "winding": 1.88,
+   "norm_std": 0.0348,
+   "read_err_deg": 1.83,
+   "D": 768
+  },
+  "2": {
+   "k1k2": 0.883,
+   "per_shape_k1k2": {
+    "triangle": 0.892,
+    "rectangle": 0.858,
+    "circle": 0.876,
+    "star": 0.908,
+    "pentagon": 0.885,
+    "hexagon": 0.88
+   },
+   "winding": 1.99,
+   "norm_std": 0.0186,
+   "read_err_deg": 0.86,
+   "D": 768
+  },
+  "3": {
+   "k1k2": 0.838,
+   "per_shape_k1k2": {
+    "triangle": 0.832,
+    "rectangle": 0.793,
+    "circle": 0.849,
+    "star": 0.858,
+    "pentagon": 0.851,
+    "hexagon": 0.845
+   },
+   "winding": 2.5,
+   "norm_std": 0.0183,
+   "read_err_deg": 1.29,
+   "D": 768
+  },
+  "4": {
+   "k1k2": 0.762,
+   "per_shape_k1k2": {
+    "triangle": 0.73,
+    "rectangle": 0.691,
+    "circle": 0.809,
+    "star": 0.776,
+    "pentagon": 0.786,
+    "hexagon": 0.781
+   },
+   "winding": 3.25,
+   "norm_std": 0.0216,
+   "read_err_deg": 1.41,
+   "D": 768
+  },
+  "5": {
+   "k1k2": 0.712,
+   "per_shape_k1k2": {
+    "triangle": 0.671,
+    "rectangle": 0.632,
+    "circle": 0.771,
+    "star": 0.73,
+    "pentagon": 0.738,
+    "hexagon": 0.732
+   },
+   "winding": 3.94,
+   "norm_std": 0.0215,
+   "read_err_deg": 2.97,
+   "D": 768
+  },
+  "6": {
+   "k1k2": 0.659,
+   "per_shape_k1k2": {
+    "triangle": 0.579,
+    "rectangle": 0.555,
+    "circle": 0.757,
+    "star": 0.676,
+    "pentagon": 0.693,
+    "hexagon": 0.694
+   },
+   "winding": 4.84,
+   "norm_std": 0.0158,
+   "read_err_deg": 4.27,
+   "D": 768
+  },
+  "7": {
+   "k1k2": 0.638,
+   "per_shape_k1k2": {
+    "triangle": 0.552,
+    "rectangle": 0.505,
+    "circle": 0.756,
+    "star": 0.666,
+    "pentagon": 0.671,
+    "hexagon": 0.678
+   },
+   "winding": 5.24,
+   "norm_std": 0.0178,
+   "read_err_deg": 4.32,
+   "D": 768
+  },
+  "8": {
+   "k1k2": 0.628,
+   "per_shape_k1k2": {
+    "triangle": 0.546,
+    "rectangle": 0.483,
+    "circle": 0.753,
+    "star": 0.652,
+    "pentagon": 0.663,
+    "hexagon": 0.672
+   },
+   "winding": 5.46,
+   "norm_std": 0.0169,
+   "read_err_deg": 1.62,
+   "D": 768
+  },
+  "9": {
+   "k1k2": 0.625,
+   "per_shape_k1k2": {
+    "triangle": 0.552,
+    "rectangle": 0.481,
+    "circle": 0.741,
+    "star": 0.652,
+    "pentagon": 0.659,
+    "hexagon": 0.669
+   },
+   "winding": 5.55,
+   "norm_std": 0.0182,
+   "read_err_deg": 4.72,
+   "D": 768
+  },
+  "10": {
+   "k1k2": 0.61,
+   "per_shape_k1k2": {
+    "triangle": 0.535,
+    "rectangle": 0.441,
+    "circle": 0.752,
+    "star": 0.644,
+    "pentagon": 0.658,
+    "hexagon": 0.63
+   },
+   "winding": 5.89,
+   "norm_std": 0.0223,
+   "read_err_deg": 2.87,
+   "D": 768
+  },
+  "11": {
+   "k1k2": 0.601,
+   "per_shape_k1k2": {
+    "triangle": 0.534,
+    "rectangle": 0.421,
+    "circle": 0.745,
+    "star": 0.645,
+    "pentagon": 0.644,
+    "hexagon": 0.616
+   },
+   "winding": 5.98,
+   "norm_std": 0.0241,
+   "read_err_deg": 1.27,
+   "D": 768
+  }
+ }
+}

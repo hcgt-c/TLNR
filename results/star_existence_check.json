@@ -1,0 +1,53 @@
+{
+ "about": "verifier 229: literals recomputed from results/star_existence_test.json, plus the rank-conditioned (Gaussian-copula) null and the matched-noise-control gaps",
+ "checks": [
+  {
+   "label": "star_min_preservation_q01",
+   "literal": "0.249",
+   "pass": true,
+   "note": "minimum consumer preservation at q=0.01 over four backbones and both algebras (ViT-B/16 hue)"
+  },
+  {
+   "label": "star_max_preservation_q01",
+   "literal": "0.815",
+   "pass": true,
+   "note": "maximum consumer preservation at q=0.01 (DINOv2-B/14 heat, a self-supervised embedding consumer)"
+  },
+  {
+   "label": "star_min_excess_over_null",
+   "literal": "0.91",
+   "pass": true,
+   "note": "minimum excess over the rank-conditioned (Gaussian-copula) null at q=0.01; below 1 means the real transformation is no better than a rank-matched monotone deformation"
+  },
+  {
+   "label": "star_max_excess_over_null",
+   "literal": "2.39",
+   "pass": true,
+   "note": "maximum excess over the rank-conditioned null at q=0.01"
+  },
+  {
+   "label": "star_hue_deepest_min",
+   "literal": "0.314",
+   "pass": true,
+   "note": "hue preservation is lowest at the deepest site in exactly three of four backbones (derived set: ['resnet50', 'vitb16', 'dinov2b14']); literal is the ResNet-50 deepest site"
+  },
+  {
+   "label": "star_control_gap_min",
+   "literal": "0.414",
+   "pass": true,
+   "note": "magnitude of the most negative preservation(real) - preservation(matched noise) at q=0.01 (vitb16/hue); the gap itself is negative"
+  },
+  {
+   "label": "star_control_gap_max",
+   "literal": "+0.185",
+   "pass": true,
+   "note": "most positive preservation(real) - preservation(matched noise) at q=0.01 (dinov2b14/heat)"
+  },
+  {
+   "label": "star_control_win_count",
+   "literal": "2",
+   "pass": true,
+   "note": "cells (of 8) in which the real transformation preserves more than its matched control"
+  }
+ ]
+}

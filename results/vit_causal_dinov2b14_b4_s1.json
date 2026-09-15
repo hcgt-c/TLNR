@@ -1,0 +1,47 @@
+{
+ "backbone": "dinov2b14",
+ "block": 4,
+ "seed": 1,
+ "delta": 60.0,
+ "n_train": 600,
+ "n_held": 200,
+ "n_head": 2000,
+ "grid": [
+  16,
+  16
+ ],
+ "dim": 768,
+ "head_train_acc": 1.0,
+ "power": {
+  "top1_flip_rate": 0.075,
+  "acc_null": 0.96,
+  "acc_real": 0.915,
+  "rel_l2_real_vs_null": 0.12922319081638545
+ },
+ "ops": {
+  "O1_procrustes": {
+   "rel_l2_vs_real": 0.0997989575080315,
+   "align_cos": 0.516268118823569,
+   "proj_coef_agg": 0.3662797777760073,
+   "win_rate": 0.66,
+   "top1_agree_real": 0.935,
+   "acc_int": 0.94
+  },
+  "O5_mlp": {
+   "rel_l2_vs_real": 0.08521709818428194,
+   "align_cos": 0.6110841130312888,
+   "proj_coef_agg": 0.4593105113815052,
+   "win_rate": 0.665,
+   "top1_agree_real": 0.945,
+   "acc_int": 0.93
+  },
+  "O8_conv_residual": {
+   "rel_l2_vs_real": 0.09392233306360573,
+   "align_cos": 0.5210568082466237,
+   "proj_coef_agg": 0.28768542748202103,
+   "win_rate": 0.665,
+   "top1_agree_real": 0.95,
+   "acc_int": 0.945
+  }
+ }
+}

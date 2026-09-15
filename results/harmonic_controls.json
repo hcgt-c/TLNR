@@ -1,0 +1,125 @@
+{
+ "protocol": "dense5 (6 shapes x 72 hues x 4 poses, 224px); pose-averaged GAP features with per-shape DC removal; k1+k2 share of centred hue-orbit energy; cross-shape phase alignment = mean pairwise cosine of unit-normalised per-frequency responses in the k=1..3 band; readout = ridge probe (lambda = 1e-2 * trace/n) fitted on the four training shapes excluding hues {20,260}, evaluated zero-shot on the two unseen shapes at those held-out hues.",
+ "held_out_hues": [
+  20,
+  260
+ ],
+ "unseen_shapes": [
+  "pentagon",
+  "hexagon"
+ ],
+ "arms": {
+  "pixels_hue": {
+   "k1k2_share_mean": 1.0,
+   "k1k2_share_mean_standardised": 1.0,
+   "k1k2_share_range": [
+    1.0,
+    1.0
+   ],
+   "cross_shape_phase_cos_mean": 1.0,
+   "readout_median_deg": 0.005,
+   "readout_mean_deg": 0.005,
+   "mlp_readout_median_deg": 0.023,
+   "mlp_readout_mean_deg": 0.023,
+   "dim": 2
+  },
+  "pixels_rgb": {
+   "k1k2_share_mean": 0.9496,
+   "k1k2_share_mean_standardised": 0.9496,
+   "k1k2_share_range": [
+    0.9496,
+    0.9496
+   ],
+   "cross_shape_phase_cos_mean": 0.9997,
+   "readout_median_deg": 0.925,
+   "readout_mean_deg": 0.925,
+   "mlp_readout_median_deg": 0.073,
+   "mlp_readout_mean_deg": 0.073,
+   "dim": 3
+  },
+  "trained_y3": {
+   "k1k2_share_mean": 0.8678,
+   "k1k2_share_mean_standardised": 0.7004,
+   "k1k2_share_range": [
+    0.8405,
+    0.8805
+   ],
+   "cross_shape_phase_cos_mean": 0.9708,
+   "readout_median_deg": 6.933,
+   "readout_mean_deg": 6.553,
+   "mlp_readout_median_deg": 5.167,
+   "mlp_readout_mean_deg": 4.997,
+   "dim": 64
+  },
+  "trained_y5": {
+   "k1k2_share_mean": 0.7298,
+   "k1k2_share_mean_standardised": 0.5346,
+   "k1k2_share_range": [
+    0.5317,
+    0.8291
+   ],
+   "cross_shape_phase_cos_mean": 0.9426,
+   "readout_median_deg": 9.578,
+   "readout_mean_deg": 10.117,
+   "mlp_readout_median_deg": 6.709,
+   "mlp_readout_mean_deg": 6.88,
+   "dim": 128
+  },
+  "trained_y7": {
+   "k1k2_share_mean": 0.6607,
+   "k1k2_share_mean_standardised": 0.4742,
+   "k1k2_share_range": [
+    0.5073,
+    0.7744
+   ],
+   "cross_shape_phase_cos_mean": 0.906,
+   "readout_median_deg": 2.586,
+   "readout_mean_deg": 2.939,
+   "mlp_readout_median_deg": 1.16,
+   "mlp_readout_mean_deg": 2.522,
+   "dim": 256
+  },
+  "random_y3": {
+   "k1k2_share_mean": 0.9762,
+   "k1k2_share_mean_standardised": 0.9661,
+   "k1k2_share_range": [
+    0.9745,
+    0.9782
+   ],
+   "cross_shape_phase_cos_mean": 0.9925,
+   "readout_median_deg": 1.46,
+   "readout_mean_deg": 1.611,
+   "mlp_readout_median_deg": 4.308,
+   "mlp_readout_mean_deg": 4.067,
+   "dim": 64
+  },
+  "random_y5": {
+   "k1k2_share_mean": 0.9758,
+   "k1k2_share_mean_standardised": 0.9598,
+   "k1k2_share_range": [
+    0.9748,
+    0.9775
+   ],
+   "cross_shape_phase_cos_mean": 0.9911,
+   "readout_median_deg": 0.84,
+   "readout_mean_deg": 0.921,
+   "mlp_readout_median_deg": 0.823,
+   "mlp_readout_mean_deg": 0.926,
+   "dim": 128
+  },
+  "random_y7": {
+   "k1k2_share_mean": 0.9751,
+   "k1k2_share_mean_standardised": 0.951,
+   "k1k2_share_range": [
+    0.9711,
+    0.9769
+   ],
+   "cross_shape_phase_cos_mean": 0.9894,
+   "readout_median_deg": 0.551,
+   "readout_mean_deg": 0.809,
+   "mlp_readout_median_deg": 1.837,
+   "mlp_readout_mean_deg": 1.807,
+   "dim": 256
+  }
+ }
+}

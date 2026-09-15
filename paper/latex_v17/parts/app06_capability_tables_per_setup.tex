@@ -1,0 +1,185 @@
+\section{Capability tables per setup}
+
+One small table per experimental setup, giving the setup name, what was fitted, what was held out, and the primary capability statistic with its baseline. Values are those of the main text's Tables 14 and 15 unless the row states otherwise.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table F.1.} CIFAR-10 ResNet-44 causal arms (five arms; stage 1; hue $\Delta=90^\circ$; three seeds). \textit{Fitted:} one global or content-conditioned channel-mixing operator per shift at the mid-layer site. \textit{Held out:} images disjoint from the fit --- \textbf{marked cell:} the raws store 1000 fit / 400 held-out for the plain-CNN arm at stage 1 (all three seeds) and for seed 0 at stage 2, but 300 fit / 200 held-out for the other four arms and for plain-CNN seeds 1--2 at stage 2, so the five-arm stage-1 comparison is not at a matched fitting budget for the plain-CNN row (the stage-2 part of the same disclosure is in the per-arm files named below). The primary statistic is the conv-res paired win rate against the no-op; the no-op is the baseline by construction, and the random orthogonal control is given for comparison.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{arm} & \textbf{effect size} & \textbf{conv-res win (Procrustes / ridge / ridge+MLP)} & \textbf{conv-res mean gain} & \textbf{random win} \\
+\midrule
+plain CNN & 0.389 & \textbf{0.871} (0.798 / 0.723 / 0.789) & +0.274 & 0.005 \\
+$+$ hue augmentation & 0.141 & --- (0.532 / 0.527 / ---) & --- & 0.000 \\
+CEConv & 0.335 & \textbf{0.975} (0.957 / 0.965 / ---) & +0.316 & 0.007 \\
+LCER & 0.013 & --- (0.273 / 0.312 / ---) & --- & 0.000 \\
+code-auxiliary arm & 0.369 & --- (0.812 / 0.692 / ---) & --- & 0.027 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The two low-effect arms (0.141 and 0.013) are the effect-size collapse of \S{}3.7: the test is unpowered there and the correct reading is that the question has no content, not that the representation is deficient.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table F.2.} Five-arm fair benchmark, CIFAR-10, 20 epochs $\times$ three seeds; every arm at an identical budget. \textit{Fitted:} end-to-end classification only. \textit{Held out:} the standard CIFAR-10 test split and the out-of-distribution colour sweep. The baseline is the plain CNN. This is a calibration table, not an accuracy claim.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{arm} & \textbf{params} & \textbf{FLOPs/img} & \textbf{clean acc} & \textbf{OOD sweep mean} & \textbf{min acc over sweep} \\
+\midrule
+plain CNN & 2.64M & 0.78G & 0.9050 $\pm$ 0.0014 & 0.8195 $\pm$ 0.0008 & 0.778 \\
+$+$ hue augmentation & 2.64M & 0.78G & 0.9035 $\pm$ 0.0024 & \textbf{0.8904 $\pm$ 0.0034} & 0.870 \\
+CEConv (rot = 8) & 2.58M & 5.96G & 0.8907 $\pm$ 0.0006 & 0.8227 $\pm$ 0.0056 & 0.786 \\
+LCER ($G=8$) & 2.57M & 5.99G & 0.8822 $\pm$ 0.0051 & 0.8815 $\pm$ 0.0047 & \textbf{0.876} \\
+code-auxiliary (ours) & 2.65M & 0.78G & \textbf{0.9082 $\pm$ 0.0016} & 0.8258 $\pm$ 0.0017 & 0.784 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The code auxiliary's clean-accuracy edge is within seed noise and is not an accuracy claim; the OOD ordering is an ordering of invariance built at training time, not of the interface.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table F.3.} Frozen transformer grid (ViT-B/16 supervised and DINOv2-B/14 self-supervised; split after block 4; hue $\Delta=60^\circ$; 200 held-out images; three seeds). \textit{Fitted:} the operator family at block 4 with a frozen linear head on the final pooled features. \textit{Held out:} the 200 evaluation images; the split and head are fixed, so only the conv-res residual varies across seeds. Baseline: the no-op; the contrast between the two rows is a power contrast, not an architectural one.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{backbone} & \textbf{effect size} & \textbf{top-1 flip} & \textbf{Procrustes proj / win} & \textbf{ridge+MLP proj / win} & \textbf{conv-res proj / win} \\
+\midrule
+ViT-B/16 (supervised) & 0.79 & 0.51 & 0.757 / 0.780 & \textbf{0.890} / 0.773 & 0.849 / 0.777 \\
+DINOv2-B/14 (self-supervised) & 0.13 & 0.075 & 0.366 / 0.660 & 0.459 / 0.665 & 0.301 (0.261--0.354) / 0.677 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table F.4.} Colour-sensitive detector (YOLO11n trained on eight hue-bin classes, shapes randomised across classes, mAP50 0.987; split at stage 3; 40 fit / 80 held-out scenes; three seeds). \textit{Fitted:} a mid-layer transport operator per hue shift. \textit{Held out:} the 80 scenes, and --- in the second block --- the shift itself, with $90^\circ$ never fitted. Primary statistic: box AP50, baseline the no-intervention (null) route.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{route} & \textbf{AP50 ($\Delta=90^\circ$)} & \textbf{F1@IoU0.5 ($\Delta=90^\circ$)} & \textbf{baseline (null)} \\
+\midrule
+Procrustes (Procrustes) & 0.785 $\pm$ 0.027 & 0.778 $\pm$ 0.029 & 0.003 / 0.008 \\
+least-squares (ridge) & 0.906 $\pm$ 0.031 & 0.905 $\pm$ 0.030 & 0.003 / 0.008 \\
+$+$ $3\times3$ residual (conv-res) & \textbf{0.969 $\pm$ 0.013} & \textbf{0.965 $\pm$ 0.013} & 0.003 / 0.008 \\
+random orthogonal (random) & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & --- \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Never-fitted shift ($90^\circ$): a single-parameter generator extrapolation reaches AP50 0.3654 and a fitted-$30^\circ/60^\circ$ chain 0.511, against 0.8052 for an operator fitted directly at $90^\circ$ (the seen-shift reference). Here a random orthogonal operator attains projection coefficients 0.32--0.46 while its detection F1 is 0.000 at every shift.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table F.5.} Real-image task consumer (small CNN task head trained end-to-end on real COCO crops to identify the value level $0.60/1.00/1.45$, an exact transform; 150 fit / 90 held-out regions). \textit{Fitted:} the task head and the stage-2 feature intervention. \textit{Held out:} 90 regions; the label is the task's own. Primary statistic: mean paired gain over the no-op, with its 95\% CI; baseline gain $0$.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{route} & \textbf{mean gain (95\% CI)} & \textbf{projection} & \textbf{win rate} \\
+\midrule
+ridge+MLP (per-cell MLP) & \textbf{0.579} [0.509, 0.653] & 0.860 & 0.967 \\
+conv-res (content $+$ neighbourhood) & 0.576 [0.512, 0.643] & 0.838 & 1.000 \\
+random (random orthogonal) & -0.180 [-0.468, 0.047] & 0.745 & 0.622 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Power: task accuracy over the three value levels 0.796; relative displacement of the real transform 0.956; top-1 flip 0.700.
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table F.6.} Real-region usage rule (750 pre-registered COCO instance regions, 737 images; fit half 450 / test half 300; statistic $m$ = saturated-colour share within $\pm30^\circ$ of the circular-mean hue; threshold $m^\star=0.70$ fixed in advance; success at $30^\circ$). \textit{Fitted:} the threshold on the fit half only. \textit{Held out:} the test half. Primary statistic: test-half success rate above versus below threshold; baseline is the below-threshold half.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{route} & \textbf{success $m\ge m^\star$} & \textbf{success $m<m^\star$} & \textbf{gap (95\% CI)} & \textbf{ROC AUC} \\
+\midrule
+aligned route & \textbf{0.770} & 0.532 & 0.238 [0.128, 0.345] & 0.660 \\
+ground-truth-box & 0.848 & 0.661 & 0.188 & 0.662 \\
+raw, unaligned & 0.277 & 0.193 & 0.085 & 0.579 \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Unaligned 120-region control: concentration alone AUC 0.523 / 0.480 (thresholds 10 / 20), $+$ mask covariates 0.754 / 0.680, $+$ category 0.651 / 0.616.
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table F.7.} Carrier interface: generalisation and ablation. \textit{Fitted:} the read-in $E_\theta$ only; the action $A_\Delta=\mathrm{diag}(I,R(\Delta),R(2\Delta))$ (six dimensions for colour) is fixed by the measured structure and never fitted. \textit{Held out:} the two unseen shapes (pentagon, hexagon) and the hues $\{20^\circ,260^\circ\}$ excluded from the read-in fit; on real regions, the region. Primary statistic: zero-shot hue read-out error, baseline the copy route (a 60$^\circ$ error) and the input-space interpolation baseline.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{capability} & \textbf{primary} & \textbf{baseline} \\
+\midrule
+zero-shot hue read-out, 64-cell $s,\allowbreak{}v$ grid & 59 of 64 cells $\le30^\circ$; median 3.4$^\circ$; saturation floor 2.14$^\circ$ & copy 60$^\circ$; random phase 90$^\circ$ \\
+$\Delta=40^\circ$ equivariance residual & 2.36$^\circ$ & --- \\
+feature-space augmentation (sparse hue training) & 1.3$^\circ$ & input-space interpolation 3.5$^\circ$; real-only 25.5$^\circ$ \\
+real COCO region read-out under the usage rule & 10.0$^\circ$ median (non-circular control) & raw composite 69.5$^\circ$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table F.8.} The two strongest applications, each against ground truth and its own baseline, with the measured cost. \textit{Fitted:} the fixed action on the learned code; no re-forward. \textit{Held out:} the region-level shifts are verified against a real pixel recolour re-forwarded on the same regions.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{application} & \textbf{metric} & \textbf{baseline} & \textbf{result} \\
+\midrule
+region-level shift, two regions in one pass & wall-clock per operation & pixel re-render $38.1$ ms & \textbf{20.9 $\mu$s ($1825\times$)} \\
+detector box agreement at $\Delta=90^\circ$ & F1@IoU0.5 & null $0.008$ & \textbf{0.965 structured; 0.000 random} \\
+composition to a never-fitted parameter & $T_F$ at the composite & direct fit at that parameter & composed $0.844$ vs direct $0.807$ at $\sigma=1.803$ (Table D.11) \\
+zero-shot hue read-out & median per-cell error & copy baseline & 3.4$^\circ$ synthetic / 8.0$^\circ$ real high-concentration (10.0$^\circ$ non-circular) \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\caption*{\textbf{Table F.9.} Hardware configuration.}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{phase} & \textbf{configuration} \\
+\midrule
+original training runs (CIFAR arms, depth grid, detector, interface) & single GPU, NVIDIA GeForce RTX 2060, 6 GB \\
+later verification runs (existence test and controls) & CPU-only, four threads at low priority, GPU deliberately untouched \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption*{\textbf{Table F.10.} The fixed, measured action against learnable actions under identical supervision. One read-in ($64\to256\to256\to6$), one code supervision, 1500 epochs $\times$ 24 minibatches $\times$ 96 code samples, train shapes 0--3 and unseen shapes 4--5; the three learnable arms additionally see paired increments drawn from the same hue labels. Errors are medians over the 226 unseen-shape cells, averaged over three seeds. \textit{Increment} is the error of the increment the arm applies against the true increment, at $37^\circ$ and $90^\circ$, neither of them fitted; \textit{composition defect} compares the two-step composite with the direct step.}
+\setlength{\tabcolsep}{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{arm} & \textbf{action} & \textbf{action params} & \textbf{read-out} & \textbf{increment $37^\circ$} & \textbf{increment $90^\circ$} & \textbf{composition defect} & \textbf{composite vs truth} \\
+\midrule
+fixed (ours) & $A_\Delta=\operatorname{diag}(I_2,\allowbreak{}R(\Delta),\allowbreak{}R(2\Delta))$, never fitted & 0 & \textbf{1.45$^\circ$} & \textbf{0.00$^\circ$} & \textbf{0.00$^\circ$} & \textbf{0.00$^\circ$} & \textbf{0.00$^\circ$} \\
+learned generator & $\exp(\Delta G)$, $G\in\mathbb R^{6\times6}$ free & 36 & 2.10$^\circ$ & 1.31$^\circ$ & 1.02$^\circ$ & 0.00$^\circ$ & 1.02$^\circ$ \\
+learned linear action & $I+\Delta B$, $B\in\mathbb R^{6\times6}$ free & 36 & 5.76$^\circ$ & 1.20$^\circ$ & 9.80$^\circ$ & 9.69$^\circ$ & 1.34$^\circ$ \\
+generic conditioned map & $c+\mathrm{MLP}([c,\allowbreak{}\cos\Delta,\allowbreak{}\sin\Delta])$, 8-256-256-6 & 69,638 & 1.72$^\circ$ & 1.32$^\circ$ & 2.59$^\circ$ & 2.47$^\circ$ & 2.02$^\circ$ \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+

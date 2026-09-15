@@ -1,0 +1,19 @@
+{
+ "arm": "ce8",
+ "seed": 0,
+ "n": 200,
+ "exactness_rot90_twice_max_abs_diff": 0.0,
+ "device": "cuda",
+ "logits_rel_l2_rot_vs_null": 0.6690682172775269,
+ "logits_top1_flip_rate": 0.6100000143051147,
+ "logits_acc_null": 0.8949999809265137,
+ "logits_acc_rot": 0.38999998569488525,
+ "featuremap_rel_l2_rot_vs_null": 1.0105966329574585,
+ "featuremap_rel_l2_shift4_vs_null": 0.9263378977775574,
+ "feature_stride": 2,
+ "equivariance_residual_rot90": 0.9506057500839233,
+ "equivariance_residual_shift4_aligned": 0.3641815781593323,
+ "equivariance_residual_shift4_unaligned": 0.9590073823928833,
+ "shift_cells_used": 2,
+ "featuremap_rel_l2_rot_unaligned": 1.0105966329574585
+}

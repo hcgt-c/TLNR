@@ -1,0 +1,141 @@
+{
+ "worst_identity_gap": 1.1102230246251565e-16,
+ "rows": [
+  {
+   "theta_rad": 0.3,
+   "synthesis": "drop one member of k=2",
+   "residual": 0.15941056138083162,
+   "formula_coloured": 0.1594105613808316,
+   "residual_whitened": 0.15941056138083168,
+   "formula_whitened": 0.15941056138083165,
+   "gap": 2.7755575615628914e-17,
+   "K_star_equals_BABdag": 6.661338147750939e-16
+  },
+  {
+   "theta_rad": 0.3,
+   "synthesis": "drop all k>=2",
+   "residual": 5.5705079145225e-31,
+   "formula_coloured": 0.0,
+   "residual_whitened": 4.0580702969046955e-31,
+   "formula_whitened": 3.944304526105058e-33,
+   "gap": 5.5705079145225e-31,
+   "K_star_equals_BABdag": 6.661338147750939e-16
+  },
+  {
+   "theta_rad": 0.3,
+   "synthesis": "drop the k=1 pair",
+   "residual": 5.902516934556927e-31,
+   "formula_coloured": 0.0,
+   "residual_whitened": 2.5796161884802605e-31,
+   "formula_whitened": 1.5888047254406614e-31,
+   "gap": 5.902516934556927e-31,
+   "K_star_equals_BABdag": 7.771561172376096e-16
+  },
+  {
+   "theta_rad": 0.3,
+   "synthesis": "full carrier",
+   "residual": 1.520215226689911e-30,
+   "formula_coloured": 0.0,
+   "residual_whitened": 1.6909029273785653e-30,
+   "formula_whitened": 6.025674015987183e-31,
+   "gap": 1.520215226689911e-30,
+   "K_star_equals_BABdag": 8.881784197001252e-16
+  },
+  {
+   "theta_rad": 0.3,
+   "synthesis": "coordinate-selection corollary",
+   "K_star_minus_PAPt": 6.661338147750939e-16
+  },
+  {
+   "theta_rad": 0.7,
+   "synthesis": "drop one member of k=2",
+   "residual": 0.4855555851671645,
+   "formula_coloured": 0.48555558516716446,
+   "residual_whitened": 0.4855555851671646,
+   "formula_whitened": 0.4855555851671645,
+   "gap": 1.1102230246251565e-16,
+   "K_star_equals_BABdag": 6.661338147750939e-16
+  },
+  {
+   "theta_rad": 0.7,
+   "synthesis": "drop all k>=2",
+   "residual": 3.800924074183682e-31,
+   "formula_coloured": 0.0,
+   "residual_whitened": 7.114494345140378e-31,
+   "formula_whitened": 3.9443045261050605e-33,
+   "gap": 7.0750512998793276e-31,
+   "K_star_equals_BABdag": 6.661338147750939e-16
+  },
+  {
+   "theta_rad": 0.7,
+   "synthesis": "drop the k=1 pair",
+   "residual": 6.257128760677741e-31,
+   "formula_coloured": 0.0,
+   "residual_whitened": 3.737645383096662e-31,
+   "formula_whitened": 2.5351551040353406e-31,
+   "gap": 6.257128760677741e-31,
+   "K_star_equals_BABdag": 5.551115123125783e-16
+  },
+  {
+   "theta_rad": 0.7,
+   "synthesis": "full carrier",
+   "residual": 1.473239164022644e-30,
+   "formula_coloured": 0.0,
+   "residual_whitened": 8.998266135217247e-31,
+   "formula_whitened": 6.025674015987183e-31,
+   "gap": 1.473239164022644e-30,
+   "K_star_equals_BABdag": 7.077671781985373e-16
+  },
+  {
+   "theta_rad": 0.7,
+   "synthesis": "coordinate-selection corollary",
+   "K_star_minus_PAPt": 6.661338147750939e-16
+  },
+  {
+   "theta_rad": 1.2,
+   "synthesis": "drop one member of k=2",
+   "residual": 0.22812525414013837,
+   "formula_coloured": 0.22812525414013834,
+   "residual_whitened": 0.22812525414013846,
+   "formula_whitened": 0.2281252541401384,
+   "gap": 5.551115123125783e-17,
+   "K_star_equals_BABdag": 7.771561172376096e-16
+  },
+  {
+   "theta_rad": 1.2,
+   "synthesis": "drop all k>=2",
+   "residual": 6.719152464761093e-31,
+   "formula_coloured": 0.0,
+   "residual_whitened": 5.2480647046599905e-31,
+   "formula_whitened": 3.944304526105059e-33,
+   "gap": 6.719152464761093e-31,
+   "K_star_equals_BABdag": 8.881784197001252e-16
+  },
+  {
+   "theta_rad": 1.2,
+   "synthesis": "drop the k=1 pair",
+   "residual": 6.365795820894429e-31,
+   "formula_coloured": 0.0,
+   "residual_whitened": 3.8830258197840973e-31,
+   "formula_whitened": 2.249065833185474e-31,
+   "gap": 6.365795820894429e-31,
+   "K_star_equals_BABdag": 4.440892098500626e-16
+  },
+  {
+   "theta_rad": 1.2,
+   "synthesis": "full carrier",
+   "residual": 1.1068315050006368e-30,
+   "formula_coloured": 0.0,
+   "residual_whitened": 1.0147603595386188e-30,
+   "formula_whitened": 6.025674015987183e-31,
+   "gap": 1.1068315050006368e-30,
+   "K_star_equals_BABdag": 5.551115123125783e-16
+  },
+  {
+   "theta_rad": 1.2,
+   "synthesis": "coordinate-selection corollary",
+   "K_star_minus_PAPt": 7.771561172376096e-16
+  }
+ ],
+ "statement": "min_K E||Kz - z'||^2 = ||B A P_ker B Sigma_c^{1/2}||_F^2, zero iff A ker B subset ker B; K* = B A B^dagger"
+}

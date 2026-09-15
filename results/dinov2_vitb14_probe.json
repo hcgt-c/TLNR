@@ -1,0 +1,187 @@
+{
+ "arch": "dinov2_vitb14",
+ "protocol": "dense5, offline DINOv2, token-mean per block, 4-pose avg, per-shape DC removal; readout MLP(D->128->2) on train shapes, eval cross-shape zero-shot at hues {20,260}",
+ "n_blocks": 12,
+ "blocks": {
+  "0": {
+   "k1k2": 0.939,
+   "per_shape_k1k2": {
+    "triangle": 0.931,
+    "rectangle": 0.935,
+    "circle": 0.95,
+    "star": 0.927,
+    "pentagon": 0.946,
+    "hexagon": 0.945
+   },
+   "winding": 1.6,
+   "norm_std": 0.0248,
+   "D": 768,
+   "read_err_deg": 2.74
+  },
+  "1": {
+   "k1k2": 0.848,
+   "per_shape_k1k2": {
+    "triangle": 0.838,
+    "rectangle": 0.838,
+    "circle": 0.862,
+    "star": 0.839,
+    "pentagon": 0.858,
+    "hexagon": 0.856
+   },
+   "winding": 2.3,
+   "norm_std": 0.0211,
+   "D": 768,
+   "read_err_deg": 3.37
+  },
+  "2": {
+   "k1k2": 0.858,
+   "per_shape_k1k2": {
+    "triangle": 0.856,
+    "rectangle": 0.825,
+    "circle": 0.869,
+    "star": 0.863,
+    "pentagon": 0.869,
+    "hexagon": 0.865
+   },
+   "winding": 2.34,
+   "norm_std": 0.0115,
+   "D": 768,
+   "read_err_deg": 2.82
+  },
+  "3": {
+   "k1k2": 0.821,
+   "per_shape_k1k2": {
+    "triangle": 0.817,
+    "rectangle": 0.752,
+    "circle": 0.841,
+    "star": 0.84,
+    "pentagon": 0.844,
+    "hexagon": 0.832
+   },
+   "winding": 2.77,
+   "norm_std": 0.0159,
+   "D": 768,
+   "read_err_deg": 1.13
+  },
+  "4": {
+   "k1k2": 0.756,
+   "per_shape_k1k2": {
+    "triangle": 0.713,
+    "rectangle": 0.639,
+    "circle": 0.823,
+    "star": 0.768,
+    "pentagon": 0.804,
+    "hexagon": 0.786
+   },
+   "winding": 3.69,
+   "norm_std": 0.0137,
+   "D": 768,
+   "read_err_deg": 0.56
+  },
+  "5": {
+   "k1k2": 0.67,
+   "per_shape_k1k2": {
+    "triangle": 0.61,
+    "rectangle": 0.499,
+    "circle": 0.776,
+    "star": 0.707,
+    "pentagon": 0.732,
+    "hexagon": 0.696
+   },
+   "winding": 5.28,
+   "norm_std": 0.0135,
+   "D": 768,
+   "read_err_deg": 3.44
+  },
+  "6": {
+   "k1k2": 0.609,
+   "per_shape_k1k2": {
+    "triangle": 0.514,
+    "rectangle": 0.427,
+    "circle": 0.777,
+    "star": 0.627,
+    "pentagon": 0.68,
+    "hexagon": 0.629
+   },
+   "winding": 6.57,
+   "norm_std": 0.0142,
+   "D": 768,
+   "read_err_deg": 4.64
+  },
+  "7": {
+   "k1k2": 0.573,
+   "per_shape_k1k2": {
+    "triangle": 0.465,
+    "rectangle": 0.402,
+    "circle": 0.778,
+    "star": 0.58,
+    "pentagon": 0.626,
+    "hexagon": 0.587
+   },
+   "winding": 7.36,
+   "norm_std": 0.008,
+   "D": 768,
+   "read_err_deg": 12.89
+  },
+  "8": {
+   "k1k2": 0.526,
+   "per_shape_k1k2": {
+    "triangle": 0.411,
+    "rectangle": 0.409,
+    "circle": 0.746,
+    "star": 0.514,
+    "pentagon": 0.557,
+    "hexagon": 0.518
+   },
+   "winding": 8.3,
+   "norm_std": 0.0106,
+   "D": 768,
+   "read_err_deg": 30.15
+  },
+  "9": {
+   "k1k2": 0.533,
+   "per_shape_k1k2": {
+    "triangle": 0.408,
+    "rectangle": 0.422,
+    "circle": 0.772,
+    "star": 0.521,
+    "pentagon": 0.538,
+    "hexagon": 0.538
+   },
+   "winding": 8.42,
+   "norm_std": 0.0132,
+   "D": 768,
+   "read_err_deg": 35.09
+  },
+  "10": {
+   "k1k2": 0.51,
+   "per_shape_k1k2": {
+    "triangle": 0.38,
+    "rectangle": 0.427,
+    "circle": 0.767,
+    "star": 0.514,
+    "pentagon": 0.467,
+    "hexagon": 0.508
+   },
+   "winding": 8.8,
+   "norm_std": 0.0185,
+   "D": 768,
+   "read_err_deg": 38.58
+  },
+  "11": {
+   "k1k2": 0.504,
+   "per_shape_k1k2": {
+    "triangle": 0.35,
+    "rectangle": 0.428,
+    "circle": 0.791,
+    "star": 0.561,
+    "pentagon": 0.428,
+    "hexagon": 0.469
+   },
+   "winding": 8.96,
+   "norm_std": 0.0146,
+   "D": 768,
+   "read_err_deg": 35.87
+  }
+ }
+}

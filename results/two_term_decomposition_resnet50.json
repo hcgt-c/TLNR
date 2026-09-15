@@ -1,0 +1,72 @@
+{
+ "backbone": "resnet50",
+ "n_crops": 100,
+ "locs_per_site": 6,
+ "definition": "within-cell = sum_cells w_c * SSR_cell(best affine v~au+b); sharing cost = pooled SSR - within-cell",
+ "sites": {
+  "layer1": {
+   "hue_90.0": {
+    "n_units": 1135.0,
+    "within_cell": 0.08357322741990475,
+    "sharing_cost": 0.20004487771096954,
+    "sharing_share_of_total": 0.7053318321080375,
+    "off_on_share_of_within": 0.05803697912047659
+   },
+   "heat_2.0": {
+    "n_units": 1148.0,
+    "within_cell": 0.15826010815565528,
+    "sharing_cost": 0.4655136070740467,
+    "sharing_share_of_total": 0.7462860260192645,
+    "off_on_share_of_within": 0.16559485544991157
+   }
+  },
+  "layer2": {
+   "hue_90.0": {
+    "n_units": 2615.0,
+    "within_cell": 0.0789417576264444,
+    "sharing_cost": 0.20846099786147557,
+    "sharing_share_of_total": 0.7253270676113527,
+    "off_on_share_of_within": 0.07646848433535809
+   },
+   "heat_2.0": {
+    "n_units": 2619.0,
+    "within_cell": 0.11038328834726502,
+    "sharing_cost": 0.348521608717477,
+    "sharing_share_of_total": 0.7594636948672783,
+    "off_on_share_of_within": 0.14902153476965307
+   }
+  },
+  "layer3": {
+   "hue_90.0": {
+    "n_units": 5640.0,
+    "within_cell": 0.05354556908236004,
+    "sharing_cost": 0.16971800944379173,
+    "sharing_share_of_total": 0.7601688128630976,
+    "off_on_share_of_within": 0.13486292091062485
+   },
+   "heat_2.0": {
+    "n_units": 5703.0,
+    "within_cell": 0.0668818505487769,
+    "sharing_cost": 0.24576399859263795,
+    "sharing_share_of_total": 0.7860779193696407,
+    "off_on_share_of_within": 0.20473890469432884
+   }
+  },
+  "layer4": {
+   "hue_90.0": {
+    "n_units": 8834.0,
+    "within_cell": 0.013052787711564122,
+    "sharing_cost": 0.31334663626962245,
+    "sharing_share_of_total": 0.9600097709966656,
+    "off_on_share_of_within": 0.5914663177302002
+   },
+   "heat_2.0": {
+    "n_units": 9296.0,
+    "within_cell": 0.011187106020837436,
+    "sharing_cost": 0.362175219831057,
+    "sharing_share_of_total": 0.970036864337311,
+    "off_on_share_of_within": 0.6347446418396996
+   }
+  }
+ }
+}

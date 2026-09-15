@@ -1,0 +1,28 @@
+{
+ "protocol": "real-image value-level task consumer (script 168 head) trained on COCO crops; the intervention site is the pooled stage-2 feature (d = 64, 3-class head); both operators are 256 x 256, fitted in closed form on the training regions; ordinary ridge uses the Euclidean objective, W* the consumer-weighted objective with A_i = J_F(z_i)^T J_F(z_i)",
+ "n_regions": 700,
+ "n_train": 580,
+ "n_test": 120,
+ "lam": 0.01,
+ "operators": {
+  "W_euclidean_ridge": {
+   "task_top1_agreement_with_real": 0.3333333432674408,
+   "projection": -0.19741138815879822,
+   "proj_per_sample_median": -5.031621932983398,
+   "win_rate": 0.0416666679084301,
+   "mean_gain": -9.485844612121582,
+   "euclidean_feature_rel_l2": 41.65949249267578,
+   "task_weighted_error_mean": 174.60868247747422
+  },
+  "W_task_weighted": {
+   "task_top1_agreement_with_real": 0.1666666716337204,
+   "projection": -0.0903397798538208,
+   "proj_per_sample_median": -2.307126998901367,
+   "win_rate": 0.01666666753590107,
+   "mean_gain": -12.441094398498535,
+   "euclidean_feature_rel_l2": 31.04138946533203,
+   "task_weighted_error_mean": 226.20201735496522
+  }
+ },
+ "task_train_accuracy": 0.7732758522033691
+}
