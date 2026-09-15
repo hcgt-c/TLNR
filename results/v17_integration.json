@@ -1,7 +1,7 @@
 {
  "source": "paper/archive/paper_v15.md",
  "target": "paper/paper_v17.md",
- "operations": 248,
+ "operations": 251,
  "operation_names": [
   "abstract",
   "sec_1_2_results",
@@ -213,6 +213,9 @@
   "w2_boundary_indep",
   "sec_2_2_reptheory",
   "sec_2_4_koopman",
+  "review3_g1",
+  "review3_fig11_bold",
+  "review3_conditioning",
   "review_a2_partition",
   "review_a2_generators",
   "review_a2_phases",
@@ -253,7 +256,7 @@
   "fig10_text"
  ],
  "words_source": 30925,
- "words_target": 36897,
+ "words_target": 36949,
  "references": 31,
  "citation_order": [
   "lenc2015",

@@ -8,8 +8,6 @@ A network has encoded an object. Can we act on its internal state alone, and obt
 &\rho_\ell(\tau_2\tau_1)=\rho_\ell(\tau_2)\circ\rho_\ell(\tau_1),\qquad \rho_\ell(e)=I,
 \end{aligned}\tag{$\star$}
 $}\end{equation*}
-that is, the commutative diagram
-
 that is, the square drawn in Figure 1(a).
 
 \begin{figure*}[t]
@@ -44,6 +42,7 @@ Predicting an orbit from a fixed anchor, transporting from a starting state neve
 
 \subsection{Contributions}
 
+\setcounter{enumi}{0}
 \begin{enumerate}
 \item \textbf{Theory: when a transformation law is realisable at all.} A realisability theory in three layers. \textit{General}: an induced action exists exactly when the transformation preserves the encoder's fibres, and existence already yields the homomorphism (\S{}3.2: the universal property of the quotient, with its two consequences). \textit{Single-region}: a linear operator exists iff the kernel is preserved, and its defect obeys the metric-weighted closed form of \S{}1.2 (Theorem 1, Theorem 2). \textit{Piecewise-linear}: on a rectifier encoder the effect decomposes exactly into a within-regime term and a term carried by the pairs of regions the transformation moves between; whether one fixed linear operator can satisfy every visited pair is a decidable joint system (Propositions C, D), and for the fixed-linear class the attainable score has an exact form, with the gate-change share as a measured proxy for its slack (Proposition E). Four further statements cover realisation and composition: a carrier admits a fixed linear action exactly when its retained blocks are closed, in which case the least-squares optimal map is the carrier action seen through the truncation (Propositions F--G); a closed orbit has no exact coordinate-monotone realisation (Theorem 3); chain error obeys a three-regime accumulation law set by the Lipschitz constant of the truth action in the consumer's seminorm (Theorem 4); and a carrier with band-limited orbits and shared rotation planes realises the fixed block-diagonal action with error bounded by the read-in error, the action mismatch and the target tail (Theorem 5).
 

@@ -2,7 +2,7 @@
 
 This appendix carries the per-backbone, per-site and per-cell grids behind Tables 5--16 of Sections 4--7. Notation is the main text's: downstream transfer $T_F = 1 - \mathbb E\lVert F(Wz)-F(g_\tau z)\rVert / \mathbb E\lVert F(z)-F(g_\tau z)\rVert$, where $1$ matches the real transformed route, $0$ is no better than the no-op (copy) and $<0$ is worse; every $T_F$ is reported with the site effect size that licenses reading it (the power gate of \S{}3.7). Operator families are Procrustes = global orthogonal (Procrustes), ridge = unconstrained linear (ridge, the paper's default), conv-res is a ridge $1\times1$ map plus a $3\times3$ residual convolution, random = orthogonal control; ridge+MLP is content-conditioned (ridge plus a residual MLP) appears only where the source protocol fitted it, never in the depth grid.
 
-\subsubsection{Harmonic spectra grid}
+\subsubsection*{D.1 Harmonic spectra grid}
 
 
 \begin{table*}[t]
@@ -71,7 +71,7 @@ pretrained YOLO11n stage 3 / stage 5 / stage 7 & 0.868 / 0.730 / 0.661 & 0.700 /
 \end{tabularx}
 \end{table*}
 
-\subsubsection{Depth grid (hue and heat)}
+\subsubsection*{D.2 Depth grid (hue and heat)}
 
 $T_F$ for the four operator families is listed as Procrustes / ridge / conv-res / random, against the site effect size that gates it. The extra $T_{RMS}$ column is the RMS-criterion transfer defined in \S{}3.3 --- the statistic a least-squares fit optimises and the one Theorem 2 is stated for; it is \textbf{not} the square of $T_F$, and the two agree to about a percent on these grids. Hue and heat $\sigma=2$ blocks are three seeds; the $\sigma=1$ block is one seed per backbone (the mild-dissipation control). \texttt{NO} marks a site no intervention can reach (final-block class-token head). Reproduces Table 10; no value disagrees with it.
 
@@ -171,7 +171,7 @@ DINOv2-B/14 & block11 & 4 & 0.188 & -0.00/-0.00/-0.00/-0.00 & 0.000 & 0.000 & 0.
 
 Trends are stored for ResNet-50 (ridge $\rho=-1.00$, conv-res $\rho=-1.00$, random $\rho=0.00$) and ConvNeXt-T (ridge $\rho=-1.00$, conv-res $\rho=-1.00$, random $\rho=-0.80$) over four points; ViT-B/16 and DINOv2-B/14 trends are \textit{not recorded}.
 
-\subsubsection{Readout $\times$ transformation crossed grid}
+\subsubsection*{D.3 Readout $\times$ transformation crossed grid}
 
 
 \begin{table*}[t]
@@ -211,7 +211,7 @@ DINOv2-B/14 & 3.29/1.50, 3.48/1.26, 0.10/0.04, 1.47/0.67 & 0.39/0.33, 0.59/0.51,
 
 Trend summary over the four sites (Spearman of the corrected share against depth, per backbone): hue$\to$hue 3/4 backbones decline, median $\rho=-0.80$; hue$\to$hf 2/4, median $+0.00$; heat$\to$hue 1/4, median $+0.30$; heat$\to$hf 4/4, median $\rho=-0.60$ --- Table 11 exactly. Per-arm power gate (effect size of the readout) and full-rank ceiling $T_F$: hue arms $0.739/0.603$, $0.723/0.708$, $0.837/0.639$, $0.618/0.587$; heat arms $0.581/0.528$, $0.523/0.575$, $0.465/0.505$, $0.251/0.160$, in the ResNet-50 / ConvNeXt-T / ViT-B/16 / DINOv2-B/14 order.
 
-\subsubsection{Composition grids}
+\subsubsection*{D.4 Composition grids}
 
 
 \begin{table*}[t]
@@ -292,7 +292,7 @@ heat, conv-res & 0.342 & 0.766 & 2.24 \\
 
 Stored per-pair examples: hue $45+45$ against $30+60$ $0.020 \pm 0.002$ (ridge); heat two-step against four-step $0.173 \pm 0.070$ (ridge). The global linear family agrees most tightly between paths and transports worst --- the consistency--fidelity split of \S{}5.4.
 
-\subsubsection{Attribute and perimeter grids}
+\subsubsection*{D.5 Attribute and perimeter grids}
 
 
 \begin{table*}[t]
@@ -302,7 +302,7 @@ Stored per-pair examples: hue $45+45$ against $30+60$ $0.020 \pm 0.002$ (ridge);
 \setlength{\tabcolsep}{2pt}
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
 \toprule
-\textbf{attribute (power)} & \textbf{Procrustes} & \textbf{ridge+MLP} & \textbf{conv-res} & \textbf{random random} \\
+\textbf{attribute (power)} & \textbf{Procrustes} & \textbf{ridge+MLP} & \textbf{conv-res} & \textbf{random} \\
 \midrule
 hue (0.288 $\pm$ 0.021) & 0.867 $\pm$ 0.048 / 0.843 & 0.989 $\pm$ 0.016 / 0.939 & 0.989 $\pm$ 0.014 / 0.940 & -0.119 $\pm$ 0.087 / 0.460 \\
 saturation (0.213 $\pm$ 0.016) & 0.946 $\pm$ 0.034 / 0.910 & 0.966 $\pm$ 0.010 / 0.982 & 0.971 $\pm$ 0.007 / 0.997 & -2.178 $\pm$ 1.103 / -1.756 \\
@@ -322,7 +322,7 @@ Each cell is transfer / projection (projection sd omitted for width; hue Procrus
 \setlength{\tabcolsep}{2pt}
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
 \toprule
-\textbf{backbone} & \textbf{attribute (power)} & \textbf{err null $\to$ real} & \textbf{Procrustes} & \textbf{ridge+MLP} & \textbf{conv-res} & \textbf{random random} & \textbf{random win} \\
+\textbf{backbone} & \textbf{attribute (power)} & \textbf{err null $\to$ real} & \textbf{Procrustes} & \textbf{ridge+MLP} & \textbf{conv-res} & \textbf{random} & \textbf{random win} \\
 \midrule
 ViT-B/16 (3) & hue (0.687 $\pm$ 0.009) & 81.8 $\to$ 36.4 & 0.650 $\pm$ 0.061 & 0.561 $\pm$ 0.067 & 0.517 $\pm$ 0.097 & 0.023 $\pm$ 0.472 & 0.482 \\
 ViT-B/16 (3) & saturation (0.350 $\pm$ 0.007) & 0.177 $\to$ 0.108 & 0.587 $\pm$ 0.043 & 0.720 $\pm$ 0.046 & 0.719 $\pm$ 0.014 & -0.871 $\pm$ 1.165 & 0.300 \\
@@ -386,7 +386,7 @@ colour-equivariant CNN (hue-equivariant) & 0.669 & 0.610 & 0.951 & 0.364 & 0.0 \
 \end{tabularx}
 \end{table*}
 
-\subsubsection{Boundary grids}
+\subsubsection*{D.6 Boundary grids}
 
 
 \begin{table*}[t]
@@ -425,11 +425,11 @@ $+$ category & 0.651 & 0.616 & +0.127 / +0.135 \\
 
 Regression targets are near zero for all three sets (CV $R^2$: $-0.018$, $+0.010$, $-0.095$), so the control bounds ranking power, not calibrated error.
 
-\subsubsection{Cross-cutting note}
+\subsubsection*{D.7 Cross-cutting note}
 
 The depth grid and the gate-change diagnosis agree. On ResNet-50 the consumer-visible crossing share rises with depth from 0.220 (hue) and 0.252 (heat) at layer 2 to 0.627 and 0.516 at layer 4, while the gate flip fraction falls over the same range (0.091 and 0.094 to 0.064 and 0.051). Over the six (site, algebra) points, Spearman against $T_F$ is $-0.829$ for the raw gate-change share, $-0.886$ for the consumer-visible gate-change share, and $+0.486$ ($p=0.33$, n.s.) for the flip fraction.
 
-\subsubsection{Realisation-error and metric diagnostics}
+\subsubsection*{D.8 Realisation-error and metric diagnostics}
 
 
 \begin{table*}[t]
@@ -483,7 +483,7 @@ layer4 & $1.027$ / $1.180$ & $0.990$ / $1.140$ & $1.056$ & $1.015$ \\
 \end{tabularx}
 \end{table*}
 
-\subsubsection{Direct test of the fibre condition}
+\subsubsection*{D.9 Direct test of the fibre condition}
 
 
 \begin{table*}[t]

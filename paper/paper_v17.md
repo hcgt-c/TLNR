@@ -15,8 +15,6 @@ $$
 &\rho_\ell(\tau_2\tau_1)=\rho_\ell(\tau_2)\circ\rho_\ell(\tau_1),\qquad \rho_\ell(e)=I,
 \end{aligned}\tag{★}
 $$
-that is, the commutative diagram
-
 that is, the square drawn in Figure 1(a).
 
 The object of study is therefore not a collection of isolated feature edits but a *representation of the transformation algebra*: the composition law must survive into the feature space, not only the individual actions. Does such a $\rho_\ell$ exist, at which layers, in what form, and when does it degrade?
@@ -474,7 +472,7 @@ A geometric account accompanies the pairing without replacing it. What erodes wi
 
 ### 6.3 The readout–transformation pairing
 
-What the depth profiles of §6.1 measure is not the algebra but the *pairing* between the transformation and the readout. The test is a crossed design: two readouts — a hue-aligned probe and a high-frequency probe — against the two transformations, on four backbones, with the chance-corrected consumer-visible share as the statistic. If erosion were a property of the algebra, a readout that does not privilege hue would erode under either transformation, and a readout aligned to the dissipative family would be as robust for heat as the hue readout is for hue. Neither holds: each readout erodes only with the transformation it is aligned to, and the off-diagonal cells are flat.
+What the depth profiles of §6.1 measure is not the algebra but the *pairing* between the transformation and the readout. The test is a crossed design: two readouts — a hue-aligned probe and a high-frequency probe — against the two transformations, on four backbones, with the chance-corrected consumer-visible share as the statistic. If erosion were a property of the algebra, a readout that does not privilege hue would erode under either transformation, and a readout aligned to the dissipative family would be as robust for heat as the hue readout is for hue. Neither holds: each readout erodes only with the transformation it is aligned to, and the off-diagonal cells are flat. **The erosion is not a numerical-conditioning artefact.** An exactly orthogonal target keeps $T_F=0.9999993$ at depths 1, 4 and 8, at condition number $1.0$, while an ill-conditioned random target at the same depths falls from $0.9993$ to $0.846$ as its condition number rises from $165$ to $2.3\times10^{5}$; what the depth profiles track is the pairing, not the conditioning of the fit.
 
 **Table 11.** The readout $\times$ transformation crossed design: number of backbones (of four) whose trend over depth is a decline, with the median Spearman $\rho$ across sites. ViT-B/16 is a floor case (its chance-corrected visible shares sit at $0.08$–$1.97$) and its flatness carries no information for this judgement; the statistic is the chance-corrected visible share (the visible share divided by the matched-rank random-projector share at the readout's effective rank), not the raw one.
 
@@ -585,7 +583,7 @@ Two comparisons decide what the structure is worth, and they belong to different
 
 ### 7.6 Useful operations
 
-**Table 15** lists every capability against **ground truth and its own baseline**, which is the rule the paper applies throughout: a capability claim without a baseline is not a claim. Feature-space augmentation cuts hue read-out error by an order of magnitude against the input-space interpolation baseline; composition reaches parameters never fitted (Table D.11); the detector keeps a third of its seen-shift AP50 at an unseen shift; and region editing costs microseconds against milliseconds because it replaces the re-render it is compared with. Figure 11 collects those uses on real images, each against its own baseline.
+**Table 15** lists every capability against **ground truth and its own baseline**, which is the rule the paper applies throughout: a capability claim without a baseline is not a claim. Feature-space augmentation cuts hue read-out error by an order of magnitude against the input-space interpolation baseline; composition reaches parameters never fitted (Table D.11); the detector keeps a third of its seen-shift AP50 at an unseen shift; and region editing costs microseconds against milliseconds because it replaces the re-render it is compared with. **Figure 11** collects those uses on real images, each against its own baseline.
 
 **Table 15.** Capability claims, each against ground truth and a baseline. Every row belongs to its stated setup; the table reports and the text does not inflate.
 
@@ -1051,7 +1049,7 @@ The gate is the consumer-level effect size, the normalised change of the consume
 
 | control | setting | result |
 |---|---|---|
-| random random orthogonal | ResNet-50 hue `layer1` | $T_F=-0.912$, win rate $0.003$, projection $0.530$ |
+| random orthogonal | ResNet-50 hue `layer1` | $T_F=-0.912$, win rate $0.003$, projection $0.530$ |
 | shuffled pair, conv-res | seeds 0/1/2 | win rate $0.110$/$0.105$/$0.085$; projection $1.267$/$1.506$/$1.383$ |
 
 #### C.7 Real-region protocol
@@ -1273,7 +1271,7 @@ Stored per-pair examples: hue $45+45$ against $30+60$ $0.020 \pm 0.002$ (ridge);
 
 **Table D.13.** Multi-attribute intervention on frozen ViT-B/16 (block 4), three seeds, 180 synthetic scenes each (100 fit / 80 held-out): transfer and projection per operator family, with the attribute's own input power. *transfer* is the fraction of the no-op $\to$ real read-out error removed.
 
-| attribute (power) | Procrustes | ridge+MLP | conv-res | random random |
+| attribute (power) | Procrustes | ridge+MLP | conv-res | random |
 |---|---|---|---|---|
 | hue (0.288 ± 0.021) | 0.867 ± 0.048 / 0.843 | 0.989 ± 0.016 / 0.939 | 0.989 ± 0.014 / 0.940 | -0.119 ± 0.087 / 0.460 |
 | saturation (0.213 ± 0.016) | 0.946 ± 0.034 / 0.910 | 0.966 ± 0.010 / 0.982 | 0.971 ± 0.007 / 0.997 | -2.178 ± 1.103 / -1.756 |
@@ -1284,7 +1282,7 @@ Each cell is transfer / projection (projection sd omitted for width; hue Procrus
 
 **Table D.14.** The same protocol on real COCO instance crops (240 regions; both backbones three seeds, fitting on 150 and evaluating on 80, all under the image-grouped split so that no two crops of one image can straddle fit and evaluation). Errors are degrees for hue and attribute units otherwise.
 
-| backbone | attribute (power) | err null $\to$ real | Procrustes | ridge+MLP | conv-res | random random | random win |
+| backbone | attribute (power) | err null $\to$ real | Procrustes | ridge+MLP | conv-res | random | random win |
 |---|---|---|---|---|---|---|---|
 | ViT-B/16 (3) | hue (0.687 ± 0.009) | 81.8 $\to$ 36.4 | 0.650 ± 0.061 | 0.561 ± 0.067 | 0.517 ± 0.097 | 0.023 ± 0.472 | 0.482 |
 | ViT-B/16 (3) | saturation (0.350 ± 0.007) | 0.177 $\to$ 0.108 | 0.587 ± 0.043 | 0.720 ± 0.046 | 0.719 ± 0.014 | -0.871 ± 1.165 | 0.300 |
@@ -1559,7 +1557,7 @@ The paper's questions — existence, identifiability, realisation form, dynamics
 | **Causal abstraction and latent linearisation** | Geiger et al. [19], [20]; Park et al. [21]; Nadaf [22]; Venkatesh and Kurapath [23] | when do high-level interventions correspond to low-level ones, and when is a latent direction a well-defined intervention? | the interventional-consistency frame, of which our fibre condition is the transformation-action specialisation, and the caution that latent directions are not identifiable without a stated reference | single interventions rather than a whole algebra; no composition law and no price for violating it; no realisation-form question; no construction | the *whole* algebra must descend (§3.2), composition is priced quantitatively (Thm 4), identifiability is carried by the kernel and stabilisers of the representation (§3.1), and the question continues to family capacity (Thm 3) and construction (§7) | our fibre condition is formally Geiger et al.'s consistency condition specialised to transformation actions — we say so in §2.4 and claim only the specialisation's additional content: the algebra, the pricing, and the construction |
 | **Dynamical / Koopman-style linearisation** | Koopman-style embedding work as surveyed in §2.4 | when does a nonlinear system admit an invariant finite-dimensional subspace on which the evolution is linear? | the idea that a linear operator on an embedding can stand for a nonlinear action, which our band-limited global family instantiates in truncated form | the subspace is *designed or learned* and the dynamics are temporal; the line does not ask whether a *given, frozen* representation admits a linear realisation, nor what obstructs one | the realisation question is *decided* for the given representation, not assumed: existence is an iff condition (Thm 1), the closure criterion decides which carrier coordinates can carry a fixed action (Props F–G), the capacity of the natural per-dimension class is bounded before fitting (Thm 3), and the failure is attributed to a measurable term (Prop D) | a truncated Koopman operator on features is one of our rejected global families (§5.2) unless the orbit is band-limited — the measured spectrum ($k\le2$ at $84$–$88\%$) is what makes the truncated form work |
 
-#### H.1 Where this paper does *not* compete
+#### G.1 Where this paper does *not* compete
 
 Three boundaries are worth stating so that the positioning is not read as a claim of priority.
 

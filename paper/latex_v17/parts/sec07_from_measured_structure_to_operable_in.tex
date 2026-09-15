@@ -41,7 +41,7 @@ On shape-held-out grids the interface reads hue zero-shot at a median error of a
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{fig09_interface.pdf}
-\caption*{\textbf{Figure 9.} The interface as built, and where it holds. (a) Hue readout error over the (saturation, value) domain on unseen shapes, an $8\times8$ grid on a logarithmic colour scale, and (b) the magnitude of the code's fundamental on the same grid; the readout fails where the code magnitude collapses towards the grey axis. (c) Readout error against the hue-concentration statistic for 120 real COCO regions, with the pre-registered threshold at $0.70$ (dashed); above it the median error is $8.0^\circ$ against $19.6^\circ$ below. (d) Wall clock per operation for a region-level code shift and for a pixel re-colour with a re-forward, logarithmic axis ($20.9$ \textbackslash{}textmu\{\}s against $38.1$ ms).}
+\caption*{\textbf{Figure 9.} The interface as built, and where it holds. (a) Hue readout error over the (saturation, value) domain on unseen shapes, an $8\times8$ grid on a logarithmic colour scale, and (b) the magnitude of the code's fundamental on the same grid; the readout fails where the code magnitude collapses towards the grey axis. (c) Readout error against the hue-concentration statistic for 120 real COCO regions, with the pre-registered threshold at $0.70$ (dashed); above it the median error is $8.0^\circ$ against $19.6^\circ$ below. (d) Wall clock per operation for a region-level code shift and for a pixel re-colour with a re-forward, logarithmic axis ($20.9$ $\mu$s against $38.1$ ms).}
 \end{figure*}
 
 \begin{figure*}[t]
@@ -79,7 +79,7 @@ rank-64 wider family & $0.815$ & --- \\
 
 \subsection{Useful operations}
 
-\textbf{Table 15} lists every capability against \textbf{ground truth and its own baseline}, which is the rule the paper applies throughout: a capability claim without a baseline is not a claim. Feature-space augmentation cuts hue read-out error by an order of magnitude against the input-space interpolation baseline; composition reaches parameters never fitted (Table D.11); the detector keeps a third of its seen-shift AP50 at an unseen shift; and region editing costs microseconds against milliseconds because it replaces the re-render it is compared with. Figure 11 collects those uses on real images, each against its own baseline.
+\textbf{Table 15} lists every capability against \textbf{ground truth and its own baseline}, which is the rule the paper applies throughout: a capability claim without a baseline is not a claim. Feature-space augmentation cuts hue read-out error by an order of magnitude against the input-space interpolation baseline; composition reaches parameters never fitted (Table D.11); the detector keeps a third of its seen-shift AP50 at an unseen shift; and region editing costs microseconds against milliseconds because it replaces the re-render it is compared with. \textbf{Figure 11} collects those uses on real images, each against its own baseline.
 
 \begin{figure*}[t]
 \centering

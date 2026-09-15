@@ -284,7 +284,11 @@ def convert(md):
                 else:
                     out.append('\\subsection{' + inline(re.sub(r'^\d+(\.\d+)*\.?\s*', '', text)) + '}')
             elif level == 4:
-                out.append('\\subsubsection{' + inline(re.sub(r'^[A-G]\.\d+\.?\s*', '', text)) + '}')
+                # The manuscript already labels these headings ("B.3 ...", "Box E1. ..."), and IEEEtran
+                # numbers \subsubsection as a continuous "1) 2) 3) ..." counter that is not reset per
+                # section: an unstarred heading printed "31) H.1 ..." in the positioning appendix.  The
+                # starred form keeps the manuscript's own label and drops the stray counter.
+                out.append('\\subsubsection*{' + inline(text) + '}')
             else:
                 out.append('\\paragraph{' + inline(text) + '}')
             i += 1
@@ -297,6 +301,10 @@ def convert(md):
             kind = 'itemize' if m else 'enumerate'
             if not list_stack or list_stack[-1] != kind:
                 close_lists()
+                if kind == 'enumerate':
+                    # IEEEtran does not reset the enumerate counter per section, so without this every
+                    # later list continues the previous one (the positioning list printed as "31)").
+                    out.append('\\setcounter{enumi}{0}')
                 out.append('\\begin{%s}' % kind)
                 list_stack.append(kind)
             out.append('\\item ' + inline((m or m2).group(1)))
@@ -493,7 +501,9 @@ def main():
             # the caption travels through the same text pipeline as the body, so every non-ASCII
             # character (degree signs, section marks) becomes a LaTeX command and the source stays ASCII
             cap = ' '.join(c['caption'].split())
-            cap = cap.replace('\u00b5', r'\textmu{}').replace('µ', r'\textmu{}')
+            # the micro sign travels through `inline` like every other non-ASCII character: it becomes
+            # `$\mu$`.  Writing \textmu here instead put the literal macro into the caption, because
+            # `inline` escapes a backslash in text.
             cap = inline(cap)
             fig_tex.append('\\begin{figure*}[t]\n\\centering\n'
                            f'\\includegraphics[width=\\textwidth]{{{base}.pdf}}\n'

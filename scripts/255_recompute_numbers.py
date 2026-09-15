@@ -192,6 +192,19 @@ for site, hn, en, htf, etf, hr, er, pct in t7b:
     check('C7', f'{site} relative difference %', pct,
           abs(rh - re_) / max(rh, re_) * 100, 0.15)
 
+# ---------------------------------------------------------------- §6.3 conditioning control
+# The control that rules out "the depth decay is numerical ill-conditioning": an exactly orthogonal
+# target is well conditioned at every depth, an ill-conditioned random one is not.
+eq = R('equivariance_theory_check.json')
+for depth in ('1', '4', '8'):
+    rec = eq[f'orthogonal_depth{depth}']
+    check('6.3', f'orthogonal target T_F, depth {depth}', 0.9999993, rec['T_F'], 5e-7)
+    check('6.3', f'orthogonal target condition number, depth {depth}', 1.0, rec['cond'], 1e-9)
+check('6.3', 'random target T_F, depth 1', 0.9993, eq['random_depth1']['T_F'], 0.0002)
+check('6.3', 'random target condition number, depth 1', 165.0, eq['random_depth1']['cond'], 0.5)
+check('6.3', 'random target T_F, depth 4', 0.846, eq['random_depth4']['T_F'], 0.0015)
+check('6.3', 'random target condition number, depth 4', 2.3e5, eq['random_depth4']['cond'], 5e3)
+
 # ---------------------------------------------------------------- report
 bad = [f for f in findings if f['verdict'] == 'MISMATCH']
 uns = [f for f in findings if f['verdict'] == 'unlocatable']

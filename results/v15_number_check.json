@@ -1223,11 +1223,91 @@
    "recomputed": 15.40459,
    "verdict": "rounding",
    "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "orthogonal target T_F, depth 1",
+   "manuscript": 0.9999993,
+   "recomputed": 0.999999,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "orthogonal target condition number, depth 1",
+   "manuscript": 1.0,
+   "recomputed": 1.0,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "orthogonal target T_F, depth 4",
+   "manuscript": 0.9999993,
+   "recomputed": 0.999999,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "orthogonal target condition number, depth 4",
+   "manuscript": 1.0,
+   "recomputed": 1.0,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "orthogonal target T_F, depth 8",
+   "manuscript": 0.9999993,
+   "recomputed": 0.999999,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "orthogonal target condition number, depth 8",
+   "manuscript": 1.0,
+   "recomputed": 1.0,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "random target T_F, depth 1",
+   "manuscript": 0.9993,
+   "recomputed": 0.999268,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "random target condition number, depth 1",
+   "manuscript": 165.0,
+   "recomputed": 165.146334,
+   "verdict": "rounding",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "random target T_F, depth 4",
+   "manuscript": 0.846,
+   "recomputed": 0.846352,
+   "verdict": "ok",
+   "note": ""
+  },
+  {
+   "group": "6.3",
+   "cell": "random target condition number, depth 4",
+   "manuscript": 230000.0,
+   "recomputed": 228215.094558,
+   "verdict": "rounding",
+   "note": ""
   }
  ],
  "summary": {
-  "checked": 153,
-  "ok": 153,
+  "checked": 163,
+  "ok": 163,
   "mismatch": 0,
   "unlocatable": 0
  }

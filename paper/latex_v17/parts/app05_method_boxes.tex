@@ -2,7 +2,7 @@
 
 Implementation-level specifications for the four components behind the paper's construction and measurement claims. Each box states its hyperparameters, what is fitted and what is not. Section numbers are those of the main text. Every value is copied from a file read while writing this appendix.
 
-\subsubsection{Box E1. Local phase-conditioned transporter (\S{}5.3)}
+\subsubsection*{Box E1. Local phase-conditioned transporter (\S{}5.3)}
 
 \textbf{Partition.} The hue circle is divided into nine segments of $40^\circ$, with starts $h\in\{0^\circ,40^\circ,\dots,320^\circ\}$; a segment operator is trained on the paired endpoints $z(h)\to z(h+40^\circ)$.
 
@@ -14,7 +14,7 @@ Implementation-level specifications for the four components behind the paper's c
 
 \textbf{Parameter count, and what is not fitted.} Each generator has $D(D-1)/2=276$ free parameters in the $24$-dimensional subspace, and the smoothed field stores $1+2K=7$ coefficient matrices; this is the entire fitted object. The backbone is frozen; the action applied at inference is a fixed function of the read phase, not a fitted operator; no test-sample operator, template or per-shape calibration is fitted.
 
-\subsubsection{Box E2. The carrier interface: learned encoding, fixed action (\S{}7.2)}
+\subsubsection*{Box E2. The carrier interface: learned encoding, fixed action (\S{}7.2)}
 
 \textbf{Read-in.} $E_\theta:\mathbb{R}^{d}\to\mathbb{R}^6$ is a three-layer MLP of widths $64\to256\to256\to6$ with SiLU activations, applied to the stage 3 GAP feature divided by the training-pool standard deviation ($\texttt{feat\_std}=0.7240$). Its six outputs are read as $l=\mathrm{softplus}(o_0)$, $\hat s=\mathrm{sigmoid}(o_1)$ and $(z_{1x},z_{1y},z_{2x},z_{2y})=o_{2:6}$, so the code is $(l,\hat s,z_1,z_2)$ with $z_1$ the fundamental and $z_2$ the second harmonic.
 
@@ -24,7 +24,7 @@ Implementation-level specifications for the four components behind the paper's c
 
 \textbf{Scope.} The action is fixed by the measured structure, so the correspondence is learned but its law is not. Whether a fitted action of equal capacity does better is measured in \S{}7.2 (Table F.10); the licence for the fixed action is that the two conditions the construction uses are measured to hold at the site (\S{}4.3, \S{}7.3). The two constructions differ in kind: the local transporter of Box E1 fits a generator and its Fourier coefficients and freezes them at inference, whereas the action here is never fitted and only the read-in is learned. One caveat belongs to the runtime figure of Box E4: the region-level timing artefact does not record its device, and the later verification runs are CPU-only, so the ratio is the reported measurement rather than a controlled head-to-head benchmark.
 
-\subsubsection{Box E3. Consumer heads}
+\subsubsection*{Box E3. Consumer heads}
 
 \textbf{ImageNet head.} For the depth grid and the transformer probes the consumer is the backbone's own frozen pretrained classifier head (torchvision \texttt{IMAGENET1K\_\allowbreak{}V2}/\texttt{V1}, DINOv2 with a frozen linear head on final pooled features). The criterion is label-free: it compares $F(Wz)$ with $F(g_\tau z)$, so no label enters, and the effect size --- the relative change of these logits under the real transformation --- licenses reading any operator result.
 
@@ -32,7 +32,7 @@ Implementation-level specifications for the four components behind the paper's c
 
 \textbf{YOLO hue-bin detector.} YOLO11n is trained on a synthetic set whose class \textit{is} the hue bin: eight bins of $45^\circ$ with the shape randomised across classes. Recipe: 60 epochs at $224$ px, batch 16, with every augmentation (mosaic, mixup, hue, saturation, value, horizontal and vertical flip) disabled, seed $0$; validation mAP50 $0.9871$ (mAP50-95 $0.9094$). Reading convention: box-level F1 at IoU $0.5$ against the detection obtained after a real recolour of the same scene, with a mid-layer transport at stage 3, 80 held-out scenes and three seeds. At $\Delta=90^\circ$ the null (no intervention) reaches F1 $0.008$, Procrustes $0.778$, ridge $0.905$, conv-res $0.965$ and the random orthogonal control random $0.000$; AP50 tracks F1 throughout.
 
-\subsubsection{Box E4. Hardware and runtime}
+\subsubsection*{Box E4. Hardware and runtime}
 
 Two configurations were used. The original training and measurement runs used a single NVIDIA GeForce RTX 2060 (6 GB); the device string is recorded with the timing artefact. The later verification runs are CPU-only, launched on four threads at low priority, which is the configuration recorded in the usage lines of the composition, split-control, and figure-composition scripts.
 

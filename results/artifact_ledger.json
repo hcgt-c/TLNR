@@ -49,6 +49,7 @@
   "results/detector_o8_multiseed.json",
   "results/dinov2_vitb14_probe.json",
   "results/dinov2_vits14_probe.json",
+  "results/equivariance_theory_check.json",
   "results/estimator_control.json",
   "results/family_capacity.json",
   "results/fig_composition.json",
@@ -251,7 +252,6 @@
   "results/diag_yolo11n_y7.json",
   "results/diag_yolo11n_y9.json",
   "results/diagnostic_validation.json",
-  "results/equivariance_theory_check.json",
   "results/external_consumer_pilot.json",
   "results/field_measure_resnet18_l1.json",
   "results/field_measure_resnet18_l2.json",
@@ -633,6 +633,7 @@
   "scripts/98_fig_value_boost.py",
   "scripts/99_vitb16_supervised_probe.py",
   "scripts/_split.py",
+  "scripts/build_release.py",
   "scripts/c10_ocode_demo.py",
   "scripts/c10_routeB_probe.py",
   "scripts/common.py",
@@ -765,6 +766,16 @@
     17
    ]
   },
+  "6.3 The readout\u2013transformation pairing": {
+   "results": [
+    "results/equivariance_theory_check.json"
+   ],
+   "scripts": [],
+   "other": [],
+   "lines": [
+    19
+   ]
+  },
   "Table 11": {
    "results": [
     "results/quotientization.json"
@@ -772,7 +783,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    19
+    20
    ]
   },
   "Table 12": {
@@ -782,7 +793,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    20
+    21
    ]
   },
   "Table 13": {
@@ -794,7 +805,7 @@
    ],
    "other": [],
    "lines": [
-    21
+    22
    ]
   },
   "7.2 The interface: learned encoding, fixed action": {
@@ -806,7 +817,7 @@
    ],
    "other": [],
    "lines": [
-    22
+    23
    ]
   },
   "Table 14": {
@@ -816,7 +827,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    23
+    24
    ]
   },
   "Table 15": {
@@ -832,7 +843,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    24
+    25
    ]
   },
   "Table 16": {
@@ -844,7 +855,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    25
+    26
    ]
   },
   "8. Discussion": {
@@ -854,7 +865,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    26
+    27
    ]
   },
   "Table A.3": {
@@ -864,7 +875,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    27
+    28
    ]
   },
   "Table B.1": {
@@ -876,8 +887,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    28,
-    29
+    29,
+    30
    ]
   },
   "Table C1": {
@@ -892,8 +903,8 @@
    ],
    "other": [],
    "lines": [
-    31,
-    32
+    32,
+    33
    ]
   },
   "Table C2": {
@@ -908,7 +919,7 @@
    ],
    "other": [],
    "lines": [
-    33
+    34
    ]
   },
   "Table C3": {
@@ -926,7 +937,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    34
+    35
    ]
   },
   "Table C4": {
@@ -957,9 +968,9 @@
    ],
    "other": [],
    "lines": [
-    35,
     36,
-    37
+    37,
+    38
    ]
   },
   "Table C5": {
@@ -971,7 +982,7 @@
    ],
    "other": [],
    "lines": [
-    38
+    39
    ]
   },
   "Table C6": {
@@ -993,7 +1004,7 @@
    ],
    "other": [],
    "lines": [
-    39
+    40
    ]
   },
   "Table C7": {
@@ -1003,7 +1014,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    40
+    41
    ]
   },
   "Table D.1": {
@@ -1018,7 +1029,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    41
+    42
    ]
   },
   "Table D.2": {
@@ -1028,7 +1039,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    42
+    43
    ]
   },
   "Table D.3": {
@@ -1038,7 +1049,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    43
+    44
    ]
   },
   "Table D.4": {
@@ -1052,8 +1063,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    44,
-    45
+    45,
+    46
    ]
   },
   "Table D.5": {
@@ -1067,8 +1078,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    46,
-    47
+    47,
+    48
    ]
   },
   "Table D.6": {
@@ -1078,8 +1089,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    48,
-    49
+    49,
+    50
    ]
   },
   "Table D.7": {
@@ -1089,7 +1100,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    50
+    51
    ]
   },
   "Table D.8": {
@@ -1099,8 +1110,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    51,
-    52
+    52,
+    53
    ]
   },
   "Table D.9": {
@@ -1111,7 +1122,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    53
+    54
    ]
   },
   "Table D.10": {
@@ -1122,7 +1133,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    54
+    55
    ]
   },
   "Table D.11": {
@@ -1133,8 +1144,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    55,
-    56
+    56,
+    57
    ]
   },
   "Table D.12": {
@@ -1145,8 +1156,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    57,
-    58
+    58,
+    59
    ]
   },
   "Table D.13": {
@@ -1156,8 +1167,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    59,
-    60
+    60,
+    61
    ]
   },
   "Table D.14": {
@@ -1171,7 +1182,7 @@
    ],
    "other": [],
    "lines": [
-    61
+    62
    ]
   },
   "Table D.15": {
@@ -1181,7 +1192,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    62
+    63
    ]
   },
   "Table D.16": {
@@ -1191,8 +1202,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    63,
-    64
+    64,
+    65
    ]
   },
   "Table D.17": {
@@ -1202,7 +1213,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    65
+    66
    ]
   },
   "Table D.18": {
@@ -1213,7 +1224,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    66
+    67
    ]
   },
   "Table D.19": {
@@ -1224,9 +1235,9 @@
    "scripts": [],
    "other": [],
    "lines": [
-    67,
     68,
-    69
+    69,
+    70
    ]
   },
   "Table D.20": {
@@ -1238,7 +1249,7 @@
    ],
    "other": [],
    "lines": [
-    70
+    71
    ]
   },
   "Table D.21": {
@@ -1250,7 +1261,7 @@
    ],
    "other": [],
    "lines": [
-    71
+    72
    ]
   },
   "Table D.22": {
@@ -1262,7 +1273,7 @@
    ],
    "other": [],
    "lines": [
-    72
+    73
    ]
   },
   "Table D.23": {
@@ -1274,7 +1285,7 @@
    ],
    "other": [],
    "lines": [
-    73
+    74
    ]
   },
   "Appendix E: Method boxes": {
@@ -1306,9 +1317,9 @@
    ],
    "other": [],
    "lines": [
-    74,
     75,
-    76
+    76,
+    77
    ]
   },
   "Table E1": {
@@ -1322,8 +1333,8 @@
    ],
    "other": [],
    "lines": [
-    77,
-    78
+    78,
+    79
    ]
   },
   "Table F.1": {
@@ -1354,8 +1365,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    79,
-    80
+    80,
+    81
    ]
   },
   "Table F.2": {
@@ -1370,8 +1381,8 @@
    ],
    "other": [],
    "lines": [
-    81,
-    82
+    82,
+    83
    ]
   },
   "Table F.3": {
@@ -1386,7 +1397,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    83
+    84
    ]
   },
   "Table F.4": {
@@ -1398,8 +1409,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    84,
-    85
+    85,
+    86
    ]
   },
   "Table F.5": {
@@ -1409,8 +1420,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    86,
-    87
+    87,
+    88
    ]
   },
   "Table F.6": {
@@ -1421,8 +1432,8 @@
    "scripts": [],
    "other": [],
    "lines": [
-    88,
-    89
+    89,
+    90
    ]
   },
   "Table F.7": {
@@ -1435,7 +1446,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    90
+    91
    ]
   },
   "Table F.8": {
@@ -1448,7 +1459,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    91
+    92
    ]
   },
   "Table F.9": {
@@ -1459,7 +1470,7 @@
    "scripts": [],
    "other": [],
    "lines": [
-    92
+    93
    ]
   },
   "Table F.10": {
@@ -1471,7 +1482,7 @@
    ],
    "other": [],
    "lines": [
-    93
+    94
    ]
   }
  }

@@ -18,6 +18,7 @@ extracts from the manuscript when the internal `*Source:*` lines are removed.
 | Table 9 | — | `results/multipath_composition.json` |
 | Table 10 | — | `results/depth_map_summary.json` |
 | 6.2 The geometry of changing realisability | — | `results/4.json`, `results/7.json` |
+| 6.3 The readout–transformation pairing | — | `results/equivariance_theory_check.json` |
 | Table 11 | — | `results/quotientization.json` |
 | Table 12 | — | `results/linear_dynamics_counterexample.json` |
 | Table 13 | `263_two_term_heldout.py` | `results/two_term_heldout_resnet50.json` |
@@ -104,5 +105,5 @@ those import.  `scripts/repo_paths.py` resolves every filesystem root.
 
 ## Stored results
 
-124 result files are shipped, all under `results/`.  They are exactly the files
+125 result files are shipped, all under `results/`.  They are exactly the files
 the manuscript quotes, so `python tools/verify_release.py` can re-derive every number

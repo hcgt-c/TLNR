@@ -1142,6 +1142,30 @@ lit('sec_2_4_koopman',
     'Koopman-style approaches ask when a nonlinear system admits an invariant finite-dimensional subspace on which the evolution is linear',
     'Koopman-style approaches [[cite:lusch2018]] ask when a nonlinear system admits an invariant finite-dimensional subspace on which the evolution is linear')
 
+
+
+
+# --- review round three (2026-09-16, the arXiv-eve report in paper/review/review.txt).
+#     1: the sentence that introduced the deleted ASCII diagram left a double "that is,".
+#     3: the positioning appendix is G, and its subsection must be numbered G.1.
+lit('review3_g1', '#### H.1 Where this paper does *not* compete',
+    '#### G.1 Where this paper does *not* compete')
+#     5: two table headers came out as "random random" (the operator name replaced its own gloss).
+#     4: Figure 11's in-text pointer goes bold, like the other figure references, so that a reader
+#        (or a reviewer's text scan) cannot miss it.
+lit('review3_fig11_bold',
+    'Figure 8 collects those uses on real images, each against its own baseline.',
+    '**Figure 8** collects those uses on real images, each against its own baseline.')
+#     6: restore the conditioning control that rules out "the depth decay is numerical ill-conditioning".
+lit('review3_conditioning',
+    'Neither holds: each readout erodes only with the transformation it is aligned to, and the off-diagonal cells are flat.',
+    'Neither holds: each readout erodes only with the transformation it is aligned to, and the off-diagonal cells are flat. '
+    '**The erosion is not a numerical-conditioning artefact.** An exactly orthogonal target keeps '
+    '$T_F=0.9999993$ at depths 1, 4 and 8, at condition number $1.0$, while an ill-conditioned random '
+    'target at the same depths falls from $0.9993$ to $0.846$ as its condition number rises from $165$ to '
+    '$2.3\\times10^{5}$; what the depth profiles track is the pairing, not the conditioning of the fit.\n\n'
+    '*Source: `results/equivariance_theory_check.json` (orthogonal_depth1/4/8, random_depth1/4/8).*')
+
 # --- review fixes (2026-09-16): the report in paper/review/review.txt.  A1 (truncated appendix table),
 #     A2 (the segment count), A3 (table numbers vs the order they appear), A4 (artifact names in an
 #     appendix table), B1 (the ASCII commutation diagram), B2 (the contribution list numbering, fixed in
@@ -1184,7 +1208,7 @@ lit('review_a4_row3', ' | `transport_theory.json`, `corollary3_rank_sweep` |', '
 lit('review_a4_row4', ' | `transport_theory.json`, `proxy_bottom_variance` |', ' |')
 lit('review_a4_row5', ' | `deep_linear_transport.json` |', ' |')
 # B1: the ASCII commutation square is deleted; the same square is already drawn as Figure 1(a).
-lit('review_b1_diagram', '```\n        τ ∈ M  (physical transformation: group / monoid / semigroup)\n   s ─────────────────►  τs\n   │                     │\n ψ_ℓ│                     │ ψ_ℓ\n   ▼                     ▼\n   z ─────────────────►  ρ_ℓ(τ) z ≈ ψ_ℓ(τs)\n        ρ_ℓ(τ): an operator on the feature space\n```',
+lit('review_b1_diagram', 'that is, the commutative diagram\n\n' + '```\n        τ ∈ M  (physical transformation: group / monoid / semigroup)\n   s ─────────────────►  τs\n   │                     │\n ψ_ℓ│                     │ ψ_ℓ\n   ▼                     ▼\n   z ─────────────────►  ρ_ℓ(τ) z ≈ ψ_ℓ(τs)\n        ρ_ℓ(τ): an operator on the feature space\n```',
     'that is, the square drawn in Figure 1(a).')
 # B4: the three navigation tables of the main text become numbered tables with captions.  Numbers 14-16
 # are placeholders above the current range; the renumbering pass assigns the final ones by citation.
@@ -1262,7 +1286,6 @@ lit_all('fig12_text',
 lit_all('fig10_text',
         'Table F.10 carries all four arms, three seeds, the parameter counts and the protocol.',
         'Table F.10 carries all four arms, three seeds, the parameter counts and the protocol. Figure 10 gives the read-out error, the two never-fitted increments and the composition defect for each arm.')
-
 
 def apply(text, kind, start, end, new):
     if kind == 'litall':
@@ -1391,6 +1414,11 @@ def deinternalise(s):
     print(f'  replaced {total} internal name(s)')
     # the parenthetical glosses the tables already carried become redundant once the code is the name
     POST_FIXES = [
+        # the operator name replaced its own gloss in two table headers and one row label
+        ('| random random orthogonal |', '| random orthogonal |', 1),
+        ('| Procrustes | ridge+MLP | conv-res | random random | random win |',
+         '| Procrustes | ridge+MLP | conv-res | random | random win |', 1),
+        ('| Procrustes | ridge+MLP | conv-res | random random |', '| Procrustes | ridge+MLP | conv-res | random |', 1),
         ('plain CNN (plain CNN)', 'plain CNN', 2),
         ('CEConv (colour-equivariant CNN)', 'CEConv', 1),
         ('LCER (colour-equivariant residual CNN)', 'LCER', 1),
