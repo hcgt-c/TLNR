@@ -1286,6 +1286,12 @@ lit_all('fig12_text',
 lit_all('fig10_text',
         'Table F.10 carries all four arms, three seeds, the parameter counts and the protocol.',
         'Table F.10 carries all four arms, three seeds, the parameter counts and the protocol. Figure 10 gives the read-out error, the two never-fitted increments and the composition defect for each arm.')
+# --- Index Terms (IEEE style): the paper had an abstract but no index terms.
+lit('index_terms',
+    '\n\n## 1. Introduction\n',
+    '\n\n**Index Terms**—representation analysis, equivariance, transformation laws, group and semigroup '
+    'actions, colour representation, internal intervention, reproducibility.\n\n## 1. Introduction\n')
+
 
 def apply(text, kind, start, end, new):
     if kind == 'litall':

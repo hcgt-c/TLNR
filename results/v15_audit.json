@@ -1,7 +1,7 @@
 {
  "paper": "paper/paper_v17.md",
- "words_total": 36949,
- "words_main_text": 18264,
+ "words_total": 36964,
+ "words_main_text": 18279,
  "words_appendices": 16314,
  "prose_numbers_main_text": 420,
  "prose_numbers_appendices": 2731,
@@ -15,7 +15,7 @@
   "7": 3.1,
   "8": 3.7,
   "9": 0.2,
-  "front": 1.2
+  "front": 1.1
  },
  "counts": {
   "sections": 58,

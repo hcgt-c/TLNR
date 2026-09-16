@@ -340,7 +340,12 @@ def convert(md):
             i += 1
             continue
         # ---- ordinary paragraph line ----
-        if ln.lstrip().startswith('*Source'):
+        if ln.lstrip().startswith('**Index Terms**'):
+            # IEEE style: the index terms are a separate environment right after the abstract, not part
+            # of it.  The placeholder is placed by main() once the abstract has been closed.
+            terms = re.sub(r'^\*\*Index Terms\*\*[—\-–]\s*', '', ln.strip())
+            out.append('%%KEYWORDS%% ' + inline(terms))
+        elif ln.lstrip().startswith('*Source'):
             out.append('{\\footnotesize ' + inline(ln.strip()) + '}')
         elif CAPTION_T.match(ln.strip()):
             # table caption: keep the label, render as an unnumbered caption attached to the next table
@@ -579,6 +584,12 @@ def main():
         # the abstract ends where the first \section starts
         k = body.index('\\section{Introduction}')
         body = body[:k] + '\\end{abstract}\n\n' + body[k:]
+        # ... and the index terms follow the abstract, outside it
+        m = re.search(r'%%KEYWORDS%% (.*)', body)
+        if m:
+            body = body.replace(m.group(0), '', 1)
+            body = body.replace('\\end{abstract}', '\\end{abstract}\n\n\\begin{IEEEkeywords}\n'
+                                + m.group(1) + '\n\\end{IEEEkeywords}', 1)
 
     # ---- split into parts/ so the project is editable section by section ----
     parts_dir = os.path.join(outdir, 'parts')

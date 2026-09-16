@@ -1,7 +1,7 @@
 {
  "source": "paper/archive/paper_v15.md",
  "target": "paper/paper_v17.md",
- "operations": 251,
+ "operations": 252,
  "operation_names": [
   "abstract",
   "sec_1_2_results",
@@ -253,10 +253,11 @@
   "eqbreak__big_BA__mathrm_int_E__theta",
   "fig11_text",
   "fig12_text",
-  "fig10_text"
+  "fig10_text",
+  "index_terms"
  ],
  "words_source": 30925,
- "words_target": 36949,
+ "words_target": 36964,
  "references": 31,
  "citation_order": [
   "lenc2015",
