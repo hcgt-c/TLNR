@@ -1381,10 +1381,12 @@ def add_availability(s):
     where = url or ('https://doi.org/' + doi)
     ref = ''
     if url and doi:
-        ref = f' (archived at \\texttt{{https://doi.org/{doi}}})'
+        ref = f' (archived at https://doi.org/{doi})'
+    # plain text, not LaTeX: the manuscript is Markdown and the LaTeX converter escapes a backslash, so
+    # a \\texttt{} typed here would be printed literally in the PDF.
     sentence = ('\n\n**Code and data availability.** The scripts that produce every table and figure of '
                 f'this paper, together with the stored result files they read, are available at '
-                f'\\texttt{{{where}}}{ref}. The manuscript states the configuration behind each '
+                f'{where}{ref}. The manuscript states the configuration behind each '
                 'number; the repository carries the code, the seeds and the raw outputs.')
     marker = 'The appendices follow in that order.'
     if s.count(marker) != 1:

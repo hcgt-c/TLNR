@@ -113,6 +113,18 @@ def inline(s):
         return '\x00M%d\x00' % (len(math) - 1)
 
     t = MATH.sub(_stash, s)
+    # bare URLs are stashed like math: they must reach LaTeX unescaped, wrapped in \url{} so that they
+    # are clickable and can break at punctuation instead of overflowing the column
+    url = []
+
+    def _stash_url(m):
+        # trailing sentence punctuation belongs to the sentence, not to the URL
+        raw = m.group(0)
+        u = raw.rstrip('.,;:')
+        url.append(u)
+        return '\x00U%d\x00' % (len(url) - 1) + raw[len(u):]
+
+    t = re.sub(r'https?://[^\s<>()\[\]{}"`]+', _stash_url, t)
     # a markdown backslash escape (\%, \_, \&, ...) is authoring syntax: drop the backslash and let
     # `escape` re-escape the character for LaTeX, so a cell reading `71\%` does not print as `71\%`.
     t = re.sub(r'\\([%_&#\'*\[\](){}])', r'\1', t)
@@ -126,6 +138,7 @@ def inline(s):
         return '\\texttt{' + inner + '}'
 
     t = re.sub(r'`([^`]+?)`', _tt, t)
+    t = re.sub(r'\x00U(\d+)\x00', lambda m: '\\url{' + url[int(m.group(1))] + '}', t)
     t = re.sub(r'\x00M(\d+)\x00', lambda m: math[int(m.group(1))], t)
     return t
 

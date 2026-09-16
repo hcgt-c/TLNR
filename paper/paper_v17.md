@@ -706,7 +706,7 @@ Appendices A–G collect the material the main text defers: the status of every 
 
 The appendices follow in that order.
 
-**Code and data availability.** The scripts that produce every table and figure of this paper, together with the stored result files they read, are available at \texttt{https://github.com/hcgt-c/TLNR}. The manuscript states the configuration behind each number; the repository carries the code, the seeds and the raw outputs.
+**Code and data availability.** The scripts that produce every table and figure of this paper, together with the stored result files they read, are available at https://github.com/hcgt-c/TLNR. The manuscript states the configuration behind each number; the repository carries the code, the seeds and the raw outputs.
 
 ### Appendix A: Claim status table
 
