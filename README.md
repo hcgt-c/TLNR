@@ -2,10 +2,10 @@
 
 Code, stored results and figures for the paper
 
-**Repository:** <https://github.com/hcgt-c/TLNR>
+**Repository:** <https://github.com/hcgt-c/TLNR>  ·  **Paper:** [arXiv:2609.18190](https://arxiv.org/abs/2609.18190)
 
 > **Transformation Laws in Neural Representations: Structure, Realisability, and Construction**
-> Yuan Sun, School of Mathematical Sciences, Beijing Normal University
+> Yuan Sun, School of Mathematical Sciences, Beijing Normal University — arXiv:2609.18190
 
 The paper asks when a physical transformation of an input — a hue rotation, a heat diffusion, a clipped
 scaling — survives the trip through a frozen network as an *operator on the features*, and what that
@@ -112,5 +112,16 @@ Markdown is the author's preprint, and the third-party terms (COCO, CIFAR-10, DI
 weights) are listed in `LICENSING.md` because none of that material is distributed here.  GitHub reads the
 root `LICENSE`, so the repository sidebar shows *MIT license*.
 
-If you use this material, please cite the paper; `CITATION.cff` carries the entry (fill in the arXiv
-identifier once it is assigned).
+If you use this material, please cite the paper (`CITATION.cff` carries the same entry):
+
+```bibtex
+@misc{sun2026transformation,
+  title  = {Transformation Laws in Neural Representations: Structure, Realisability, and Construction},
+  author = {Sun, Yuan},
+  year   = {2026},
+  eprint = {2609.18190},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url    = {https://arxiv.org/abs/2609.18190}
+}
+```

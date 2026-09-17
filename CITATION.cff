@@ -9,6 +9,10 @@ authors:
 type: software
 license: MIT
 repository-code: "https://github.com/hcgt-c/TLNR"
+identifiers:
+  - type: other
+    value: "arXiv:2609.18190"
+    description: "Preprint of the paper these results belong to"
 abstract: >-
   Code, stored results and figures for a study of how physical transformations of an input are retained,
   realised and composed in frozen neural representations: existence conditions, the metric-weighted defect
@@ -26,4 +30,8 @@ preferred-citation:
     - family-names: Sun
       given-names: Yuan
   year: 2026
-  notes: "Preprint; add the journal reference once it is published."
+  url: "https://arxiv.org/abs/2609.18190"
+  identifiers:
+    - type: other
+      value: "arXiv:2609.18190"
+  notes: "Preprint on arXiv (cs.LG); add the journal reference and DOI once the journal version appears."
